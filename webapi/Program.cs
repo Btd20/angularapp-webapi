@@ -9,7 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("webapiContextC
 
 builder.Services.AddDbContext<webapiContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<webapiUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<webapiContext>();
+builder.Services.AddDefaultIdentity<webapiUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<webapiContext>();
 
 // Add services to the container.
 

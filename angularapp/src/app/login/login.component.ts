@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,17 +15,18 @@ export class LoginComponent {
   constructor(private http: HttpClient, private router: Router) { }
 
   login() {
-    const data = {
-      Username: this.Username,
-      Password: this.Password,
-      RememberMe: this.RememberMe
+    const username = encodeURIComponent(this.Username || '');
+    const password = encodeURIComponent(this.Password || '');
+    const rememberMe = this.RememberMe || false;
+
+    const url = `https://localhost:7240/Auth/login`;
+    const body = {
+      username: username,
+      password: password,
+      rememberMe: rememberMe
     };
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-
-    this.http.post('https://localhost:7240/Auth/login', data, { headers }).subscribe(
+    this.http.post(url, body).subscribe(
       response => {
         // Manejar la respuesta exitosa del inicio de sesión
         console.log('Login exitoso:', response);
