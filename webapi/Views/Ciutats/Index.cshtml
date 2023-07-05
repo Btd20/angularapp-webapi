@@ -1,0 +1,41 @@
+﻿@model IEnumerable<webapi.Models.Ciutats>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomCiutat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pais)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomCiutat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pais.CountryID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CityID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CityID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CityID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

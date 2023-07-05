@@ -1,0 +1,30 @@
+﻿@model webapi.Models.Oficines
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Oficines</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomOficina)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomOficina)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ciutat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ciutat.CityID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.OfficeID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

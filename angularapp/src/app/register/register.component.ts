@@ -1,37 +1,43 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import { Component, Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+interface RegisterData {
+  username: string;
+  email: string;
+  password: string;
+}
 
+@Injectable()
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: 'register.component.html',
+  styleUrls: ['register.component.css']
 })
 export class RegisterComponent {
-  username: string | undefined;
-  email: string | undefined;
-  password: string | undefined;
+  username: string = '';
+  email: string = '';
+  password: string = '';
+  errorMessage: string | undefined;
 
   constructor(private http: HttpClient) { }
 
   register() {
-    const data = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
+    const data: RegisterData = {
       username: this.username,
       email: this.email,
       password: this.password
     };
 
-    this.http.post('http://localhost:7240/Auth/register', data).subscribe(
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    this.http.post('https://localhost:7240/Auth/register', data, { headers }).subscribe(
       response => {
-        // Manejar la respuesta exitosa del registro
         console.log('Registro exitoso:', response);
       },
       error => {
-        // Manejar el error del registro
+        this.errorMessage = 'Error en el registro. Verifica los datos ingresados.';
         console.error('Error en el registro:', error);
       }
     );
