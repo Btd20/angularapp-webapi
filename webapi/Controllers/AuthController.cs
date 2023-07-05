@@ -38,7 +38,7 @@ namespace webapi.Controllers
 
             // Aquí puedes generar un token JWT u otra lógica de autenticación si es necesario
 
-            return Ok("Inicio de sesión exitoso.");
+            return Ok(new { message = "Inicio de sesión exitoso." });
         }
 
         [HttpPost("register")]
@@ -59,7 +59,7 @@ namespace webapi.Controllers
 
             // Aquí puedes generar un token JWT u otra lógica de autenticación si es necesario
 
-            return Ok("Registro exitoso.");
+            return Ok(new { message = "Registro exitoso." });
         }
     }
 }

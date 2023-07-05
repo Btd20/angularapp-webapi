@@ -2,14 +2,20 @@
 
 <form (ngSubmit)="login()">
   <div>
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username" required>
+    <label for="Username">Username</label>
+    <input type="text" id="Username" name="Username" [(ngModel)]="Username" required>
   </div>
 
   <div>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    <label for="Password">Password</label>
+    <input type="Password" id="Password" name="Password" [(ngModel)]="Password" required>
+  </div>
+
+  <div>
+    <input type="checkbox" id="RememberMe" name="RememberMe" [(ngModel)]="RememberMe">
+    <label for="RememberMe">Recuérdame</label>
   </div>
 
   <button type="submit">Login</button>
 </form>
+
