@@ -20,7 +20,6 @@
 
 .app-home-general {
   margin: 6em auto auto auto;
-  min-width: calc(100% - 30rem);
   width: calc(100% - 50em);
   height: 40em;
   background-color: #F2F4FB;
@@ -47,41 +46,22 @@
 .btn-general {
   display: inline-flex;
   width: 100%;
-  min-width:calc(100% - 20%);
   height: 7rem;
   margin: 1.3rem 0rem 0rem 0rem;
-  overflow:hidden;
 }
 
 .btn-register {
-  overflow: hidden;
   align-items: center;
   display: inline-grid;
   width: 12%;
-  background-color: var(--txt-g1);
+  background-color: #202067;
   color: var(--bs-body-bg);
   border-radius: 15px;
-  outline-offset: 2px;
-  outline: 1px solid #ccc;
-  transition: 0.8s ease-in-out all;
 }
 
 .btn-txtapp {
   color: var(--bs-body-bg);
-  font-family: 'Karla';
-  font-weight: 600;
-  letter-spacing: 0.052em;
-  transition: 0.8s ease-in-out all;
-}
-
-
-.btn-register:hover {
-  background-color: transparent !important;
-  outline: 1px solid cyan;
-  transition: 0.8s ease-in-out all;
-}
-
-.btn-register:hover .btn-txtapp {
-   color: var(--txt-g1);
-   transition: 0.8s ease-in-out all;
+  font-family:'Karla';
+  font-weight:600;
+  letter-spacing:0.052em;
 }

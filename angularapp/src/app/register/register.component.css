@@ -1,0 +1,24 @@
+.regi-h2txt{
+    font-family:Rubik;
+    color:var(--txt-g1);
+    font-weight:bold;
+}
+
+.regi-lbl {
+  display:block;
+  font-family: var(--fontK);
+}
+
+.regi-inputUser{
+    display:block;
+
+}
+
+.btn-register {
+  align-items: center;
+  display: inline-grid;
+  width: 12%;
+  background-color: #202067;
+  color: var(--bs-body-bg);
+  border-radius: 15px;
+}
