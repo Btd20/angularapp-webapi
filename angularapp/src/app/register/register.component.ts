@@ -35,6 +35,10 @@ export class RegisterComponent {
     this.http.post('https://localhost:7240/Auth/register', data, { headers }).subscribe(
       response => {
         console.log('Registro exitoso:', response);
+
+        // Manejar la respuesta exitosa del inicio de sesión
+        console.log('Login exitoso:', response);
+        window.location.href = 'https://google.es';
       },
       error => {
         this.errorMessage = 'Error en el registro. Verifica los datos ingresados.';
