@@ -3,10 +3,335 @@
     <StartupCommand>npm start</StartupCommand>
     <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
     <!-- Command to run on project build -->
-    <BuildCommand></BuildCommand>
+    <BuildCommand>
+    </BuildCommand>
     <!-- Command to create an optimized build of the project that's ready for publishing -->
     <ProductionBuildCommand>npm run build</ProductionBuildCommand>
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\angularapp</BuildOutputFolder>
   </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="src\login_register\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\tilt\tilt.jquery.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\select2\select2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\select2\select2.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\select2\select2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\select2\select2.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\jquery\jquery-3.2.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\css-hamburgers\hamburgers.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\css-hamburgers\hamburgers.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\js\tooltip.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\js\popper.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\js\popper.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\js\bootstrap.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\js\bootstrap.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap-reboot.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap-grid.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap-grid.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\bootstrap\css\bootstrap-grid.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\vendor\animate\animate.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\js\main.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\images\img-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\images\icons\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-Thin.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-SemiBold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-MediumItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-Medium.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-LightItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-Light.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-Italic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-ExtraLight.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-ExtraBold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-BoldItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-Bold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-BlackItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\poppins\Poppins-Black.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\OFL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-Thin.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-SemiBold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-Medium.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-LightItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-Light.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-Italic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-Bold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\montserrat\Montserrat-Black.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_path.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_list.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_core.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\stacked.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\path.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\mixins.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\list.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\larger.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\icons.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\core.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\less\animated.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\css\util.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\login_register\Login_v1\css\main.css" />
+  </ItemGroup>
 </Project>
