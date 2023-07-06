@@ -28,4 +28,9 @@ public class webapiContext : IdentityDbContext<webapiUser>
     public DbSet<webapi.Models.Ciutats> Ciutats { get; set; } = default!;
 
     public DbSet<webapi.Models.Sales> Sales { get; set; } = default!;
+
+    public DbSet<webapi.Models.Reserves> Reserves { get; set; } = default!;
+
+
+
 }
