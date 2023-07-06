@@ -10,17 +10,17 @@ namespace webapi.Models
         [Key]
         public int ReserveID { get; set; }
         public int MeetingRoomID { get; set; }
-        public DateTime DataReserva { get;set; }
-        public DateTime HoraInici { get;set; }
-        public DateTime HoraFi { get;set; }
+        public DateTime? DataReserva { get;set; }
+        public DateTime? HoraInici { get;set; }
+        public DateTime? HoraFi { get;set; }
         public string UserID { get; set; }
 
         [ForeignKey("MeetingRoomID")]
 
-        public Sales sala { get;set; }
+        public virtual Sales sala { get;set; }
 
         [ForeignKey("UserID")]
-        public IdentityUser User { get; set; }
+        public virtual IdentityUser User { get; set; }
 
     }
 }
