@@ -35,10 +35,12 @@ html {
 
 :root {
   --bs-body-bg: #F4F4FB;
+  --bg-1: rgb(0 0 0 / 10%);
+  --bg-2: #e3e3e3;
+  --txt-g1: #202067;
 }
 
 body {
-  margin-bottom: 60px;
-  background-color: var(--bs-body-bg);
+  background-color: var(--bg-2);
 }
 
