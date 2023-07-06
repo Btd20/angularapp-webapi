@@ -26,19 +26,19 @@ namespace webapi.Controllers
 
             if (user == null)
             {
-                return NotFound("El usuario no existe.");
+                return NotFound("L'usuari no existeix.");
             }
 
             var result = await _signInManager.PasswordSignInAsync(user, model.Password, isPersistent: model.RememberMe, lockoutOnFailure: false);
 
             if (!result.Succeeded)
             {
-                return BadRequest("Error de inicio de sesión. Verifica tus credenciales.");
+                return BadRequest("Error d'inici de sessió. Verifica les teves credencials.");
             }
 
             // Aquí puedes generar un token JWT u otra lógica de autenticación si es necesario
 
-            return Ok(new { message = "Inicio de sesión exitoso." });
+            return Ok(new { message = "Inici de sessió correcte." });
         }
 
         [HttpPost("register")]
@@ -54,12 +54,12 @@ namespace webapi.Controllers
 
             if (!result.Succeeded)
             {
-                return BadRequest("Error al registrar el usuario.");
+                return BadRequest("Error al registrar l'usuari.");
             }
 
             // Aquí puedes generar un token JWT u otra lógica de autenticación si es necesario
 
-            return Ok(new { message = "Registro exitoso." });
+            return Ok(new { message = "Registre completat." });
         }
     }
 }

@@ -15,15 +15,15 @@ export class LoginComponent {
   constructor(private http: HttpClient, private router: Router) { }
 
   login() {
-    const username = encodeURIComponent(this.Username || '');
-    const password = encodeURIComponent(this.Password || '');
-    const rememberMe = this.RememberMe || false;
+    const Username = encodeURIComponent(this.Username || '');
+    const Password = encodeURIComponent(this.Password || '');
+    const RememberMe = this.RememberMe || false;
 
     const url = `https://localhost:7240/Auth/login`;
     const body = {
-      username: username,
-      password: password,
-      rememberMe: rememberMe
+      Username: Username,
+      Password: Password,
+      RememberMe: RememberMe
     };
 
     this.http.post(url, body).subscribe(

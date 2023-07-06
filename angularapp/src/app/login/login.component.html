@@ -1,21 +1,21 @@
-<h2>Login</h2>
+<h2>Inici de sessió</h2>
 
 <form (ngSubmit)="login()">
   <div>
-    <label for="Username">Username</label>
-    <input type="text" id="Username" name="Username" [(ngModel)]="Username" required>
+    <label for="username">Usuari</label>
+    <input type="text" id="username" name="username" [(ngModel)]="Username" required>
   </div>
 
   <div>
-    <label for="Password">Password</label>
-    <input type="Password" id="Password" name="Password" [(ngModel)]="Password" required>
+    <label for="password">Contrasenya</label>
+    <input type="password" id="password" name="password" [(ngModel)]="Password" required>
   </div>
 
   <div>
-    <input type="checkbox" id="RememberMe" name="RememberMe" [(ngModel)]="RememberMe">
-    <label for="RememberMe">Recuérdame</label>
+    <label for="remember">Recordar</label>
+    <input type="checkbox" id="remember" name="rememberme" [(ngModel)]="RememberMe">
   </div>
 
-  <button type="submit">Login</button>
+  <button type="submit">Iniciar sessió</button>
 </form>
 
