@@ -1,21 +1,24 @@
-
 .svg-home1 {
-  width: 10rem;
-  background-color: red;
-  z-index: 2;
+  z-index: -99;
   position: absolute;
-  margin: 2rem 5rem;
   display: block;
+  width: 100%;
+  height: 10rem!important; /*--Aixi controlo millor el SVG--*/
+  overflow: hidden;
 }
 
-
 .svg-home2 {
-  width: 10rem;
-  background-color: cyan;
-  z-index: 2;
+  z-index: -99;
   position: absolute;
-  margin: 2rem 105rem;
   display: block;
+  width: 100%;
+  height: 10rem !important; /*--Aixi controlo millor el SVG--*/
+  overflow:hidden;
+  margin-top: -3em;
+}
+
+.svgp2 {
+  transform: rotate(75deg);
 }
 
 .app-home-general {
