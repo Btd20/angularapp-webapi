@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
+
+html {
+  font-size: 14px;
+}
+
+/*--IMPORT FONTS EXTERNES--*/
+
+@font-face {
+  font-family: "BlenderProBook";
+  src: url('https://www.cyberpunk.net/fonts/BlenderPro-Book.woff2') format('woff2');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+:root {
+  --bs-body-bg: #F4F4FB;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: var(--bs-body-bg);
+}
+

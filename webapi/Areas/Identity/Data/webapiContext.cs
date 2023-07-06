@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using webapi.Areas.Identity.Data;
+using webapi.Models;
 
 namespace webapi.Data;
 
@@ -19,4 +20,10 @@ public class webapiContext : IdentityDbContext<webapiUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
     }
+
+    public DbSet<webapi.Models.Pais> Pais { get; set; } = default!;
+
+    public DbSet<webapi.Models.Oficines> Oficines { get; set; } = default!;
+
+    public DbSet<webapi.Models.Ciutats> Ciutats { get; set; } = default!;
 }

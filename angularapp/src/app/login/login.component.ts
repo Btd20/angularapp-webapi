@@ -1,36 +1,39 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.css']
 })
 export class LoginComponent {
-  username: string | undefined;
-  password: string | undefined;
-  rememberme: boolean | undefined;
+  Username: string | undefined;
+  Password: string | undefined;
+  RememberMe: boolean | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   login() {
-    const data = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
-      username: this.username,
-      password: this.password,
-      rememberme: this.rememberme
+    const Username = encodeURIComponent(this.Username || '');
+    const Password = encodeURIComponent(this.Password || '');
+    const RememberMe = this.RememberMe || false;
+
+    const url = `https://localhost:7240/Auth/login`;
+    const body = {
+      Username: Username,
+      Password: Password,
+      RememberMe: RememberMe
     };
 
-    this.http.post('/Auth/login', data).subscribe(
+    this.http.post(url, body).subscribe(
       response => {
         // Manejar la respuesta exitosa del inicio de sesión
         console.log('Login exitoso:', response);
+        window.location.href = 'https://google.es';
       },
       error => {
-        // Manejar el error del inicio de sesión
+        console.log('Error en el inicio de sesión:', error);
       }
     );
   }
