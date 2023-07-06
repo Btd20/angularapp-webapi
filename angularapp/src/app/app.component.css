@@ -29,7 +29,7 @@
 }
 
 .titl-home {
-  font-size: 7.6rem;
+  font-size: 7rem;
   font-family: 'Rubik', sans-serif;
   text-align: center;
   font-weight: 900;
@@ -53,11 +53,15 @@
 .btn-register {
   align-items: center;
   display: inline-grid;
-  width: 14%;
+  width: 12%;
+  background-color: #202067;
+  color: var(--bs-body-bg);
+  border-radius: 15px;
 }
 
-.btn-login {
-  align-items: center;
-  display: inline-grid;
-  width: 14%;
+.btn-txtapp {
+  color: var(--bs-body-bg);
+  font-family:'Karla';
+  font-weight:600;
+  letter-spacing:0.052em;
 }
