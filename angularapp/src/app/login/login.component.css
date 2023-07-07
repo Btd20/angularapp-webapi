@@ -1,0 +1,7 @@
+.login-inputUser {
+  display: block;
+  background-color: transparent !important;
+  color: var(--txt-g1);
+  font-weight: bold;
+  font-family: var(--fontK);
+}
