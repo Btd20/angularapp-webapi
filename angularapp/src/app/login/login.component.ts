@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -28,13 +28,22 @@ export class LoginComponent {
 
     this.http.post(url, body).subscribe(
       response => {
-        // Manejar la respuesta exitosa del inicio de sesión
+        
         console.log('Login exitoso:', response);
-        window.location.href = 'https://google.es';
+        this.router.navigate(['/']); 
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
       }
     );
+
   }
+
+  @Output() goBackEvent = new EventEmitter<void>();
+
+  goBack() {
+    this.goBackEvent.emit();
+  }
+
 }
+

@@ -1,9 +1,5 @@
 .svg-home1 {
-  z-index: -99;
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 10rem!important; /*--Aixi controlo millor el SVG--*/
+  margin-bottom: -18rem;
   overflow: hidden;
 }
 
@@ -23,7 +19,7 @@
 
 .app-home-general {
   margin: 6em auto auto auto;
-  width: calc(100% - 50em);
+  width: calc(100% - 18em);
   height: 40em;
   background-color: #F2F4FB;
   border-radius: 2rem;
@@ -60,6 +56,7 @@
   background-color: #202067;
   color: var(--bs-body-bg);
   border-radius: 15px;
+  overflow:hidden;
 }
 
 .btn-txtapp {

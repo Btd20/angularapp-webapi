@@ -19,6 +19,11 @@ export class AppComponent {
     this.showRegisterForm = !this.showRegisterForm;
     this.showLoginForm = false;
   }
+
+  goBack() {
+    this.showLoginForm = false;
+    this.showRegisterForm = false;
+  }
 } 
 
 interface WeatherForecast {

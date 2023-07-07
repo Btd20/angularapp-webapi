@@ -3,12 +3,12 @@
 <form (ngSubmit)="login()">
   <div>
     <label for="username">Usuari</label>
-    <input type="text" id="username" name="username" [(ngModel)]="Username" required>
+    <input type="text" id="username" name="username" class="login-inputUser" [(ngModel)]="Username" required>
   </div>
 
   <div>
     <label for="password">Contrasenya</label>
-    <input type="password" id="password" name="password" [(ngModel)]="Password" required>
+    <input type="password" id="password" name="password" class="login-inputUser" [(ngModel)]="Password" required>
   </div>
 
   <div>
@@ -19,3 +19,4 @@
   <button type="submit">Iniciar sessió</button>
 </form>
 
+<button class="btn btn-secondary" (click)="goBack()">Torna enrere</button>
