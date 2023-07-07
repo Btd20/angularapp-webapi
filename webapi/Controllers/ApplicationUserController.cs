@@ -1,38 +1,33 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using webapi.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using webapi.Data;
-
 
 namespace webapi.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
-    public class ApplicationUserController : ControllerBase
+    public class ApplicationUsersController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public ApplicationUserController(UserManager<ApplicationUser> userManager)
+        public ApplicationUsersController(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }
 
-        // GET: ApplicationUsers
+        // GET: api/ApplicationUsers
         [HttpGet]
-        public IActionResult GetApplicationUsers()
+        public IActionResult GetUsers()
         {
             var users = _userManager.Users;
             return Ok(users);
         }
 
-        // GET: ApplicationUsers/5
+        // GET: api/ApplicationUsers/{id}
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetApplicationUser(string id)
+        public async Task<IActionResult> GetUser(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)
@@ -42,21 +37,21 @@ namespace webapi.Controllers
             return Ok(user);
         }
 
-        // POST: ApplicationUsers
+        // POST: api/ApplicationUsers
         [HttpPost]
-        public async Task<IActionResult> CreateApplicationUser(ApplicationUser user)
+        public async Task<IActionResult> CreateUser(ApplicationUser user)
         {
             var result = await _userManager.CreateAsync(user);
             if (result.Succeeded)
             {
-                return CreatedAtAction("GetApplicationUser", new { id = user.Id }, user);
+                return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
             }
             return BadRequest(result.Errors);
         }
 
-        // PUT: ApplicationUsers/5
+        // PUT: api/ApplicationUsers/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateApplicationUser(string id, ApplicationUser user)
+        public async Task<IActionResult> UpdateUser(string id, ApplicationUser user)
         {
             if (id != user.Id)
             {
@@ -69,7 +64,7 @@ namespace webapi.Controllers
                 return NotFound();
             }
 
-            existingUser.Nom = user.Nom;
+            existingUser.UserName = user.UserName;
             existingUser.Email = user.Email;
 
             var result = await _userManager.UpdateAsync(existingUser);
@@ -80,9 +75,9 @@ namespace webapi.Controllers
             return BadRequest(result.Errors);
         }
 
-        // DELETE: ApplicationUsers/5
+        // DELETE: api/ApplicationUsers/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteApplicationUser(string id)
+        public async Task<IActionResult> DeleteUser(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)

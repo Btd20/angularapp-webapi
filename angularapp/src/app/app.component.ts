@@ -7,16 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public forecasts?: WeatherForecast[];
+  showLoginForm: boolean = false;
+  showRegisterForm: boolean = false;
 
-  constructor(http: HttpClient) {
-    http.get<WeatherForecast[]>('/weatherforecast').subscribe(result => {
-      this.forecasts = result;
-    }, error => console.error(error));
+  toggleLoginForm() {
+    this.showLoginForm = !this.showLoginForm;
+    this.showRegisterForm = false;
   }
 
-  title = 'angularapp';
-}
+  toggleRegisterForm() {
+    this.showRegisterForm = !this.showRegisterForm;
+    this.showLoginForm = false;
+  }
+} 
 
 interface WeatherForecast {
   date: string;
@@ -24,3 +27,5 @@ interface WeatherForecast {
   temperatureF: number;
   summary: string;
 }
+
+
