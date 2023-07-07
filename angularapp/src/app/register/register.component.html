@@ -2,7 +2,7 @@
 
 <form (ngSubmit)="register()">
   <div>
-    <label class="regi-lbl"  for="username">Usuari</label>
+    <label class="regi-lbl" for="username">Usuari</label>
     <input class="regi-inputUser" type="text" id="username" name="username" [(ngModel)]="username" required>
   </div>
 
@@ -18,3 +18,5 @@
 
   <button type="submit" class="btn btn-register">Registrar-se</button>
 </form>
+
+<button class="btn btn-secondary" (click)="goBack()">Torna enrere</button>

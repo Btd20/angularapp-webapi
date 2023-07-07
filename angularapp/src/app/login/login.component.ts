@@ -28,13 +28,20 @@ export class LoginComponent {
 
     this.http.post(url, body).subscribe(
       response => {
-        // Manejar la respuesta exitosa del inicio de sesión
+        
         console.log('Login exitoso:', response);
-        window.location.href = 'https://google.es';
+        this.router.navigate(['/']); 
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
       }
     );
+
   }
+
+  goBack() {
+    this.router.navigate(['/']);
+  }
+
 }
+

@@ -19,8 +19,9 @@ namespace webapi.Models
 
         public virtual Sales sala { get;set; }
 
-        [ForeignKey("UserID")]
+       /* [ForeignKey("UserID")]
         public virtual IdentityUser User { get; set; }
+       */
 
     }
 }
