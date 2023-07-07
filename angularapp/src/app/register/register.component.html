@@ -1,22 +1,24 @@
-<h2 class="regi-h2txt">Dona't d'alta</h2>
+<div class="container">
+  <h2 class="regi-h2txt">Dona't d'alta</h2>
 
-<form (ngSubmit)="register()">
-  <div>
-    <label class="regi-lbl" for="username">Usuari</label>
-    <input class="regi-inputUser" type="text" id="username" name="username" [(ngModel)]="username" required>
-  </div>
+  <form (ngSubmit)="register()">
+    <div>
+      <label class="regi-lbl" for="username">Usuari</label>
+      <input class="regi-inputUser" type="text" id="username" name="username" [(ngModel)]="username" required>
+    </div>
 
-  <div>
-    <label class="regi-lbl" for="email">Correu</label>
-    <input class="regi-inputUser" type="email" id="email" name="email" [(ngModel)]="email" required>
-  </div>
+    <div>
+      <label class="regi-lbl" for="email">Correu</label>
+      <input class="regi-inputUser" type="email" id="email" name="email" [(ngModel)]="email" required>
+    </div>
 
-  <div>
-    <label class="regi-lbl" for="password">Contrasenya</label>
-    <input class="regi-inputUser" type="password" id="password" name="password" [(ngModel)]="password" required>
-  </div>
+    <div>
+      <label class="regi-lbl" for="password">Contrasenya</label>
+      <input class="regi-inputUser" type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
 
-  <button type="submit" class="btn btn-register">Registrar-se</button>
-</form>
+    <button type="submit" class="btn btn-register">Registrar-se</button>
+  </form>
 
-<button class="btn btn-secondary" (click)="goBack()">Torna enrere</button>
+  <button class="btn btn-secondary" (click)="goBack()">Torna enrere</button>
+</div>

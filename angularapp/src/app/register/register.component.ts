@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -45,7 +45,9 @@ export class RegisterComponent {
     );
   }
 
+  @Output() goBackEvent = new EventEmitter<void>();
+
   goBack() {
-    this.router.navigate(['/']);
+    this.goBackEvent.emit();
   }
 }

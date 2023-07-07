@@ -334,4 +334,7 @@
   <ItemGroup>
     <None Remove="src\login_register\Login_v1\css\main.css" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\NewFolder\" />
+  </ItemGroup>
 </Project>
