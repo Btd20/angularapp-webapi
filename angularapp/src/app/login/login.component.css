@@ -1,7 +1,10 @@
-.login-inputUser {
-  display: block;
-  background-color: transparent !important;
-  color: var(--txt-g1);
-  font-weight: bold;
-  font-family: var(--fontK);
+.app-login-general {
+  background-color: cyan;
+  margin: 13% auto;
+  width: 300px;
+}
+
+.lg-h2-titl{
+    text-align:center;
+    font-family:var(--font-k);
 }
