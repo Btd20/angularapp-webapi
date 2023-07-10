@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 
 
 
@@ -15,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    VistaPaisosComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
