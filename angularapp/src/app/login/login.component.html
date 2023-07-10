@@ -1,22 +1,25 @@
-<h2>Inici de sessió</h2>
 
-<form (ngSubmit)="login()">
-  <div>
-    <label for="username">Usuari</label>
-    <input type="text" id="username" name="username" class="login-inputUser" [(ngModel)]="Username" required>
-  </div>
+<div class="app-regi-general">
+  <h2>Inici de sessió</h2>
 
-  <div>
-    <label for="password">Contrasenya</label>
-    <input type="password" id="password" name="password" class="login-inputUser" [(ngModel)]="Password" required>
-  </div>
+  <form (ngSubmit)="login()">
+    <div>
+      <label for="username">Usuari</label>
+      <input type="text" id="username" name="username" class="login-inputUser" [(ngModel)]="Username" required>
+    </div>
 
-  <div>
-    <label for="remember">Recordar</label>
-    <input type="checkbox" id="remember" name="rememberme" [(ngModel)]="RememberMe">
-  </div>
+    <div>
+      <label for="password">Contrasenya</label>
+      <input type="password" id="password" name="password" class="login-inputUser" [(ngModel)]="Password" required>
+    </div>
 
-  <button type="submit">Iniciar sessió</button>
-</form>
+    <div>
+      <label for="remember">Recordar</label>
+      <input type="checkbox" id="remember" name="rememberme" [(ngModel)]="RememberMe">
+    </div>
 
-<button class="btn btn-secondary" (click)="goBack()">Torna enrere</button>
+    <button type="submit">Iniciar sessió</button>
+  </form>
+
+  <button class="btn btn-secondary" (click)="goBack()">Torna enrere</button>
+</div>
