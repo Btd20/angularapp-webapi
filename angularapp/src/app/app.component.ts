@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -9,28 +10,37 @@ import { Component } from '@angular/core';
 export class AppComponent {
   showLoginForm: boolean = false;
   showRegisterForm: boolean = false;
+  userLoggedIn: boolean = false;
+
+  constructor(private router: Router) { }
+
 
   toggleLoginForm() {
     this.showLoginForm = !this.showLoginForm;
     this.showRegisterForm = false;
+    this.userLoggedIn = false;
+    this.router.navigate(['/login']);
   }
 
   toggleRegisterForm() {
     this.showRegisterForm = !this.showRegisterForm;
     this.showLoginForm = false;
+    this.userLoggedIn = false;
+    this.router.navigate(['/register']);
   }
 
   goBack() {
     this.showLoginForm = false;
     this.showRegisterForm = false;
+    this.userLoggedIn = false;
+    this.router.navigate(['/']);
   }
-} 
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+  setUserLoggedIn(loggedIn: boolean) {
+    this.userLoggedIn = loggedIn;
+    this.router.navigate(['/home']);
+  }
+  
 }
 
 

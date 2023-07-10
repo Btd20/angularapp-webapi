@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -17,7 +18,8 @@ import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    VistaPaisosComponent
+    VistaPaisosComponent,
+    HomeComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,

@@ -20,14 +20,17 @@
     </div>
   </div>
 
-  <div *ngIf="showLoginForm">
-    <app-login (goBackEvent)="goBack()"></app-login>
-   
+  <div *ngIf="showLoginForm && !userLoggedIn">
+    <app-login (goBackEvent)="goBack()" (loggedInEvent) ="setUserLoggedIn($event)"></app-login>
   </div>
 
   <div *ngIf="showRegisterForm">
-    <app-register (goBackEvent)="goBack()"></app-register>
+    <app-register (goBackEvent)="goBack()"></app-register>,
     
+  </div>
+
+  <div *ngIf="userLoggedIn">
+    <app-home></app-home>
   </div>
 </main>
 

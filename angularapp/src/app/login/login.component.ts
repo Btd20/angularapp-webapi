@@ -12,6 +12,7 @@ export class LoginComponent {
   Password: string | undefined;
   RememberMe: boolean | undefined;
 
+  @Output() loggedInEvent = new EventEmitter<boolean>();
   constructor(private http: HttpClient, private router: Router) { }
 
   login() {
@@ -29,6 +30,7 @@ export class LoginComponent {
     this.http.post(url, body).subscribe(
       response => {
         console.log('Login exitoso:', response);
+        this.loggedInEvent.emit(true); //això fa que loggedIn sigui true i per tant es mostri el HOME
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
