@@ -3,14 +3,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using webapi.Areas.Identity.Data;
 using webapi.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("webapiContextConnection") ?? throw new InvalidOperationException("Connection string 'webapiContextConnection' not found.");
 
 builder.Services.AddDbContext<webapiContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<webapiUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<webapiContext>();
-
+builder.Services.AddDefaultIdentity<webapiUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>() // Agrega esta línea para habilitar el uso de roles
+    .AddEntityFrameworkStores<webapiContext>();
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -47,7 +49,32 @@ else
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
+
+/* Creació i assignació d'usuari Administrador */
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var userManager = services.GetRequiredService<UserManager<webapiUser>>();
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+    var roleName = "Administrador";
+
+    if (!await roleManager.RoleExistsAsync(roleName))
+    {
+        var role = new IdentityRole(roleName);
+        await roleManager.CreateAsync(role);
+    }
+
+    var usuario = await userManager.FindByEmailAsync("admin@gmail.com");
+
+    if (usuario != null && !await userManager.IsInRoleAsync(usuario, roleName))
+    {
+        await userManager.AddToRoleAsync(usuario, roleName);
+    }
+}
 
 app.Run();

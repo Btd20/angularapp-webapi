@@ -1,19 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using System.Threading.Tasks;
-using webapi.Models;
+using Microsoft.AspNetCore.Mvc;
 using webapi.Areas.Identity.Data;
 
 namespace webapi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ApplicationUsersController : ControllerBase
+    [Authorize(Roles = "Administrador")]
+    public class AdminController : Controller
     {
         private readonly UserManager<webapiUser> _userManager;
 
-        public ApplicationUsersController(UserManager<webapiUser> userManager)
+        public AdminController(UserManager<webapiUser> userManager)
         {
             _userManager = userManager;
         }
@@ -93,27 +90,5 @@ namespace webapi.Controllers
             }
             return BadRequest(result.Errors);
         }
-
-        // GET: api/ApplicationUsers/{id}/role
-        [HttpGet("{id}/role")]
-        public async Task<IActionResult> GetUserRole(string id)
-        {
-            var user = await _userManager.FindByIdAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            var roles = await _userManager.GetRolesAsync(user);
-            if (roles.Count == 0)
-            {
-                return NotFound("El usuari no és Administrador.");
-            }
-
-            var role = roles[0]; // Suponemos que el usuario tiene un solo rol asignado
-
-            return Ok(role);
-        }
-
     }
 }
