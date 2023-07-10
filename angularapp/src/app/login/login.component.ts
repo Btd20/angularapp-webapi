@@ -28,9 +28,7 @@ export class LoginComponent {
 
     this.http.post(url, body).subscribe(
       response => {
-        
         console.log('Login exitoso:', response);
-        this.router.navigate(['/']); 
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
