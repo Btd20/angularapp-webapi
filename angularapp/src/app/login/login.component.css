@@ -4,7 +4,21 @@
   width: 300px;
 }
 
-.lg-h2-titl{
-    text-align:center;
-    font-family:var(--font-k);
+.lg-h2-titl {
+  text-align: center;
+  font-family: var(--fontR);
+  letter-spacing:0.8px;
+  font-weight: 900;
+  color: var(--txt-g1);
+}
+
+
+.lg-btn-submit{}
+
+.lg-remember{
+    background-color:red;
+}
+
+.lg-remember-input {
+  background-color: darkblue;
 }
