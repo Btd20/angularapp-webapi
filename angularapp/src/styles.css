@@ -39,5 +39,6 @@ html {
 
 body {
   background-color: var(--bg-2);
+  overflow-y: hidden;
 }
 
