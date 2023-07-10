@@ -14,7 +14,7 @@
 
 .lg-input {
   color: var(--txt-g1);
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   font-weight: 600;
   font-family: var(--fontK);
   line-height: 1;
@@ -24,7 +24,7 @@
   height: calc(1em + 1.6em + 0.5em);
   width: 100%;
   padding: 0.3em;
-  border: 0.25em solid transparent;
+  border: 0.12em solid transparent;
   background-image: linear-gradient(var(--bg-2), var(--bg-2)), linear-gradient(120deg, #202067 0%, #F2F4FB 50%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
