@@ -12,13 +12,13 @@ export class LoginComponent {
   Password: string | undefined;
   RememberMe: boolean | undefined;
 
+  msgLogin = "";
+
   @Output() loggedInEvent = new EventEmitter<boolean>();
   constructor(private http: HttpClient, private router: Router) { }
 
-  msgLogin="";
-
   showMessage() {
-    this.msgLogin = "Hi ha hagut un error. Revisa el nom d'usuari o la contrasenya.";
+    this.msgLogin="Trukutru"
   }
 
   login() {
@@ -49,7 +49,7 @@ export class LoginComponent {
 
   goBack() {
     this.goBackEvent.emit();
-  }
+    };
 
 }
 

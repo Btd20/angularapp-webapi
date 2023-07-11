@@ -3,11 +3,11 @@
   <br />
   <form (ngSubmit)="login()">
     <div>
-      <label for="username" class="d-block text-center">Usuari</label>
+      <label for="username" class="d-block lg-txt">Usuari</label>
       <input type="text" id="username" name="username" class="m-auto login-inputUser lg-input d-block" [(ngModel)]="Username" required>
     </div><br />
     <div>
-      <label for="password" class="d-block text-center">Contrasenya</label>
+      <label for="password" class="d-block lg-txt">Contrasenya</label>
       <input type="password" id="password" name="password" class="m-auto login-inputUser lg-input d-block" [(ngModel)]="Password" required>
     </div><br />
 
@@ -17,8 +17,8 @@
     </div>
     <br />
     <button type="submit" class="btn btn-primary m-auto d-block">Iniciar sessió</button>
-    <div class="lg-msgInici" (click)="showMessage()">{{msgLogin}}</div>
+    <div id="msgInici" (click)="showMessage()">{{msgLogin}}</div> <!--aixo es pot fer amb angular+bootstrap-->
+    <button class="btn btn-secondary m-auto d-block btn-tornaEnrere" (click)="goBack()">Tornar enrere</button>
   </form>
   <br />
-  <button class="btn btn-secondary m-auto d-block" (click)="goBack()">Tornar enrere</button>
 </div>
