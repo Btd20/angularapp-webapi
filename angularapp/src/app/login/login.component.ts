@@ -18,7 +18,7 @@ export class LoginComponent {
   msgLogin="";
 
   showMessage() {
-    this.msgLogin = "Hi ha hagut un error de connexió. Revisa el nom d'usuari o la contrasenya";
+    this.msgLogin = "Hi ha hagut un error. Revisa el nom d'usuari o la contrasenya.";
   }
 
   login() {
