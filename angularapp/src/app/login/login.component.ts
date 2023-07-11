@@ -30,7 +30,7 @@ export class LoginComponent {
     this.http.post(url, body).subscribe(
       response => {
         console.log('Login exitoso:', response);
-        this.loggedInEvent.emit(true); //això fa que loggedIn sigui true i per tant es mostri el HOME
+        this.router.navigate(['/home']);
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
