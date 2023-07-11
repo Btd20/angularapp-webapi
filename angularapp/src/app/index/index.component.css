@@ -1,6 +1,6 @@
 .titl-home {
   font-size: 7rem;
-  font-family: 'Rubik', sans-serif;
+  font-family: var(--fontR);
   text-align: center;
   font-weight: 900;
   color: var(--txt-g1);
@@ -32,7 +32,7 @@
 
 .btn-txtapp {
   color: var(--bs-body-bg);
-  font-family: 'Karla';
+  font-family: var(--fontK);
   font-weight: 600;
   letter-spacing: 0.052em;
 }

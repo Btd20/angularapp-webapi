@@ -15,6 +15,12 @@ export class LoginComponent {
   @Output() loggedInEvent = new EventEmitter<boolean>();
   constructor(private http: HttpClient, private router: Router) { }
 
+  msgLogin="";
+
+  showMessage() {
+    this.msgLogin = "No s'ha pogut logejar. Revisa el nom d'usuari o la contrasenya.";
+  }
+
   login() {
     const Username = encodeURIComponent(this.Username || '');
     const Password = encodeURIComponent(this.Password || '');

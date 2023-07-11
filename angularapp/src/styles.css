@@ -28,6 +28,8 @@ html {
   min-height: 100%;
 }
 
+/*--VARIABLES GENERALS--*/
+
 :root {
   --bs-body-bg: #F4F4FB;
   --bg-1: rgb(0 0 0 / 10%);
@@ -39,6 +41,5 @@ html {
 
 body {
   background-color: var(--bg-2);
-  overflow-y: hidden;
 }
 

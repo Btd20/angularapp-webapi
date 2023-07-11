@@ -1,6 +1,8 @@
 .app-login-general {
   margin: 4rem auto 0rem auto;
-  width: 300px;
+  width: 20rem;
+  height:100%;
+  overflow:hidden;
 }
 
 .lg-h2-titl {
@@ -10,6 +12,16 @@
   font-weight: 900;
   color: var(--txt-g1);
   text-transform:uppercase;
+}
+
+.lg-txt {
+  font-size: 0.8rem;
+  text-align: center;
+  font-family: var(--fontK);
+  letter-spacing: 0.08rem;
+  font-weight: 600;
+  color: var(--txt-g1);
+  text-transform: uppercase;
 }
 
 .lg-input {
@@ -24,7 +36,7 @@
   height: calc(1em + 1.6em + 0.5em);
   width: 100%;
   padding: 0.3em;
-  border: 0.12em solid transparent;
+  border: 0.22em solid transparent;
   background-image: linear-gradient(var(--bg-2), var(--bg-2)), linear-gradient(120deg, #202067 0%, #F2F4FB 50%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
@@ -33,14 +45,48 @@
   transition: background-position 0.8s ease-out;
 }
 
-.lg-btn-submit{
+.lg-btn-submit{ /*-EL MATEIX QUE REGISTRAR-SE-*/
 
+}
+
+.lg-remember-comp {
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-bottom:0.8rem;
 }
 
 .lg-remember{
-    background-color:red;
+    font-family:var(--fontK);
+    margin-right:2rem;
+    text-align:center;
 }
 
 .lg-remember-input {
-  background-color: darkblue;
+    margin-left:-1.5rem;
+}
+
+.lg-msgInici {
+  border: 1px solid #ff000080;
+  background-color: #ff000020;
+  border-radius: 25rem;
+  width: 18rem;
+  height: 3.3rem;
+  margin:1rem auto 1rem auto;
+  padding: 0rem 2.5rem 0rem 2.5rem;
+  font-family: var(--fontK);
+  font-size: 0.9rem;
+  word-break: break-all;
+  line-height: 180%;
+  z-index: 9;
+  position: relative;
+}
+
+.btn-tornaEnrere {
+  z-index: 8;
+  position: relative;
 }
