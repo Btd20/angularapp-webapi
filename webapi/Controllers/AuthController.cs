@@ -1,5 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using webapi.Models;
 using webapi.Areas.Identity.Data;
@@ -12,11 +18,13 @@ namespace webapi.Controllers
     {
         private readonly UserManager<webapiUser> _userManager;
         private readonly SignInManager<webapiUser> _signInManager;
+        private readonly IConfiguration _configuration;
 
-        public AuthController(UserManager<webapiUser> userManager, SignInManager<webapiUser> signInManager)
+        public AuthController(UserManager<webapiUser> userManager, SignInManager<webapiUser> signInManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _configuration = configuration;
         }
 
         [HttpPost("login")]
@@ -36,31 +44,29 @@ namespace webapi.Controllers
                 return BadRequest("Error d'inici de sessió. Verifica les teves credencials.");
             }
 
-            // Aquí puedes generar un token JWT u otra lógica de autenticación si es necesario
+            var token = GenerateJwtToken(user);
 
-            return Ok(new { message = "Inici de sessió correcte." });
+            return Ok(new { token });
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterModel model)
+        private string GenerateJwtToken(webapiUser user)
         {
-            var user = new webapiUser
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Secret"]);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
             {
-                UserName = model.Username,
-                Email = model.Email
+                Subject = new ClaimsIdentity(new[]
+                {
+            new Claim(ClaimTypes.NameIdentifier, user.Id),
+            new Claim(ClaimTypes.Role, "Administrador") // Reemplaza "Administrador" con el rol adecuado del usuario
+        }),
+                Expires = DateTime.UtcNow.AddHours(1), // Token expira en 1 hora
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest("Error al registrar l'usuari.");
-            }
-
-            // Aquí puedes generar un token JWT u otra lógica de autenticación si es necesario
-
-            return Ok(new { message = "Registre completat." });
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }
-

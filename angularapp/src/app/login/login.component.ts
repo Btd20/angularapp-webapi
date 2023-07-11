@@ -2,6 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+interface LoginResponse {
+  token: string;
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: 'login.component.html',
@@ -15,34 +19,31 @@ export class LoginComponent {
   @Output() loggedInEvent = new EventEmitter<boolean>();
   constructor(private http: HttpClient, private router: Router) { }
 
-  msgLogin="";
+  msgLogin = '';
 
   showMessage() {
-    this.msgLogin = "No s'ha pogut logejar. Revisa el nom d'usuari o la contrasenya.";
+    this.msgLogin = "No se ha podido iniciar sesión. Verifica el nombre de usuario o la contraseña.";
   }
 
   login() {
-    const Username = encodeURIComponent(this.Username || '');
-    const Password = encodeURIComponent(this.Password || '');
-    const RememberMe = this.RememberMe || false;
-
     const url = `https://localhost:7240/Auth/login`;
     const body = {
-      Username: Username,
-      Password: Password,
-      RememberMe: RememberMe
+      Username: this.Username,
+      Password: this.Password,
+      RememberMe: this.RememberMe
     };
 
-    this.http.post(url, body).subscribe(
+    this.http.post<LoginResponse>(url, body).subscribe(
       response => {
         console.log('Login exitoso:', response);
-        this.loggedInEvent.emit(true); //això fa que loggedIn sigui true i per tant es mostri el HOME
+        /* Emmagatzemar token en local */
+        localStorage.setItem('token', response.token);
+        this.loggedInEvent.emit(true);
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
       }
     );
-
   }
 
   @Output() goBackEvent = new EventEmitter<void>();
@@ -50,6 +51,4 @@ export class LoginComponent {
   goBack() {
     this.goBackEvent.emit();
   }
-
 }
-
