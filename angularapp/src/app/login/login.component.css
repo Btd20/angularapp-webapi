@@ -33,16 +33,11 @@
   letter-spacing: 0.022rem;
   border-style: none;
   outline: none;
-  height: calc(1em + 1.6em + 0.5em);
+  height: calc(1em + 1.3em + 0.5em);
   width: 100%;
   padding: 0.3em;
-  border: 0.22em solid transparent;
-  background-image: linear-gradient(var(--bg-2), var(--bg-2)), linear-gradient(120deg, #202067 0%, #F2F4FB 50%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  background-color: #e8f0fe;
   border-radius: 1.2em;
-  background-size: 200% 100%;
-  transition: background-position 0.8s ease-out;
 }
 
 .lg-btn-submit{ /*-EL MATEIX QUE REGISTRAR-SE-*/
@@ -50,18 +45,20 @@
 }
 
 .lg-remember-comp {
-  width: 100%;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  margin-bottom:0.8rem;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom:0.8rem;
 }
 
 .lg-remember{
     font-family:var(--fontK);
+    text-transform:uppercase;
+    font-weight:900;
     margin-right:2rem;
     text-align:center;
 }
