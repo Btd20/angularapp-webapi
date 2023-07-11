@@ -1,39 +1,55 @@
 .app-regi-general {
-  margin: 3em auto -6em auto;
-  width: calc(100% - 18em);
-  height: 40em;
-  background-color: #F2F4FB;
-  border-radius: 2rem;
-  box-shadow: rgb(0 0 0 / 8%) 0.81px 2.4px 2.4px 3.2px;
+  margin: 4rem auto 0rem auto;
+  width: 20rem;
+  height: 100%;
   overflow: hidden;
 }
 
-
-
 .regi-h2txt {
-  font-family: Rubik;
+  text-align: center;
+  font-family: var(--fontR);
+  letter-spacing: 0.8px;
+  font-weight: 900;
   color: var(--txt-g1);
-  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.regi-lbl {
-  display:block;
+.regi-txt {
+  font-size: 0.8rem;
+  text-align: center;
   font-family: var(--fontK);
+  letter-spacing: 0.08rem;
+  font-weight: 600;
+  color: var(--txt-g1);
+  text-transform: uppercase;
 }
 
-.regi-inputUser {
-  display: block;
-  background-color: transparent !important;
+.regi-input {
   color: var(--txt-g1);
-  font-weight: bold;
+  font-size: 0.95rem;
+  font-weight: 600;
   font-family: var(--fontK);
+  line-height: 1;
+  letter-spacing: 0.022rem;
+  border-style: none;
+  outline: none;
+  height: calc(1em + 1.3em + 0.5em);
+  width: 100%;
+  padding: 0.3em;
+  background-color: #e8f0fe;
+  border-radius: 1.2em;
 }
 
 .btn-register {
   align-items: center;
   display: inline-grid;
-  width: 12%;
+  width: 20%;
   background-color: #202067;
   color: var(--bs-body-bg);
   border-radius: 15px;
+}
+
+.btn-tornaEnrere {
+  z-index: 8;
+  position: relative;
 }

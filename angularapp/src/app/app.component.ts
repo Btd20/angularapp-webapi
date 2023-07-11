@@ -11,23 +11,11 @@ export class AppComponent {
   showLoginForm: boolean = false;
   showRegisterForm: boolean = false;
   userLoggedIn: boolean = false;
+    title: any;
 
   constructor(private router: Router) { }
 
 
-  toggleLoginForm() {
-    this.showLoginForm = !this.showLoginForm;
-    this.showRegisterForm = false;
-    this.userLoggedIn = false;
-    this.router.navigate(['/login']);
-  }
-
-  toggleRegisterForm() {
-    this.showRegisterForm = !this.showRegisterForm;
-    this.showLoginForm = false;
-    this.userLoggedIn = false;
-    this.router.navigate(['/register']);
-  }
 
   goBack() {
     this.showLoginForm = false;

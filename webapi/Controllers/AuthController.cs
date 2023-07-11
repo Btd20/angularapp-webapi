@@ -45,28 +45,61 @@ namespace webapi.Controllers
             }
 
             var token = GenerateJwtToken(user);
-
             return Ok(new { token });
         }
 
-        private string GenerateJwtToken(webapiUser user)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(RegisterModel model)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Secret"]);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
+            var user = new webapiUser
             {
-                Subject = new ClaimsIdentity(new[]
-                {
-            new Claim(ClaimTypes.NameIdentifier, user.Id),
-            new Claim(ClaimTypes.Role, "Administrador") // Reemplaza "Administrador" con el rol adecuado del usuario
-        }),
-                Expires = DateTime.UtcNow.AddHours(1), // Token expira en 1 hora
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                UserName = model.Username,
+                Email = model.Email
             };
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest("Error al registrar l'usuari.");
+            }
+
+            var token = GenerateJwtToken(user);
+            return Ok(new { token });
+        }
+
+        private async Task<string> GenerateJwtToken(webapiUser user)
+        {
+            var roles = await _userManager.GetRolesAsync(user);
+
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.Name, user.UserName),
+        new Claim(ClaimTypes.Email, user.Email),
+        // Agrega más claims según tus necesidades
+    };
+
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            var tokenOptions = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddHours(1), // Token válido por 1 hora
+                signingCredentials: new SigningCredentials(
+                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"])),
+                    SecurityAlgorithms.HmacSha256)
+            );
+
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+
+            // Asignar el token al usuario en la tabla AspNetUserTokens
+            await _userManager.SetAuthenticationTokenAsync(user, "webapi", "acmetoken", tokenString);
+
+            return tokenString;
         }
     }
 }

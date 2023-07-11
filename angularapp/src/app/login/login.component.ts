@@ -1,10 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-
-interface LoginResponse {
-  token: string;
-}
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -17,28 +13,35 @@ export class LoginComponent {
   RememberMe: boolean | undefined;
 
   @Output() loggedInEvent = new EventEmitter<boolean>();
-  constructor(private http: HttpClient, private router: Router) { }
+
+  constructor(private authService: AuthService, private router: Router) { }
+
+  ngOnInit(): void {
+    if (this.authService.isAuthenticated()) {
+      this.authService.isTokenValid().subscribe(isValid => {
+        if (isValid) {
+          this.router.navigate(['https://localhost:4200/home']);
+        }
+      });
+    }
+  }
 
   msgLogin = '';
 
   showMessage() {
-    this.msgLogin = "No se ha podido iniciar sesión. Verifica el nombre de usuario o la contraseña.";
+    this.msgLogin = "No s'ha pogut logejar. Revisa el nom d'usuari o la contrasenya.";
   }
 
   login() {
-    const url = `https://localhost:7240/Auth/login`;
-    const body = {
-      Username: this.Username,
-      Password: this.Password,
-      RememberMe: this.RememberMe
-    };
+    const username = encodeURIComponent(this.Username || '');
+    const password = encodeURIComponent(this.Password || '');
+    const rememberMe = this.RememberMe || false;
 
-    this.http.post<LoginResponse>(url, body).subscribe(
+    this.authService.login(username, password).subscribe(
       response => {
-        console.log('Login exitoso:', response);
-        /* Emmagatzemar token en local */
-        localStorage.setItem('token', response.token);
-        this.loggedInEvent.emit(true);
+        this.authService.setToken(response.token);
+        console.log('Login exitoso');
+        this.router.navigate(['/home']);
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
@@ -50,5 +53,6 @@ export class LoginComponent {
 
   goBack() {
     this.goBackEvent.emit();
+    this.router.navigate(['/']);
   }
 }
