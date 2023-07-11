@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
+import { SalesComponent } from './sales/sales.component';
+import { PaisosComponent } from './paisos/paisos.component';
 
 
 
@@ -21,7 +23,9 @@ import { IndexComponent } from './index/index.component';
     RegisterComponent,
     VistaPaisosComponent,
     HomeComponent,
-    IndexComponent
+    IndexComponent,
+    SalesComponent,
+    PaisosComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,

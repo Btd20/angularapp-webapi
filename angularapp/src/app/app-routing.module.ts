@@ -4,12 +4,17 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
+import { SalesComponent } from './sales/sales.component';
+import { PaisosComponent } from './paisos/paisos.component';
 
 const routes: Routes = [
+  { path: 'paisos', component: PaisosComponent },
+  { path: 'sales', component: SalesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: IndexComponent },
+
 ];
 
 @NgModule({

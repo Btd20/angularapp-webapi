@@ -34,6 +34,7 @@ export class LoginComponent {
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
+
       }
     );
 
@@ -43,6 +44,7 @@ export class LoginComponent {
 
   goBack() {
     this.goBackEvent.emit();
+    this.router.navigate(['/']);
   }
 
 }
