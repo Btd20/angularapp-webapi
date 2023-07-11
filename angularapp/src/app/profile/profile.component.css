@@ -2,11 +2,8 @@
 
 .container-profile {
   margin: auto;
-  width: 45rem;
-  height: 30rem;
-  background-color: #F2F4FB;
-  border-radius: 2rem;
-  box-shadow: rgb(0 0 0 / 8%) 0.81px 2.4px 2.4px 3.2px;
+  width: 100%;
+  height: 85%;
   overflow: hidden;
 }
 
