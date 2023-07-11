@@ -21,6 +21,20 @@ export class LoginComponent {
     this.msgLogin = "No s'ha pogut logejar. Revisa el nom d'usuari o la contrasenya.";
   }
 
+  errorLogin() {
+    const errorLogin = document.getElementById('errorLogin');
+    if (errorLogin != null) {
+      errorLogin.style.display = 'block';
+    }
+  }
+
+  sucessLogin() {
+    const succesLogin = document.getElementById('succesLogin');
+    if (succesLogin != null) {
+      succesLogin.style.display = 'block';
+    }
+  }
+
   login() {
     const Username = encodeURIComponent(this.Username || '');
     const Password = encodeURIComponent(this.Password || '');
