@@ -14,7 +14,7 @@ export class ApiService {
     return this.http.get<any[]>(this.apiUrlPaisos);
   }
 
-  getCiutats() {
-    return this.http.get<any[]>(this.apiUrlCiutats); // Pati: Has d'implementar aquesta funció a Ciutats component
+  getCiutats(pais: string) {
+    return this.http.get<any[]>(`${this.apiUrlCiutats}/${pais}`); // Pati: Has d'implementar aquesta funció a Ciutats component
   }
 }

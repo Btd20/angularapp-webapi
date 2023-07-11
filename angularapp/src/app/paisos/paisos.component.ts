@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export class PaisosComponent implements OnInit {
 
   paisos!: any[];
+  ciutats!: any[];
 
 
   constructor(private apiService: ApiService) { }
@@ -26,8 +27,20 @@ export class PaisosComponent implements OnInit {
       error => {
         console.error(error);
       }
-    )
+    );
 
+  }
+
+  getCiutats(pais: string): void {
+    this.apiService.getCiutats(pais).subscribe(
+      response => {
+        console.log(response);
+        this.ciutats = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 
 }
