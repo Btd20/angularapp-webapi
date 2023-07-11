@@ -1,0 +1,14 @@
+thead {
+  background-color: #202067;
+  color: var(--bs-body-bg);
+  font-family: 'Karla';
+}
+
+a {
+  padding: 0.3em;
+  color: black;
+  margin: 2em;
+  /*background-color: #202067;*/
+  font-family: 'Karla';
+  text-decoration: none;
+}

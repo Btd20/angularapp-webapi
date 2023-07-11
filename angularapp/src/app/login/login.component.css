@@ -70,14 +70,13 @@
     margin-left:-1.5rem;
 }
 
-
-#msgInici {
+.lg-msgInici {
   border: 1px solid #ff000080;
   background-color: #ff000020;
   border-radius: 25rem;
   width: 18rem;
   height: 3.3rem;
-  margin: 1rem auto 1rem auto;
+  margin:1rem auto 1rem auto;
   padding: 0rem 2.5rem 0rem 2.5rem;
   font-family: var(--fontK);
   font-size: 0.9rem;
@@ -85,7 +84,6 @@
   line-height: 180%;
   z-index: 9;
   position: relative;
-  display: none;
 }
 
 .btn-tornaEnrere {

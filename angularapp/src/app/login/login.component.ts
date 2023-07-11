@@ -12,13 +12,13 @@ export class LoginComponent {
   Password: string | undefined;
   RememberMe: boolean | undefined;
 
-  msgLogin = "";
-
   @Output() loggedInEvent = new EventEmitter<boolean>();
   constructor(private http: HttpClient, private router: Router) { }
 
+  msgLogin="";
+
   showMessage() {
-    this.msgLogin="Trukutru"
+    this.msgLogin = "No s'ha pogut logejar. Revisa el nom d'usuari o la contrasenya.";
   }
 
   login() {
@@ -36,10 +36,11 @@ export class LoginComponent {
     this.http.post(url, body).subscribe(
       response => {
         console.log('Login exitoso:', response);
-        this.loggedInEvent.emit(true); //això fa que loggedIn sigui true i per tant es mostri el HOME
+        this.router.navigate(['/home']);
       },
       error => {
         console.log('Error en el inicio de sesión:', error);
+
       }
     );
 
@@ -49,7 +50,8 @@ export class LoginComponent {
 
   goBack() {
     this.goBackEvent.emit();
-    };
+    this.router.navigate(['/']);
+  }
 
 }
 

@@ -49,5 +49,6 @@ export class RegisterComponent {
 
   goBack() {
     this.goBackEvent.emit();
+    this.router.navigate(["/"]);
   }
 }
