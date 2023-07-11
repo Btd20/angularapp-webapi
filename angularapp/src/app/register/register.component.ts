@@ -36,7 +36,7 @@ export class RegisterComponent {
     this.http.post('https://localhost:7240/Auth/register', data, { headers }).subscribe(
       response => {
         console.log('Registro exitoso:', response);
-        this.router.navigate(['/']); // Redirige a la página principal (AppComponent)
+        this.router.navigate(['/login']); 
       },
       error => {
         this.errorMessage = 'Error en el registro. Verifica los datos ingresados.';

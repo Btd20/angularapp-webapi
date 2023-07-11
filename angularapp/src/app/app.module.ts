@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 import { HomeComponent } from './home/home.component';
+import { IndexComponent } from './index/index.component';
 
 
 
@@ -19,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegisterComponent,
     VistaPaisosComponent,
-    HomeComponent
+    HomeComponent,
+    IndexComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
