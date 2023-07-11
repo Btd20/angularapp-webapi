@@ -8,7 +8,6 @@ interface RegisterData {
   password: string;
 }
 
-@Injectable()
 @Component({
   selector: 'app-register',
   templateUrl: 'register.component.html',
@@ -36,7 +35,7 @@ export class RegisterComponent {
     this.http.post('https://localhost:7240/Auth/register', data, { headers }).subscribe(
       response => {
         console.log('Registro exitoso:', response);
-        this.router.navigate(['/login']); 
+        this.router.navigate(['/login']);
       },
       error => {
         this.errorMessage = 'Error en el registro. Verifica los datos ingresados.';
