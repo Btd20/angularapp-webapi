@@ -37,10 +37,22 @@
 
 }
 
+.lg-remember-comp {
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-bottom:0.8rem;
+}
+
 .lg-remember{
-    background-color:red;
+    font-family:var(--fontK);
+    margin-right:2rem;
+    text-align:center;
 }
 
 .lg-remember-input {
-  background-color: darkblue;
 }

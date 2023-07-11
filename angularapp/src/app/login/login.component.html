@@ -11,9 +11,11 @@
       <input type="password" id="password" name="password" class="m-auto login-inputUser lg-input d-block" [(ngModel)]="Password" required>
     </div><br />
 
-    <div>
+    <div class="d-inline-flex lg-remember-comp">
       <label for="remember" class="text-center lg-remember">Recordar</label>
       <input type="checkbox" id="remember" class="text-center lg-remember-input" name="rememberme" [(ngModel)]="RememberMe">
+      <!--Falta afegir el condicional de si està vuit, mosta't. De fet això hauria de ser un div i no pas un botó-->
+      <button (click)="showMessage()">{{msgLogin}}</button>
     </div>
     <br />
     <button type="submit" class="btn btn-primary m-auto d-block">Iniciar sessió</button>
