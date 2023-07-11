@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: 'paisos', component: PaisosComponent },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'nav', component: NavbarComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '', component: IndexComponent },
 
 ];
