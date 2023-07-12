@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -27,7 +28,8 @@ import { PaisosComponent } from './paisos/paisos.component';
     HomeComponent,
     IndexComponent,
     SalesComponent,
-    PaisosComponent
+    PaisosComponent,
+    NavbarComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
