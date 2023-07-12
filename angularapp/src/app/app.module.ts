@@ -18,6 +18,8 @@ import { CiutatsComponent } from './ciutats/ciutats.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
+import { AdminComponent } from './admin/admin.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -35,7 +37,9 @@ import { RoomsComponent } from './rooms/rooms.component';
     CiutatsComponent,
     NavbarComponent,
     OficinesComponent,
-    RoomsComponent
+    RoomsComponent,
+    AdminComponent,
+    ProfileComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
