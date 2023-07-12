@@ -3,24 +3,24 @@ import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-paisos',
-  templateUrl: './paisos.component.html',
-  styleUrls: ['./paisos.component.css']
+  selector: 'app-oficines',
+  templateUrl: './oficines.component.html',
+  styleUrls: ['./oficines.component.css']
 })
-export class PaisosComponent implements OnInit {
-  paisos: any[] = [];
-  
+export class OficinesComponent implements OnInit {
+  oficines: any[] = [];
+
 
   constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.getPaisosFromApi();
+    this.getOficinesFromApi();
   }
 
-  getPaisosFromApi(): void {
-    this.apiService.getPaisos().subscribe(
+  getOficinesFromApi(): void {
+    this.apiService.getOficines().subscribe(
       response => {
-        this.paisos = response;
+        this.oficines = response;
       },
       error => {
         console.error(error);

@@ -41,6 +41,32 @@ namespace webapi.Controllers
             return Ok(pais);
         }
 
+        // GET: Pais/nom/{nomPais}
+        [HttpGet("nom/{nomPais}")]
+        public async Task<ActionResult<IEnumerable<Pais>>> GetPaisesByNom(string nomPais)
+        {
+            var paises = await _context.Pais
+                .Where(p => p.NomPais.Contains(nomPais))
+                .ToListAsync();
+
+            return Ok(paises);
+        }
+
+        [HttpGet("{id}/Ciutats")]
+        public async Task<ActionResult<IEnumerable<Ciutats>>> GetCiutatsByPais(int id)
+        {
+            var ciutats = await _context.Ciutats
+                .Where(c => c.CountryID == id)
+                .ToListAsync();
+
+            if (ciutats == null || ciutats.Count == 0)
+            {
+                return NotFound("No s'han trobat ciutats per aquest país.");
+            }
+
+            return Ok(ciutats);
+        }
+
         // POST: Pais
         [HttpPost]
         public async Task<ActionResult<Pais>> CreatePais(Pais pais)

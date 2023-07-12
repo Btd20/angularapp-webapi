@@ -6,16 +6,20 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CiutatsComponent } from './ciutats/ciutats.component';
+import { OficinesComponent } from './oficines/oficines.component';
+import { RoomsComponent } from './rooms/rooms.component';
 
 const routes: Routes = [
+  { path: 'rooms', component: RoomsComponent},
+  { path: 'oficines', component: OficinesComponent },
+  { path: 'ciutats', component: CiutatsComponent},
   { path: 'paisos', component: PaisosComponent },
   { path: 'sales', component: SalesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'nav', component: NavbarComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', component: IndexComponent },
 

@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -15,8 +14,11 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
+import { CiutatsComponent } from './ciutats/ciutats.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AdminComponent } from './admin/admin.component';
+import { OficinesComponent } from './oficines/oficines.component';
+import { RoomsComponent } from './rooms/rooms.component';
+
 
 
 
@@ -30,8 +32,10 @@ import { AdminComponent } from './admin/admin.component';
     IndexComponent,
     SalesComponent,
     PaisosComponent,
+    CiutatsComponent,
     NavbarComponent,
-    AdminComponent
+    OficinesComponent,
+    RoomsComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,

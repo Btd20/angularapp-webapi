@@ -3,24 +3,24 @@ import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-paisos',
-  templateUrl: './paisos.component.html',
-  styleUrls: ['./paisos.component.css']
+  selector: 'app-rooms',
+  templateUrl: './rooms.component.html',
+  styleUrls: ['./rooms.component.css']
 })
-export class PaisosComponent implements OnInit {
-  paisos: any[] = [];
-  
+export class RoomsComponent implements OnInit {
+  rooms: any[] = [];
+
 
   constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.getPaisosFromApi();
+    this.getRoomsFromApi();
   }
 
-  getPaisosFromApi(): void {
-    this.apiService.getPaisos().subscribe(
+  getRoomsFromApi(): void {
+    this.apiService.getRooms().subscribe(
       response => {
-        this.paisos = response;
+        this.rooms = response;
       },
       error => {
         console.error(error);
@@ -29,3 +29,4 @@ export class PaisosComponent implements OnInit {
   }
 
 }
+
