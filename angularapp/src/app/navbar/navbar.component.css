@@ -2,3 +2,9 @@
     background:cyan;
     padding:1.2rem;
 }
+
+
+.d-acme{
+    direction:rtl;
+    display:-webkit-box;
+}
