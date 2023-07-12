@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -13,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { CiutatsComponent } from './ciutats/ciutats.component';
 
 
@@ -26,8 +29,7 @@ import { CiutatsComponent } from './ciutats/ciutats.component';
     HomeComponent,
     IndexComponent,
     SalesComponent,
-    PaisosComponent,
-    CiutatsComponent
+    PaisosComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
@@ -35,7 +37,13 @@ import { CiutatsComponent } from './ciutats/ciutats.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 

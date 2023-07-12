@@ -8,31 +8,9 @@
 </header>
 
 <main class="app-home-general">
+
+  <app-nav></app-nav>
   <router-outlet></router-outlet>
-  <!--<div *ngIf="!showLoginForm && !showRegisterForm">
-    <div class="titl-home">ACME-ROOMS</div>
-    <div class="btn-general row justify-content-center align-content-center gap-5">
-      <div class="btn-register col-3">
-        <button class="btn btn-txtapp" (click)="toggleLoginForm()">LOGIN</button>
-      </div>
-      <div class="btn-register col-3">
-        <button class="btn btn-txtapp" (click)="toggleRegisterForm()">REGISTER</button>
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="showLoginForm && !userLoggedIn">
-    <app-login (goBackEvent)="goBack()" (loggedInEvent) ="setUserLoggedIn($event)"></app-login>
-  </div>
-
-  <div *ngIf="showRegisterForm">
-    <app-register (goBackEvent)="goBack()"></app-register>,
-    
-  </div>
-
-  <div *ngIf="userLoggedIn">
-    <app-home></app-home>
-  </div>-->
 </main>
 
 <footer>

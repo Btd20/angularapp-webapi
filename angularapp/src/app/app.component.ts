@@ -11,6 +11,7 @@ export class AppComponent {
   showLoginForm: boolean = false;
   showRegisterForm: boolean = false;
   userLoggedIn: boolean = false;
+    title: any;
 
   constructor(private router: Router) { }
 
