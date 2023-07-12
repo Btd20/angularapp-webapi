@@ -9,9 +9,8 @@ import { ApiService } from '../api.service';
 })
 export class PaisosComponent implements OnInit {
   paisos: any[] = [];
-  
 
-  constructor(private router: Router, private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.getPaisosFromApi();
@@ -28,4 +27,7 @@ export class PaisosComponent implements OnInit {
     );
   }
 
+  mostrarCiutats(pais: any): void {
+    this.router.navigate(['/ciutats', pais.nomPais]);
+  }
 }

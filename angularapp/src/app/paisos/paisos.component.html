@@ -1,11 +1,10 @@
-<main>
-  <table>
-    <th> Països </th>
-    <tr *ngFor="let pais of paisos">
-      <button>
-        {{ pais.nomPais }}
-      </button>
-    </tr>
-  </table>
+<h1>Paisos</h1>
 
-</main>
+<table>
+  <th>Països</th>
+  <tr *ngFor="let pais of paisos">
+    <td>
+      <button (click)="mostrarCiutats(pais)">{{ pais.nomPais }}</button>
+    </td>
+  </tr>
+</table>

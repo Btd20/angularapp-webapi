@@ -41,13 +41,13 @@ namespace webapi.Controllers
             return Ok(ciutats);
         }
 
-        // GET: Ciutats/pais/{pais}
-        [HttpGet("pais/{pais}")]
-        public async Task<ActionResult<IEnumerable<Ciutats>>> GetCiutatsByPais(string pais)
+        // GET: Ciutats/pais/{nomPais}
+        [HttpGet("pais/{nomPais}")]
+        public async Task<ActionResult<IEnumerable<Ciutats>>> GetCiutatsByPais(string nomPais)
         {
             var ciutats = await _context.Ciutats
                 .Include(o => o.pais)
-                .Where(c => c.pais.NomPais.Contains(pais))
+                .Where(c => c.pais.NomPais.Contains(nomPais))
                 .ToListAsync();
 
             return Ok(ciutats);
@@ -62,7 +62,7 @@ namespace webapi.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCiutats", new { id = ciutats.CityID }, ciutats);
-        }
+        }   
 
         // PUT: Ciutats/5
         [HttpPut("{id}")]

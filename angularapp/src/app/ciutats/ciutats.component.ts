@@ -9,21 +9,27 @@ import { ApiService } from '../api.service';
 })
 export class CiutatsComponent implements OnInit {
   ciutats: any[] = [];
+  pais: string = '';
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.getCiutatsFromApi();
+    this.route.params.subscribe(params => {
+      this.pais = params['pais'];
+      this.getCiutatsFromApi();
+    });
   }
 
   getCiutatsFromApi(): void {
-    this.apiService.getCiutats().subscribe(
-      response => {
-        this.ciutats = response;
-      },
-      error => {
-        console.error(error);
-      }
-    )
+    if (this.pais) {
+      this.apiService.getCiutatsByPais(this.pais).subscribe(
+        response => {
+          this.ciutats = response;
+        },
+        error => {
+          console.error(error);
+        }
+      );
+    }
   }
 }
