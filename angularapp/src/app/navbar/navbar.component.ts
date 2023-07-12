@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+  dropMenu() {
+    const dropbox = document.getElementById('dmenu');
+    if (dropbox != null) {
+      dropbox.style.display = 'block';
+    }
+  }
 }
