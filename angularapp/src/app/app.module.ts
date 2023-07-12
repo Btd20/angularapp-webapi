@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
+import { CiutatsComponent } from './ciutats/ciutats.component';
 
 
 
@@ -25,7 +26,8 @@ import { PaisosComponent } from './paisos/paisos.component';
     HomeComponent,
     IndexComponent,
     SalesComponent,
-    PaisosComponent
+    PaisosComponent,
+    CiutatsComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
