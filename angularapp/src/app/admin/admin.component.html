@@ -1,0 +1,28 @@
+<div class="admin-container" *ngIf="isAdmin">
+  <p>Soy admin!</p>
+  <ul class="user-list">
+    <li class="user-item" *ngFor="let usuario of usuaris">
+      <span class="user-name">{{ usuario.userName }}</span>
+      <button (click)="editarUsuario(usuario)">Editar</button>
+
+      <div class="edit-form" *ngIf="usuario.editando">
+        <form (ngSubmit)="guardarCanvis(usuario)">
+          <label for="nombre">Nom:</label>
+          <input type="text" id="nombre" [(ngModel)]="usuario.nombre" name="nombre" required>
+
+          <label for="correo">Correu:</label>
+          <input type="email" id="correo" [(ngModel)]="usuario.correo" name="correo" required>
+
+          <label for="contrasena">Contrasenya:</label>
+          <input type="password" id="contrasena" [(ngModel)]="usuario.contrasena" name="contrasena">
+
+          <label for="rol">Administrador:</label>
+          <input type="checkbox" id="rol" [(ngModel)]="usuario.rol" name="rol">
+
+          <button type="submit">Guardar canvis</button>
+          <button type="button" (click)="cancelarEdicion(usuario)">Cancelar</button>
+        </form>
+      </div>
+    </li>
+  </ul>
+</div>

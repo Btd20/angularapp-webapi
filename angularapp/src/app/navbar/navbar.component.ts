@@ -13,4 +13,11 @@ export class NavbarComponent {
       dropbox.style.display = 'block';
     }
   }
+
+  notDropMenu() {
+    const dropbox = document.getElementById('dmenu');
+    if (dropbox != null) {
+      dropbox.style.display = 'none';
+    }
+  }
 }

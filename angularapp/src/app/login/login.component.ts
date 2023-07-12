@@ -1,12 +1,20 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth-service.service';
+import jwt_decode, { JwtPayload } from 'jwt-decode';
+
+interface DecodedToken {
+  email: string;
+  role: string;
+  // otras propiedades que tengas en el token
+}
 
 @Component({
   selector: 'app-login',
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.css']
 })
+
 export class LoginComponent {
   Username: string | undefined;
   Password: string | undefined;
@@ -15,16 +23,6 @@ export class LoginComponent {
   @Output() loggedInEvent = new EventEmitter<boolean>();
 
   constructor(private authService: AuthService, private router: Router) { }
-
-  ngOnInit(): void {
-    if (this.authService.isAuthenticated()) {
-      this.authService.isTokenValid().subscribe(isValid => {
-        if (isValid) {
-          this.router.navigate(['https://localhost:4200/home']);
-        }
-      });
-    }
-  }
 
   msgLogin = '';
 
@@ -53,9 +51,15 @@ export class LoginComponent {
 
     this.authService.login(username, password).subscribe(
       response => {
-        this.authService.setToken(response.token);
-        console.log('Login exitoso');
-        this.router.navigate(['/home']);
+        if (response?.token) {
+          localStorage.setItem('token', response.token.result);
+          const decodedToken = jwt_decode(response.token.result) as DecodedToken;
+          console.log(decodedToken);
+          console.log('Login exitoso');
+          this.router.navigate(['/home']);
+        } else {
+          console.log('Error en el inicio de sesión: token vacío');
+        }
       },
       error => {
         console.log('Error en el inicio de sesión:', error);

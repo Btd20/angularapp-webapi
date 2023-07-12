@@ -1,0 +1,78 @@
+.admin-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+  .admin-container p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+  .user-item .user-name {
+    flex: 1;
+    font-weight: bold;
+  }
+
+  .user-item button {
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.edit-form {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .edit-form .form-field {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+    .edit-form .form-field label {
+      flex-basis: 120px;
+    }
+
+    .edit-form .form-field input[type="text"],
+    .edit-form .form-field input[type="email"],
+    .edit-form .form-field input[type="password"] {
+      flex: 1;
+      padding: 5px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+  .edit-form .button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+    .edit-form .button-group button {
+      background-color: #008CBA;
+      margin-left: 10px;
+    }
