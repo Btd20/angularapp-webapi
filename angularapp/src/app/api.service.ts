@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   private apiUrlPaisos = 'https://localhost:7240/Pais';
   private apiUrlCiutats = 'https://localhost:7240/Ciutats';
-
+  private apiUrlRooms = 'https://localhost:7240/Sales';
+  private apiUrlOficines = 'https://localhost:7240/Oficines';
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +20,12 @@ export class ApiService {
     return this.http.get<any[]>(this.apiUrlCiutats);
   }
 
+  getRooms() {
+    return this.http.get<any[]>(this.apiUrlRooms);
+  }
 
+  getOficines() {
+    return this.http.get<any[]>(this.apiUrlOficines);
+  }
 
 }

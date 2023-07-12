@@ -16,6 +16,8 @@ import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
 import { CiutatsComponent } from './ciutats/ciutats.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OficinesComponent } from './oficines/oficines.component';
+import { RoomsComponent } from './rooms/rooms.component';
 
 
 
@@ -31,7 +33,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     SalesComponent,
     PaisosComponent,
     CiutatsComponent,
-    NavbarComponent
+    NavbarComponent,
+    OficinesComponent,
+    RoomsComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
