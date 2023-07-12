@@ -22,6 +22,11 @@ export class ApiService {
     return this.http.get<any[]>(this.apiUrlCiutats);
   }
 
+  getCiutatsByPais(pais: string) {
+    const url = `${this.apiUrlCiutats}/pais/${pais}`;
+    return this.http.get<any[]>(url);
+  }
+
   getRooms() {
     return this.http.get<any[]>(this.apiUrlRooms);
   }

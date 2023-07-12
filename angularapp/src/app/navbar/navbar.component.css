@@ -9,5 +9,8 @@
 
 .d-acme {
   direction: rtl;
-  padding-left: 64rem;
+}
+
+.itm-acme{
+    width:9em;
 }

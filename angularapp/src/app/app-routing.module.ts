@@ -14,7 +14,7 @@ import { RoomsComponent } from './rooms/rooms.component';
 const routes: Routes = [
   { path: 'rooms', component: RoomsComponent},
   { path: 'oficines', component: OficinesComponent },
-  { path: 'ciutats', component: CiutatsComponent},
+  { path: 'ciutats/:pais', component: CiutatsComponent},
   { path: 'paisos', component: PaisosComponent },
   { path: 'sales', component: SalesComponent },
   { path: 'login', component: LoginComponent },

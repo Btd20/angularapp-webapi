@@ -19,6 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { AdminComponent } from './admin/admin.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -37,7 +38,8 @@ import { AdminComponent } from './admin/admin.component';
     NavbarComponent,
     OficinesComponent,
     RoomsComponent,
-    AdminComponent
+    AdminComponent,
+    ProfileComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
