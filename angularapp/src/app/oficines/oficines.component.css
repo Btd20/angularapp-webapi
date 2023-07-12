@@ -1,0 +1,18 @@
+main {
+  margin-left: 10vw;
+}
+
+th {
+  background-color: #202067;
+  color: var(--bs-body-bg);
+  font-family: 'Karla';
+}
+
+button {
+  padding: 0.3em;
+  color: black;
+  margin: 0.3em;
+  /*background-color: #202067;*/
+  font-family: 'Karla';
+  text-decoration: none;
+}
