@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,11 @@ export class ApiService {
 
   getUsuaris() {
     return this.http.get<any[]>(this.apiUrlUsuaris);
+  }
+
+  actualitzarUsuari(usuario: any): Observable<any> {
+    const url = `${this.apiUrlUsuaris}/${usuario.id}`;
+    return this.http.put(url, usuario);
   }
 
 }

@@ -5,7 +5,7 @@ import { ApiService } from '../api.service';
 interface DecodedToken {
   email: string;
   "http://schemas.microsoft.com/ws/2008/06/identity/claims/role": string;
-  // altres propietats del token
+  // otras propiedades del token
 }
 
 @Component({
@@ -47,9 +47,18 @@ export class AdminComponent implements OnInit {
   }
 
   guardarCanvis(usuario: any): void {
-    console.log('Guardar cambios del usuario:', usuario);
+    console.log('Guardar canvis del usuari:', usuario);
 
-    usuario.editando = false;
+    // Realizar una solicitud HTTP a la API para actualizar los cambios en la base de datos
+    this.apiService.actualitzarUsuari(usuario).subscribe(
+      response => {
+        console.log('Canvis guardats');
+        usuario.editando = false;
+      },
+      error => {
+        console.error('Error al guardar els canvis:', error);
+      }
+    );
   }
 
   cancelarEdicion(usuario: any): void {
