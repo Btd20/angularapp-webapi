@@ -41,6 +41,19 @@ namespace webapi.Controllers
             return Ok(ciutats);
         }
 
+        // GET: Ciutats/pais/{pais}
+        [HttpGet("pais/{pais}")]
+        public async Task<ActionResult<IEnumerable<Ciutats>>> GetCiutatsByPais(string pais)
+        {
+            var ciutats = await _context.Ciutats
+                .Include(o => o.pais)
+                .Where(c => c.pais.NomPais.Contains(pais))
+                .ToListAsync();
+
+            return Ok(ciutats);
+        }
+
+
         // POST: Ciutats
         [HttpPost]
         public async Task<ActionResult<Ciutats>> CreateCiutats(Ciutats ciutats)

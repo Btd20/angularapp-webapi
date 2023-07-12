@@ -1,22 +1,11 @@
-
 <main>
   <table>
-    <thead> País </thead>
+    <th> Països </th>
     <tr *ngFor="let pais of paisos">
-      <a class=" btn-link" href="#">
+      <button>
         {{ pais.nomPais }}
-      </a>
+      </button>
     </tr>
   </table>
 
-  <table>
-    <thead> Ciutat</thead>
-      <tr *ngFor ="let ciutat of ciutats">
-        <td>
-          <a class=" btn-link" href="#">
-            {{ciutat.nomCiutat}}
-          </a>
-         </td>
-      </tr>
-  </table>
 </main>
