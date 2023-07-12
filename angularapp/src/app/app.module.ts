@@ -16,6 +16,7 @@ import { IndexComponent } from './index/index.component';
 import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -29,7 +30,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     IndexComponent,
     SalesComponent,
     PaisosComponent,
-    NavbarComponent
+    NavbarComponent,
+    AdminComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
