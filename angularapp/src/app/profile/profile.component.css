@@ -15,7 +15,7 @@
 .prf-img-cnt {
   box-sizing: content-box;
   display: flex;
-  width: 470px; /*--PER FER-HO RODO--*/
+  width: 100%; /*--PER FER-HO RODO--*/
   height: 100%;
   color: #1A1A41;
   border-radius: 50px;
