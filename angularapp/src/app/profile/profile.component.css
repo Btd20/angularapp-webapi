@@ -1,5 +1,3 @@
-/*--PROFILE--*/
-
 .container-profile {
   margin: auto;
   width: 100%;
@@ -15,18 +13,16 @@
 .prf-img-cnt {
   box-sizing: content-box;
   display: flex;
-  width: 470px; /*--PER FER-HO RODO--*/
+  width: 100%;
   height: 100%;
   color: #1A1A41;
   border-radius: 50px;
   outline: 1px solid #1A1A41;
   outline-offset: -20px;
-  /*--AIXO HAURIA DE AGAFAR ALGUNA VARIABLE DE BBDD, {{imageUser}}--*/
   background-image: url('https://clipartix.com/wp-content/uploads/2016/04/Purple-music-note-clipart-free-clipart-images.png');
   background-size: 100%;
   background-color: rgba(12,12,12,0.17);
   background-blend-mode: overlay;
-  /*--box-shadow: rgb(0 0 0 / 23%) 0.81px 2.4px 2.4px 3.2px;--*/
 }
 
 .prf-info {
@@ -35,17 +31,19 @@
 }
 
 .prf-info-titl {
-  font-size: 8rem;
-  font-family: Rubik;
+  width: 100%;
+  height: 100%;
+  font-size: 122px;
+  font-family: var(--fontR);
   font-weight: 600;
-  color: #1A1A41;
+  color: var(--txt-g1);
   letter-spacing: .01em;
   word-spacing: 0.05em;
   line-height: normal;
   text-transform: uppercase;
   transform: translate(0px,1.2em);
   transition: 0.8s ease-in all;
-  text-align:center;
+  text-align: center;
 }
 
 .container-profile:hover .prf-info-titl {
@@ -73,9 +71,9 @@
 }
 
 .prf-info-all-tit {
-  font-size: 1rem;
+  font-size: 14px;
   font-family: 'Karla';
-  color: #84849C;
+  color: #2b2b3fcf;
   font-weight: 900;
   border-bottom: 5px solid #1A1A41;
   padding: 0.7rem 0rem 0rem 0rem;
@@ -85,7 +83,7 @@
 .prf-info-all-infoUser {
   font-size: 1.2rem;
   font-family: Rubik;
-  color: #1A1A41;
+  color: var(--txt-g1);
   font-weight: 900;
   padding: 2.5px;
 }

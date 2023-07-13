@@ -16,6 +16,8 @@ interface DecodedToken {
 export class AdminComponent implements OnInit {
   usuaris: any[] = [];
   isAdmin?: boolean;
+  currentPage: number = 1;
+  pageSize: number = 5;
 
   constructor(private apiService: ApiService) {
     const token = localStorage.getItem('token');
@@ -63,5 +65,21 @@ export class AdminComponent implements OnInit {
 
   cancelarEdicion(usuario: any): void {
     usuario.editando = false;
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.usuaris.length / this.pageSize); // Total de páginas
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
   }
 }

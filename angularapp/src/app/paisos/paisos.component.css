@@ -21,9 +21,10 @@ button {
 
 .app-paisos-general {
   margin: 4rem auto 0rem auto;
-  width: 20rem;
+  width: 100%;
   height: 100%;
   overflow: hidden;
+  background-color: red;
 }
 
 
