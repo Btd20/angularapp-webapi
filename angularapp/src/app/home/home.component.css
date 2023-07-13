@@ -5,6 +5,15 @@
   overflow: hidden;
 }
 
+.btn-home-g {
+  background-color: black;
+  width: 95%;
+  height: 100%;
+  border: 5px solid cyan;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
 .btn-reserva {
   width: 14%;
   height: 13%;
