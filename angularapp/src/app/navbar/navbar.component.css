@@ -6,30 +6,27 @@
   box-shadow: var(--bx-snav);
 }
 
-.nav-item{
+.nav-item {
   border-radius: 25px;
-  margin-left:2px;
+  margin-left: 2px;
+  font-family: var(--fontK);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 
 .nav-link {
   border-radius: 25px;
-  color:red;
+  color: var(--txt-g1);
 }
 
-.nav-link:hover {
+  .nav-link:hover {
     border-radius: 25px;
-    background-color: var(--txt-g1);
-    color: var(--bs-body-bg);
-
-}
+    box-shadow: rgba(50, 50, 93, 0.62) 0px 13px 227px -5px, rgba(0, 0, 0, 0.3) 0px 8px 6px -8px;
+  }
 
 .d-acme {
   direction: rtl;
-}
-
-.itm-acme {
-  width: 9em;
 }
 
 
