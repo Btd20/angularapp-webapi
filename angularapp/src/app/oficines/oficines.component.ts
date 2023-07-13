@@ -16,7 +16,12 @@ export class OficinesComponent implements OnInit {
     this.route.params.subscribe(params => {
       const pais = params['pais'];
       const ciutat = params['ciutat'];
-      this.getOficinesByCiutats(pais, ciutat);
+
+      if (pais && ciutat) {
+        this.getOficinesByCiutats(pais, ciutat);
+      } else {
+        this.getAllOficinesFromApi();
+      }
     });
   }
 
@@ -30,4 +35,16 @@ export class OficinesComponent implements OnInit {
       }
     );
   }
+
+  getAllOficinesFromApi(): void {
+    this.apiService.getAllOficines().subscribe(
+      response => {
+        this.oficines = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
 }
+

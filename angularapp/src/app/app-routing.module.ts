@@ -14,7 +14,9 @@ import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent},
-  { path: 'rooms', component: RoomsComponent},
+  { path: 'rooms', component: RoomsComponent },
+  { path: 'ciutats', component: CiutatsComponent },
+  { path: 'oficines', component: OficinesComponent},
   { path: 'ciutats/:pais/oficines/:ciutat', component: OficinesComponent },
   { path: 'ciutats/:pais', component: CiutatsComponent},
   { path: 'paisos', component: PaisosComponent },

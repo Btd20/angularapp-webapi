@@ -17,7 +17,12 @@ export class CiutatsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.pais = params['pais'];
-      this.getCiutatsFromApi();
+
+      if (this.pais) {
+        this.getCiutatsFromApi();
+      } else {
+        this.getAllCiutatsFromApi();
+      }
     });
   }
 
@@ -45,4 +50,16 @@ export class CiutatsComponent implements OnInit {
       }
     );
   }
+
+  getAllCiutatsFromApi(): void {
+    this.apiService.getAllCiutats().subscribe(
+      response => {
+        this.ciutats = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
 }
+
