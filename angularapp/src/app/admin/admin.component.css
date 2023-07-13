@@ -1,16 +1,7 @@
 .admin-container {
   margin: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f2f2f2;
 }
-
-  .admin-container p {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
 
 .user-list {
   list-style-type: none;
@@ -18,11 +9,67 @@
   margin: 0;
 }
 
+.pagination {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-left: 15px; /* Agrega un espacio a la izquierda para desplazar las flechas */
+}
+
+.pagination button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+    .pagination button.disabled {
+      color: #ccc;
+      cursor: default;
+    }
+
+    .pagination button:hover {
+      color: #555;
+    }
+
+  .pagination .arrow-button {
+    position: absolute;
+    top: -20px;
+    left: px;
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
 .user-item {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f2f2f2; /* Mueve el fondo a las filas de usuarios */
 }
+
+  .user-item:first-child {
+    margin-top: 0;
+  }
+
+  .user-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .user-item .user-icon {
+    margin-right: 10px;
+  }
 
   .user-item .user-name {
     flex: 1;
@@ -31,48 +78,10 @@
 
   .user-item button {
     margin-left: 10px;
-    background-color: #4CAF50;
+    background-color: #132885;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
   }
-
-.edit-form {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-  .edit-form .form-field {
-    flex: 0 0 50%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-    .edit-form .form-field label {
-      flex-basis: 120px;
-    }
-
-    .edit-form .form-field input[type="text"],
-    .edit-form .form-field input[type="email"],
-    .edit-form .form-field input[type="password"] {
-      flex: 1;
-      padding: 5px;
-      margin-right: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-  .edit-form .button-group {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-  }
-
-    .edit-form .button-group button {
-      background-color: #008CBA;
-      margin-left: 10px;
-    }

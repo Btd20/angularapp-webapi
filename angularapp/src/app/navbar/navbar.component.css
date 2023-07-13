@@ -1,35 +1,37 @@
 .app-nav {
-  padding: 1.2rem;
+  padding: 0.8rem 1.2rem 0.8rem 1.2rem;
   width: 95%;
   margin: 2rem auto auto auto;
   border-radius: 3rem;
   box-shadow: var(--bx-snav);
 }
 
-.nav-item{
+.nav-item {
   border-radius: 25px;
-  margin-left:2px;
+  margin-left: 2px;
+  font-family: var(--fontK);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 
 .nav-link {
   border-radius: 25px;
-  color:red;
+  color: var(--txt-g1);
 }
 
 .nav-link:hover {
     border-radius: 25px;
-    background-color: var(--txt-g1);
-    color: var(--bs-body-bg);
+    box-shadow: rgba(50, 50, 93, 0.62) 0px 13px 227px -5px, rgba(0, 0, 0, 0.3) 0px 8px 6px -8px;
+}
 
+.icon-home {
+  font-size: 1.3rem;
+  line-height: initial;
 }
 
 .d-acme {
   direction: rtl;
-}
-
-.itm-acme {
-  width: 9em;
 }
 
 
@@ -37,3 +39,4 @@
 .dropdown-menu {
   background-color: var(--bs-body-bg);
 }
+

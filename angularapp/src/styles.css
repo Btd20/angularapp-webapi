@@ -1,10 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
-
-html {
-  font-size: 14px;
-}
-
 /*--IMPORT FONTS EXTERNES--*/
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
@@ -12,12 +5,8 @@ html {
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://kit-pro.fontawesome.com/releases/v6.1.1/css/pro.min.css');
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -28,9 +17,8 @@ html {
   min-height: 100%;
 }
 
-/*--VARIABLES GENERALS--*/
-
 :root {
+  /*--GENERALS--*/
   --bs-body-bg: #F4F4FB;
   --bg-1: rgb(0 0 0 / 10%);
   --bg-2: #e3e3e3;
@@ -38,9 +26,12 @@ html {
   --fontR: Rubik;
   --fontK: 'Karla';
   --bx-snav: rgb(0 0 0 / 8%) 0px 0px 2.4px 3.2px;
+  /*--FILTRE PERFIL IMG--*/
+  --imgp-clr: rgb(227 227 227);
+  --imgp-blnd:luminosity;
 }
 
-body {
+body { 
   background-color: var(--bg-2);
 }
 
