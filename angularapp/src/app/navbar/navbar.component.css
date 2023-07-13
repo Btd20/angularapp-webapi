@@ -1,16 +1,39 @@
 .app-nav {
-  background: cyan;
   padding: 1.2rem;
   width: 95%;
   margin: 2rem auto auto auto;
   border-radius: 3rem;
-  box-shadow: rgb(0 0 0 / 8%) 0px 0px 2.4px 3.2px;
+  box-shadow: var(--bx-snav);
+}
+
+.nav-item{
+  border-radius: 25px;
+  margin-left:2px;
+}
+
+
+.nav-link {
+  border-radius: 25px;
+  color:red;
+}
+
+.nav-link:hover {
+    border-radius: 25px;
+    background-color: var(--txt-g1);
+    color: var(--bs-body-bg);
+
 }
 
 .d-acme {
   direction: rtl;
 }
 
-.itm-acme{
-    width:9em;
+.itm-acme {
+  width: 9em;
+}
+
+
+/*--DROPDOWN--*/
+.dropdown-menu {
+  background-color: var(--bs-body-bg);
 }

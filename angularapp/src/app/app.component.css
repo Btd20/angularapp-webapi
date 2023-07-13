@@ -20,7 +20,7 @@
   margin: 7em auto -6em auto;
   width: calc(100% - 18em);
   height: 40em;
-  background-color: #F2F4FB;
+  background-color: var(--bs-body-bg);
   border-radius: 2rem;
   box-shadow: rgb(0 0 0 / 8%) 0.81px 2.4px 2.4px 3.2px;
   overflow: hidden;
