@@ -1,11 +1,14 @@
-
   <div class="app-ciutats-general">
+  <div class="tbl-ciutats">
     <table>
       <th>Ciutats</th>
-      <tr *ngFor="let ciutat of ciutats">
-        <td>
-          <button (click)="getOficinesByCiutats(pais, ciutat.nomCiutat)">{{ ciutat.nomCiutat }}</button>
-        </td>
-      </tr>
+      <div class="tbl-content">
+        <tr *ngFor="let ciutat of ciutats">
+          <td>
+            <button (click)="getOficinesByCiutats(pais, ciutat.nomCiutat)" class="btn btn-ciutats m-2">{{ ciutat.nomCiutat }}</button>
+          </td>
+        </tr>
+      </div>
     </table>
   </div>
+</div>

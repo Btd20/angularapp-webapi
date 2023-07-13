@@ -23,12 +23,13 @@ html {
   --bg-1: rgb(0 0 0 / 10%);
   --bg-2: #e3e3e3;
   --txt-g1: #202067;
+  --txt-g2: #373777;
   --fontR: Rubik;
   --fontK: 'Karla';
   --bx-snav: rgb(0 0 0 / 8%) 0px 0px 2.4px 3.2px;
   /*--FILTRE PERFIL IMG--*/
   --imgp-clr: rgb(227 227 227);
-  --imgp-blnd:luminosity;
+  --imgp-blnd: luminosity;
 }
 
 body { 

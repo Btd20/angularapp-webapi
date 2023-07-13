@@ -3,11 +3,60 @@
   width: 100%;
   height: 85%;
   overflow: hidden;
-  background-color:red;
 }
 
-.app-paisos-general th{
-  background-color:cyan;
+.tbl-paisos{
+    margin:10% auto auto auto;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+}
+
+/*--A PARTIR D'AQUI JA SON TABLES, ETC--*/
+
+.tbl-paisos table{
+    margin:auto;
+    display:grid;
+}
+
+.tbl-paisos th { /*--PAISOS--*/
+    display: block;
+    color: var(--txt-g1);
+    font-family: var(--fontR);
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
 }
 
 
+.tbl-content {
+  width: 85%;
+  height: 100%;
+  margin: auto;
+  display: inline-flex;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-paisos {
+  background-color: var(--txt-g1);
+  color: var(--bs-body-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: auto;
+  font-family: var(--fontK);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-size: 20px;
+}
