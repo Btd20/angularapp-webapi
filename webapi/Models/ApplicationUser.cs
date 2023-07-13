@@ -4,6 +4,6 @@ namespace webapi.Models
 {
     public class ApplicationUser : IdentityUser
     {
-
+    
     }
 }

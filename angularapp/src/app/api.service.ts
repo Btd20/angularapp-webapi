@@ -11,6 +11,7 @@ export class ApiService {
   private apiUrlRooms = 'https://localhost:7240/Sales';
   private apiUrlOficines = 'https://localhost:7240/Oficines';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
+  
 
   constructor(private http: HttpClient) { }
 
@@ -27,13 +28,16 @@ export class ApiService {
     return this.http.get<any[]>(url);
   }
 
+  getOficinesByCiutats(nomPais: string, nomCiutat: string) {
+    const url = `${this.apiUrlCiutats}/pais/${nomPais}/ciutats/${nomCiutat}/oficines`;
+    return this.http.get<any[]>(url);
+  }
+
   getRooms() {
     return this.http.get<any[]>(this.apiUrlRooms);
   }
 
-  getOficines() {
-    return this.http.get<any[]>(this.apiUrlOficines);
-  }
+  
 
   getUsuaris() {
     return this.http.get<any[]>(this.apiUrlUsuaris);

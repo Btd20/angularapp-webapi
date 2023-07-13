@@ -16,3 +16,10 @@ button {
   font-family: 'Karla';
   text-decoration: none;
 }
+
+.app-ciutats-general {
+  margin: 4rem auto 0rem auto;
+  width: 20rem;
+  height: 100%;
+  overflow: hidden;
+}

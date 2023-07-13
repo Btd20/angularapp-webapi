@@ -1,12 +1,7 @@
-<main>
-  <app-navbar></app-navbar>
-  <table>
-    <th> Oficines </th>
-    <tr *ngFor="let oficina of oficines">
-      <button>
-        {{ oficina.NomOficina }}
-      </button>
-    </tr>
-  </table>
 
-</main>
+<table>
+  <th> Oficines </th>
+  <tr *ngFor="let oficina of oficines">
+    <button> {{ oficina.nomOficina }} </button>
+  </tr>
+</table>

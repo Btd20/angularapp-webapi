@@ -1,7 +1,11 @@
-<h1>Ciutats</h1>
-
-<ul>
-  <li *ngFor="let ciutat of ciutats">
-  {{ ciutat.nomCiutat }}
-  </li>
-</ul>
+<<div class="app-ciutats-general">
+  <div class="app-ciutats-general">
+    <table>
+      <th>Ciutats</th>
+      <tr *ngFor="let ciutat of ciutats">
+        <td>
+          <button (click)="getOficinesByCiutats(pais, ciutat.nomCiutat)">{{ ciutat.nomCiutat }}</button>
+        </td>
+      </tr>
+    </table>
+  </div>

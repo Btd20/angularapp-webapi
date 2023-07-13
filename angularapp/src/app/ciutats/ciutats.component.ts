@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -10,8 +10,9 @@ import { ApiService } from '../api.service';
 export class CiutatsComponent implements OnInit {
   ciutats: any[] = [];
   pais: string = '';
+  oficines: any[] = [];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -31,5 +32,17 @@ export class CiutatsComponent implements OnInit {
         }
       );
     }
+  }
+
+  getOficinesByCiutats(nomPais: string, nomCiutat: string): void {
+    this.apiService.getOficinesByCiutats(nomPais, nomCiutat).subscribe(
+      response => {
+        this.oficines = response;
+        this.router.navigate(['ciutats', nomPais, 'oficines', nomCiutat]);
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 }

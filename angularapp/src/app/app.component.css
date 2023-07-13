@@ -6,7 +6,7 @@
 }
 
 .svg-home2 {
-  margin-top: -10rem;
+  margin-top: 5em; /* ho he canviat per probar una cosa , era -10rem*/
   z-index: 1;
   position: relative;
   overflow: hidden;

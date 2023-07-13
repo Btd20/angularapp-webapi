@@ -53,6 +53,19 @@ namespace webapi.Controllers
             return Ok(ciutats);
         }
 
+        // GET: Join de Ofis a Ciutats 
+        [HttpGet("pais/{nomPais}/ciutats/{nomCiutat}/oficines")]
+        public async Task<ActionResult<IEnumerable<Oficines>>> GetOficinesByCiudad(string nomPais, string nomCiutat)
+        {
+            var oficines = await _context.Oficines
+                .Include(o => o.ciutat.pais)
+                .Where(o => o.ciutat.pais.NomPais.Contains(nomPais) && o.ciutat.NomCiutat.Contains(nomCiutat))
+                .ToListAsync();
+
+            return Ok(oficines);
+        }
+
+
 
         // POST: Ciutats
         [HttpPost]

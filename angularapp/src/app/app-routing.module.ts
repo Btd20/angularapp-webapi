@@ -10,10 +10,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { CiutatsComponent } from './ciutats/ciutats.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
+  { path: 'admin', component: AdminComponent},
   { path: 'rooms', component: RoomsComponent},
-  { path: 'oficines', component: OficinesComponent },
+  { path: 'ciutats/:pais/oficines/:ciutat', component: OficinesComponent },
   { path: 'ciutats/:pais', component: CiutatsComponent},
   { path: 'paisos', component: PaisosComponent },
   { path: 'sales', component: SalesComponent },
