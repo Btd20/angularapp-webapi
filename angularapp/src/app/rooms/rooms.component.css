@@ -1,19 +1,63 @@
-main {
-  margin-left: 10vw;
+.app-rooms-general {
+  margin: auto;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
 }
 
-th {
-  background-color: #202067;
+
+.tbl-rooms {
+  margin: 10% auto auto auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+  /*--A PARTIR D'AQUI JA SON TABLES, ETC--*/
+
+  .tbl-rooms table {
+    margin: auto;
+    display: grid;
+  }
+
+  .tbl-rooms th { /*--TITLE--*/
+    display: block;
+    color: var(--txt-g1);
+    font-family: var(--fontR);
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+
+.tbl-content {
+  width: 85%;
+  height: 100%;
+  margin: auto;
+  display: inline-flex;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-rooms {
+  background-color: var(--txt-g1);
   color: var(--bs-body-bg);
-  font-family: 'Karla';
+  border-radius: 15px;
+  overflow: hidden;
+  margin: auto;
+  font-family: var(--fontK);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-size: 20px;
 }
-
-button {
-  padding: 0.3em;
-  color: black;
-  margin: 0.3em;
-  /*background-color: #202067;*/
-  font-family: 'Karla';
-  text-decoration: none;
-}
- 

@@ -1,9 +1,13 @@
 <app-navsales></app-navsales>
-<div class="app-oficines-general ">
-<table>
-  <th> Oficines </th>
-  <tr *ngFor="let oficina of oficines">
-    <button> {{ oficina.nomOficina }} </button>
-  </tr>
-</table>
+<div class="app-oficines-general">
+
+  <div class="tbl-oficines">
+    <table>
+      <th>Oficines</th>
+      <div class="tbl-content">
+      <tr *ngFor="let oficina of oficines">
+        <button  class="btn btn-oficines m-2"> {{ oficina.nomOficina }} </button>
+      </tr>
+  </div>
+  </table>
 </div>

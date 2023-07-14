@@ -5,7 +5,6 @@
   overflow: hidden;
 }
 
-
 .tbl-ciutats {
   margin: 10% auto auto auto;
   overflow: hidden;
@@ -15,14 +14,14 @@
   align-items: center;
 }
 
-  /*--A PARTIR D'AQUI JA SON TABLES, ETC--*/
+/*--A PARTIR D'AQUI JA SON TABLES, ETC--*/
 
-  .tbl-ciutats table {
-    margin: auto;
-    display: grid;
-  }
+.tbl-ciutats table {
+  margin: auto;
+  display: grid;
+}
 
-  .tbl-ciutats th { /*--PAISOS--*/
+  .tbl-ciutats th { /*--TITLE--*/
     display: block;
     color: var(--txt-g1);
     font-family: var(--fontR);

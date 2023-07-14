@@ -1,9 +1,14 @@
 <app-navsales></app-navsales>
-  <table>
-    <th> Sales de Reunions </th>
-    <tr *ngFor="let room of rooms">
-      <button>
-        {{ room.nomSala }}
-      </button>
-    </tr>
+<div class="app-rooms-general">
+  <div class="tbl-rooms">
+    <table>
+      <th>Sales de reunions</th>
+      <div class="tbl-content">
+      <tr *ngFor="let room of rooms">
+        <button class="btn btn-rooms m-2">
+          {{ room.nomSala }}
+        </button>
+      </tr>
+  </div>
   </table>
+</div>
