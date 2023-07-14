@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import jwt_decode from 'jwt-decode';
 import { ApiService } from '../api.service';
-
-interface DecodedToken {
-  email: string;
-  "http://schemas.microsoft.com/ws/2008/06/identity/claims/role": string;
-  // otras propiedades del token
-}
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-admin',
@@ -19,14 +13,8 @@ export class AdminComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 5;
 
-  constructor(private apiService: ApiService) {
-    const token = localStorage.getItem('token');
-    const decodedToken = token ? jwt_decode(token) as DecodedToken : null;
-    this.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
-
-    if (this.isAdmin !== undefined) {
-      localStorage.setItem('isAdmin', this.isAdmin.toString());
-    }
+  constructor(private apiService: ApiService, private authService: AuthService) {
+    this.isAdmin = authService.isAdmin;
   }
 
   ngOnInit(): void {
