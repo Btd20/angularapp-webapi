@@ -2,13 +2,29 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
+
+interface DecodedToken {
+  email: string;
+  "http://schemas.microsoft.com/ws/2008/06/identity/claims/role": string;
+  // otras propiedades del token
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+export class AuthService {
+  isAdmin?: boolean;
+  constructor(private http: HttpClient, private router: Router) {
+    const token = localStorage.getItem('token');
+    const decodedToken = token ? jwt_decode(token) as DecodedToken : null;
+    this.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
+
+    if (this.isAdmin !== undefined) {
+      localStorage.setItem('isAdmin', this.isAdmin.toString());
+    }
+  }
 
   login(username: string, password: string): Observable<any> {
     const body = {

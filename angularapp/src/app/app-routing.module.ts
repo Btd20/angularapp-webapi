@@ -26,7 +26,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', component: IndexComponent },
-  { path: 'admin', component: AdminComponent },
 
 ];
 
