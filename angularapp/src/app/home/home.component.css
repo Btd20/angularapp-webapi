@@ -14,9 +14,22 @@
   border-radius: 25px;
 }
 
+.home-titl {
+  margin: auto 50px;
+  overflow:hidden;
+}
+
+.home-titl span {
+  display:block;
+  font-family:var(--fontR);
+  color:var(--txt-g1);
+  font-weight:900;
+  font-size:2.5rem;
+}
 
 .btn-home-g {
   width: 95%;
+  height: 20%;
   margin: 0 auto;
 }
 
@@ -26,11 +39,11 @@
   border-radius: 15px;
   overflow: hidden;
   display: flex;
-  width: 14%;
-  height: 13%;
-  margin:auto;
+  width: 9%;
+  margin: auto;
   /* BUSCAR UN EFECTE MÉS CUQUITINI*/
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  /* transition: 1.2s ease-in-out;
+  */
 }
 
 .btn-reserva span {
@@ -41,6 +54,9 @@
   font-size: 20px;
 }
 
-.btn-reserva:hover {
-    box-shadow: rgb(255 255 255 / 14%) 0px 30px 40px -12px inset, rgb(255 253 253 / 62%) 0px 18px 36px -18px inset;
-}
+  /*.btn-reserva:hover span {
+    letter-spacing: 2px;
+    transition: 0.8s ease-in-out;
+    
+  }
+*/
