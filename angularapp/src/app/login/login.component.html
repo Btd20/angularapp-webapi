@@ -17,12 +17,13 @@
     </div><br />
     <button type="submit" class="btn btn-primary m-auto d-block" (click)="showMessage()">Iniciar sessió</button>
     <!--aixo es pot fer amb angular+bootstrap-->
-    <div class="alert alert-success alert-dismissible fade show" id="sucessLogin">
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-      <strong>Success!</strong> {{msgLogin}}
-    </div>
-    <br />
-    <button class="btn btn-secondary m-auto d-block btn-tornaEnrere" (click)="goBack()">Tornar enrere</button>
+    <!--<alert-loginwarning></alert-loginwarning>-->
+      <div class="alert alert-success alert-dismissible fade show" id="sucessLogin">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Success!</strong> {{msgLogin}}
+      </div>
+      <br />
+      <button class="btn btn-secondary m-auto d-block btn-tornaEnrere" (click)="goBack()">Tornar enrere</button>
   </form>
   <br />
 </div>
