@@ -102,6 +102,7 @@
   margin: 0;
   position: relative;
   width: 30px;
+  margin-top: 5px;
 }
 
   .checkbox-wrapper-2 .ikxBAC::before {
