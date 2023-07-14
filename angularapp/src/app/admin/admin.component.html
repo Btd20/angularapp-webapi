@@ -1,16 +1,14 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
-
 <app-navbar></app-navbar>
 <div class="admin-container" *ngIf="isAdmin">
-  <p>Edició d'usuaris</p>
+  <p class="adm-titl">Edició d'usuaris</p>
   <ul class="user-list">
     <li class="user-item" *ngFor="let usuario of usuaris | slice:(currentPage-1)*pageSize:currentPage*pageSize">
       <span class="user-icon"><i class="fas fa-user"></i></span>
       <span class="user-name">{{ usuario.userName }}</span>
-      <button (click)="editarUsuario(usuario)">Editar</button>
+      <button class="button-edit" (click)="editarUsuario(usuario)" *ngIf="mostrarBotonEditar(usuario)">Editar</button>
 
       <div class="edit-form" *ngIf="usuario.editando">
-        <form (ngSubmit)="guardarCanvis(usuario)">
+        <form class="edit-form" (ngSubmit)="guardarCanvis(usuario)">
           <label for="nombre">Nom:</label>
           <input type="text" id="nombre" [(ngModel)]="usuario.userName" name="nom" required>
 
@@ -18,8 +16,9 @@
           <input type="email" id="correo" [(ngModel)]="usuario.email" name="correu" required>
 
           <label for="rol">Administrador:</label>
-          <input type="checkbox" id="rol" [(ngModel)]="usuario.rol" name="rol">
-
+          <div class="checkbox-wrapper-2">
+            <input type="checkbox" class="sc-gJwTLC ikxBAC" [(ngModel)]="usuario.rol" name="rol">
+          </div>
           <button type="submit">Guardar canvis</button>
           <button type="button" (click)="cancelarEdicion(usuario)">Cancelar</button>
         </form>
