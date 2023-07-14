@@ -11,8 +11,10 @@ import { CiutatsComponent } from './ciutats/ciutats.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { AdminComponent } from './admin/admin.component';
+import { ReservesComponent } from './reserves/reserves.component';
 
 const routes: Routes = [
+  { path: 'reserves',component: ReservesComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'rooms', component: RoomsComponent },
   { path: 'ciutats', component: CiutatsComponent },
