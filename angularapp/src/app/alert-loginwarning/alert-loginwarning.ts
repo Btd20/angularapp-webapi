@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgbAlertConfig, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { NgbAlertConfig, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'alert-loginwarning',
@@ -9,7 +9,7 @@ import { NgbAlertConfig, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
   // add NgbAlertConfig  to the component providers
   providers: [NgbAlertConfig],
 })
-export class NgbdAlertConfig {
+export class AlertLoginWarning {
   @Input() public alerts: Array<string> = [];
 
   constructor(alertConfig: NgbAlertConfig) {

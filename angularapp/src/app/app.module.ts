@@ -21,6 +21,9 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavsalesComponent } from './navsales/navsales.component';
+/*--ALERTES--*/
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { AlertLoginWarning } from './alert-loginwarning/alert-loginwarning';
 
 
 
@@ -41,13 +44,15 @@ import { NavsalesComponent } from './navsales/navsales.component';
     RoomsComponent,
     AdminComponent,
     ProfileComponent,
-    NavsalesComponent
+    NavsalesComponent,
+    //AlertLoginWarning
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
     FormsModule, 
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
   ],
   providers: [
     {
