@@ -21,6 +21,7 @@ export class RoomsComponent implements OnInit {
     this.apiService.getRooms().subscribe(
       response => {
         this.rooms = response;
+        console.log(this.rooms);
       },
       error => {
         console.error(error);

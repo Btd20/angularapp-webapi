@@ -20,6 +20,7 @@ import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NavsalesComponent } from './navsales/navsales.component';
 
 
 
@@ -39,7 +40,8 @@ import { ProfileComponent } from './profile/profile.component';
     OficinesComponent,
     RoomsComponent,
     AdminComponent,
-    ProfileComponent
+    ProfileComponent,
+    NavsalesComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
