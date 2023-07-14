@@ -67,6 +67,10 @@ export class AdminComponent implements OnInit {
     usuario.editando = false;
   }
 
+  mostrarBotonEditar(usuario: any): boolean {
+    return !usuario.editando;
+  }
+
   get totalPages(): number {
     return Math.ceil(this.usuaris.length / this.pageSize); // Total de páginas
   }

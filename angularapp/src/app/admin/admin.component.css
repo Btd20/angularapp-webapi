@@ -17,7 +17,7 @@
   padding-left: 15px; /* Agrega un espacio a la izquierda para desplazar las flechas */
 }
 
-.pagination button {
+  .pagination button {
     background-color: transparent;
     color: black;
     border: none;
@@ -48,7 +48,6 @@
     justify-content: center;
   }
 
-
 .user-item {
   display: flex;
   align-items: center;
@@ -69,6 +68,7 @@
 
   .user-item .user-icon {
     margin-right: 10px;
+    color: var(--txt-g1);
   }
 
   .user-item .user-name {
@@ -85,3 +85,104 @@
     border-radius: 4px;
     cursor: pointer;
   }
+
+.adm-titl {
+  font-family: var(--fontR);
+  color: var(--txt-g1);
+  font-weight: 900;
+}
+
+.checkbox-wrapper-2 .ikxBAC {
+  appearance: none;
+  background-color: #dfe1e4;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  width: 30px;
+  margin-top: 5px;
+}
+
+  .checkbox-wrapper-2 .ikxBAC::before {
+    bottom: -6px;
+    content: "";
+    left: -6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+  }
+
+  .checkbox-wrapper-2 .ikxBAC,
+  .checkbox-wrapper-2 .ikxBAC::after {
+    transition: all 100ms ease-out;
+  }
+
+    .checkbox-wrapper-2 .ikxBAC::after {
+      background-color: #fff;
+      border-radius: 50%;
+      content: "";
+      height: 14px;
+      left: 3px;
+      position: absolute;
+      top: 3px;
+      width: 14px;
+    }
+
+.checkbox-wrapper-2 input[type=checkbox] {
+  cursor: default;
+}
+
+.checkbox-wrapper-2 .ikxBAC:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked {
+  background-color: #6e79d6;
+}
+
+  .checkbox-wrapper-2 .ikxBAC:checked::after {
+    background-color: #fff;
+    left: 13px;
+  }
+
+.edit-form {
+  transform: translateX(-50px);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  font-family: var(--fontR);
+  color: var(--txt-g1);
+  font-weight: 900;
+  margin-right: -45px;
+}
+
+  .edit-form label {
+    margin-right: 5px;
+    padding-left: 10px;
+  }
+
+  .edit-form input,
+  .edit-form button {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .edit-form button {
+    margin-left: 5px;
+    padding: 3px 6px;
+    font-size: 14px;
+  }
+
+  .edit-form input[type="text"],
+  .edit-form input[type="email"] {
+    background-color: #dfe1e4;
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 0px;
+  }
+
+
