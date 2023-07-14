@@ -21,6 +21,7 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavsalesComponent } from './navsales/navsales.component';
+import { ReservesComponent } from './reserves/reserves.component';
 
 
 
@@ -41,7 +42,8 @@ import { NavsalesComponent } from './navsales/navsales.component';
     RoomsComponent,
     AdminComponent,
     ProfileComponent,
-    NavsalesComponent
+    NavsalesComponent,
+    ReservesComponent
   ],
   imports: [ 
     BrowserModule, HttpClientModule,
