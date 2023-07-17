@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 /*--NAVS--*/
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavsalesComponent } from './navsales/navsales.component';
+import { NavadminComponent } from './navadmin/navadmin.component';
 
 /*--COMPONENTS D'USUARI--*/
 import { HomeComponent } from './home/home.component';
@@ -51,6 +52,7 @@ import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.comp
     /*--NAVS--*/
     NavbarComponent,
     NavsalesComponent,
+    NavadminComponent,
 
     /*--COMPONENTS D'USUARI--*/
     HomeComponent,
