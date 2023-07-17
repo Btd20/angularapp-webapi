@@ -20,6 +20,15 @@ export class AuthService {
     const token = localStorage.getItem('token');
     const decodedToken = token ? jwt_decode(token) as DecodedToken : null;
     this.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
+    let role = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+
+    if (role !== "Administrador") {
+      role = "Usuari";
+    } else {
+      role = "Administrador";
+    }
+
+    localStorage.setItem('role', role);
 
     if (this.isAdmin !== undefined) {
       localStorage.setItem('isAdmin', this.isAdmin.toString());
