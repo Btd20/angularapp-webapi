@@ -6,7 +6,7 @@
 }
 
 .tbl-paisos {
-  margin: 5% auto auto auto;
+  margin: 2.5% auto auto auto;
   width: 100%;
   height: 85%;
   overflow: hidden;
@@ -19,10 +19,12 @@
 
 /*--A PARTIR D'AQUI JA SON TABLES, ETC--*/
 
-.tbl-paisos table{
-    margin:auto;
-    display:grid;
-}
+  .tbl-paisos table {
+    margin: auto;
+    display: grid;
+    width: 100%;
+    height: 100%;
+  }
 
 .tbl-paisos th { /*--PAISOS--*/
     display: block;
@@ -41,7 +43,7 @@
 .tbl-content {
   width: 85%;
   padding: 2.5px;
-  height: 85%;
+  height: 60%;
   margin: 10px auto;
   display: flex;
   flex-direction: row;
@@ -51,19 +53,6 @@
   align-items: center;
   overflow: auto;
 }
-
-  /*--aixo quan ja ho tinguem tot llest ho posaré maco--*/
-
-  .tbl-content::-webkit-scrollbar {
-    background-color: darkcyan;
-  }
-  .tbl-content::-webkit-scroll {
-    background-color: mediumpurple;
-  }
-
-  .tbl-content::-webkit-scrollbar-track{
-      background-color:red;
-  }
 
 .btn-paisos {
   background-color: var(--txt-g1);

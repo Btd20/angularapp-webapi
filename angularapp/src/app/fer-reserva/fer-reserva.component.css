@@ -1,0 +1,42 @@
+.container-reserva {
+  margin: auto;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+}
+
+.res-titl {
+  width: 100%;
+  height: 14%;
+  font-family: var(--fontR);
+  font-size: 35px;
+  overflow: hidden;
+}
+
+  .res-titl i {
+    color: #2b2b3fcf;
+    font-size: 20px;
+    text-align: -webkit-center;
+    vertical-align: middle;
+    padding-left: 5px;
+  }
+
+  .res-titl strong {
+    color: #2b2b3fcf;
+    letter-spacing: 0.8px;
+    font-size: 20px;
+    text-align: -webkit-center;
+    vertical-align: middle;
+  }
+
+  .res-titl span {
+    color: var(--txt-g1);
+    font-weight: 800;
+    padding-left: 5px;
+  }
+
+.res-body {
+  width: 100%;
+  height: calc(100% - 14%);
+  background-color: palevioletred;
+}

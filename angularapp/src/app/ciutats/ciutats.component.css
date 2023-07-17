@@ -6,20 +6,25 @@
 }
 
 .tbl-ciutats {
-  margin: 10% auto auto auto;
+  margin: 2.5% auto auto auto;
+  width: 100%;
+  height: 85%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 /*--A PARTIR D'AQUI JA SON TABLES, ETC--*/
 
-.tbl-ciutats table {
-  margin: auto;
-  display: grid;
-}
+  .tbl-ciutats table {
+    margin: auto;
+    display: grid;
+    width: 100%;
+    height: 100%;
+  }
 
   .tbl-ciutats th { /*--TITLE--*/
     display: block;
@@ -48,13 +53,6 @@
   align-items: center;
   overflow: auto;
 }
-
-  /*--aixo quan ja ho tinguem tot llest ho posaré maco--*/
-
-  .tbl-content::-webkit-scrollbar {
-    background-color: darkcyan;
-  }
-
 
 .btn-ciutats {
   background-color: var(--txt-g1);

@@ -39,4 +39,5 @@
   width:100%;
   height:calc(100% - 14%);
   background-color: palevioletred;
+  overflow:auto;
 }
