@@ -1,6 +1,8 @@
-.admin-container {
-  margin: 20px;
-  padding: 20px;
+.container-admin {
+  margin: auto;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
 }
 
 .user-list {
