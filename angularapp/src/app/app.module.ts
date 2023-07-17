@@ -3,29 +3,38 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+/*--COMPONENTS DE NO LOGED USER--*/
+import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
+
+/*--NAVS--*/
+import { NavbarComponent } from './navbar/navbar.component';
+import { NavsalesComponent } from './navsales/navsales.component';
+
+/*--COMPONENTS D'USUARI--*/
 import { HomeComponent } from './home/home.component';
-import { IndexComponent } from './index/index.component';
 import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
 import { CiutatsComponent } from './ciutats/ciutats.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
+import { ReservesComponent } from './reserves/reserves.component';
+import { ProfileComponent } from './profile/profile.component';
+import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
+
+/*--ADMIN MODIFY COMPONENTS--*/
 import { AdminComponent } from './admin/admin.component';
 import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component';
 import { AdminMOComponent } from './admin-modifyoficines/admin-modifyoficines.component';
-//import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component'; PAISOS
-//import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component'; CIUTATS
-import { ProfileComponent } from './profile/profile.component';
-import { NavsalesComponent } from './navsales/navsales.component';
-import { ReservesComponent } from './reserves/reserves.component';
+import { AdminMPComponent } from './admin-modifypaisos/admin-modifypaisos.component'; 
+import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.component';
 
 
 
@@ -33,23 +42,34 @@ import { ReservesComponent } from './reserves/reserves.component';
 @NgModule({
   declarations: [
     AppComponent,
+
+    /*--COMPONENTS DE NO LOGED USER--*/
+    IndexComponent,
     LoginComponent,
     RegisterComponent,
-    VistaPaisosComponent,
+
+    /*--NAVS--*/
+    NavbarComponent,
+    NavsalesComponent,
+
+    /*--COMPONENTS D'USUARI--*/
     HomeComponent,
-    IndexComponent,
     SalesComponent,
     PaisosComponent,
     CiutatsComponent,
-    NavbarComponent,
     OficinesComponent,
     RoomsComponent,
+    ProfileComponent,
+    ReservesComponent,
+    VistaPaisosComponent,
+
+    /*--ADMIN MODIFY COMPONENTS--*/
     AdminComponent,
     AdminMRComponent,
     AdminMOComponent,
-    ProfileComponent,
-    NavsalesComponent,
-    ReservesComponent
+    AdminMPComponent,
+    AdminMCComponent,
+
   ],
   imports: [ 
     BrowserModule, HttpClientModule,

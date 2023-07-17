@@ -3,11 +3,11 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 
 @Component({
-  selector: 'app-admin-modifyrooms',
-  templateUrl: 'admin-modifyrooms.component.html',
-  styleUrls: ['admin-modifyrooms.component.css']
+  selector: 'app-admin-modifyciutats',
+  templateUrl: 'admin-modifyciutats.component.html',
+  styleUrls: ['admin-modifyciutats.component.css']
 })
-export class AdminMRComponent implements OnInit {
+export class AdminMCComponent implements OnInit {
   usuaris: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;

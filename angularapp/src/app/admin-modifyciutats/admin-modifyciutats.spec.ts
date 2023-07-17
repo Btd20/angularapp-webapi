@@ -1,15 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AdminMPComponent } from './admin-modifypaisos.component';
+import { AdminMCComponent } from './admin-modifyciutats.component';
 
-describe('AdminMPComponent', () => {
-  let component: AdminMPComponent;
-  let fixture: ComponentFixture<AdminMPComponent>;
+describe('AdminMRComponent', () => {
+  let component: AdminMCComponent;
+  let fixture: ComponentFixture<AdminMCComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdminMPComponent]
+      declarations: [AdminMCComponent]
     });
-    fixture = TestBed.createComponent(AdminMPComponent);
+    fixture = TestBed.createComponent(AdminMCComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
