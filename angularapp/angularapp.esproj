@@ -338,6 +338,7 @@
     <Folder Include="src\app\alert-loginwarning\" />
     <Folder Include="src\app\alert-registersuccess\" />
     <Folder Include="src\app\alert-registerwarning\" />
+    <Folder Include="src\css\" />
     <Folder Include="src\NewFolder\" />
   </ItemGroup>
 </Project>

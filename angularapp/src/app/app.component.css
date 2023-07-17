@@ -6,8 +6,8 @@
 }
 
 .svg-home2 {
-  margin-top: 5em;
-  z-index: 1;
+  margin-top: -10em;
+  z-index: -21;
   position: relative;
   overflow: hidden;
 }

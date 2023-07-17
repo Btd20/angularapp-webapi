@@ -38,16 +38,24 @@
 
 .tbl-content {
   width: 85%;
-  height: 100%;
-  margin: auto;
-  display: inline-flex;
-  overflow: hidden;
+  padding: 2.5px;
+  height: 60%;
+  margin: 10px auto;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-content: center;
+  align-content: space-between;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
+
+  /*--aixo quan ja ho tinguem tot llest ho posaré maco--*/
+
+  .tbl-content::-webkit-scrollbar {
+    background-color: darkcyan;
+  }
+
 
 .btn-oficines {
   background-color: var(--txt-g1);
