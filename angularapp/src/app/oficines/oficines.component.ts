@@ -9,6 +9,8 @@ import { ApiService } from '../api.service';
 })
 export class OficinesComponent implements OnInit {
   oficines: any[] = [];
+  pais: string = '';
+  ciutat: string = '';
 
   constructor(private router: Router, private route: ActivatedRoute, private apiService: ApiService) { }
 
@@ -45,6 +47,10 @@ export class OficinesComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+  getSalaByOficina(oficina: any): void {
+    this.router.navigate(['/rooms', this.pais, this.ciutat, oficina.nomOficina]);
   }
 }
 

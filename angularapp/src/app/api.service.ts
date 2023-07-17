@@ -32,6 +32,11 @@ export class ApiService {
     return this.http.get<any[]>(this.apiUrlOficines);
   }
 
+  getSalesByOficina(nomPais: string, nomCiutat: string, nomOficina: string) {
+    const url = `${this.apiUrlOficines}/pais/${nomPais}/ciutats/${nomCiutat}/oficines/${nomOficina}/sales`;
+    return this.http.get < any[]>(url);
+  }
+
   getOficinesByCiutats(nomPais: string, nomCiutat: string) {
     const url = `${this.apiUrlCiutats}/pais/${nomPais}/ciutats/${nomCiutat}/oficines`;
     return this.http.get<any[]>(url);
