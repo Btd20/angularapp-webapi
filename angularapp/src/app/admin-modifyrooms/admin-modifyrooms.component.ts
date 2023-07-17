@@ -3,7 +3,7 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 
 @Component({
-  selector: 'app-admin-modify',
+  selector: 'app-admin-modifyrooms',
   templateUrl: 'admin-modifyrooms.component.html',
   styleUrls: ['admin-modifyrooms.component.css']
 })
