@@ -55,10 +55,19 @@
   overflow: auto;
 }
 
-/*--aixo quan ja ho tinguem tot llest ho posaré maco--*/
+.tbl-content::-webkit-scrollbar-track {
+  background-color: transparent !important;
+  border: none !important;
+}
 
-.tbl-content::-webkit-scrollbar{ 
-    background-color:darkcyan;
+.tbl-content::-webkit-scrollbar-thumb {
+  background: var(--txt-g1);
+}
+
+.tbl-content::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+  background-color: transparent !important;
 }
 
 .btn-rooms {

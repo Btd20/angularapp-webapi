@@ -36,3 +36,17 @@ body {
   background-color: var(--bg-2);
 }
 
+::-webkit-scrollbar-track {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+::-webkit-scrollbar-thumb {
+    background: var(--txt-g1);
+  }
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    background-color: transparent !important;
+}
