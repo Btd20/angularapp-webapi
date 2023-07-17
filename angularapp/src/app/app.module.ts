@@ -27,6 +27,7 @@ import { CiutatsComponent } from './ciutats/ciutats.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ReservesComponent } from './reserves/reserves.component';
+import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 
@@ -64,6 +65,7 @@ import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.c
     RoomsComponent,
     ProfileComponent,
     ReservesComponent,
+    FerReservaComponent,
     VistaPaisosComponent,
 
     /*--ADMIN MODIFY COMPONENTS--*/

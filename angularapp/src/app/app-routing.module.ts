@@ -14,6 +14,7 @@ import { CiutatsComponent } from './ciutats/ciutats.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ReservesComponent } from './reserves/reserves.component';
+import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 
@@ -26,7 +27,8 @@ import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.comp
 import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.component';
 
 const routes: Routes = [
-  { path: 'reserves',component: ReservesComponent},
+  { path: 'reserves', component: ReservesComponent },
+  { path: 'ferreserva', component: FerReservaComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin-modifyrooms', component: AdminMRComponent },
   { path: 'admin-modifyoficines', component: AdminMOComponent },

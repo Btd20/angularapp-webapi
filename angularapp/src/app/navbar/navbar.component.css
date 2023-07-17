@@ -11,9 +11,11 @@
   margin-left: 2px;
   font-family: var(--fontK);
   font-weight: 600;
-  text-transform: uppercase;
 }
 
+.itm-acme{
+    text-transform:uppercase;
+}
 
 .nav-link {
   border-radius: 25px;
@@ -38,5 +40,16 @@
 /*--DROPDOWN--*/
 .dropdown-menu {
   background-color: var(--bs-body-bg);
+}
+
+.dropdown-item {
+  color: var(--txt-g1);
+  font-family: var(--fontR);
+  letter-spacing:0.8px;
+}
+
+.dropdown-item:active, .dropdown-item:hover{
+    background-color:var(--txt-g1);
+    color:var(--bs-body-bg);
 }
 
