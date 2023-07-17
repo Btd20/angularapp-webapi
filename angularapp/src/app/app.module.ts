@@ -19,6 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { AdminComponent } from './admin/admin.component';
+import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavsalesComponent } from './navsales/navsales.component';
 import { ReservesComponent } from './reserves/reserves.component';
@@ -41,6 +42,7 @@ import { ReservesComponent } from './reserves/reserves.component';
     OficinesComponent,
     RoomsComponent,
     AdminComponent,
+    AdminMRComponent,
     ProfileComponent,
     NavsalesComponent,
     ReservesComponent
