@@ -7,12 +7,15 @@
 
 
 .tbl-rooms {
-  margin: 10% auto auto auto;
+  margin: 5% auto auto auto;
+  width: 100%;
+  height: 85%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
   /*--A PARTIR D'AQUI JA SON TABLES, ETC--*/
@@ -20,6 +23,8 @@
   .tbl-rooms table {
     margin: auto;
     display: grid;
+    width:100%;
+    height:100%;
   }
 
   .tbl-rooms th { /*--TITLE--*/
@@ -38,15 +43,22 @@
 
 .tbl-content {
   width: 85%;
-  height: 100%;
-  margin: auto;
-  display: inline-flex;
-  overflow: hidden;
+  padding: 2.5px;
+  height: 60%;
+  margin: 10PX auto;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-content: center;
+  align-content: space-between;
   justify-content: center;
   align-items: center;
+  overflow: auto;
+}
+
+/*--aixo quan ja ho tinguem tot llest ho posaré maco--*/
+
+.tbl-content::-webkit-scrollbar{ 
+    background-color:darkcyan;
 }
 
 .btn-rooms {
