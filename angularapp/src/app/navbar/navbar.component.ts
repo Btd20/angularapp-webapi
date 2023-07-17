@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  isAdmin?: boolean;
+
+  constructor(private authService: AuthService) {
+    this.isAdmin = authService.isAdmin;
+  }
 
   dropMenu() {
     const dropbox = document.getElementById('dmenu');

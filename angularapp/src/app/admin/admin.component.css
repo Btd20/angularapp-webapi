@@ -14,7 +14,7 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
-  padding-left: 15px; /* Agrega un espacio a la izquierda para desplazar las flechas */
+  padding-left: 15px; 
 }
 
   .pagination button {
@@ -102,7 +102,6 @@
   margin: 0;
   position: relative;
   width: 30px;
-  margin-top: 5px;
 }
 
   .checkbox-wrapper-2 .ikxBAC::before {
