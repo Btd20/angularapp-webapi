@@ -5,8 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 
 /*--COMPONENTS D'USUARI--*/
 import { HomeComponent } from './home/home.component';
@@ -36,6 +34,7 @@ const routes: Routes = [
   { path: 'rooms', component: RoomsComponent },
   { path: 'ciutats', component: CiutatsComponent },
   { path: 'oficines', component: OficinesComponent},
+  { path: 'rooms/:pais/:ciutat/:oficina', component: RoomsComponent },
   { path: 'ciutats/:pais/oficines/:ciutat', component: OficinesComponent },
   { path: 'ciutats/:pais', component: CiutatsComponent},
   { path: 'paisos', component: PaisosComponent },
