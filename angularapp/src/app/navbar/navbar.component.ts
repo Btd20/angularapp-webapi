@@ -7,10 +7,15 @@ import { AuthService } from '../auth-service.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  isAdmin?: boolean;
+  isAdmin?: boolean = false;
+  username: string | null;
 
   constructor(private authService: AuthService) {
-    this.isAdmin = authService.isAdmin;
+    this.username = localStorage.getItem('username');
+  }
+
+  ngOnInit(): void {
+    this.isAdmin = this.authService.isAdmin;
   }
 
   dropMenu() {

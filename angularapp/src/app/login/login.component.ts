@@ -4,6 +4,7 @@ import { AuthService } from '../auth-service.service';
 import jwt_decode, { JwtPayload } from 'jwt-decode';
 
 interface DecodedToken {
+  username: string;
   email: string;
   role: string;
   // otras propiedades que tengas en el token
@@ -54,15 +55,16 @@ export class LoginComponent {
         if (response?.token) {
           localStorage.setItem('token', response.token.result);
           const decodedToken = jwt_decode(response.token.result) as DecodedToken;
+          localStorage.setItem('username', username);
           console.log(decodedToken);
           console.log('Login exitoso');
           this.router.navigate(['/home']);
         } else {
-          console.log('Error en el inicio de sesión: token vacío');
+          console.log('Error en el inici de sessió, token buit.');
         }
       },
       error => {
-        console.log('Error en el inicio de sesión:', error);
+        console.log('Error en iniciar sessió:', error);
       }
     );
   }
