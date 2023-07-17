@@ -6,7 +6,7 @@
       <th>Oficines</th>
       <div class="tbl-content">
       <tr *ngFor="let oficina of oficines">
-        <button  class="btn btn-oficines m-2"> {{ oficina.nomOficina }} </button>
+        <button (click) ="getSalaByOficina(oficina)"class="btn btn-oficines m-2"> {{ oficina.nomOficina }} </button>
       </tr>
   </div>
   </table>

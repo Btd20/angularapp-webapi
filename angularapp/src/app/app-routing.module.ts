@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'rooms', component: RoomsComponent },
   { path: 'ciutats', component: CiutatsComponent },
   { path: 'oficines', component: OficinesComponent},
+  { path: 'rooms/:pais/:ciutat/:oficina', component: RoomsComponent },
   { path: 'ciutats/:pais/oficines/:ciutat', component: OficinesComponent },
   { path: 'ciutats/:pais', component: CiutatsComponent},
   { path: 'paisos', component: PaisosComponent },
