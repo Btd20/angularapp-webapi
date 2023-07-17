@@ -36,6 +36,7 @@ import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.componen
 import { AdminMOComponent } from './admin-modifyoficines/admin-modifyoficines.component';
 import { AdminMPComponent } from './admin-modifypaisos/admin-modifypaisos.component'; 
 import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.component';
+import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.component';
 
 
 
@@ -71,6 +72,7 @@ import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.comp
     AdminMOComponent,
     AdminMPComponent,
     AdminMCComponent,
+    AdminMRVComponent
 
   ],
   imports: [ 
