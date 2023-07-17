@@ -60,11 +60,11 @@ export class LoginComponent {
           console.log('Login exitoso');
           this.router.navigate(['/home']);
         } else {
-          console.log('Error en el inicio de sesión: token vacío');
+          console.log('Error en el inici de sessió, token buit.');
         }
       },
       error => {
-        console.log('Error en el inicio de sesión:', error);
+        console.log('Error en iniciar sessió:', error);
       }
     );
   }
