@@ -13,6 +13,8 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component';
 import { AdminMOComponent } from './admin-modifyoficines/admin-modifyoficines.component';
+import { AdminMPComponent } from './admin-modifypaisos/admin-modifypaisos.component';
+import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.component';
 import { ReservesComponent } from './reserves/reserves.component';
 
 const routes: Routes = [
@@ -20,8 +22,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'admin-modifyrooms', component: AdminMRComponent },
   { path: 'admin-modifyoficines', component: AdminMOComponent },
-  //{ path: 'admin-modifypaisos', component: AdminMPComponent },
-  //{ path: 'admin-modifyciutats', component: AdminMCComponent },
+  { path: 'admin-modifypaisos', component: AdminMPComponent },
+  { path: 'admin-modifyciutats', component: AdminMCComponent },
   { path: 'rooms', component: RoomsComponent },
   { path: 'ciutats', component: CiutatsComponent },
   { path: 'oficines', component: OficinesComponent},

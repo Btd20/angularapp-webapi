@@ -21,8 +21,8 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component';
 import { AdminMOComponent } from './admin-modifyoficines/admin-modifyoficines.component';
-//import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component'; PAISOS
-//import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component'; CIUTATS
+import { AdminMPComponent } from './admin-modifypaisos/admin-modifypaisos.component'; 
+import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavsalesComponent } from './navsales/navsales.component';
 import { ReservesComponent } from './reserves/reserves.component';
@@ -47,6 +47,8 @@ import { ReservesComponent } from './reserves/reserves.component';
     AdminComponent,
     AdminMRComponent,
     AdminMOComponent,
+    AdminMPComponent,
+    AdminMCComponent,
     ProfileComponent,
     NavsalesComponent,
     ReservesComponent
