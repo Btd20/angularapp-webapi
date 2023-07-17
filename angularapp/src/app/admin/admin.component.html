@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="admin-container" *ngIf="isAdmin">
+<div class="row p-5 container-admin" *ngIf="isAdmin">
   <p class="adm-titl">Edició d'usuaris</p>
   <ul class="user-list">
     <li class="user-item" *ngFor="let usuario of usuaris | slice:(currentPage-1)*pageSize:currentPage*pageSize">
