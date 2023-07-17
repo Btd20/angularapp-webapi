@@ -8,9 +8,11 @@ import { AuthService } from '../auth-service.service';
 })
 export class NavbarComponent {
   isAdmin?: boolean;
+  username: string | null;
 
   constructor(private authService: AuthService) {
     this.isAdmin = authService.isAdmin;
+    this.username = localStorage.getItem('username');
   }
 
   dropMenu() {

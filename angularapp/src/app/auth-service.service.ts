@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
 
 interface DecodedToken {
+  username: string;
   email: string;
   "http://schemas.microsoft.com/ws/2008/06/identity/claims/role": string;
   // otras propiedades del token
@@ -16,9 +17,11 @@ interface DecodedToken {
 
 export class AuthService {
   isAdmin?: boolean;
+  username?: string;
   constructor(private http: HttpClient, private router: Router) {
     const token = localStorage.getItem('token');
     const decodedToken = token ? jwt_decode(token) as DecodedToken : null;
+    const username = decodedToken?.username;
     this.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
 
     if (this.isAdmin !== undefined) {
