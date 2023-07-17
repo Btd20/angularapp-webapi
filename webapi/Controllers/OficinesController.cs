@@ -41,6 +41,19 @@ namespace webapi.Controllers
             return Ok(oficina);
         }
 
+        //GET: Oficines->Sales
+        [HttpGet("pais/{nomPais}/ciutats/{nomCiutat}/oficines/{nomOficina}/sales")]
+        public async Task<ActionResult<IEnumerable<Sales>>> GetSalesByOficines(string nomPais, string nomCiutat, string nomOficina)
+        {;
+            var sales = await _context.Sales
+                .Include(o => o.oficina.ciutat.pais)
+                .Where(o => o.oficina.ciutat.pais.NomPais.Contains(nomPais) && o.oficina.ciutat.NomCiutat.Contains(nomCiutat)&& o.oficina.NomOficina.Contains(nomOficina))
+                .ToListAsync();
+
+            return Ok(sales);
+        }
+
+
         // POST: Oficines
         [HttpPost]
         public async Task<ActionResult<Oficines>> CreateOficina(Oficines oficina)
