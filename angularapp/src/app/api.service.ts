@@ -8,7 +8,7 @@ import { Observable, tap } from 'rxjs';
 export class ApiService {
   private apiUrlPaisos = 'https://localhost:7240/Pais';
   private apiUrlCiutats = 'https://localhost:7240/Ciutats';
-  private apiUrlRooms = 'https://localhost:7240/Sales';
+  private apiUrlSales = 'https://localhost:7240/Sales';
   private apiUrlOficines = 'https://localhost:7240/Oficines';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
   
@@ -31,20 +31,22 @@ export class ApiService {
   getAllOficines() {
     return this.http.get<any[]>(this.apiUrlOficines);
   }
-
-  getSalesByOficina(nomPais: string, nomCiutat: string, nomOficina: string) {
-    const url = `${this.apiUrlOficines}/pais/${nomPais}/ciutats/${nomCiutat}/oficines/${nomOficina}/sales`;
-    return this.http.get < any[]>(url);
+  getAllSales() {
+    return this.http.get<any[]>(this.apiUrlSales);
   }
+
+  getSalaByOficina(pais: string, ciutat: string, nomOficina: string) {
+    const url = `https://localhost:7240/Oficines/pais/${pais}/ciutats/${ciutat}/oficines/${nomOficina}/sales`;
+    return this.http.get<any[]>(url);
+  }
+
+
 
   getOficinesByCiutats(nomPais: string, nomCiutat: string) {
     const url = `${this.apiUrlCiutats}/pais/${nomPais}/ciutats/${nomCiutat}/oficines`;
     return this.http.get<any[]>(url);
   }
 
-  getRooms() {
-    return this.http.get<any[]>(this.apiUrlRooms);
-  }
 
   getUsuaris(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrlUsuaris).pipe(

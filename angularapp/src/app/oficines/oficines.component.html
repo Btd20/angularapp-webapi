@@ -4,10 +4,11 @@
     <table>
       <th>Oficines</th>
       <div class="tbl-content">
-      <tr *ngFor="let oficina of oficines">
-        <button (click)="getSalaByOficina(oficina)" class="btn btn-oficines m-2"> {{ oficina.nomOficina }} </button>
+      <tr *ngFor="let oficinaItem of oficina">
+        <button (click)="navigateToRooms(oficinaItem.nomOficina)" class="btn btn-oficines m-2"> {{ oficinaItem.nomOficina }} </button>
       </tr>
   </div>
   </table>
+
   <div class="row btn-modify" *ngIf="isAdmin"><a href="/admin-modifyoficines"><span>Modifica</span></a></div>
 </div>

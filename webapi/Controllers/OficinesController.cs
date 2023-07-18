@@ -41,6 +41,8 @@ namespace webapi.Controllers
             return Ok(oficina);
         }
 
+
+
         //GET: Oficines->Sales
         [HttpGet("pais/{nomPais}/ciutats/{nomCiutat}/oficines/{nomOficina}/sales")]
         public async Task<ActionResult<IEnumerable<Sales>>> GetSalesByOficines(string nomPais, string nomCiutat, string nomOficina)
@@ -93,6 +95,8 @@ namespace webapi.Controllers
 
             return NoContent();
         }
+
+   
 
         // DELETE: Oficines/5
         [HttpDelete("{id}")]

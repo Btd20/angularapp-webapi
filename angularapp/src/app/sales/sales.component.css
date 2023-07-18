@@ -1,0 +1,98 @@
+.app-sales-general {
+  margin: auto;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+}
+
+
+.tbl-sales {
+  margin: 2.5% auto auto auto;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+  /*--A PARTIR D'AQUI JA SON TABLES, ETC--*/
+
+  .tbl-sales table {
+    margin: auto;
+    display: grid;
+    width: 100%;
+    height: 80%;
+  }
+
+  .tbl-sales th { /*--TITLE--*/
+    display: block;
+    color: var(--txt-g1);
+    font-family: var(--fontR);
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+
+.tbl-content {
+  width: 85%;
+  padding: 2.5px;
+  height: 90%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.btn-sales {
+  background-color: var(--txt-g1);
+  color: var(--bs-body-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: auto;
+  font-family: var(--fontK);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.btn-modify {
+  width: 95%;
+  height: 20%;
+  margin: 0 auto;
+}
+
+  .btn-modify a {
+    font-family: var(--fontR);
+    background-color: var(--txt-g1);
+    color: var(--bs-body-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 12%;
+    height: 50%;
+    margin: auto;
+    text-decoration: none !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-modify span {
+    font-family: var(--fontK);
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+  }

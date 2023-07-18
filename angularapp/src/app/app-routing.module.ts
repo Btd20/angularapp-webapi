@@ -12,7 +12,6 @@ import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
 import { CiutatsComponent } from './ciutats/ciutats.component';
 import { OficinesComponent } from './oficines/oficines.component';
-import { RoomsComponent } from './rooms/rooms.component';
 import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -40,14 +39,14 @@ const routes: Routes = [
   { path: 'admin-modifypaisos', component: AdminMPComponent },
   { path: 'admin-modifyciutats', component: AdminMCComponent },
   { path: 'admin-modifyreserves', component: AdminMRVComponent },
-  { path: 'rooms', component: RoomsComponent },
+  { path: 'sales', component: SalesComponent },
   { path: 'ciutats', component: CiutatsComponent },
   { path: 'oficines', component: OficinesComponent },
-  { path: 'rooms/:pais/:ciutat/:oficina', component: RoomsComponent },
+  { path: 'oficines/:pais/:ciutat/:oficina/sales', component: SalesComponent },
+/* uwu */
   { path: 'ciutats/:pais/oficines/:ciutat', component: OficinesComponent },
-  { path: 'ciutats/:pais', component: CiutatsComponent},
+  { path: 'ciutats/:pais', component: CiutatsComponent },
   { path: 'paisos', component: PaisosComponent },
-  { path: 'sales', component: SalesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },

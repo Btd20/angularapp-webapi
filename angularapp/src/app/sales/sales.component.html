@@ -1,3 +1,16 @@
-
-<app-paisos></app-paisos>
+<app-navsales></app-navsales>
+<div class="app-sales-general">
+  <div class="tbl-sales">
+    <table>
+      <th>Sales de reunions</th>
+      <div class="tbl-content">
+      <tr *ngFor="let sala of sales">
+        <button class="btn btn-sales m-2">
+          {{ sala.nomSala }}
+        </button>
+      </tr>
+  </div>
+  </table>
+  <div class="row btn-modify" *ngIf="isAdmin"><a href="/admin-modifyrooms"><span>Modifica</span></a></div>
+</div>
 
