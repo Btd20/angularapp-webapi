@@ -41,6 +41,9 @@ import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.comp
 import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.component';
 import { NavprofileComponent } from './navprofile/navprofile.component';
 import { DadesComponent } from './dades/dades.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ChangeUserComponent } from './change-user/change-user.component';
+import { ChangeEmailComponent } from './change-email/change-email.component';
 
 
 
@@ -80,7 +83,10 @@ import { DadesComponent } from './dades/dades.component';
     AdminMRVComponent,
     ProfileConfigComponent,
     NavprofileComponent,
-    DadesComponent
+    DadesComponent,
+    ChangePasswordComponent,
+    ChangeUserComponent,
+    ChangeEmailComponent
 
   ],
   imports: [ 

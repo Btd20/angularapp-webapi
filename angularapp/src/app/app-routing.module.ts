@@ -18,6 +18,9 @@ import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileConfigComponent } from './profile-config/profile-config.component';
 import { DadesComponent } from './dades/dades.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ChangeUserComponent } from './change-user/change-user.component';
+import { ChangeEmailComponent } from './change-email/change-email.component';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 
 /*--ADMIN MODIFY COMPONENTS--*/
@@ -51,6 +54,9 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'profile-config', component: ProfileConfigComponent },
   { path: 'dades', component: DadesComponent },
+  { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'change-user', component: ChangeUserComponent },
+  { path: 'change-email', component: ChangeEmailComponent },
   { path: '', component: IndexComponent },
 
 ];

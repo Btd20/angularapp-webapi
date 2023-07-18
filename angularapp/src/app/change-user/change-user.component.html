@@ -1,0 +1,13 @@
+<h4>Canviar usuari</h4>
+<form (ngSubmit)="changeUsername()">
+  <label for="currentUsername">Usuari actual:</label>
+  <input type="text" name="currentUsername" id="currentUsername" [(ngModel)]="currentUsername" required>
+
+  <label for="newUsername">Nou usuari:</label>
+  <input type="text" name="newUsername" id="newUsername" [(ngModel)]="newUsername" required>
+
+  <label for="confirmNewUsername">Confirmar nou usuari:</label>
+  <input type="text" name="confirmUsername" id="confirmUsername" [(ngModel)]="confirmUsername" required>
+
+  <button type="submit">Cambiar usuario</button>
+</form>

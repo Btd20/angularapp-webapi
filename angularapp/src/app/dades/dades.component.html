@@ -1,12 +1,22 @@
-<form (ngSubmit)="changePassword()">
-  <label for="currentPassword">Contraseña actual:</label>
-  <input type="password" name="currentPassword" id="currentPassword" [(ngModel)]="currentPassword" required>
+<app-navprofile></app-navprofile>
 
-  <label for="newPassword">Nueva contraseña:</label>
-  <input type="password" name="newPassword" id="newPassword" [(ngModel)]="newPassword" required>
-
-  <label for="confirmPassword">Confirmar nueva contraseña:</label>
-  <input type="password" name="confirmPassword" id="confirmPassword" [(ngModel)]="confirmPassword" required>
-
-  <button type="submit">Cambiar contraseña</button>
-</form>
+<div class="container">
+  <a href="/change-password">
+    <div class="item">
+      <p class="adm-titl">Canviar de contrasenya</p>
+      <img src="https://i.imgur.com/sE6pLAi.png" alt="Imagen">
+    </div>
+  </a>
+  <a href="/change-user">
+    <div class="item">
+      <p class="adm-titl">Canviar d'usuari</p>
+      <img src="https://i.imgur.com/UKu99D4.png" alt="Imagen">
+    </div>
+  </a>
+  <a href="/change-email">
+    <div class="item">
+      <p class="adm-titl">Canviar de correu</p>
+      <img src="https://i.imgur.com/iNv2FWd.png" alt="Imagen">
+    </div>
+  </a>
+</div>
