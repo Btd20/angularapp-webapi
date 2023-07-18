@@ -11,6 +11,7 @@
   height: 85%;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -23,7 +24,7 @@
     margin: auto;
     display: grid;
     width: 100%;
-    height: 100%;
+    height: 80%;
   }
 
 .tbl-paisos th { /*--PAISOS--*/
@@ -43,7 +44,7 @@
 .tbl-content {
   width: 85%;
   padding: 2.5px;
-  height: 60%;
+  height: 90%;
   margin: 10px auto;
   display: flex;
   flex-direction: row;
@@ -62,7 +63,37 @@
   margin: auto;
   font-family: var(--fontK);
   font-weight: 500;
-  letter-spacing: 100%;
+  letter-spacing: 1px;
   text-transform: capitalize;
   font-size: 20px;
 }
+
+.btn-modify {
+  width: 95%;
+  height: 20%;
+  margin: 0 auto;
+}
+
+  .btn-modify a {
+    font-family: var(--fontR);
+    background-color: var(--txt-g1);
+    color: var(--bs-body-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 12%;
+    height: 50%;
+    margin: auto;
+    text-decoration: none !important;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-modify span {
+    font-family: var(--fontK);
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
