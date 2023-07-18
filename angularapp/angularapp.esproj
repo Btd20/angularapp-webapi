@@ -335,10 +335,31 @@
     <None Remove="src\login_register\Login_v1\css\main.css" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\app\alert-loginwarning\" />
-    <Folder Include="src\app\alert-registersuccess\" />
-    <Folder Include="src\app\alert-registerwarning\" />
-    <Folder Include="src\css\" />
-    <Folder Include="src\NewFolder\" />
+    <TypeScriptConfiguration Remove="src\app\alert-registersuccess\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\app\alert-registersuccess\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="src\NewFolder\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\NewFolder\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="src\css\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\css\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="src\app\alert-registerwarning\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\app\alert-registerwarning\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\app\alert\services\" />
+    <Folder Include="src\app\alert\types\" />
   </ItemGroup>
 </Project>
