@@ -15,15 +15,9 @@
       <label for="remember" class="text-center lg-remember">Recordar</label>
       <input type="checkbox" id="remember" class="text-center lg-remember-input" name="rememberme" [(ngModel)]="RememberMe">
     </div><br />
-    <button type="submit" class="btn btn-primary m-auto d-block" (click)="showMessage()">Iniciar sessió</button>
-    <!--aixo es pot fer amb angular+bootstrap-->
-    <!--<alert-loginwarning></alert-loginwarning>-->
-      <div class="alert alert-success alert-dismissible fade show" id="sucessLogin">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        <strong>Success!</strong> {{msgLogin}}
-      </div>
-      <br />
-      <button class="btn btn-secondary m-auto d-block btn-tornaEnrere" (click)="goBack()">Tornar enrere</button>
+    <button type="submit" class="btn btn-primary m-auto d-block">Iniciar sessió</button>
+    <br />
+    <button class="btn btn-secondary m-auto d-block btn-tornaEnrere" (click)="goBack()">Tornar enrere</button>
   </form>
   <br />
 </div>

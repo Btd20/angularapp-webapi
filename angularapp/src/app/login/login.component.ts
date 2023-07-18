@@ -25,26 +25,6 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  msgLogin = '';
-
-  showMessage() {
-    this.msgLogin = "No s'ha pogut logejar. Revisa el nom d'usuari o la contrasenya.";
-  }
-
-  errorLogin() {
-    const errorLogin = document.getElementById('errorLogin');
-    if (errorLogin != null) {
-      errorLogin.style.display = 'block';
-    }
-  }
-
-  sucessLogin() {
-    const succesLogin = document.getElementById('succesLogin');
-    if (succesLogin != null) {
-      succesLogin.style.display = 'block';
-    }
-  }
-
   login() {
     const username = encodeURIComponent(this.Username || '');
     const password = encodeURIComponent(this.Password || '');
@@ -65,6 +45,7 @@ export class LoginComponent {
       },
       error => {
         console.log('Error en iniciar sessió:', error);
+        //AQUI S'HA DE ACTIVAR EL DIV DE ALERT-BOOTSTRAP
       }
     );
   }

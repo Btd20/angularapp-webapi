@@ -21,6 +21,17 @@ export class RegisterComponent {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  showSuccess() {
+    //document.getElementById(success - btn)
+  };
+
+
+  showError() {
+    //document.getElementById(success - btn)
+  };
+
+  isUnchanged = true;
+
   register() {
     const data: RegisterData = {
       username: this.username,
@@ -35,11 +46,12 @@ export class RegisterComponent {
     this.http.post('https://localhost:7240/Auth/register', data, { headers }).subscribe(
       response => {
         console.log('Registro exitoso:', response);
-        this.router.navigate(['/login']);
+        this.showSuccess();
       },
       error => {
         this.errorMessage = 'Error en el registro. Verifica los datos ingresados.';
         console.error('Error en el registro:', error);
+        this.showError();
       }
     );
   }
