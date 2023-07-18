@@ -35,11 +35,12 @@ export class RegisterComponent {
     this.http.post('https://localhost:7240/Auth/register', data, { headers }).subscribe(
       response => {
         console.log('Registro exitoso:', response);
-        this.router.navigate(['/login']);
+        //NO HA DE ANAR AL LOGIN, SINO QUE LI HA DE DIR AL USUARI QUE TOT OK
       },
       error => {
         this.errorMessage = 'Error en el registro. Verifica los datos ingresados.';
         console.error('Error en el registro:', error);
+        //AQUI S'HA DE ACTIVAR EL DIV DE ALERT-BOOTSTRAP
       }
     );
   }
