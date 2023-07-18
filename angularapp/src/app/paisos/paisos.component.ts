@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-paisos',
@@ -9,8 +10,13 @@ import { ApiService } from '../api.service';
 })
 export class PaisosComponent implements OnInit {
   paisos: any[] = [];
+  isAdmin?: boolean;
 
-  constructor(private apiService: ApiService, private router: Router) { }
+
+  constructor(private apiService: ApiService, 
+    private router: Router, private authService: AuthService) {
+    this.isAdmin = authService.isAdmin;
+  }
 
   ngOnInit(): void {
     this.getPaisosFromApi();

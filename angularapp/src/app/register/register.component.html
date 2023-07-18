@@ -17,8 +17,17 @@
       <input class="regi-input" type="password" id="password" name="password" [(ngModel)]="password" required>
     </div>
     <br />
-    <button type="submit" class="btn btn-primary m-auto d-block">Registra't</button>
+    <button type="submit" class="btn btn-primary m-auto d-block" (click)="showAlert(alertTypes.danger)">Registra't</button>
   </form>
+  <!--
+  <div *ngIf="!isCollapsed" class="alert alert-warning alert-dismissible fade show" role="alert" id="warning-btn">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div *ngIf="!isCollapsed" class="alert alert-success alert-dismissible fade show" role="alert" id="success-btn">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>-->
   <br />
   <button class="btn btn-secondary m-auto d-block btn-tornaEnrere" (click)="goBack()">Torna enrere</button>
 </div>
