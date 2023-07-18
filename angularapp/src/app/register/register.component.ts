@@ -23,6 +23,7 @@ export class RegisterComponent {
   password: string = '';
   errorMessage: string | undefined;
 
+  AlertComponent?: AlertComponent;
   alertTypes = AlertTypeEnum;
 
 
@@ -52,12 +53,14 @@ export class RegisterComponent {
       response => {
         console.log('Registro exitoso:', response);
         this.showAlert(this.alertTypes.success);
+        alert('Registrat amb exit');
         //this.showSuccess();
       },
       error => {
         this.errorMessage = 'Error en el registro. Verifica los datos ingresados.';
         console.error('Error en el registro:', error);
         this.showAlert(this.alertTypes.warning);
+        alert('Error en el registre');
         //this.showError();
       }
     );

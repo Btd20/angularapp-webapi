@@ -12,6 +12,9 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
+import { AlertComponent } from './alert/alert.component';
+import { AlertService } from './alert/services/alert.service';
+import { AlertTypeEnum } from './alert/types/alertType.enum';
 import { ReactiveFormsModule } from '@angular/forms';
 
 /*--NAVS--*/
@@ -87,7 +90,7 @@ import { DadesComponent } from './dades/dades.component';
     BrowserModule, HttpClientModule,
     FormsModule, 
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     {
