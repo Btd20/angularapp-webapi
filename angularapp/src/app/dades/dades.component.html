@@ -1,0 +1,12 @@
+<form (ngSubmit)="changePassword()">
+  <label for="currentPassword">Contraseña actual:</label>
+  <input type="password" name="currentPassword" id="currentPassword" [(ngModel)]="currentPassword" required>
+
+  <label for="newPassword">Nueva contraseña:</label>
+  <input type="password" name="newPassword" id="newPassword" [(ngModel)]="newPassword" required>
+
+  <label for="confirmPassword">Confirmar nueva contraseña:</label>
+  <input type="password" name="confirmPassword" id="confirmPassword" [(ngModel)]="confirmPassword" required>
+
+  <button type="submit">Cambiar contraseña</button>
+</form>

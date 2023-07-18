@@ -16,6 +16,8 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProfileConfigComponent } from './profile-config/profile-config.component';
+import { DadesComponent } from './dades/dades.component';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 
 /*--ADMIN MODIFY COMPONENTS--*/
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'profile-config', component: ProfileConfigComponent },
+  { path: 'dades', component: DadesComponent },
   { path: '', component: IndexComponent },
 
 ];

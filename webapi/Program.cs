@@ -15,8 +15,7 @@ builder.Services.AddDefaultIdentity<webapiUser>(options => options.SignIn.Requir
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<webapiContext>();
 
-// Configuración de autenticación JWT
-var jwtSecretKey = "acmetokens"; // Reemplaza con tu propia clave secreta
+var jwtSecretKey = "acmetokens"; // Clau secreta del token
 var key = Encoding.ASCII.GetBytes(jwtSecretKey);
 
 builder.Services.AddAuthentication(options =>

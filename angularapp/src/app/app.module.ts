@@ -30,6 +30,7 @@ import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
+import { ProfileConfigComponent } from './profile-config/profile-config.component';
 
 /*--ADMIN MODIFY COMPONENTS--*/
 import { AdminComponent } from './admin/admin.component';
@@ -38,6 +39,8 @@ import { AdminMOComponent } from './admin-modifyoficines/admin-modifyoficines.co
 import { AdminMPComponent } from './admin-modifypaisos/admin-modifypaisos.component'; 
 import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.component';
 import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.component';
+import { NavprofileComponent } from './navprofile/navprofile.component';
+import { DadesComponent } from './dades/dades.component';
 
 
 
@@ -74,7 +77,10 @@ import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.c
     AdminMOComponent,
     AdminMPComponent,
     AdminMCComponent,
-    AdminMRVComponent
+    AdminMRVComponent,
+    ProfileConfigComponent,
+    NavprofileComponent,
+    DadesComponent
 
   ],
   imports: [ 

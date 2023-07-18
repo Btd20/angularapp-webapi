@@ -1,6 +1,6 @@
 <app-navadmin></app-navadmin>
 <div class="row p-5 container-admin" *ngIf="isAdmin">
-  <p class="adm-titl">Edició d'usuaris</p>
+  <h4 class="adm-titl">Edició d'usuaris</h4>
   <ul class="user-list">
     <li class="user-item" *ngFor="let usuario of usuaris | slice:(currentPage-1)*pageSize:currentPage*pageSize">
       <span class="user-icon"><i class="fas fa-user"></i></span>
@@ -17,7 +17,7 @@
 
           <label for="rol">Administrador:</label>
           <div class="checkbox-wrapper-2">
-            <input type="checkbox" class="sc-gJwTLC ikxBAC" [(ngModel)]="usuario.rol" name="rol">
+            <input type="checkbox" class="sc-gJwTLC ikxBAC" [(ngModel)]="usuario.Rol" name="rol">
           </div>
           <button type="submit">Guardar canvis</button>
           <button type="button" (click)="cancelarEdicion(usuario)">Cancelar</button>

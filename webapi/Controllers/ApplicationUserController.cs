@@ -115,5 +115,26 @@ namespace webapi.Controllers
             return Ok(role);
         }
 
+        // POST: api/ApplicationUsers/ChangePassword
+        [HttpPost("ChangePassword")]
+        public async Task<IActionResult> ChangePassword(ChangePassword model)
+        {
+            var user = await _userManager.FindByNameAsync(model.Username);
+            if (user == null)
+            {
+                return BadRequest("Usuari no trobat.");
+            }
+
+            var changePasswordResult = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+            if (!changePasswordResult.Succeeded)
+            {
+                return BadRequest(changePasswordResult.Errors);
+            }
+
+            // Si deseas iniciar sesión automáticamente después de cambiar la contraseña, puedes agregar lo siguiente:
+            // await _signInManager.SignInAsync(user, isPersistent: false);
+
+            return NoContent();
+        }
     }
 }

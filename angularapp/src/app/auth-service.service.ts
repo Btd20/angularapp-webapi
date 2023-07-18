@@ -43,4 +43,15 @@ export class AuthService {
 
     return this.http.post<any>('https://localhost:7240/Auth/login', body);
   }
+
+  changePassword(currentPassword: string, newPassword: string) {
+
+    const body = {
+      username: localStorage.getItem('username'),
+      currentPassword: currentPassword,
+      newPassword: newPassword
+    };
+
+    return this.http.post<any>('https://localhost:7240/api/ApplicationUsers/ChangePassword', body);
+  }
 }
