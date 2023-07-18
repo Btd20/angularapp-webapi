@@ -36,8 +36,20 @@
 }
 
 .res-body {
-  width:100%;
-  height:calc(100% - 14%);
+  width: 100%;
+  height: calc(100% - 14%);
   background-color: palevioletred;
-  overflow:auto;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.res-box {
+  position: relative;
+  width: 22%;
+  margin:1%;
+  height: 50%;
 }
