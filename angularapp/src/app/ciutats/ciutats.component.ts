@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-ciutats',
@@ -11,8 +12,12 @@ export class CiutatsComponent implements OnInit {
   ciutats: any[] = [];
   pais: string = '';
   oficines: any[] = [];
+  isAdmin?: boolean;
 
-  constructor(private apiService: ApiService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private apiService: ApiService, private router: Router,
+    private route: ActivatedRoute, private authService: AuthService) {
+    this.isAdmin = authService.isAdmin;
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

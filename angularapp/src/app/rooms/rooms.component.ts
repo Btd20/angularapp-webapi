@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-rooms',
@@ -9,9 +10,11 @@ import { ApiService } from '../api.service';
 })
 export class RoomsComponent implements OnInit {
   rooms: any[] = [];
+  isAdmin?: boolean;
 
-
-  constructor(private router: Router, private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private authService: AuthService) {
+    this.isAdmin = authService.isAdmin;
+  }
 
   ngOnInit(): void {
     this.getRoomsFromApi();
