@@ -59,10 +59,10 @@ export class AuthService {
 
     const body = {
       username: localStorage.getItem('username'),
-      currentPassword: currentUsername,
-      newPassword: newUsername
+      currentUsername: currentUsername,
+      newUsername: newUsername
     };
 
-    return this.http.post<any>('https://localhost:7240/api/ApplicationUsers/ChangePassword', body);
+    return this.http.post<any>('https://localhost:7240/api/ApplicationUsers/ChangeUsername', body);
   }
 }

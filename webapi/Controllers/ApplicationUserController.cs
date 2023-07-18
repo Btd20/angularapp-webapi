@@ -136,5 +136,30 @@ namespace webapi.Controllers
 
             return NoContent();
         }
+
+        // POST: api/ApplicationUsers/ChangeUsername
+        [HttpPost("ChangeUsername")]
+        public async Task<IActionResult> ChangeUsername(ChangeUsername model)
+        {
+            var user = await _userManager.FindByNameAsync(model.CurrentUsername);
+            if (user == null)
+            {
+                return BadRequest("Usuari no trobat.");
+            }
+
+            var isExistingUser = await _userManager.FindByNameAsync(model.NewUsername);
+            if (isExistingUser != null)
+            {
+                return BadRequest("El nou nom d'usuari ja existeix.");
+            }
+
+            user.UserName = model.NewUsername;
+            var updateResult = await _userManager.UpdateAsync(user);
+            if (updateResult.Succeeded)
+            {
+                return NoContent();
+            }
+            return BadRequest(updateResult.Errors);
+        }
     }
 }
