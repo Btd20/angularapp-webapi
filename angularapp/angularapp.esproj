@@ -361,6 +361,5 @@
   <ItemGroup>
     <Folder Include="src\app\alert\services\" />
     <Folder Include="src\app\alert\types\" />
-    <Folder Include="src\app\NewFolder\" />
   </ItemGroup>
 </Project>

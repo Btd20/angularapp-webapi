@@ -49,6 +49,8 @@ import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.c
 import { NavprofileComponent } from './navprofile/navprofile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+/*--RESERVA COMPONENTS--*/
+import { ReservaBoxComponent } from './reserva-box/reserva-box.component';
 
 
 
@@ -90,7 +92,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DadesComponent,
     ChangePasswordComponent,
     ChangeUserComponent,
-    ChangeEmailComponent
+    ChangeEmailComponent,
+
+    ReservaBoxComponent
 
   ],
   imports: [ 
