@@ -47,6 +47,7 @@ import { DadesComponent } from './dades/dades.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeUserComponent } from './change-user/change-user.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
+import { UbicacioComponent } from './ubicacio/ubicacio.component';
 
 
 
@@ -89,7 +90,8 @@ import { ChangeEmailComponent } from './change-email/change-email.component';
     DadesComponent,
     ChangePasswordComponent,
     ChangeUserComponent,
-    ChangeEmailComponent
+    ChangeEmailComponent,
+    UbicacioComponent
 
   ],
   imports: [ 

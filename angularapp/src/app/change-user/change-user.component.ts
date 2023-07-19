@@ -15,7 +15,7 @@ export class ChangeUserComponent {
 
   changeUsername() {
     if (this.newUsername !== this.confirmUsername) {
-      // Mostrar un mensaje de error indicando que las contraseñas no coinciden
+      console.log('Els usuaris no coincideixen.')
       return;
     }
 

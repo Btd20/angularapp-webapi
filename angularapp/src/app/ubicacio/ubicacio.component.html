@@ -1,0 +1,17 @@
+<app-navprofile></app-navprofile>
+
+<h3>Selecciona un país:</h3>
+<select [(ngModel)]="selectedCountry">
+  <option value="">Selecciona un país</option>
+  <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
+</select>
+
+<button (click)="guardarPais()">Guardar</button>
+
+<h3>Selecciona una oficina:</h3>
+<select [(ngModel)]="selectedOffice">
+  <option value="">Selecciona una oficina</option>
+  <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
+</select>
+
+<button (click)="guardarOficina()">Guardar</button>
