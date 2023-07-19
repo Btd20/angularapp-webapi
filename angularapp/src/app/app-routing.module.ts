@@ -32,6 +32,7 @@ import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.c
 
 const routes: Routes = [
   { path: 'reserves', component: ReservesComponent },
+  { path: 'reserves/:nomSala', component: ReservesComponent },
   { path: 'ferreserva', component: FerReservaComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin-modifyrooms', component: AdminMRComponent },
@@ -43,7 +44,6 @@ const routes: Routes = [
   { path: 'ciutats', component: CiutatsComponent },
   { path: 'oficines', component: OficinesComponent },
   { path: 'oficines/:pais/:ciutat/:oficina/sales', component: SalesComponent },
-/* uwu */
   { path: 'ciutats/:pais/oficines/:ciutat', component: OficinesComponent },
   { path: 'ciutats/:pais', component: CiutatsComponent },
   { path: 'paisos', component: PaisosComponent },
