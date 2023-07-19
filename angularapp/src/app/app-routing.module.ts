@@ -14,6 +14,7 @@ import { CiutatsComponent } from './ciutats/ciutats.component';
 import { OficinesComponent } from './oficines/oficines.component';
 import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
+import { ReservaMComponent } from './reserva-modify/reserva-modify.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileConfigComponent } from './profile-config/profile-config.component';
 import { DadesComponent } from './dades/dades.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'reserves', component: ReservesComponent },
   { path: 'reserves/:nomSala', component: ReservesComponent },
   { path: 'ferreserva', component: FerReservaComponent },
+  { path: 'reserva-modify/:nomSala', component: ReservaMComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin-modifyrooms', component: AdminMRComponent },
   { path: 'admin-modifyoficines', component: AdminMOComponent },
@@ -58,7 +60,7 @@ const routes: Routes = [
   { path: 'change-user', component: ChangeUserComponent },
   { path: 'change-email', component: ChangeEmailComponent },
   { path: 'ubicacio', component: UbicacioComponent },
-  { path: '', component: IndexComponent },
+  { path: '', component: IndexComponent }, 
 
 ];
 

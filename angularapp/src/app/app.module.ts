@@ -51,6 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /*--RESERVA COMPONENTS--*/
 import { ReservaBoxComponent } from './reserva-box/reserva-box.component';
+import { ReservaMComponent } from './reserva-modify/reserva-modify.component';
 
 
 
@@ -94,7 +95,8 @@ import { ReservaBoxComponent } from './reserva-box/reserva-box.component';
     ChangeUserComponent,
     ChangeEmailComponent,
 
-    ReservaBoxComponent
+    ReservaBoxComponent,
+    ReservaMComponent
 
   ],
   imports: [ 

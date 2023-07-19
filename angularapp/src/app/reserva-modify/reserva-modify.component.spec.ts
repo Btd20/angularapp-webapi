@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReservaBoxComponent } from './reserva-box.component';
+import { ReservaMComponent } from './reserva-modify.component';
 
 describe('ReservaBoxComponent', () => {
-  let component: ReservaBoxComponent;
-  let fixture: ComponentFixture<ReservaBoxComponent>;
+  let component: ReservaMComponent;
+  let fixture: ComponentFixture<ReservaMComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ReservaBoxComponent]
+      declarations: [ReservaMComponent]
     });
-    fixture = TestBed.createComponent(ReservaBoxComponent);
+    fixture = TestBed.createComponent(ReservaMComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
