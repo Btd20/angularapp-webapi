@@ -1,15 +1,29 @@
 <app-navprofile></app-navprofile>
 
-<h4>Canviar usuari</h4>
-<form (ngSubmit)="changeUsername()">
-  <label for="currentUsername">Usuari actual:</label>
-  <input type="text" name="currentUsername" id="currentUsername" [(ngModel)]="currentUsername" required>
+<div class="container">
+  <div class="form-container">
+    <h4 class="txt">Canviar usuari</h4>
+    <form (ngSubmit)="changeUsername()">
+      <div class="form-group">
+        <label class="txt" for="currentUsername">Usuari actual:</label>
+        <input type="text" name="currentUsername" id="currentUsername" [(ngModel)]="currentUsername" required>
+      </div>
 
-  <label for="newUsername">Nou usuari:</label>
-  <input type="text" name="newUsername" id="newUsername" [(ngModel)]="newUsername" required>
+      <div class="form-group">
+        <label class="txt" for="newUsername">Nou usuari:</label>
+        <input type="text" name="newUsername" id="newUsername" [(ngModel)]="newUsername" required>
+      </div>
 
-  <label for="confirmNewUsername">Confirmar nou usuari:</label>
-  <input type="text" name="confirmUsername" id="confirmUsername" [(ngModel)]="confirmUsername" required>
+      <div class="form-group">
+        <label class="txt" for="confirmNewUsername">Confirmar nou usuari:</label>
+        <input type="text" name="confirmUsername" id="confirmUsername" [(ngModel)]="confirmUsername" required>
+      </div>
 
-  <button type="submit">Cambiar usuario</button>
-</form>
+      <button type="submit">Cambiar usuario</button>
+    </form>
+  </div>
+
+  <div class="image-container">
+    <img src="https://i.imgur.com/UKu99D4.png" />
+  </div>
+</div>
