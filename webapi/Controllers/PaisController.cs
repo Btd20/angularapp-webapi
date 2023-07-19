@@ -123,6 +123,24 @@ namespace webapi.Controllers
             return NoContent();
         }
 
+        // DELETE: Pais/nom/{nomPais}
+        [HttpDelete("nom/{nomPais}")]
+        public async Task<IActionResult> DeletePaisByNom(string nomPais)
+        {
+            var pais = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == nomPais);
+            if (pais == null)
+            {
+                return NotFound();
+            }
+
+            _context.Pais.Remove(pais);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+
+
         private bool PaisExists(int id)
         {
             return _context.Pais.Any(e => e.CountryID == id);

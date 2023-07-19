@@ -64,5 +64,22 @@ export class ApiService {
     const url = `${this.apiUrlUsuaris}/${usuario.id}`;
     return this.http.put(url, usuario);
   }
+  // CRUD PAISOS //
+
+  createPais(pais: any): Observable<any> {
+    return this.http.post<any>(this.apiUrlPaisos, pais);
+  }
+
+  updatePais(id: number, pais: any): Observable<any> {
+    const url = `${this.apiUrlPaisos}/${id}`;
+    return this.http.put<any>(url, pais);
+  }
+
+  deletePaisByNom(nomPais: string): Observable<any> {
+    const url = `${this.apiUrlPaisos}/nom/${nomPais}`;
+    return this.http.delete(url);
+  }
+
+
 
 }
