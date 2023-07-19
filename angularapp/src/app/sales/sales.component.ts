@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class SalesComponent implements OnInit {
   oficina: string = '';
   isAdmin?: boolean;
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -51,5 +51,9 @@ export class SalesComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+  navigateToReserves(nomSala: string): void {
+    this.router.navigate(['/reserves', nomSala]);
   }
 }

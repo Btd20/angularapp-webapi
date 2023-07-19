@@ -5,7 +5,7 @@
       <th>Sales de reunions</th>
       <div class="tbl-content">
       <tr *ngFor="let sala of sales">
-        <button class="btn btn-sales m-2">
+        <button (click) ="navigateToReserves(sala.nomSala)" class="btn btn-sales m-2">
           {{ sala.nomSala }}
         </button>
       </tr>
