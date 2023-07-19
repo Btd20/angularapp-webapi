@@ -1,19 +1,27 @@
 <app-navsales></app-navsales>
 <div class="app-paisos-general">
-    <div class="tbl-paisos">
-      <table>
-        <th>Paisos</th>
-        <div class="tbl-content">
-        <tr *ngFor="let pais of paisos">
-          <button (click)="mostrarCiutats(pais)" class="btn btn-paisos m-2">{{ pais.nomPais }}</button>
+  <div class="tbl-paisos">
+    <table>
+      <thead class="m-auto">
+        <tr>
+          <th>Paisos</th>
         </tr>
-      </div>
+      </thead>
+      <tbody class="tbl-content">
+        <tr *ngFor="let pais of paisos">
+          <td>
+            <button (click)="mostrarCiutats(pais)" class="btn btn-paisos m-2">{{ pais.nomPais }}</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
-    <div class="row btn-modify" *ngIf="isAdmin"><a href="/admin-modifypaisos"><span>Modifica</span></a></div>
+  </div>
+  <div class="row btn-modify" *ngIf="isAdmin">
+    <a href="/admin-modifypaisos">
+      <span>Modifica</span>
+    </a>
+  </div>
 </div>
-
-
-
 
 
 

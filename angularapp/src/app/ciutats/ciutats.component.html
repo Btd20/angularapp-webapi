@@ -2,14 +2,24 @@
 <div class="app-ciutats-general">
   <div class="tbl-ciutats">
     <table>
-      <th>Ciutats</th>
-      <div class="tbl-content">
-      <tr *ngFor="let ciutat of ciutats">
-        <td>
-          <button (click)="getOficinesByCiutats(pais, ciutat.nomCiutat)" class="btn btn-ciutats m-2">{{ ciutat.nomCiutat }}</button>
-        </td>
-      </tr>
+      <thead class="m-auto">
+        <tr>
+          <th>Ciutats</th>
+        </tr>
+      </thead>
+      <tbody class="tbl-content">
+        <tr *ngFor="let ciutat of ciutats">
+          <td>
+            <button (click)="getOficinesByCiutats(pais, ciutat.nomCiutat)" class="btn btn-ciutats m-2">{{ ciutat.nomCiutat }}</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  </table>
-  <div class="row btn-modify" *ngIf="isAdmin"><a href="/admin-modifyciutats"><span>Modifica</span></a></div>
+  <div class="row btn-modify" *ngIf="isAdmin">
+    <a href="/admin-modifyciutats">
+      <span>Modifica</span>
+    </a>
+  </div>
 </div>
+

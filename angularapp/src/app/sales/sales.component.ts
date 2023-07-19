@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-sales',
@@ -14,7 +15,10 @@ export class SalesComponent implements OnInit {
   oficina: string = '';
   isAdmin?: boolean;
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute,
+    private authService: AuthService) {
+    this.isAdmin = authService.isAdmin;
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

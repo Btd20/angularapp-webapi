@@ -2,13 +2,22 @@
 <div class="app-oficines-general">
   <div class="tbl-oficines">
     <table>
-      <th>Oficines</th>
-      <div class="tbl-content">
-      <tr *ngFor="let oficinaItem of oficina">
-        <button (click)="navigateToRooms(oficinaItem.nomOficina)" class="btn btn-oficines m-2"> {{ oficinaItem.nomOficina }} </button>
-      </tr>
+      <thead class="m-auto">
+        <tr>
+          <th>Oficines</th>
+        </tr>
+      </thead>
+      <tbody class="tbl-content">
+        <tr *ngFor="let oficinaItem of oficina">
+          <button (click)="navigateToRooms(oficinaItem.nomOficina)" class="btn btn-oficines m-2"> {{ oficinaItem.nomOficina }} </button>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  </table>
-
-  <div class="row btn-modify" *ngIf="isAdmin"><a href="/admin-modifyoficines"><span>Modifica</span></a></div>
+  <div class="row btn-modify" *ngIf="isAdmin">
+    <a href="/admin-modifyoficines">
+      <span>Modifica</span>
+    </a>
+  </div>
 </div>
+
