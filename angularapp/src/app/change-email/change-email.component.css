@@ -83,3 +83,7 @@ button {
   color: var(--txt-g1);
   font-weight: 900;
 }
+
+.inputFamily {
+  font-family: var(--fontR);
+}

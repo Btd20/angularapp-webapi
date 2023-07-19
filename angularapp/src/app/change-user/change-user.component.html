@@ -6,17 +6,17 @@
     <form (ngSubmit)="changeUsername()">
       <div class="form-group">
         <label class="txt" for="currentUsername">Usuari actual:</label>
-        <input type="text" name="currentUsername" id="currentUsername" [(ngModel)]="currentUsername" required>
+        <input class="inputFamily" type="text" name="currentUsername" id="currentUsername" [(ngModel)]="currentUsername" required>
       </div>
 
       <div class="form-group">
         <label class="txt" for="newUsername">Nou usuari:</label>
-        <input type="text" name="newUsername" id="newUsername" [(ngModel)]="newUsername" required>
+        <input class="inputFamily" type="text" name="newUsername" id="newUsername" [(ngModel)]="newUsername" required>
       </div>
 
       <div class="form-group">
         <label class="txt" for="confirmNewUsername">Confirmar nou usuari:</label>
-        <input type="text" name="confirmUsername" id="confirmUsername" [(ngModel)]="confirmUsername" required>
+        <input class="inputFamily" type="text" name="confirmUsername" id="confirmUsername" [(ngModel)]="confirmUsername" required>
       </div>
 
       <button type="submit">Cambiar usuario</button>

@@ -6,17 +6,17 @@
     <form (ngSubmit)="changeEmail()">
       <div class="form-group">
         <label class="txt" for="currentEmail">Correu actual:</label>
-        <input type="email" name="currentEmail" id="currentEmail" [(ngModel)]="currentEmail" required>
+        <input class="inputFamily" type="email" name="currentEmail" id="currentEmail" [(ngModel)]="currentEmail" required>
       </div>
 
       <div class="form-group">
         <label class="txt" for="newEmail">Nou correu:</label>
-        <input type="email" name="newEmail" id="newEmail" [(ngModel)]="newEmail" required>
+        <input class="inputFamily" type="email" name="newEmail" id="newEmail" [(ngModel)]="newEmail" required>
       </div>
 
       <div class="form-group">
         <label class="txt" for="confirmEmail">Confirmar correu:</label>
-        <input type="email" name="confirmEmail" id="confirmEmail" [(ngModel)]="confirmEmail" required>
+        <input class="inputFamily" type="email" name="confirmEmail" id="confirmEmail" [(ngModel)]="confirmEmail" required>
       </div>
        
         <button type="submit">Canviar correu</button>
