@@ -46,6 +46,7 @@ import { DadesComponent } from './dades/dades.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeUserComponent } from './change-user/change-user.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -95,6 +96,7 @@ import { ChangeEmailComponent } from './change-email/change-email.component';
     FormsModule, 
     ReactiveFormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
