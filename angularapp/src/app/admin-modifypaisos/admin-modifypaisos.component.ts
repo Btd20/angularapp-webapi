@@ -8,23 +8,23 @@ import { AuthService } from '../auth-service.service';
   styleUrls: ['admin-modifypaisos.component.css']
 })
 export class AdminMPComponent implements OnInit {
-  usuaris: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 6;
+  paisos: any[] = [];
 
   constructor(private apiService: ApiService, private authService: AuthService) {
     this.isAdmin = authService.isAdmin;
   }
 
   ngOnInit(): void {
-    this.getUsuarisFromApi();
+    this.getPaisosFromApi();
   }
 
-  getUsuarisFromApi(): void {
-    this.apiService.getUsuaris().subscribe(
+  getPaisosFromApi(): void {
+    this.apiService.getPaisos().subscribe(
       response => {
-        this.usuaris = response;
+        this.paisos = response;
       },
       error => {
         console.error(error);
@@ -32,35 +32,53 @@ export class AdminMPComponent implements OnInit {
     );
   }
 
-  editarUsuario(usuario: any): void {
-    usuario.editando = true;
+  createPais(): void {
+    const nomPais = prompt('Introdueix el nom del país');
+    if (nomPais && nomPais.trim() !== '' && nomPais.trim().length > 0) {
+      const nouPais = { nomPais: nomPais.trim() };
+      this.apiService.createPais(nouPais).subscribe(
+        response => {
+          console.log('País creat: ', response);
+          this.getPaisosFromApi();
+        },
+        error => {
+          console.error('Error al crear el país: ', error);
+        }
+      );
+    } else {
+      console.error('Nom del país invàlid');
+      alert('El país no pot estar en blanc');
+    }
   }
 
-  guardarCanvis(usuario: any): void {
-    console.log('Guardar canvis del usuari:', usuario);
 
-    // Realizar una solicitud HTTP a la API para actualizar los cambios en la base de datos
-    this.apiService.actualitzarUsuari(usuario).subscribe(
+  updatePais(pais: any): void {
+    this.apiService.updatePais(pais.CountryID, pais).subscribe(
       response => {
-        console.log('Canvis guardats');
-        usuario.editando = false;
+        console.log('País modificado: ', response);
       },
       error => {
-        console.error('Error al guardar els canvis:', error);
+        console.error('Error al modificar el país :', error);
       }
     );
   }
 
-  cancelarEdicion(usuario: any): void {
-    usuario.editando = false;
-  }
-
-  mostrarBotonEditar(usuario: any): boolean {
-    return !usuario.editando;
+  deletePais(pais: any): void {
+    if (confirm('Estás seguro de que quieres eliminar este país?')) {
+      this.apiService.deletePaisByNom(pais.nomPais).subscribe(
+        response => {
+          console.log('País eliminat: ', response);
+          this.getPaisosFromApi();
+        },
+        error => {
+          console.error('Error al eliminar el país:', error);
+        }
+      );
+    }
   }
 
   get totalPages(): number {
-    return Math.ceil(this.usuaris.length / this.pageSize); // Total de páginas
+    return Math.ceil(this.paisos.length / this.pageSize);
   }
 
   nextPage(): void {
