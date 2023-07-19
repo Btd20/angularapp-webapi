@@ -37,6 +37,17 @@
 
 .res-body {
   width: 100%;
+  background-color:purple;
   height: calc(100% - 14%);
-  background-color: palevioletred;
+  display:inline-flex;
+}
+
+.res-gen {
+  width: 100%;
+  height: calc(100% - 54%);
+  background-color: mediumpurple;
+}
+
+.res-btn-body{
+    background-color:darkgrey;
 }
