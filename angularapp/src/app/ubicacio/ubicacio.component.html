@@ -15,7 +15,7 @@
         <option value=""></option>
         <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
       </select>
-      <button (click)="guardarPais()">Guardar</button>
+      <button class="txt" (click)="guardarPais()">Guardar</button>
     </div>
   </div>
 
@@ -29,7 +29,7 @@
         <option value=""></option>
         <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
       </select>
-      <button (click)="guardarOficina()">Guardar</button>
+      <button class="txt" (click)="guardarOficina()">Guardar</button>
     </div>
   </div>
 </div>

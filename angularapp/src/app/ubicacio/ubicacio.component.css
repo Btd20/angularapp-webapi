@@ -107,3 +107,7 @@ select {
   color: var(--txt-g1);
   font-weight: 900;
 }
+
+.txt {
+  font-family: var(--fontR);
+}
