@@ -72,7 +72,7 @@ export class OficinesComponent implements OnInit {
   navigateToRooms(nomOficina: string) {
     const pais = this.pais;
     const ciutat = this.ciutat;
-    this.router.navigate(['/oficines', pais, ciutat, nomOficina, 'sales']);
+    this.router.navigate(['/oficines', pais, ciutat, nomOficina, 'sales']); //la ruta màgica 
   }
 
  

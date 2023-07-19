@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 
@@ -15,8 +15,8 @@ export class SalesComponent implements OnInit {
   oficina: string = '';
   isAdmin?: boolean;
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute,
-    private authService: AuthService) {
+  constructor(private router: Router, private route: ActivatedRoute,
+    private apiService: ApiService, private authService: AuthService) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -56,4 +56,9 @@ export class SalesComponent implements OnInit {
       }
     );
   }
+
+  navigateToReserves(nomSala: string): void {
+    this.router.navigate(['/reserves', nomSala]);
+  }
+
 }
