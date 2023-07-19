@@ -28,7 +28,6 @@ import { SalesComponent } from './sales/sales.component';
 import { PaisosComponent } from './paisos/paisos.component';
 import { CiutatsComponent } from './ciutats/ciutats.component';
 import { OficinesComponent } from './oficines/oficines.component';
-import { RoomsComponent } from './rooms/rooms.component';
 import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -47,7 +46,7 @@ import { DadesComponent } from './dades/dades.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeUserComponent } from './change-user/change-user.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
-import { UbicacioComponent } from './ubicacio/ubicacio.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -72,7 +71,6 @@ import { UbicacioComponent } from './ubicacio/ubicacio.component';
     PaisosComponent,
     CiutatsComponent,
     OficinesComponent,
-    RoomsComponent,
     ProfileComponent,
     ReservesComponent,
     FerReservaComponent,
@@ -90,8 +88,7 @@ import { UbicacioComponent } from './ubicacio/ubicacio.component';
     DadesComponent,
     ChangePasswordComponent,
     ChangeUserComponent,
-    ChangeEmailComponent,
-    UbicacioComponent
+    ChangeEmailComponent
 
   ],
   imports: [ 
@@ -99,6 +96,7 @@ import { UbicacioComponent } from './ubicacio/ubicacio.component';
     FormsModule, 
     ReactiveFormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

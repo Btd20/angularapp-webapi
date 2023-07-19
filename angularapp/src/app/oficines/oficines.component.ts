@@ -9,9 +9,10 @@ import { AuthService } from '../auth-service.service';
   styleUrls: ['./oficines.component.css']
 })
 export class OficinesComponent implements OnInit {
-  oficines: any[] = [];
+  oficina: any[] = []; 
   pais: string = '';
   ciutat: string = '';
+  sales: any[] = [];
   isAdmin?: boolean;
 
   constructor(private router: Router, private route: ActivatedRoute, private apiService: ApiService, private authService: AuthService) {
@@ -20,11 +21,14 @@ export class OficinesComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const pais = params['pais'];
-      const ciutat = params['ciutat'];
+     // alert(JSON.stringify(params));
 
-      if (pais && ciutat) {
-        this.getOficinesByCiutats(pais, ciutat);
+      this.pais = params['pais'];
+      this.ciutat = params['ciutat'];
+      this.oficina = params['oficina'];
+
+      if (this.pais && this.ciutat) {
+        this.getOficinesByCiutats(this.pais, this.ciutat);
       } else {
         this.getAllOficinesFromApi();
       }
@@ -34,7 +38,7 @@ export class OficinesComponent implements OnInit {
   getOficinesByCiutats(pais: string, ciutat: string): void {
     this.apiService.getOficinesByCiutats(pais, ciutat).subscribe(
       response => {
-        this.oficines = response;
+        this.oficina = response; 
       },
       error => {
         console.error(error);
@@ -45,7 +49,7 @@ export class OficinesComponent implements OnInit {
   getAllOficinesFromApi(): void {
     this.apiService.getAllOficines().subscribe(
       response => {
-        this.oficines = response;
+        this.oficina = response; 
       },
       error => {
         console.error(error);
@@ -53,8 +57,23 @@ export class OficinesComponent implements OnInit {
     );
   }
 
-  getSalaByOficina(oficina: any): void {
-    this.router.navigate(['/rooms', this.pais, this.ciutat, oficina.nomOficina]);
+  getSalaByOficina(pais: string, ciutat: string, oficina: string): void {
+    this.apiService.getSalaByOficina(pais, ciutat, oficina).subscribe(
+      response => {
+        this.sales = response;
+        console.log(this.sales);
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
-}
 
+  navigateToRooms(nomOficina: string) {
+    const pais = this.pais;
+    const ciutat = this.ciutat;
+    this.router.navigate(['/oficines', pais, ciutat, nomOficina, 'sales']); //la ruta màgica 
+  }
+
+ 
+}
