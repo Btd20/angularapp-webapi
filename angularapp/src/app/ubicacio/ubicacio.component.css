@@ -1,0 +1,90 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px; /* Ajusta el ancho máximo del formulario según tus preferencias */
+  padding: 5px;
+  margin-top: 50px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra para dar profundidad */
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  padding: 60px;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+select,
+button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+/* Estilos para los select */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23333'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+  background-size: 16px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra al enfoque */
+  position: relative;
+  z-index: 1;
+}
+
+  select::-ms-expand {
+    display: none;
+  }
+
+/* Estilos para las imágenes */
+.image1 {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto; /* Agrega margen para centrar las imágenes */
+}
+
+.image2 {
+  margin-top: -20px;
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 20px auto; /* Agrega margen para centrar las imágenes */
+}

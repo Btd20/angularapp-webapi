@@ -33,6 +33,11 @@ import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 import { ProfileConfigComponent } from './profile-config/profile-config.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ChangeUserComponent } from './change-user/change-user.component';
+import { ChangeEmailComponent } from './change-email/change-email.component';
+import { DadesComponent } from './dades/dades.component';
+import { UbicacioComponent } from './ubicacio/ubicacio.component';
 
 /*--ADMIN MODIFY COMPONENTS--*/
 import { AdminComponent } from './admin/admin.component';
@@ -42,10 +47,6 @@ import { AdminMPComponent } from './admin-modifypaisos/admin-modifypaisos.compon
 import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.component';
 import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.component';
 import { NavprofileComponent } from './navprofile/navprofile.component';
-import { DadesComponent } from './dades/dades.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ChangeUserComponent } from './change-user/change-user.component';
-import { ChangeEmailComponent } from './change-email/change-email.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -75,6 +76,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReservesComponent,
     FerReservaComponent,
     VistaPaisosComponent,
+    UbicacioComponent,
 
     /*--ADMIN MODIFY COMPONENTS--*/
     AdminComponent,

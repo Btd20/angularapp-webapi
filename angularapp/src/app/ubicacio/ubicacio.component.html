@@ -1,17 +1,26 @@
 <app-navprofile></app-navprofile>
 
-<h3>Selecciona un país:</h3>
-<select [(ngModel)]="selectedCountry">
-  <option value="">Selecciona un país</option>
-  <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
-</select>
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <h3>Selecciona un país:</h3>
+      <select [(ngModel)]="selectedCountry">
+        <option value="">Selecciona un país</option>
+        <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
+      </select>
 
-<button (click)="guardarPais()">Guardar</button>
+      <button (click)="guardarPais()">Guardar</button>
+      <img class="image1" src="https://i.imgur.com/qyhaabF.png" />
+    </div>
+    <div class="column">
+      <h3>Selecciona una oficina:</h3>
+      <select [(ngModel)]="selectedOffice">
+        <option value="">Selecciona una oficina</option>
+        <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
+      </select>
 
-<h3>Selecciona una oficina:</h3>
-<select [(ngModel)]="selectedOffice">
-  <option value="">Selecciona una oficina</option>
-  <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
-</select>
-
-<button (click)="guardarOficina()">Guardar</button>
+      <button (click)="guardarOficina()">Guardar</button>
+      <img class="image2" src="https://i.imgur.com/14Rxpzd.png" />
+    </div>
+  </div>
+</div>
