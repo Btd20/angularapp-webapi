@@ -53,15 +53,22 @@ export class AdminMPComponent implements OnInit {
 
 
   updatePais(pais: any): void {
-    this.apiService.updatePais(pais.CountryID, pais).subscribe(
-      response => {
-        console.log('País modificado: ', response);
-      },
-      error => {
-        console.error('Error al modificar el país :', error);
-      }
-    );
+    const nouNomPais = prompt('Introdueix canvi', pais.nomPais);
+    if ( nouNomPais && nouNomPais.trim() !== '' && nouNomPais.trim().length > 0) {
+      pais.nomPais = nouNomPais.trim();
+      this.apiService.updatePais(pais.CountryID, pais).subscribe(
+        response => {
+          console.log('País modificat: ', response);
+        },
+        error => {
+          console.error('Error al modificar el país:', error);
+        }
+      );
+    } else {
+      console.error('Nombre del país inválid');
+    }
   }
+
 
   deletePais(pais: any): void {
     if (confirm('Estás seguro de que quieres eliminar este país?')) {
