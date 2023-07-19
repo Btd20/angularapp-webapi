@@ -22,10 +22,10 @@ export class AuthService {
     this.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
     let role = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
 
-    if (role !== "Administrador") {
-      role = "Usuari";
-    } else {
+    if (role === "Administrador") {
       role = "Administrador";
+    } else {
+      role = "Usuari";
     }
 
     localStorage.setItem('role', role);
@@ -64,5 +64,16 @@ export class AuthService {
     };
 
     return this.http.post<any>('https://localhost:7240/api/ApplicationUsers/ChangeUsername', body);
+  }
+
+  changeEmail(currentEmail: string, newEmail: string) {
+
+    const body = {
+      email: localStorage.getItem('email'),
+      currentEmail: currentEmail,
+      newEmail: newEmail
+    };
+
+    return this.http.post<any>('https://localhost:7240/api/ApplicationUsers/ChangeEmail', body);
   }
 }

@@ -1,1 +1,15 @@
-<p>change-email works!</p>
+<app-navprofile></app-navprofile>
+
+<h4>Canviar correu</h4>
+<form (ngSubmit)="changeEmail()">
+  <label for="currentEmail">Correu actual:</label>
+  <input type="email" name="currentEmail" id="currentEmail" [(ngModel)]="currentEmail" required>
+  <label for="newEmail">Nou correu:</label>
+  <input type="email" name="newEmail" id="newEmail" [(ngModel)]="newEmail" required>
+
+  <label for="confirmEmail">Confirmar correu:</label>
+  <input type="email" name="confirmEmail" id="confirmEmail" [(ngModel)]="confirmEmail" required>
+
+  <button type="submit">Canviar correu</button>
+
+</form>

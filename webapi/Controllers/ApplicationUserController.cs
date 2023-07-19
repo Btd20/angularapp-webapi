@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using webapi.Models;
 using webapi.Areas.Identity.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
+using System.Security.Claims;
 
 namespace webapi.Controllers
 {
@@ -154,6 +156,74 @@ namespace webapi.Controllers
             }
 
             user.UserName = model.NewUsername;
+            var updateResult = await _userManager.UpdateAsync(user);
+            if (updateResult.Succeeded)
+            {
+                return NoContent();
+            }
+            return BadRequest(updateResult.Errors);
+        }
+
+        // POST: api/ApplicationUsers/ChangeEmail
+        [HttpPost("ChangeEmail")]
+        public async Task<IActionResult> ChangeEmail(ChangeEmail model)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return BadRequest("Usuari no trobat.");
+            }
+
+            var isExistingEmail = await _userManager.FindByEmailAsync(model.NewEmail);
+            if (isExistingEmail != null)
+            {
+                return BadRequest("El nou correu electrònic ja existeix.");
+            }
+
+            user.Email = model.NewEmail;
+            var updateResult = await _userManager.UpdateAsync(user);
+            if (updateResult.Succeeded)
+            {
+                return NoContent();
+            }
+            return BadRequest(updateResult.Errors);
+        }
+
+        // POST: api/ApplicationUsers/AssignCountry
+        [HttpPost("AssignCountry")]
+        public async Task<IActionResult> AssignCountry(AssignCountry model)
+        {
+            var user = await _userManager.FindByNameAsync(model.Username);
+            if (user == null)
+            {
+                return BadRequest("Usuari no trobat.");
+            }
+
+            // Asigna el país directamente a la propiedad "Pais" del usuario
+            user.Pais = model.Country;
+
+            var updateResult = await _userManager.UpdateAsync(user);
+            if (updateResult.Succeeded)
+            {
+                return NoContent();
+            }
+            return BadRequest(updateResult.Errors);
+        }
+
+
+        // POST: api/ApplicationUsers/AssignOffice
+        [HttpPost("AssignOffice")]
+        public async Task<IActionResult> AssignOffice(AssignOffice model)
+        {
+            var user = await _userManager.FindByNameAsync(model.Username);
+            if (user == null)
+            {
+                return BadRequest("Usuari no trobat.");
+            }
+
+            // Asigna la oficina directamente a la propiedad "Oficina" del usuario
+            user.Oficina = model.Office;
+
             var updateResult = await _userManager.UpdateAsync(user);
             if (updateResult.Succeeded)
             {

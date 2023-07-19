@@ -14,7 +14,7 @@ export class ChangePasswordComponent {
 
   changePassword() {
     if (this.newPassword !== this.confirmPassword) {
-      // Mostrar un mensaje de error indicando que las contraseñas no coinciden
+      console.log('Les contrasenyes no coincideixen.')
       return;
     }
 

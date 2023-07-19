@@ -20,7 +20,7 @@ import { DadesComponent } from './dades/dades.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeUserComponent } from './change-user/change-user.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
-import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
+import { UbicacioComponent } from './ubicacio/ubicacio.component';
 
 /*--ADMIN MODIFY COMPONENTS--*/
 import { AdminComponent } from './admin/admin.component';
@@ -57,6 +57,7 @@ const routes: Routes = [
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'change-user', component: ChangeUserComponent },
   { path: 'change-email', component: ChangeEmailComponent },
+  { path: 'ubicacio', component: UbicacioComponent },
   { path: '', component: IndexComponent },
 
 ];
