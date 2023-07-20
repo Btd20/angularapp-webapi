@@ -3,7 +3,8 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreatePaisComponent } from '../create-pais/create-pais.component';
-import { ActivatedRoute } from '@angular/router'; 
+import { UpdatePaisComponent } from '../update-pais/update-pais.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin-modifypaisos',
@@ -20,7 +21,7 @@ export class AdminMPComponent implements OnInit {
     private apiService: ApiService,
     private authService: AuthService,
     private dialog: MatDialog,
-    private route: ActivatedRoute // Agregar ActivatedRoute al constructor
+    private route: ActivatedRoute
   ) {
     this.isAdmin = authService.isAdmin;
   }
@@ -61,22 +62,27 @@ export class AdminMPComponent implements OnInit {
   }
 
   updatePais(pais: any): void {
-    const nouNomPais = prompt('Introdueix canvi', pais.nomPais);
-    if (nouNomPais && nouNomPais.trim() !== '' && nouNomPais.trim().length > 0) {
-      pais.nomPais = nouNomPais.trim();
-      this.apiService.updatePais(pais.CountryID, pais).subscribe(
-        response => {
-          console.log('País modificat: ', response);
-        },
-        error => {
-          console.error('Error al modificar el país:', error);
-        }
-      );
-    } else {
-      console.error('Nombre del país inválid');
-    }
-  }
+    console.log('Pais inicial:', JSON.stringify(pais)); 
+    const dialogRef = this.dialog.open(UpdatePaisComponent, {
+      data: { ...pais }
+    });
 
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        console.log('Resultat:', JSON.stringify(result)); 
+        this.apiService.updatePais(result).subscribe(
+          response => {
+            console.log('País actualitzat:', response);
+            this.getPaisosFromApi();
+          },
+          error => {
+            console.log('Quan falla: ', JSON.stringify(result));
+            console.error('Error al actualizar el país:', error);
+          }
+        );
+      }
+    });
+  }
 
 
 

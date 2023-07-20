@@ -1,4 +1,30 @@
 <app-navadmin></app-navadmin>
+
 <div class="row p-5 container-admin" *ngIf="isAdmin">
-  <p>admin modify-rooms component works!</p>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <button class="btn btn-primary mb-3"><!-- (click)="createSales()" -->+</button>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sala of sales | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+          <td>{{ sala.nomSala }}</td>
+
+          <td>
+            <button class="btn btn-sm btn-info"> <!--(click)="updateSales(sala)"-->Modificar</button>
+            <button class="btn btn-sm btn-danger"> <!-- (click)="deleteSala(sala)"-->Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1" [class.disabled]="currentPage === 1">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages" [class.disabled]="currentPage === totalPages">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
 </div>

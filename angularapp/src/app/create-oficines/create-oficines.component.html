@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Create Oficina</h1>
+<mat-dialog-content>
+  <form [formGroup]="oficinaForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Oficina Name</mat-label>
+      <input matInput formControlName="nomOficina" placeholder="Enter Oficina Name" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="createOficina()">Create</button>
+  <button mat-raised-button mat-dialog-close (click)="cancel()">Cancel</button>
+</mat-dialog-actions>

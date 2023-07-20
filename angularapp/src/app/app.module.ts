@@ -59,6 +59,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreatePaisComponent } from './create-pais/create-pais.component';
+import { UpdatePaisComponent } from './update-pais/update-pais.component';
+import { CreateOficinesComponent } from './create-oficines/create-oficines.component';
+import { CreateSalesComponent } from './create-sales/create-sales.component';
 
 
 
@@ -105,7 +108,10 @@ import { CreatePaisComponent } from './create-pais/create-pais.component';
     ReservaBoxComponent,
     ReservaMComponent,
     CreateCiutatComponent,
-    CreatePaisComponent
+    CreatePaisComponent,
+    UpdatePaisComponent,
+    CreateOficinesComponent,
+    CreateSalesComponent
 
   ],
   imports: [ 

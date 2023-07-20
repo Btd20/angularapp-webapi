@@ -8,7 +8,7 @@ import { AuthService } from '../auth-service.service';
   styleUrls: ['admin-modifyrooms.component.css']
 })
 export class AdminMRComponent implements OnInit {
-  usuaris: any[] = [];
+  sales: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;
   pageSize: number = 5;
@@ -18,13 +18,13 @@ export class AdminMRComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getUsuarisFromApi();
+    this.getSalesFromApi();
   }
 
-  getUsuarisFromApi(): void {
-    this.apiService.getUsuaris().subscribe(
+  getSalesFromApi(): void {
+    this.apiService.getAllSales().subscribe(
       response => {
-        this.usuaris = response;
+        this.sales = response;
       },
       error => {
         console.error(error);
@@ -32,35 +32,8 @@ export class AdminMRComponent implements OnInit {
     );
   }
 
-  editarUsuario(usuario: any): void {
-    usuario.editando = true;
-  }
-
-  guardarCanvis(usuario: any): void {
-    console.log('Guardar canvis del usuari:', usuario);
-
-    // Realizar una solicitud HTTP a la API para actualizar los cambios en la base de datos
-    this.apiService.actualitzarUsuari(usuario).subscribe(
-      response => {
-        console.log('Canvis guardats');
-        usuario.editando = false;
-      },
-      error => {
-        console.error('Error al guardar els canvis:', error);
-      }
-    );
-  }
-
-  cancelarEdicion(usuario: any): void {
-    usuario.editando = false;
-  }
-
-  mostrarBotonEditar(usuario: any): boolean {
-    return !usuario.editando;
-  }
-
   get totalPages(): number {
-    return Math.ceil(this.usuaris.length / this.pageSize); // Total de páginas
+    return Math.ceil(this.sales.length / this.pageSize); // Total de páginas
   }
 
   nextPage(): void {

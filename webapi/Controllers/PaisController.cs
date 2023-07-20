@@ -107,31 +107,6 @@ namespace webapi.Controllers
             return NoContent();
         }
 
-        [HttpPut("nom/{nomPais}")]
-        public async Task<IActionResult> UpdatePaisByNom(string nomPais, Pais pais)
-        {
-            var paisToUpdate = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == nomPais);
-
-            if (paisToUpdate == null)
-            {
-                return NotFound();
-            }
-
-            paisToUpdate.NomPais = pais.NomPais;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-                return NoContent();
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                return BadRequest("Error al actualizar el país: " + ex.Message);
-            }
-        }
-
-
-
 
         // DELETE: Pais/5
         [HttpDelete("{id}")]

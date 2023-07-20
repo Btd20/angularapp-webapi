@@ -29,6 +29,7 @@ export class ApiService {
   }
 
   getAllOficines() {
+   
     return this.http.get<any[]>(this.apiUrlOficines);
   }
   getAllSales() {
@@ -85,13 +86,10 @@ export class ApiService {
     return this.http.delete(url);
   }
 
-
-
-  updatePais(id: number, pais: any): Observable<any> {
-    const url = `${this.apiUrlPaisos}/${id}`;
-    return this.http.put<any>(url, pais);
+  updatePais(pais: any): Observable<any> {
+    const url = `${this.apiUrlPaisos}/pais/${pais.countryID}`; 
+    return this.http.put(url, pais);
   }
-  
 
   guardarPais(username: string, country: string): void {
     const model = { Username: username, Country: country };
@@ -123,6 +121,22 @@ export class ApiService {
 
 
   // CRUD OFICINES
+
+  createOficina(oficina: any): Observable<any> {
+    return this.http.post<any>(this.apiUrlOficines, oficina);
+  }
+
+  updateOficina(oficina: any): Observable<any> {
+    const url = `${this.apiUrlOficines}/${oficina.OfficeID}`;
+    return this.http.put(url, oficina);
+  }
+
+  deleteOficinesByNom(nomOficina: string): Observable<any> {
+    const url = `${this.apiUrlOficines}/nom/${nomOficina}`;
+    return this.http.delete(url);
+  }
+
+
   guardarOficina(username: string, office: string): void {
     const model = { Username: username, Office: office };
 

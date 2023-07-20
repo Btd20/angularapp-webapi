@@ -114,6 +114,22 @@ namespace webapi.Controllers
             return NoContent();
         }
 
+
+        // DELETE: Oficina/nom/{nomOficina}
+        [HttpDelete("nom/{nomOficina}")]
+        public async Task<IActionResult> DeleteOficinesByNom(string nomOficina)
+        {
+            var oficina = await _context.Oficines.FirstOrDefaultAsync(o => o.NomOficina == nomOficina);
+            if (oficina == null)
+            {
+                return NotFound();
+            }
+
+            _context.Oficines.Remove(oficina);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
         private bool OficinaExists(int id)
         {
             return _context.Oficines.Any(e => e.OfficeID == id);

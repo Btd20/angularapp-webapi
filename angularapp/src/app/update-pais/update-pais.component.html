@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Modifica el país</h1>
+<mat-dialog-content>
+  <form [formGroup]="paisForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nom del país</mat-label>
+      <input matInput formControlName="nomPais" placeholder="Enter Country Name" />
+    </mat-form-field>
+    <input type="hidden" formControlName="countryID" />
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="updatePais()">Acceptar</button>
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>
