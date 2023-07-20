@@ -43,14 +43,14 @@ export class UbicacioComponent {
 
   guardarPais(): void {
     if (this.selectedCountry) {
-      const username = localStorage.getItem('username') ?? '';
+      const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarPais(username, this.selectedCountry);
     }
   }
 
   guardarOficina(): void {
     if (this.selectedOffice) {
-      const username = localStorage.getItem('username') ?? '';
+      const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarOficina(username, this.selectedOffice);
     }
   }

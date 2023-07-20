@@ -70,12 +70,39 @@ namespace webapi.Controllers
             existingUser.UserName = user.UserName;
             existingUser.Email = user.Email;
 
-            var result = await _userManager.UpdateAsync(existingUser);
-            if (result.Succeeded)
+            // Actualizar el valor del campo "Rol" de acuerdo a la asignación o remoción del rol "Administrador"
+            if (user.Rol)
+            {
+                // Si el campo "Rol" es true, agregar el rol "Administrador" al usuario
+                var addToRoleResult = await _userManager.AddToRoleAsync(existingUser, "Administrador");
+                if (!addToRoleResult.Succeeded)
+                {
+                    return BadRequest(addToRoleResult.Errors);
+                }
+
+                // Actualizar el campo "Rol" en la entidad webapiUser a true
+                existingUser.Rol = true;
+            }
+            else
+            {
+                // Si el campo "Rol" es false, quitar el rol "Administrador" del usuario (si lo tiene)
+                var removeFromRoleResult = await _userManager.RemoveFromRoleAsync(existingUser, "Administrador");
+                if (!removeFromRoleResult.Succeeded)
+                {
+                    return BadRequest(removeFromRoleResult.Errors);
+                }
+
+                // Actualizar el campo "Rol" en la entidad webapiUser a false
+                existingUser.Rol = false;
+            }
+
+            var updateResult = await _userManager.UpdateAsync(existingUser);
+            if (updateResult.Succeeded)
             {
                 return NoContent();
             }
-            return BadRequest(result.Errors);
+
+            return BadRequest(updateResult.Errors);
         }
 
         // DELETE: api/ApplicationUsers/{id}

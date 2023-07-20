@@ -67,8 +67,14 @@
   letter-spacing: 1px;
   text-transform: capitalize;
   font-size: 20px;
+  transition: 0.3s ease-in-out;
 }
 
+.btn-sales:hover {
+  background-color: var(--bs-body-bg);
+  color: var(--txt-g1);
+  transition: 0.3s ease-in-out;
+}
 
 .btn-modify {
   width: 95%;
@@ -90,6 +96,13 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    transition: 0.3s ease-in-out;
+  }
+
+  .btn-modify:hover a {
+    background-color: var(--bs-body-bg);
+    color: var(--txt-g1);
+    transition: 0.3s ease-in-out;
   }
 
   .btn-modify span {

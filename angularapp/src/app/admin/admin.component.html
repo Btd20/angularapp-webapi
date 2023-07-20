@@ -17,7 +17,7 @@
 
           <label for="rol">Administrador:</label>
           <div class="checkbox-wrapper-2">
-            <input type="checkbox" class="sc-gJwTLC ikxBAC" [(ngModel)]="usuario.Rol" name="rol">
+            <input type="checkbox" class="sc-gJwTLC ikxBAC" [(ngModel)]="usuario.rol" name="rol" [checked]="usuario.Rol">
           </div>
           <button type="submit">Guardar canvis</button>
           <button type="button" (click)="cancelarEdicion(usuario)">Cancelar</button>

@@ -7,6 +7,7 @@ interface DecodedToken {
   username: string;
   email: string;
   role: string;
+  "http://schemas.microsoft.com/ws/2008/06/identity/claims/role": string;
   // otras propiedades que tengas en el token
 }
 
@@ -33,9 +34,10 @@ export class LoginComponent {
     this.authService.login(username, password).subscribe(
       response => {
         if (response?.token) {
-          localStorage.setItem('token', response.token.result);
+          sessionStorage.setItem('token', response.token.result);
           const decodedToken = jwt_decode(response.token.result) as DecodedToken;
-          localStorage.setItem('username', username);
+          this.authService.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
+          sessionStorage.setItem('username', username);
           console.log(decodedToken);
           console.log('Login exitoso');
           this.router.navigate(['/home']);

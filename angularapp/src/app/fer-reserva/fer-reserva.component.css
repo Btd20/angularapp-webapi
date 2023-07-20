@@ -101,6 +101,7 @@
   align-items: center;
   width: 27%;
   margin: auto;
+  transition:0.3s ease-in-out;
 }
 
 .res-btn-reserva span {
@@ -114,3 +115,10 @@
 .res-btn-reserva i{
     margin-right:2%;
 }
+
+.res-btn-reserva:hover {
+    background-color: var(--bs-body-bg);
+    color: var(--txt-g1);
+    transition: 0.3s ease-in-out;
+}
+
