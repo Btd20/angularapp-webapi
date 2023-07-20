@@ -38,11 +38,19 @@
 .res-body {
   width: 100%;
   height: calc(100% - 14%);
-  background-color: palevioletred;
   overflow: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   align-items: stretch;
+  background-color:mediumpurple;
+}
+
+.res-gen {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }

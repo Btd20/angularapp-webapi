@@ -1,7 +1,31 @@
 .res-box {
   position: relative;
-  width: 22%;
-  margin: 1%;
-  height: 50%;
-  background-color:red;
+  width: 22em;
+  height: 40%;
+  background-color: red;
+  padding: 0.01em;
+  border: 1px solid cyan;
+  margin: 2px;
+}
+
+.resb-header {
+  overflow: hidden;
+  display: flex;
+}
+
+.resb-titles{
+    display:block;
+}
+
+.resb-titl{
+    color:cyan;
+}
+
+
+.resb-subt{
+    color:purple;
+}
+
+.resb-icon{
+    color:;
 }

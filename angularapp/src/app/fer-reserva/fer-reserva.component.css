@@ -1,7 +1,7 @@
 .container-reserva {
   margin: auto;
   width: 100%;
-  height: 85%;
+  height: 80%;
   overflow: hidden;
 }
 
@@ -37,17 +37,80 @@
 
 .res-body {
   width: 100%;
-  background-color:purple;
-  height: calc(100% - 14%);
-  display:inline-flex;
+  height: calc(100% - 19%);
+  display: inline-flex;
+  align-content: flex-end;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+  padding-top:25px;
 }
 
 .res-gen {
   width: 100%;
-  height: calc(100% - 54%);
-  background-color: mediumpurple;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
 }
 
-.res-btn-body{
-    background-color:darkgrey;
+
+/*--AQUI JA SON ELS FORMULARIS--*/
+.res-titlb h2 {
+  color: var(--txt-g1);
+  padding-bottom: 30px;
+  font-family: var(--fontR);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.res-subtitlb h4 {
+  color: #2b2b3fcf;
+  margin-bottom: 2.5px auto;
+  font-family: var(--fontR);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.res-gen input {
+  margin:2.5px auto 10px auto;
+}
+
+/*--BUTÓ FER RESERVA--*/
+.res-btn-g {
+  width: 95%;
+  height: 20%;
+  margin: 0 auto;
+}
+
+.res-btn-reserva {
+  background-color: var(--txt-g1);
+  color: var(--bs-body-bg);
+  border-radius: 15px;
+  padding:2.5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27%;
+  margin: auto;
+}
+
+.res-btn-reserva span {
+    font-family: var(--fontK);
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.res-btn-reserva i{
+    margin-right:2%;
 }
