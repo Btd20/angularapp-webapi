@@ -35,4 +35,16 @@
   font-family: var(--fontK);
   font-weight: 600;
   letter-spacing: 0.052em;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-register:hover {
+  background-color: var(--bs-body-bg);
+  color: var(--txt-g1);
+  transition: 0.3s ease-in-out;
+}
+
+.btn-register:hover .btn-txtapp {
+  color: var(--txt-g1);
+  transition: 0.3s ease-in-out;
 }

@@ -50,9 +50,7 @@
   display: flex;
   width: 12%;
   margin: auto;
-  /* BUSCAR UN EFECTE MÉS CUQUITINI*/
-  /* transition: 1.2s ease-in-out;
-  */
+  transition: 0.3s ease-in-out;
 }
 
 .btn-reserva span {
@@ -63,10 +61,10 @@
   font-size: 20px;
 }
 
-/*
-.btn-reserva:hover span {
-    letter-spacing: 2px;
-    transition: 0.8s ease-in-out;
-    
-}
-*/
+
+  .btn-reserva:hover {
+    background-color: var(--bs-body-bg);
+    color: var(--txt-g1);
+    transition: 0.3s ease-in-out;
+  }
+

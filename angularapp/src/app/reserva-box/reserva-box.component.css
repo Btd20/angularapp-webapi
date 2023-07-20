@@ -45,9 +45,16 @@
 }
 
 .resb-icon {
+  opacity: 0;
   width: calc(100% - 80%);
   font-size: 1.4rem;
   text-align: -webkit-right;
+  transition: 0.3s ease-in-out;
+}
+
+.res-box:hover .resb-icon {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
 }
 
 .resb-icon a{
