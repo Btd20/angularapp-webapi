@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
@@ -14,8 +14,8 @@ interface DecodedToken {
   providedIn: 'root'
 })
 
-export class AuthService {
-  isAdmin?: boolean;
+export class AuthService implements OnInit {
+  isAdmin?: boolean = false;
   constructor(private http: HttpClient, private router: Router) {
     const token = localStorage.getItem('token');
     const decodedToken = token ? jwt_decode(token) as DecodedToken : null;
@@ -33,6 +33,10 @@ export class AuthService {
     if (this.isAdmin !== undefined) {
       localStorage.setItem('isAdmin', this.isAdmin.toString());
     }
+  }
+
+  ngOnInit(): void {
+
   }
 
   login(username: string, password: string): Observable<any> {
