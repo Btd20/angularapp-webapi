@@ -34,7 +34,7 @@ export class AdminMPComponent implements OnInit {
 
   createPais(): void {
     const nomPais = prompt('Introdueix el nom del país');
-    if (nomPais && nomPais.trim() !== '' && nomPais.trim().length > 0) {
+    if (nomPais !== null && nomPais.trim() !== '' && nomPais.trim().length > 0) {
       const nouPais = { nomPais: nomPais.trim() };
       this.apiService.createPais(nouPais).subscribe(
         response => {
@@ -45,7 +45,7 @@ export class AdminMPComponent implements OnInit {
           console.error('Error al crear el país: ', error);
         }
       );
-    } else {
+    } else if (nomPais !== null) {
       console.error('Nom del país invàlid');
       alert('El país no pot estar en blanc');
     }
@@ -54,7 +54,7 @@ export class AdminMPComponent implements OnInit {
 
   updatePais(pais: any): void {
     const nouNomPais = prompt('Introdueix canvi', pais.nomPais);
-    if ( nouNomPais && nouNomPais.trim() !== '' && nouNomPais.trim().length > 0) {
+    if (nouNomPais !== null && nouNomPais.trim() !== '' && nouNomPais.trim().length > 0) {
       pais.nomPais = nouNomPais.trim();
       this.apiService.updatePais(pais.CountryID, pais).subscribe(
         response => {
@@ -64,10 +64,12 @@ export class AdminMPComponent implements OnInit {
           console.error('Error al modificar el país:', error);
         }
       );
-    } else {
-      console.error('Nombre del país inválid');
+    } else if (nouNomPais !== null) {
+      alert('El país no pot estar en blanc');
+      console.error('Nombre del país invàlid');
     }
   }
+
 
 
   deletePais(pais: any): void {

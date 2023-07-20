@@ -79,8 +79,6 @@ export class ApiService {
     return this.http.delete(url);
   }
 
-
-
   guardarPais(username: string, country: string): void {
     const model = { Username: username, Country: country };
 
@@ -94,6 +92,29 @@ export class ApiService {
     );
   }
 
+
+  // CRUD CIUTATS
+
+  createCiutatsByName(nomPais: string, nomCiutat: string): Observable<any> {
+    const url = `${this.apiUrlCiutats}/${nomCiutat}?nomPais=${nomPais}`;
+    return this.http.post<any>(url, {});
+  }
+
+
+  updateCiutats(id: number, ciutat: any): Observable<any> {
+    const url = `${this.apiUrlCiutats}/${id}`;
+    return this.http.put<any>(url, ciutat);
+  }
+
+  deleteCiutatsByNom(nomCiutat: string): Observable<any> {
+    const url = `${this.apiUrlCiutats}/nom/${nomCiutat}`;
+    return this.http.delete(url);
+  }
+
+
+
+
+  // CRUD OFICINES
   guardarOficina(username: string, office: string): void {
     const model = { Username: username, Office: office };
 

@@ -75,7 +75,32 @@ namespace webapi.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCiutats", new { id = ciutats.CityID }, ciutats);
-        }   
+
+        }
+
+        // POST: Ciutats by name
+        [HttpPost("{nomCiutat}")]
+        public async Task<ActionResult<Ciutats>> CreateCiutatsByName(string nomPais, string nomCiutat)
+        {
+            var pais = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == nomPais);
+
+            if (pais == null)
+            {
+                return NotFound("El país no existe");
+            }
+
+            var ciutat = new Ciutats
+            {
+                NomCiutat = nomCiutat,
+                CountryID = pais.CountryID
+            };
+
+            _context.Ciutats.Add(ciutat);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetCiutats", new { id = ciutat.CityID }, ciutat);
+        }
+
 
         // PUT: Ciutats/5
         [HttpPut("{id}")]
@@ -123,7 +148,26 @@ namespace webapi.Controllers
             return NoContent();
         }
 
-        private bool CiutatsExists(int id)
+
+        // DELETE: Ciutats/nom/{nomCiutat}
+        [HttpDelete("nom/{nomCiutat}")]
+        public async Task<IActionResult> DeleteCiutatsByNom(string nomCiutat)
+        {
+            var ciutats = await _context.Ciutats.FirstOrDefaultAsync(c => c.NomCiutat == nomCiutat);
+            if (ciutats == null)
+            {
+                return NotFound();
+            }
+
+            _context.Ciutats.Remove(ciutats);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+    
+
+
+    private bool CiutatsExists(int id)
         {
             return _context.Ciutats.Any(e => e.CityID == id);
         }

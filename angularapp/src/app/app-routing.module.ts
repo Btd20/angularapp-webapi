@@ -40,6 +40,7 @@ const routes: Routes = [
   { path: 'admin-modifypaisos', component: AdminMPComponent },
   { path: 'admin-modifyciutats', component: AdminMCComponent },
   { path: 'admin-modifyreserves', component: AdminMRVComponent },
+  { path: 'admin-ciutats', component: AdminMCComponent },
   { path: 'sales', component: SalesComponent },
   { path: 'ciutats', component: CiutatsComponent },
   { path: 'oficines', component: OficinesComponent },
