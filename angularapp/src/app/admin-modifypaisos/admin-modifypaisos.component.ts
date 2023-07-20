@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CreatePaisComponent } from '../create-pais/create-pais.component';
+
 
 @Component({
   selector: 'app-admin-modifypaisos',
@@ -13,7 +16,7 @@ export class AdminMPComponent implements OnInit {
   pageSize: number = 6;
   paisos: any[] = [];
 
-  constructor(private apiService: ApiService, private authService: AuthService) {
+  constructor(private apiService: ApiService, private authService: AuthService, private dialog:MatDialog) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -33,22 +36,23 @@ export class AdminMPComponent implements OnInit {
   }
 
   createPais(): void {
-    const nomPais = prompt('Introdueix el nom del país');
-    if (nomPais !== null && nomPais.trim() !== '' && nomPais.trim().length > 0) {
-      const nouPais = { nomPais: nomPais.trim() };
-      this.apiService.createPais(nouPais).subscribe(
-        response => {
-          console.log('País creat: ', response);
-          this.getPaisosFromApi();
-        },
-        error => {
-          console.error('Error al crear el país: ', error);
-        }
-      );
-    } else if (nomPais !== null) {
-      console.error('Nom del país invàlid');
-      alert('El país no pot estar en blanc');
-    }
+    const dialogRef = this.dialog.open(CreatePaisComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe((result: string) => {
+      if (result && result.trim() !== '') {
+        const nouPais = { nomPais: result.trim() };
+        this.apiService.createPais(nouPais).subscribe(
+          response => {
+            console.log('País creat: ', response);
+            this.getPaisosFromApi();
+          },
+          error => {
+            console.error('Error al crear el país: ', error);
+          }
+        );
+      }
+    });
   }
 
 

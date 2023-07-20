@@ -53,6 +53,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReservaBoxComponent } from './reserva-box/reserva-box.component';
 import { ReservaMComponent } from './reserva-modify/reserva-modify.component';
 
+/*--COMPONENTS CRUD--*/
+import { CreateCiutatComponent } from './create-ciutat/create-ciutat.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreatePaisComponent } from './create-pais/create-pais.component';
+
 
 
 @NgModule({
@@ -96,7 +103,9 @@ import { ReservaMComponent } from './reserva-modify/reserva-modify.component';
     ChangeEmailComponent,
 
     ReservaBoxComponent,
-    ReservaMComponent
+    ReservaMComponent,
+    CreateCiutatComponent,
+    CreatePaisComponent
 
   ],
   imports: [ 
@@ -105,7 +114,12 @@ import { ReservaMComponent } from './reserva-modify/reserva-modify.component';
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+
   ],
+
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

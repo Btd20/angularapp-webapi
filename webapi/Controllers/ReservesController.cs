@@ -43,13 +43,48 @@ namespace webapi.Controllers
 
         // POST: Reserves
         [HttpPost]
-        public async Task<ActionResult<Reserves>> CreateReserve(Reserves reserve)
+        public async Task<ActionResult<Reserves>> CreateReservations(Reserves reserve)
         {
             _context.Reserves.Add(reserve);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetReserve", new { id = reserve.ReserveID }, reserve);
         }
+
+        // POST: CrearReserves
+        [HttpPost("CreateReserva")]
+        public async Task<IActionResult> CreateReserva(string nomSala, string dataReserva, string horaInici, string horaFi)
+        {
+            // Convertir las cadenas de fecha y hora a objetos DateTime
+            DateTime dataReservaDateTime, horaIniciDateTime, horaFiDateTime;
+            if (!DateTime.TryParse(dataReserva, out dataReservaDateTime) ||
+                !DateTime.TryParse(horaInici, out horaIniciDateTime) ||
+                !DateTime.TryParse(horaFi, out horaFiDateTime))
+            {
+                return BadRequest("Los valores de fecha y hora no están en el formato correcto.");
+            }
+
+            var sala = await _context.Sales.FirstOrDefaultAsync(s => s.NomSala == nomSala);
+            if (sala == null)
+            {
+                return NotFound("No se ha encontrado ninguna sala con el nombre especificado.");
+            }
+
+            var reserva = new Reserves
+            {
+                MeetingRoomID = sala.MeetingRoomID,
+                DataReserva = dataReservaDateTime,
+                HoraInici = horaIniciDateTime,
+                HoraFi = horaFiDateTime,
+            };
+
+            _context.Reserves.Add(reserva);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetReserva", new { id = reserva.ReserveID }, reserva);
+        }
+
+
 
         // PUT: Reserves/5
         [HttpPut("{id}")]

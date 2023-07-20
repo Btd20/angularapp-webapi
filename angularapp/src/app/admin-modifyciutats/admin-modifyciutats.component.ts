@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateCiutatComponent } from '../create-ciutat/create-ciutat.component';
+
+
 
 @Component({
   selector: 'app-admin-modifyciutats',
@@ -15,7 +19,7 @@ export class AdminMCComponent implements OnInit {
   nomPais: string = '';
   nomCiutat: string = '';
 
-  constructor(private apiService: ApiService, private authService: AuthService) {
+  constructor(private apiService: ApiService, private authService: AuthService, private dialog:MatDialog) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -35,22 +39,24 @@ export class AdminMCComponent implements OnInit {
   }
 
   createCiutats(): void {
-  if (this.nomPais && this.nomCiutat && this.nomPais.trim() !== '' && this.nomCiutat.trim() !== '') {
-    this.apiService.createCiutatsByName(this.nomPais, this.nomCiutat).subscribe(
-      response => {
-        console.log('Ciutat creada: ', response);
-        this.getCiutatsFromApi();
-      },
-      error => {
-        console.error('Error al crear la ciutat: ', error);
-      }
-    );
-  } else {
-    console.error('Nom del país o nom de la ciutat invàlid');
-    alert('aquest son els parametres passats' + this.nomCiutat + this.nomPais);
-  }
-}
+    const dialogRef = this.dialog.open(CreateCiutatComponent);
 
+    // Suscribirse al evento "afterClosed" para obtener los datos ingresados por el usuario cuando se cierre la ventana modal
+    dialogRef.afterClosed().subscribe((result: { nomPais: string, nomCiutat: string } | undefined) => {
+      if (result) {
+        const { nomPais, nomCiutat } = result;
+        this.apiService.createCiutatsByName(nomPais, nomCiutat).subscribe(
+          response => {
+            console.log('Ciutat creada: ', response);
+            this.getCiutatsFromApi();
+          },
+          error => {
+            console.error('Error al crear la ciutat: ', error);
+          }
+        );
+      }
+    });
+  }
 
 
   updateCiutats(ciutat: any): void {
@@ -90,7 +96,7 @@ export class AdminMCComponent implements OnInit {
 
 
   get totalPages(): number {
-    return Math.ceil(this.ciutats.length / this.pageSize); // Total de páginas
+    return Math.ceil(this.ciutats.length / this.pageSize); 
   }
 
   nextPage(): void {

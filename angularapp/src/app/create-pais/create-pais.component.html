@@ -1,0 +1,10 @@
+<h2>Crear País</h2>
+<form [formGroup]="paisForm" (ngSubmit)="createPais()">
+  <mat-form-field>
+    <mat-label>Nom del País</mat-label>
+    <input matInput formControlName="nomPais" required>
+  </mat-form-field>
+  <br>
+  <button mat-button type="button" (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="primary" type="submit">Crear</button>
+</form>
