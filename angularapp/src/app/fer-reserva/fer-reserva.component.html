@@ -3,26 +3,30 @@
   <div class="res-titl"><strong>RESERVA UNA SALA</strong>  <i class="fa-duotone fa-arrow-right"></i>  <span>[NOM SALA]</span></div>
   <div class="res-body">
     <div class="res-gen">
-      <div class="res-titlb">HORA</div>
-      <div class="res-subtitlb">COMENÇA</div>
+      <div class="res-titlb"><h2>hora</h2></div>
+      <div class="res-subtitlb"><h4>comença</h4></div>
       <input type="time" name="time-start" />
-      
-      <div class="res-subtitlb">ACABA</div>
-      <input type="time" name="time-finish" />
 
+        <div class="res-subtitlb"><h4>acaba</h4></div>
+        <input type="time" name="time-start" />
     </div>
     <div class="res-gen">
-      <div class="res-titlb">DATA</div>
-      <div class="res-subtitlb">COMENÇA I ACABA</div>
-      <!--AQUI SI QUE ES MÉS INTERESSANT POSAR EL DATAPICKER PERQUE L'USUARI PUGI FER UN RANG-->
-      <input type="date" id="start" name="trip-start"
+      <div class="res-titlb"><h2>data</h2></div>
+      <div class="res-subtitlb"><h4>comença</h4></div>
+      <input type="date" id="start" name="call-start"
              value="2023-07-31"
              min="1999-01-01" max="2023-12-31">
+
+      <div class="res-subtitlb"><h4>acaba</h4></div>
+      <input type="date" id="end" name="call-end"
+             value="2023-07-31"
+             min="1999-01-01" max="2023-12-31">
+      <!--AQUI SI QUE ES MÉS INTERESSANT POSAR EL DATAPICKER PERQUE L'USUARI PUGI FER UN RANG-->
       <!--<date-range-picker-forms-example></date-range-picker-forms-example>-->
     </div>
   </div>
-  <div class="res-btn-body">
-    FER BOTÓ DE RESERVAR. passar-ho tot a la taula de reserva. 
+  <div class="res-btn-g">
+    <a class="btn res-btn-reserva" href="/sales"><i class="fa-regular fa-arrow-right-from-arc"></i><span>reservar</span></a>
   </div>
 </div>
 
