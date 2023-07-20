@@ -1,15 +1,29 @@
 <app-navprofile></app-navprofile>
 
-<h4>Canviar correu</h4>
-<form (ngSubmit)="changeEmail()">
-  <label for="currentEmail">Correu actual:</label>
-  <input type="email" name="currentEmail" id="currentEmail" [(ngModel)]="currentEmail" required>
-  <label for="newEmail">Nou correu:</label>
-  <input type="email" name="newEmail" id="newEmail" [(ngModel)]="newEmail" required>
+<div class="container">
+  <div class="form-container">
+    <h4 class="txt">Canviar correu</h4>
+    <form (ngSubmit)="changeEmail()">
+      <div class="form-group">
+        <label class="txt" for="currentEmail">Correu actual:</label>
+        <input class="inputFamily" type="email" name="currentEmail" id="currentEmail" [(ngModel)]="currentEmail" required>
+      </div>
 
-  <label for="confirmEmail">Confirmar correu:</label>
-  <input type="email" name="confirmEmail" id="confirmEmail" [(ngModel)]="confirmEmail" required>
+      <div class="form-group">
+        <label class="txt" for="newEmail">Nou correu:</label>
+        <input class="inputFamily" type="email" name="newEmail" id="newEmail" [(ngModel)]="newEmail" required>
+      </div>
 
-  <button type="submit">Canviar correu</button>
+      <div class="form-group">
+        <label class="txt" for="confirmEmail">Confirmar correu:</label>
+        <input class="inputFamily" type="email" name="confirmEmail" id="confirmEmail" [(ngModel)]="confirmEmail" required>
+      </div>
+       
+        <button type="submit">Canviar correu</button>
+    </form>
+  </div>
 
-</form>
+  <div class="image-container">
+    <img src="https://i.imgur.com/iNv2FWd.png" />
+  </div>
+</div>

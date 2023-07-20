@@ -10,38 +10,52 @@ body {
 }
 
 .container {
-  max-width: 600px; /* Ajusta el ancho máximo del formulario según tus preferencias */
-  padding: 5px;
-  margin-top: 50px;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra para dar profundidad */
+  width: 70%;
+  max-width: 800px;
+  margin: 20px auto; /* Ajusta el margen para centrar los rectángulos */
+  display: flex;
+  flex-direction: column; /* Ajusta la dirección para que los rectángulos estén uno encima del otro */
 }
 
-.row {
+.ubicacio-container {
+  text-align: left; /* Alinea el título al centro */
+  margin-top: 40px;
+  margin-left: 180px;
+}
+
+.rectangle {
   display: flex;
   justify-content: space-between;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px; /* Ajusta el espacio entre los rectángulos */
 }
 
 .column {
   flex: 1;
-  padding: 60px;
+  padding: 15px;
+  margin-right: 60px;
   text-align: center;
 }
 
 h3 {
   text-align: center;
+  margin-bottom: 10px;
+  font-size: 14px; /* Tamaño de fuente más pequeño */
 }
 
 select,
 button {
   width: 100%;
   margin-bottom: 10px;
+  font-size: 14px; /* Tamaño de fuente más pequeño */
 }
 
 button {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007BFF;
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  background-color: var(--txt-g1);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -55,16 +69,17 @@ button {
 /* Estilos para los select */
 select {
   appearance: none;
+  font-family: var(--fontR);
   -webkit-appearance: none;
   -moz-appearance: none;
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23333'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
   background-size: 16px;
-  padding: 8px;
-  font-size: 16px;
+  padding: 6px; /* Tamaño de relleno más pequeño */
+  font-size: 14px; /* Tamaño de fuente más pequeño */
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra al enfoque */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
 }
@@ -75,16 +90,25 @@ select {
 
 /* Estilos para las imágenes */
 .image1 {
-  max-width: 100%;
+  max-width: 50%; /* Ajusta el ancho de las imágenes */
   height: auto;
   display: block;
-  margin: 20px auto; /* Agrega margen para centrar las imágenes */
+  margin: 30px auto; /* Agrega margen para centrar las imágenes */
 }
 
 .image2 {
-  margin-top: -20px;
-  max-width: 60%;
+  max-width: 30%; /* Ajusta el ancho de las imágenes */
   height: auto;
   display: block;
-  margin: 20px auto; /* Agrega margen para centrar las imágenes */
+  margin: 30px auto; /* Agrega margen para centrar las imágenes */
+}
+
+.ubicacio-titl {
+  font-family: var(--fontR);
+  color: var(--txt-g1);
+  font-weight: 900;
+}
+
+.txt {
+  font-family: var(--fontR);
 }

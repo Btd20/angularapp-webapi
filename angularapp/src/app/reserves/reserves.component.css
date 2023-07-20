@@ -46,10 +46,3 @@
   justify-content: space-evenly;
   align-items: stretch;
 }
-
-.res-box {
-  position: relative;
-  width: 22%;
-  margin:1%;
-  height: 50%;
-}

@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 50px auto;
+  margin-left: 100px;
+  display: flex; /* Flexbox para alinear los elementos en una fila */
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+}
+
+.form-container {
+  flex: 1; /* Expande el formulario para ocupar el espacio disponible */
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: var(--fontR);
+  background-color: var(--txt-g1);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px; /* Espacio entre el formulario y la imagen */
+}
+
+  .image-container img {
+    margin-top: 30px;
+    max-width: 60%;
+    align-items: center;
+  }
+
+.txt {
+  font-family: var(--fontR);
+  color: var(--txt-g1);
+  font-weight: 900;
+}
+
+.inputFamily {
+  font-family: var(--fontR);
+}

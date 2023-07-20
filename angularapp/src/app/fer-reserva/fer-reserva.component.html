@@ -2,14 +2,27 @@
 <div class="row p-5 container-reserva">
   <div class="res-titl"><strong>RESERVA UNA SALA</strong>  <i class="fa-duotone fa-arrow-right"></i>  <span>[NOM SALA]</span></div>
   <div class="res-body">
-    <div class="res-titlb">HORA</div>
-    <div class="res-subtitlb">COMENÇA</div>
-    <!--<date-range-picker-forms-example></date-range-picker-forms-example>-->
-    <div class="res-subtitlb">ACABA</div>
-    <div class="res-titlb">DATA</div>
-    <div class="res-subtitlb">COMENÇA I ACABA</div>
-    <!--<date-range-picker-forms-example></date-range-picker-forms-example>-->
+    <div class="res-gen">
+      <div class="res-titlb">HORA</div>
+      <div class="res-subtitlb">COMENÇA</div>
+      <input type="time" name="time-start" />
+      
+      <div class="res-subtitlb">ACABA</div>
+      <input type="time" name="time-finish" />
+
+    </div>
+    <div class="res-gen">
+      <div class="res-titlb">DATA</div>
+      <div class="res-subtitlb">COMENÇA I ACABA</div>
+      <!--AQUI SI QUE ES MÉS INTERESSANT POSAR EL DATAPICKER PERQUE L'USUARI PUGI FER UN RANG-->
+      <input type="date" id="start" name="trip-start"
+             value="2023-07-31"
+             min="1999-01-01" max="2023-12-31">
+      <!--<date-range-picker-forms-example></date-range-picker-forms-example>-->
+    </div>
+  </div>
+  <div class="res-btn-body">
+    FER BOTÓ DE RESERVAR. passar-ho tot a la taula de reserva. 
   </div>
 </div>
-
 
