@@ -6,11 +6,19 @@
   padding: 0.01em;
   border: 1px solid cyan;
   margin: 2px;
+  padding: 25px;
+  border-radius: 25px;
+  overflow:hidden;
 }
 
 .resb-header {
+  background-color:darkcyan;
   overflow: hidden;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
 }
 
 .resb-titles{
@@ -21,11 +29,22 @@
     color:cyan;
 }
 
-
 .resb-subt{
     color:purple;
 }
 
-.resb-icon{
-    color:;
+.resb-icon a{
+    color:var(--txt-g1);
+    font-weight:900;
+    font-size:2em;
+}
+
+.resb-body{
+    background-color:purple;
+    width:100%;
+    height:calc(100% - 50px);
+}
+
+.resb-body span{
+    display:block;
 }
