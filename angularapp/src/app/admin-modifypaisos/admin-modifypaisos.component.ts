@@ -39,9 +39,9 @@ export class AdminMPComponent implements OnInit {
     const dialogRef = this.dialog.open(CreatePaisComponent, {
     });
 
-    dialogRef.afterClosed().subscribe((result: string) => {
-      if (result && result.trim() !== '') {
-        const nouPais = { nomPais: result.trim() };
+    dialogRef.afterClosed().subscribe((result: { nomPais: string } | undefined) => {
+      if (result && result.nomPais.trim() !== '') {
+        const nouPais = { nomPais: result.nomPais.trim() };
         this.apiService.createPais(nouPais).subscribe(
           response => {
             console.log('País creat: ', response);

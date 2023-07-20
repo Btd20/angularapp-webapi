@@ -41,7 +41,7 @@ export class AdminMCComponent implements OnInit {
   createCiutats(): void {
     const dialogRef = this.dialog.open(CreateCiutatComponent);
 
-    // Suscribirse al evento "afterClosed" para obtener los datos ingresados por el usuario cuando se cierre la ventana modal
+    // es subscriu per obtindre les dades una vegada es tanca la finestra
     dialogRef.afterClosed().subscribe((result: { nomPais: string, nomCiutat: string } | undefined) => {
       if (result) {
         const { nomPais, nomCiutat } = result;
