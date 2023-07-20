@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  username: string | null = localStorage.getItem('username');
-  role: string | null = localStorage.getItem('role');
-  email: string | null = localStorage.getItem('email');
+  username: string | null = sessionStorage.getItem('username');
+  role: string | null = sessionStorage.getItem('role');
+  email: string | null = sessionStorage.getItem('email');
+  pais: string | null = sessionStorage.getItem('pais');
+  oficina: string | null = sessionStorage.getItem('oficina');
 }

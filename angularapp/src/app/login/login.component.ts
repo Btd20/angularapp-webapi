@@ -34,10 +34,10 @@ export class LoginComponent {
     this.authService.login(username, password).subscribe(
       response => {
         if (response?.token) {
-          localStorage.setItem('token', response.token.result);
+          sessionStorage.setItem('token', response.token.result);
           const decodedToken = jwt_decode(response.token.result) as DecodedToken;
           this.authService.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
-          localStorage.setItem('username', username);
+          sessionStorage.setItem('username', username);
           console.log(decodedToken);
           console.log('Login exitoso');
           this.router.navigate(['/home']);

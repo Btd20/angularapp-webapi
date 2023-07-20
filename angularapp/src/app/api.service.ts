@@ -51,9 +51,11 @@ export class ApiService {
   getUsuaris(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrlUsuaris).pipe(
       tap((usuaris: any[]) => {
-        const currentUser = usuaris.find(usuario => usuario.userName === localStorage.getItem('username'));
+        const currentUser = usuaris.find(usuario => usuario.userName === sessionStorage.getItem('username'));
         if (currentUser) {
-          localStorage.setItem('email', currentUser.email);
+          sessionStorage.setItem('email', currentUser.email);
+          sessionStorage.setItem('pais', currentUser.pais);
+          sessionStorage.setItem('oficina', currentUser.oficina)
         }
       })
     );

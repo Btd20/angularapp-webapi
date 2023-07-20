@@ -11,11 +11,11 @@ export class NavbarComponent implements OnInit {
   username: string | null;
 
   constructor(private authService: AuthService) {
-    this.username = localStorage.getItem('username');
+    this.username = sessionStorage.getItem('username');
   }
 
   ngOnInit(): void {
-    this.username = localStorage.getItem('username');
+    this.username = sessionStorage.getItem('username');
     this.isAdmin = this.authService.isAdmin;
   }
 
