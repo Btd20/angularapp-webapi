@@ -54,8 +54,16 @@ export class ApiService {
         const currentUser = usuaris.find(usuario => usuario.userName === sessionStorage.getItem('username'));
         if (currentUser) {
           sessionStorage.setItem('email', currentUser.email);
-          sessionStorage.setItem('pais', currentUser.pais);
-          sessionStorage.setItem('oficina', currentUser.oficina)
+          if (currentUser.pais == null) {
+            sessionStorage.setItem('pais', "No seleccionat");
+          } else {
+            sessionStorage.setItem('pais', currentUser.pais);
+          }
+          if (currentUser.oficina == null) {
+            sessionStorage.setItem('oficina', "No seleccionat");
+          } else {
+            sessionStorage.setItem('oficina', currentUser.oficina)
+          }
         }
       })
     );
