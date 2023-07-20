@@ -164,10 +164,38 @@ namespace webapi.Controllers
 
             return NoContent();
         }
-    
+
+        // PUT: Ciutats/nom/{nomCiutat}
+        [HttpPut("nom/{nomCiutat}")]
+        public async Task<IActionResult> UpdateCiutatsByNom(string nomCiutat, Ciutats ciutats)
+        {
+            var ciutat = await _context.Ciutats.FirstOrDefaultAsync(c => c.NomCiutat == nomCiutat);
+            if (ciutat == null)
+            {
+                return NotFound();
+            }
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CiutatsExists(ciutats.CityID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
 
 
-    private bool CiutatsExists(int id)
+
+        private bool CiutatsExists(int id)
         {
             return _context.Ciutats.Any(e => e.CityID == id);
         }

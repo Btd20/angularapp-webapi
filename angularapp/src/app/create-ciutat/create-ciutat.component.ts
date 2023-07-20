@@ -29,6 +29,8 @@ export class CreateCiutatComponent implements OnInit {
     }
   }
 
+
+
   cancel(): void {
     // tanca la finestra sense enviar dades, obviament
     this.dialogRef.close();

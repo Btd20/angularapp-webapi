@@ -10,7 +10,7 @@
         <tr *ngFor="let ciutat of ciutats | slice:(currentPage-1)*pageSize:currentPage*pageSize">
           <td>{{ ciutat.nomCiutat }}</td>
           <td>
-            <button class="btn btn-sm btn-info" (click)="updateCiutats(ciutat)">Modificar</button>
+            <button class="btn btn-sm btn-info"> <!--(click)="updateCiutats(ciutat)"-->Modificar</button>
             <button class="btn btn-sm btn-danger" (click)="deleteCiutats(ciutat)">Eliminar</button>
           </td>
         </tr>

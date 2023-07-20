@@ -59,23 +59,7 @@ export class AdminMCComponent implements OnInit {
   }
 
 
-  updateCiutats(ciutat: any): void {
-    const nouNomCiutat = prompt('Introdueix el nou nom de la ciutat', ciutat.NomCiutat);
-    if (nouNomCiutat && nouNomCiutat.trim() !== '' && nouNomCiutat.trim().length > 0) {
-      ciutat.NomCiutat = nouNomCiutat.trim();
-      this.apiService.updateCiutats(ciutat.CityID, ciutat).subscribe(
-        response => {
-          console.log('Ciutat modificada: ', response);
-        },
-        error => {
-          console.error('Error al modificar la ciutat:', error);
-        }
-      );
-    } else {
-      alert('El nom de la ciutat no pot estar en blanc');
-      console.error('Nom de la ciutat invàlid');
-    }
-  }
+
 
   deleteCiutats(ciutat: any): void {
     const confirmar = confirm('Estás seguro de que quieres eliminar la ciudad?');

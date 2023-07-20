@@ -69,15 +69,19 @@ export class ApiService {
     return this.http.post<any>(this.apiUrlPaisos, pais);
   }
 
-  updatePais(id: number, pais: any): Observable<any> {
-    const url = `${this.apiUrlPaisos}/${id}`;
-    return this.http.put<any>(url, pais);
-  }
 
   deletePaisByNom(nomPais: string): Observable<any> {
     const url = `${this.apiUrlPaisos}/nom/${nomPais}`;
     return this.http.delete(url);
   }
+
+
+
+  updatePais(id: number, pais: any): Observable<any> {
+    const url = `${this.apiUrlPaisos}/${id}`;
+    return this.http.put<any>(url, pais);
+  }
+  
 
   guardarPais(username: string, country: string): void {
     const model = { Username: username, Country: country };
@@ -99,18 +103,12 @@ export class ApiService {
     const url = `${this.apiUrlCiutats}/${nomCiutat}?nomPais=${nomPais}`;
     return this.http.post<any>(url, {});
   }
-
-
-  updateCiutats(id: number, ciutat: any): Observable<any> {
-    const url = `${this.apiUrlCiutats}/${id}`;
-    return this.http.put<any>(url, ciutat);
-  }
+  
 
   deleteCiutatsByNom(nomCiutat: string): Observable<any> {
     const url = `${this.apiUrlCiutats}/nom/${nomCiutat}`;
     return this.http.delete(url);
   }
-
 
 
 

@@ -3,7 +3,7 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreatePaisComponent } from '../create-pais/create-pais.component';
-
+import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-admin-modifypaisos',
@@ -16,7 +16,12 @@ export class AdminMPComponent implements OnInit {
   pageSize: number = 6;
   paisos: any[] = [];
 
-  constructor(private apiService: ApiService, private authService: AuthService, private dialog:MatDialog) {
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService,
+    private dialog: MatDialog,
+    private route: ActivatedRoute // Agregar ActivatedRoute al constructor
+  ) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -55,10 +60,9 @@ export class AdminMPComponent implements OnInit {
     });
   }
 
-
   updatePais(pais: any): void {
     const nouNomPais = prompt('Introdueix canvi', pais.nomPais);
-    if (nouNomPais !== null && nouNomPais.trim() !== '' && nouNomPais.trim().length > 0) {
+    if (nouNomPais && nouNomPais.trim() !== '' && nouNomPais.trim().length > 0) {
       pais.nomPais = nouNomPais.trim();
       this.apiService.updatePais(pais.CountryID, pais).subscribe(
         response => {
@@ -68,11 +72,12 @@ export class AdminMPComponent implements OnInit {
           console.error('Error al modificar el país:', error);
         }
       );
-    } else if (nouNomPais !== null) {
-      alert('El país no pot estar en blanc');
-      console.error('Nombre del país invàlid');
+    } else {
+      console.error('Nombre del país inválid');
     }
   }
+
+
 
 
 
