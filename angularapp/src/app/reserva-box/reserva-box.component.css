@@ -1,7 +1,5 @@
 .res-box {
   position: relative;
-  width: 22em;
-  height: 40%;
   background-color: red;
   padding: 0.01em;
   border: 1px solid cyan;
@@ -27,10 +25,19 @@
 
 .resb-titl{
     color:cyan;
+    font-family:var(--fontR);
+    font-weight:300;
+    font-size:0.79em;
+    letter-spacing:0.05em;
 }
 
-.resb-subt{
-    color:purple;
+.resb-subt {
+  color: purple;
+  font-family: var(--fontK);
+  font-size:1.25em;
+  font-weight:900;
+  letter-spacing:0.035rem;
+  text-transform:uppercase;
 }
 
 .resb-icon a{
@@ -43,6 +50,7 @@
     background-color:purple;
     width:100%;
     height:calc(100% - 50px);
+    overflow:hidden;
 }
 
 .resb-body span{
