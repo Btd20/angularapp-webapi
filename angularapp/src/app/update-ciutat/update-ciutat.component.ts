@@ -26,7 +26,12 @@ export class UpdateCiutatComponent implements OnInit {
     if (this.ciutatForm.valid) {
       const updatedData = {
         cityID: this.data.cityID,
-        nomCiutat: this.ciutatForm.value.nomCiutat
+        nomCiutat: this.ciutatForm.value.nomCiutat,
+        countryID: this.data.countryID,
+        pais: {
+          countryID: this.data.pais.countryID,
+          nomPais: this.data.pais.nomPais
+        }
       };
       this.dialogRef.close(updatedData);
     }
