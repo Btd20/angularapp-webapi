@@ -91,10 +91,19 @@
   }
 
 .adm-titl {
+  width: 100%;
   font-family: var(--fontR);
-  color: var(--txt-g1);
-  font-weight: 900;
+  font-size: 35px;
+  overflow: hidden;
 }
+
+  .adm-titl h4 {
+    color: var(--txt-g1);
+    font-weight: 800;
+    padding-left: 5px;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
 
 .checkbox-wrapper-2 .ikxBAC {
   appearance: none;

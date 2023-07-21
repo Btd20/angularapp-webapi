@@ -102,7 +102,7 @@ namespace webapi.Controllers
         }
 
 
-        // PUT: Ciutats/5
+     /*   // PUT: Ciutats/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCiutats(int id, Ciutats ciutats)
         {
@@ -131,7 +131,11 @@ namespace webapi.Controllers
 
             return NoContent();
         }
+     */
 
+        //UPDATE: proba 
+
+       
         // DELETE: Ciutats/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCiutats(int id)
@@ -148,6 +152,49 @@ namespace webapi.Controllers
             return NoContent();
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCiutat(int id, Ciutats ciutat)
+        {
+            if (id != ciutat.CityID)
+            {
+                return BadRequest();
+            }
+
+            var ciutatActual = await _context.Ciutats.FindAsync(id);
+
+            if (ciutatActual == null)
+            {
+                return NotFound();
+            }
+
+            var pais = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == ciutat.pais.NomPais);
+
+            if (pais == null)
+            {
+                return NotFound("El país especificado no existe");
+            }
+
+            ciutatActual.NomCiutat = ciutat.NomCiutat;
+            ciutatActual.CountryID = pais.CountryID;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CiutatsExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
 
         // DELETE: Ciutats/nom/{nomCiutat}
         [HttpDelete("nom/{nomCiutat}")]
@@ -165,33 +212,7 @@ namespace webapi.Controllers
             return NoContent();
         }
 
-        // PUT: Ciutats/nom/{nomCiutat}
-        [HttpPut("nom/{nomCiutat}")]
-        public async Task<IActionResult> UpdateCiutatsByNom(string nomCiutat, Ciutats ciutats)
-        {
-            var ciutat = await _context.Ciutats.FirstOrDefaultAsync(c => c.NomCiutat == nomCiutat);
-            if (ciutat == null)
-            {
-                return NotFound();
-            }
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CiutatsExists(ciutats.CityID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
+      
 
 
 
