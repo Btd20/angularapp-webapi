@@ -1,11 +1,11 @@
 <app-navadmin></app-navadmin>
 <div class="row p-5 container-admin" *ngIf="isAdmin">
-  <h4 class="adm-titl">Edició d'usuaris</h4>
+  <div class="adm-titl"><h4>Edició d'usuaris</h4></div>
   <ul class="user-list">
     <li class="user-item" *ngFor="let usuario of usuaris | slice:(currentPage-1)*pageSize:currentPage*pageSize">
-      <span class="user-icon"><i class="fas fa-user"></i></span>
+      <span class="user-icon"><i class="fa-regular fa-user"></i></span>
       <span class="user-name">{{ usuario.userName }}</span>
-      <button class="button-edit" (click)="editarUsuario(usuario)" *ngIf="mostrarBotonEditar(usuario)">Editar</button>
+      <button class="btn btn-useredit" (click)="editarUsuario(usuario)" *ngIf="mostrarBotonEditar(usuario)"><span>Editar</span></button>
 
       <div class="edit-form" *ngIf="usuario.editando">
         <form class="edit-form" (ngSubmit)="guardarCanvis(usuario)">
@@ -16,21 +16,21 @@
           <input type="email" id="correo" [(ngModel)]="usuario.email" name="correu" required>
 
           <label for="rol">Administrador:</label>
-          <div class="checkbox-wrapper-2">
-            <input type="checkbox" class="sc-gJwTLC ikxBAC" [(ngModel)]="usuario.rol" name="rol" [checked]="usuario.Rol">
+          <div class="checkbox-wrapper-2">  
+            <input type="checkbox" class="checkadmin" [(ngModel)]="usuario.rol" name="rol" [checked]="usuario.Rol">
           </div>
-          <button type="submit">Guardar canvis</button>
-          <button type="button" (click)="cancelarEdicion(usuario)">Cancelar</button>
+          <button class="btn btn-modify" type="submit"><span>Guardar canvis</span></button>
+          <button class="btn btn-modify" type="button" (click)="cancelarEdicion(usuario)"><span>Cancelar</span></button>
         </form>
       </div>
     </li>
   </ul>
   <div class="pagination">
     <button (click)="previousPage()" [disabled]="currentPage === 1" [class.disabled]="currentPage === 1">
-      <i class="fas fa-chevron-left"></i>
+      <i class="fa-regular fa-chevron-left"></i>
     </button>
     <button (click)="nextPage()" [disabled]="currentPage === totalPages" [class.disabled]="currentPage === totalPages">
-      <i class="fas fa-chevron-right"></i>
+      <i class="fa-regular fa-chevron-right"></i>
     </button>
   </div>
 </div>

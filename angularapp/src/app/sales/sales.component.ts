@@ -57,8 +57,8 @@ export class SalesComponent implements OnInit {
     );
   }
 
-  navigateToReserves(nomSala: string): void {
-    this.router.navigate(['/reserves', nomSala]);
+  navigateToReserves(): void {
+    this.router.navigate(['/reserves']);
   }
 
 }

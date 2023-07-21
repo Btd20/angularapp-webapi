@@ -51,6 +51,42 @@ namespace webapi.Controllers
             return CreatedAtAction("GetSales", new { id = sala.MeetingRoomID }, sala);
         }
 
+        [HttpPost("Pais/{nomPais}/Ciutats/{nomCiutat}/Oficines/{nomOficina}/Sales/{nomSala}")]
+        public async Task<ActionResult<Sales>> CreateSalesByNom(string nomPais, string nomCiutat, string nomOficina, string nomSala)
+        {
+            var pais = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == nomPais);
+
+            if (pais == null)
+            {
+                return NotFound("El país no existeix");
+            }
+
+            var ciutat = await _context.Ciutats.FirstOrDefaultAsync(c => c.NomCiutat == nomCiutat && c.CountryID == pais.CountryID);
+
+            if (ciutat == null)
+            {
+                return NotFound("La ciutat no existeix en aquest país");
+            }
+
+            var oficina = await _context.Oficines.FirstOrDefaultAsync(o => o.NomOficina == nomOficina && o.CityID == ciutat.CityID);
+
+            if (oficina == null)
+            {
+                return NotFound("La oficina no existeix en aquesta ciutat");
+            }
+
+            var novaSala = new Sales
+            {
+                NomSala = nomSala,
+                OfficeID = oficina.OfficeID,
+            };
+
+            _context.Sales.Add(novaSala);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetOficina", new { id = novaSala.MeetingRoomID }, novaSala);
+        }
+
         // PUT: Sales/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateSales(int id, Sales sala)
@@ -97,7 +133,24 @@ namespace webapi.Controllers
             return NoContent();
         }
 
-        private bool SalesExists(int id)
+
+        // DELETE: Sales/nom/{nomSala}
+        [HttpDelete("nom/{nomSala}")]
+        public async Task<IActionResult> DeleteSalesByNom(string nomSala)
+        {
+            var sala = await _context.Sales.FirstOrDefaultAsync(o => o.NomSala == nomSala);
+            if (sala == null)
+            {
+                return NotFound();
+            }
+
+            _context.Sales.Remove(sala);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+    private bool SalesExists(int id)
         {
             return _context.Sales.Any(e => e.MeetingRoomID == id);
         }
