@@ -20,33 +20,43 @@
 
   .pagination button {
     background-color: transparent;
-    color:var(--txt-g1);
+    color: black;
     border: none;
     padding: 0;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
     transition: color 0.3s ease;
   }
 
     .pagination button.disabled {
-      color: var(--bg-2);
+      color: #ccc;
       cursor: default;
     }
 
     .pagination button:hover {
-      color: #2b2b3fcf;
+      color: #555;
     }
+
+  .pagination .arrow-button {
+    position: absolute;
+    top: -20px;
+    left: 12px;
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 .user-item {
   display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
-  border-radius: 25px; /* Cambio de borde a borde redondeado */
-  box-shadow: var(--bx-snav); /* Agregar sombra */
-  padding: 12px;
+  border-radius: 10px; /* Cambio de borde a borde redondeado */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+  padding: 10px;
+  background-color: #f2f2f2;
 }
 
   .user-item:first-child {
@@ -60,49 +70,33 @@
   .user-item .user-icon {
     margin-right: 10px;
     color: var(--txt-g1);
-    transition: 0.3s ease-in-out;
   }
 
   .user-item .user-name {
     flex: 1;
-    color: #2b2b3fcf;
-    font-weight: bolder;
-    font-family: var(--fontK);
-    letter-spacing: 0.044em;
-    font-size: 0.97em;
-    text-transform: uppercase;
-    transition: 0.3s ease-in-out;
+    font-weight: bold;
   }
 
-  .user-item:hover .user-name {
-    color: var(--txt-g1);
-    letter-spacing: normal;
-    transition: 0.3s ease-in-out;
-  }
-
-
-  .user-item:hover .user-icon {
-    color: #2b2b3fcf;
-    transition: 0.3s ease-in-out;
+  .user-item button {
+    margin-left: 10px;
+    background-color: #202067;
+    color: white;
+    border: none;
+    font-size: 14.5px;
+    font-family: var(--fontR);
+    font-weight: 300;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
   }
 
 .adm-titl {
-  width: 100%;
-  height: 14%;
   font-family: var(--fontR);
-  font-size: 35px;
-  overflow: hidden;
+  color: var(--txt-g1);
+  font-weight: 900;
 }
 
-.adm-titl h4 {
-    color: var(--txt-g1);
-    font-weight: 800;
-    padding-left: 5px;
-    font-size: 35px;
-    text-transform:uppercase;
-}
-
-.checkbox-wrapper-2 .checkadmin {
+.checkbox-wrapper-2 .ikxBAC {
   appearance: none;
   background-color: #dfe1e4;
   border-radius: 72px;
@@ -114,7 +108,7 @@
   width: 30px;
 }
 
-  .checkbox-wrapper-2 .checkadmin::before {
+  .checkbox-wrapper-2 .ikxBAC::before {
     bottom: -6px;
     content: "";
     left: -6px;
@@ -123,12 +117,12 @@
     top: -6px;
   }
 
-  .checkbox-wrapper-2 .checkadmin,
-  .checkbox-wrapper-2 .checkadmin::after {
+  .checkbox-wrapper-2 .ikxBAC,
+  .checkbox-wrapper-2 .ikxBAC::after {
     transition: all 100ms ease-out;
   }
 
-    .checkbox-wrapper-2 .checkadmin::after {
+    .checkbox-wrapper-2 .ikxBAC::after {
       background-color: #fff;
       border-radius: 50%;
       content: "";
@@ -143,16 +137,16 @@
   cursor: default;
 }
 
-.checkbox-wrapper-2 .checkadmin:hover {
+.checkbox-wrapper-2 .ikxBAC:hover {
   background-color: #c9cbcd;
   transition-duration: 0s;
 }
 
-.checkbox-wrapper-2 .checkadmin:checked {
+.checkbox-wrapper-2 .ikxBAC:checked {
   background-color: #6e79d6;
 }
 
-  .checkbox-wrapper-2 .checkadmin:checked::after {
+  .checkbox-wrapper-2 .ikxBAC:checked::after {
     background-color: #fff;
     left: 13px;
   }
@@ -173,6 +167,18 @@
     padding-left: 10px;
   }
 
+  .edit-form input,
+  .edit-form button {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .edit-form button {
+    margin-left: 5px;
+    padding: 3px 6px;
+    font-size: 14px;
+  }
+
   .edit-form input[type="text"],
   .edit-form input[type="email"] {
     background-color: #dfe1e4;
@@ -181,70 +187,3 @@
     border-radius: 4px;
     margin-bottom: 0px;
   }
-
-/*--guardar + confirmar--*/
-
-.btn-modify{
-  font-family: var(--fontR);
-  background-color: var(--txt-g1);
-  color: var(--bs-body-bg);
-  border-radius: 15px;
-  overflow: hidden;
-  height: 35%;
-  margin: auto 5px;
-  text-decoration: none !important;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease-in-out;
-}
-
-.btn-modify:hover{
-  background-color: var(--bs-body-bg);
-  color: var(--txt-g1);
-  transition: 0.3s ease-in-out;
-}
-
-.btn-modify span {
-  font-family: var(--fontK);
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-
-/*--BTN USER EDIT--*/
-.btn-useredit {
-  font-family: var(--fontR);
-  background-color: var(--txt-g1);
-  color: var(--bs-body-bg);
-  border-radius: 15px;
-  overflow: hidden;
-  width: 5%;
-  height: 35%;
-  margin: auto;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease-in-out;
-  font-weight: 900;
-}
-
-.user-item btn-useredit:hover {
-  background-color: var(--bs-body-bg);
-  color: var(--txt-g1);
-  transition: 0.3s ease-in-out;
-}
-
-.btn-useredit span {
-  font-family: var(--fontK);
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 15px;
-}

@@ -28,7 +28,7 @@ export class UpdateCiutatComponent implements OnInit {
         cityID: this.data.cityID,
         nomCiutat: this.ciutatForm.value.nomCiutat,
         countryID: this.data.countryID,
-        pais: {
+        pais: { // Si te falta un field es esto mi rey.
           countryID: this.data.pais.countryID,
           nomPais: this.data.pais.nomPais
         }
