@@ -1,4 +1,3 @@
-/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,17 +9,17 @@ body {
 }
 
 .container {
-  width: 70%;
+  width: 90%;
   max-width: 800px;
-  margin: 20px auto; /* Ajusta el margen para centrar los rectángulos */
+  margin: 20px auto;
   display: flex;
-  flex-direction: column; /* Ajusta la dirección para que los rectángulos estén uno encima del otro */
+  flex-direction: column;
 }
 
 .ubicacio-container {
-  text-align: left; /* Alinea el título al centro */
+  text-align: left;
   margin-top: 40px;
-  margin-left: 180px;
+  margin-left: 140px;
 }
 
 .rectangle {
@@ -28,8 +27,8 @@ body {
   justify-content: space-between;
   background-color: #f2f2f2;
   border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px; /* Ajusta el espacio entre los rectángulos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .column {
@@ -42,19 +41,19 @@ body {
 h3 {
   text-align: center;
   margin-bottom: 10px;
-  font-size: 14px; /* Tamaño de fuente más pequeño */
+  font-size: 14px;
 }
 
 select,
 button {
   width: 100%;
   margin-bottom: 10px;
-  font-size: 14px; /* Tamaño de fuente más pequeño */
+  font-size: 14px;
 }
 
 button {
   padding: 10px 20px;
-  font-size: 14px; /* Tamaño de fuente más pequeño */
+  font-size: 14px;
   background-color: var(--txt-g1);
   color: #fff;
   border: none;
@@ -66,7 +65,6 @@ button {
     background-color: #0056b3;
   }
 
-/* Estilos para los select */
 select {
   appearance: none;
   font-family: var(--fontR);
@@ -74,8 +72,8 @@ select {
   -moz-appearance: none;
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23333'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
   background-size: 16px;
-  padding: 6px; /* Tamaño de relleno más pequeño */
-  font-size: 14px; /* Tamaño de fuente más pequeño */
+  padding: 6px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
@@ -88,19 +86,18 @@ select {
     display: none;
   }
 
-/* Estilos para las imágenes */
 .image1 {
-  max-width: 50%; /* Ajusta el ancho de las imágenes */
+  max-width: 50%;
   height: auto;
   display: block;
-  margin: 30px auto; /* Agrega margen para centrar las imágenes */
+  margin: 30px auto;
 }
 
 .image2 {
-  max-width: 30%; /* Ajusta el ancho de las imágenes */
+  max-width: 30%;
   height: auto;
   display: block;
-  margin: 30px auto; /* Agrega margen para centrar las imágenes */
+  margin: 30px auto;
 }
 
 .ubicacio-titl {
