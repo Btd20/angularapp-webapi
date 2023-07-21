@@ -12,7 +12,7 @@
     <div class="column">
       <h3 class="ubicacio-titl">Selecciona el teu país:</h3>
       <select [(ngModel)]="selectedCountry">
-        <option value=""></option>
+        <option value="No seleccionat">No seleccionat</option>
         <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
       </select>
       <button class="txt" (click)="guardarPais()">Guardar</button>
@@ -26,7 +26,7 @@
     <div class="column">
       <h3 class="ubicacio-titl">Selecciona la teva oficina:</h3>
       <select [(ngModel)]="selectedOffice">
-        <option value=""></option>
+        <option value="No seleccionat">No seleccionat</option>
         <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
       </select>
       <button class="txt" (click)="guardarOficina()">Guardar</button>
