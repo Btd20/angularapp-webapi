@@ -39,7 +39,6 @@ export class AdminComponent implements OnInit {
   guardarCanvis(usuario: any): void {
     console.log('Guardar canvis del usuari:', usuario);
 
-    // Realizar una solicitud HTTP a la API para actualizar los cambios en la base de datos
     this.apiService.actualitzarUsuari(usuario).subscribe(
       response => {
         console.log('Canvis guardats');
@@ -60,7 +59,7 @@ export class AdminComponent implements OnInit {
   }
 
   get totalPages(): number {
-    return Math.ceil(this.usuaris.length / this.pageSize); // Total de páginas
+    return Math.ceil(this.usuaris.length / this.pageSize);
   }
 
   nextPage(): void {
