@@ -54,6 +54,7 @@ export class RegisterComponent {
         console.log('Registro exitoso:', response);
         this.showAlert(this.alertTypes.success);
         alert('Registrat amb exit');
+        this.router.navigate(['/login']);
         //this.showSuccess();
       },
       error => {

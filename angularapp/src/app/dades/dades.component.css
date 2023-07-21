@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  margin-top: 100px;
+  margin-top: 20px;
   justify-content: center;
 }
 
@@ -48,4 +48,16 @@
 
 a {
   text-decoration: none;
+}
+
+.ubicacio-titl {
+  font-family: var(--fontR);
+  color: var(--txt-g1);
+  font-weight: 900;
+}
+
+.ubicacio-container {
+  text-align: left;
+  margin-top: 40px;
+  margin-left: 70px;
 }
