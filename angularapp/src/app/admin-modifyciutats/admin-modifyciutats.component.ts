@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateCiutatComponent } from '../create-ciutat/create-ciutat.component';
+import { UpdateCiutatComponent } from '../update-ciutat/update-ciutat.component';
 
 
 
@@ -58,9 +59,6 @@ export class AdminMCComponent implements OnInit {
     });
   }
 
-
-
-
   deleteCiutats(ciutat: any): void {
     const confirmar = confirm('Estás seguro de que quieres eliminar la ciudad?');
     if (confirmar) {
@@ -76,9 +74,28 @@ export class AdminMCComponent implements OnInit {
     }
   }
 
+  updateCiutat(ciutat: any): void {
+    console.log('Ciutat inicial:', JSON.stringify(ciutat));
+    const dialogRef = this.dialog.open(UpdateCiutatComponent, {
+      data: { ...ciutat }
+    });
 
-
-
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        console.log('Resultat:', JSON.stringify(result));
+        this.apiService.updateCiutat(result).subscribe(
+          response => {
+            console.log('Ciutat actualitzat:', response);
+            this.getCiutatsFromApi();
+          },
+          error => {
+            console.log('Quan falla: ', JSON.stringify(result));
+            console.error('Error al actualizar la ciutat:', error);
+          }
+        );
+      }
+    });
+  }
   get totalPages(): number {
     return Math.ceil(this.ciutats.length / this.pageSize); 
   }

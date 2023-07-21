@@ -87,8 +87,13 @@ export class ApiService {
   }
 
   updatePais(pais: any): Observable<any> {
-    const url = `${this.apiUrlPaisos}/pais/${pais.countryID}`; 
+    const url = `${this.apiUrlPaisos}/${pais.countryID}`; 
     return this.http.put(url, pais);
+  }
+
+  updateCiutat(ciutat: any): Observable<any> {
+    const url = `${this.apiUrlCiutats}/${ciutat.cityID}`;
+    return this.http.put(url, ciutat);
   }
 
   guardarPais(username: string, country: string): void {

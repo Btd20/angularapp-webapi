@@ -62,6 +62,7 @@ import { CreatePaisComponent } from './create-pais/create-pais.component';
 import { UpdatePaisComponent } from './update-pais/update-pais.component';
 import { CreateOficinesComponent } from './create-oficines/create-oficines.component';
 import { CreateSalesComponent } from './create-sales/create-sales.component';
+import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
 
 
 
@@ -111,7 +112,8 @@ import { CreateSalesComponent } from './create-sales/create-sales.component';
     CreatePaisComponent,
     UpdatePaisComponent,
     CreateOficinesComponent,
-    CreateSalesComponent
+    CreateSalesComponent,
+    UpdateCiutatComponent
 
   ],
   imports: [ 
