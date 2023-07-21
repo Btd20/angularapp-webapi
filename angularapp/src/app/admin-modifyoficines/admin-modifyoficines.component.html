@@ -1,15 +1,22 @@
 <app-navadmin></app-navadmin>
 
 <div class="row p-5 container-admin" *ngIf="isAdmin">
+  <div class="adm-titl"><h4>Edició de oficines</h4></div>
   <div class="table-responsive">
     <table class="table">
       <thead>
-        <button class="btn btn-primary mb-3"(click)="createOficines()" >+</button>
+        <tr>
+          <th>
+            <button class="btn btn-create mb-3" (click)="createOficines()">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </th>
+        </tr>
       </thead>
       <tbody>
         <tr *ngFor="let oficina of oficines | slice:(currentPage-1)*pageSize:currentPage*pageSize">
           <td>{{ oficina.nomOficina }}</td>
-          
+
           <td>
             <button class="btn btn-sm btn-info"> <!--(click)="updateCiutats(ciutat)"-->Modificar</button>
             <button class="btn btn-sm btn-danger" (click)="deleteOficina(oficina)">Eliminar</button>

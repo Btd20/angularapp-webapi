@@ -1,10 +1,17 @@
 <app-navadmin></app-navadmin>
 
 <div class="row p-5 container-admin" *ngIf="isAdmin">
+  <div class="adm-titl"><h4>Edició de sales</h4></div>
   <div class="table-responsive">
     <table class="table">
       <thead>
-        <button class="btn btn-primary mb-3"(click)="createSales()">+</button>
+        <tr>
+          <th>
+            <button class="btn btn-create" (click)="createSales()">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </th>
+        </tr>
       </thead>
       <tbody>
         <tr *ngFor="let sala of sales | slice:(currentPage-1)*pageSize:currentPage*pageSize">
