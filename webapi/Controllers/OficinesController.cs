@@ -66,6 +66,39 @@ namespace webapi.Controllers
             return CreatedAtAction("GetOficina", new { id = oficina.OfficeID }, oficina);
         }
 
+        // POST: Oficines/createOficinesByName
+        [HttpPost("Pais/{nomPais}/Ciutats/{nomCiutat}/Oficines/{nomOficina}")]
+        public async Task<ActionResult<Oficines>> CreateOficinesByNom(string nomPais, string nomCiutat, string nomOficina)
+        {
+            var pais = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == nomPais);
+
+            if (pais == null)
+            {
+                return NotFound("El país no existeix");
+            }
+
+            var ciutat = await _context.Ciutats.FirstOrDefaultAsync(c => c.NomCiutat == nomCiutat && c.CountryID == pais.CountryID);
+
+            if (ciutat == null)
+            {
+                return NotFound("La ciutat no existeix en aquest país");
+            }
+
+            var novaOficina = new Oficines
+            {
+                NomOficina = nomOficina,
+                CityID = ciutat.CityID
+            };
+
+            _context.Oficines.Add(novaOficina);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetOficina", new { id = novaOficina.OfficeID }, novaOficina);
+        }
+
+
+
+
         // PUT: Oficines/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateOficina(int id, Oficines oficina)

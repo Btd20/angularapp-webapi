@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { CreateOficinesComponent } from '../create-oficines/create-oficines.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-admin-modifyoficines',
@@ -12,8 +14,11 @@ export class AdminMOComponent implements OnInit {
   isAdmin?: boolean;
   currentPage: number = 1;
   pageSize: number = 5;
+  nomCiutat: string = '';
+  nomPais: string = '';
+  nomOficina: string = '';
 
-  constructor(private apiService: ApiService, private authService: AuthService) {
+  constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -32,6 +37,43 @@ export class AdminMOComponent implements OnInit {
     );
   }
 
+  createOficines(): void {
+    const dialogRef = this.dialog.open(CreateOficinesComponent);
+
+    
+    dialogRef.afterClosed().subscribe((result: { nomPais: string, nomCiutat: string, nomOficina: string } | undefined) => {
+      console.log('Valores del formulario:', result);
+      if (result) {
+        const { nomPais, nomCiutat, nomOficina } = result;
+        console.log('Valores desestructurados:', nomPais, nomCiutat, nomOficina);
+        this.apiService.createOficinesByNom(nomPais, nomCiutat, nomOficina).subscribe(
+
+          response => {
+            console.log('Oficina creada: ', response);
+            this.getOficinesFromApi();
+          },
+          error => {
+            console.error('Error al crear la oficina: ', error);
+          }
+        );
+      }
+    });
+  }
+
+  deleteOficina(oficina: any): void {
+    const confirmar = confirm('Estàs segur de que vols eliminar la oficina?');
+    if (confirmar) {
+      this.apiService.deleteOficinesByNom(oficina.nomOficina).subscribe(
+        response => {
+          console.log('Oficina eliminada: ', response);
+          this.getOficinesFromApi();
+        },
+        error => {
+          console.error('Error al eliminar la oficina: ', error);
+        }
+      );
+    }
+  }
 
   get totalPages(): number {
     return Math.ceil(this.oficines.length / this.pageSize);

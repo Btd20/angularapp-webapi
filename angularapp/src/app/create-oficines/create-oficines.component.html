@@ -2,6 +2,16 @@
 <mat-dialog-content>
   <form [formGroup]="oficinaForm">
     <mat-form-field appearance="outline">
+      <mat-label>Nom del País</mat-label>
+      <input matInput formControlName="nomPais" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Nom de la Ciutat</mat-label>
+      <input matInput formControlName="nomCiutat" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
       <mat-label>Oficina Name</mat-label>
       <input matInput formControlName="nomOficina" placeholder="Enter Oficina Name" />
     </mat-form-field>

@@ -17,20 +17,27 @@ export class CreateOficinesComponent implements OnInit {
 
   ngOnInit(): void {
     this.oficinaForm = this.formBuilder.group({
+      nomPais: ['', Validators.required],
+      nomCiutat: ['', Validators.required],
       nomOficina: ['', Validators.required]
     });
   }
 
   createOficina(): void {
     if (this.oficinaForm.valid) {
-      const newOficina = {
-        nomOficina: this.oficinaForm.value.nomOficina.trim()
-      };
-      this.dialogRef.close(newOficina);
+      const nomPais = this.oficinaForm.get('nomPais')?.value;
+      const nomCiutat = this.oficinaForm.get('nomCiutat')?.value;
+      const nomOficina = this.oficinaForm.get('nomOficina')?.value;
+
+      //tanca la finestra i envia les dades
+      this.dialogRef.close({ nomPais, nomCiutat, nomOficina });
     }
   }
 
+
+
   cancel(): void {
+    // tanca la finestra sense enviar dades, obviament
     this.dialogRef.close();
   }
 }

@@ -122,8 +122,9 @@ export class ApiService {
 
   // CRUD OFICINES
 
-  createOficina(oficina: any): Observable<any> {
-    return this.http.post<any>(this.apiUrlOficines, oficina);
+  createOficinesByNom(nomPais: string, nomCiutat: string, nomOficina: string): Observable<any> {
+    const url = `${this.apiUrlOficines}/Pais/${nomPais}/Ciutats/${nomCiutat}/Oficines/${nomOficina}`;
+    return this.http.post(url, {});
   }
 
   updateOficina(oficina: any): Observable<any> {
