@@ -20,34 +20,22 @@
 
   .pagination button {
     background-color: transparent;
-    color: black;
+    color:var(--txt-g1);
     border: none;
     padding: 0;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     transition: color 0.3s ease;
   }
 
     .pagination button.disabled {
-      color: #ccc;
+      color: var(--bg-2);
       cursor: default;
     }
 
     .pagination button:hover {
-      color: #555;
+      color: #2b2b3fcf;
     }
-
-  .pagination .arrow-button {
-    position: absolute;
-    top: -20px;
-    left: 12px;
-    font-size: 12px;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
 .user-item {
   display: flex;
@@ -114,7 +102,7 @@
     text-transform:uppercase;
 }
 
-.checkbox-wrapper-2 .ikxBAC {
+.checkbox-wrapper-2 .checkadmin {
   appearance: none;
   background-color: #dfe1e4;
   border-radius: 72px;
@@ -126,7 +114,7 @@
   width: 30px;
 }
 
-  .checkbox-wrapper-2 .ikxBAC::before {
+  .checkbox-wrapper-2 .checkadmin::before {
     bottom: -6px;
     content: "";
     left: -6px;
@@ -135,12 +123,12 @@
     top: -6px;
   }
 
-  .checkbox-wrapper-2 .ikxBAC,
-  .checkbox-wrapper-2 .ikxBAC::after {
+  .checkbox-wrapper-2 .checkadmin,
+  .checkbox-wrapper-2 .checkadmin::after {
     transition: all 100ms ease-out;
   }
 
-    .checkbox-wrapper-2 .ikxBAC::after {
+    .checkbox-wrapper-2 .checkadmin::after {
       background-color: #fff;
       border-radius: 50%;
       content: "";
@@ -155,16 +143,16 @@
   cursor: default;
 }
 
-.checkbox-wrapper-2 .ikxBAC:hover {
+.checkbox-wrapper-2 .checkadmin:hover {
   background-color: #c9cbcd;
   transition-duration: 0s;
 }
 
-.checkbox-wrapper-2 .ikxBAC:checked {
+.checkbox-wrapper-2 .checkadmin:checked {
   background-color: #6e79d6;
 }
 
-  .checkbox-wrapper-2 .ikxBAC:checked::after {
+  .checkbox-wrapper-2 .checkadmin:checked::after {
     background-color: #fff;
     left: 13px;
   }
