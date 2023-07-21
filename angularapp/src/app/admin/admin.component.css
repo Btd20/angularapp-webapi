@@ -187,3 +187,9 @@
     border-radius: 4px;
     margin-bottom: 0px;
   }
+
+.ubicacio-container {
+  text-align: left; /* Alinea el título al centro */
+  margin-top: 40px;
+  margin-left: 180px;
+}
