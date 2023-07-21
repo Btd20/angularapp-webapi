@@ -4,6 +4,7 @@
   height: 85%;
   overflow: hidden;
 }
+
 .pagination {
   position: relative;
   display: flex;
@@ -14,31 +15,88 @@
 
   .pagination button {
     background-color: transparent;
-    color: black;
+    color: var(--txt-g1);
     border: none;
     padding: 0;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     transition: color 0.3s ease;
   }
 
     .pagination button.disabled {
-      color: #ccc;
+      color: var(--bg-2);
       cursor: default;
     }
 
     .pagination button:hover {
-      color: #555;
+      color: #2b2b3fcf;
     }
 
-  .pagination .arrow-button {
-    position: absolute;
-    top: -20px;
-    left: 12px;
-    font-size: 12px;
-    width: 24px;
-    height: 24px;
+.adm-titl {
+  width: 100%;
+  font-family: var(--fontR);
+  font-size: 35px;
+  overflow: hidden;
+}
+
+  .adm-titl h4 {
+    color: var(--txt-g1);
+    font-weight: 800;
+    padding-left: 5px;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+
+/*--BOTÓ DE CREAR--*/
+.btn-create {
+  width: 30px;
+  height: 30px;
+  font-family: var(--fontR);
+  background-color: var(--txt-g1);
+  color: var(--bs-body-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-create:hover {
+  background-color: var(--bs-body-bg);
+  color: var(--txt-g1);
+  transition: 0.3s ease-in-out;
+}
+
+  .btn-create i {
+    width: 30px;
+    height: 30px;
+    background-color: var(--txt-g1);
+    color: var(--bs-body-bg);
+    font-family: var(--fontK);
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
     display: flex;
     align-items: center;
+    align-content: center;
     justify-content: center;
   }
+
+.btn-create:hover i {
+  background-color: var(--bs-body-bg);
+  color: var(--txt-g1);
+  transition: 0.3s ease-in-out;
+}
+
+/*--MODIFICAR--*/
+
+/*--ELIMINAR--*/
+
+/*--BOX COMPONENT--*/
+
+/*--NAME BOX COMPONENT--*/
