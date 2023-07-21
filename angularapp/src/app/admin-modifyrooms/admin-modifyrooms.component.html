@@ -4,7 +4,7 @@
   <div class="table-responsive">
     <table class="table">
       <thead>
-        <button class="btn btn-primary mb-3"><!-- (click)="createSales()" -->+</button>
+        <button class="btn btn-primary mb-3"(click)="createSales()">+</button>
       </thead>
       <tbody>
         <tr *ngFor="let sala of sales | slice:(currentPage-1)*pageSize:currentPage*pageSize">
@@ -12,7 +12,7 @@
 
           <td>
             <button class="btn btn-sm btn-info"> <!--(click)="updateSales(sala)"-->Modificar</button>
-            <button class="btn btn-sm btn-danger"> <!-- (click)="deleteSala(sala)"-->Eliminar</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteSala(sala)">Eliminar</button>
           </td>
         </tr>
       </tbody>

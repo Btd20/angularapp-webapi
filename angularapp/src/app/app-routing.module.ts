@@ -61,7 +61,8 @@ const routes: Routes = [
   { path: 'change-user', component: ChangeUserComponent },
   { path: 'change-email', component: ChangeEmailComponent },
   { path: 'ubicacio', component: UbicacioComponent },
-  { path: '', component: IndexComponent }, 
+  { path: 'reserves', component: ReservesComponent},
+  { path: '', component: IndexComponent },
 
 ];
 

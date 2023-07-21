@@ -150,4 +150,19 @@ export class ApiService {
       }
     );
   }
+
+  // CRUD SALES
+
+  createSalesByNom(nomPais: string, nomCiutat: string, nomOficina: string, nomSala: string): Observable<any> {
+    const url = `${this.apiUrlSales}/Pais/${nomPais}/Ciutats/${nomCiutat}/Oficines/${nomOficina}/Sales/${nomSala}`;
+    return this.http.post(url, {});
+  }
+
+  deleteSalesByNom(nomSala: string): Observable<any> {
+    const url = `${this.apiUrlSales}/nom/${nomSala}`;
+    return this.http.delete(url);
+  }
+
+
+
 }

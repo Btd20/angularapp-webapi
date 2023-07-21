@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateSalesComponent } from '../create-sales/create-sales.component';
 
 @Component({
   selector: 'app-admin-modifyrooms',
@@ -13,7 +15,7 @@ export class AdminMRComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 5;
 
-  constructor(private apiService: ApiService, private authService: AuthService) {
+  constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog ) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -32,8 +34,46 @@ export class AdminMRComponent implements OnInit {
     );
   }
 
+  createSales(): void {
+    const dialogRef = this.dialog.open(CreateSalesComponent);
+
+
+    dialogRef.afterClosed().subscribe((result: { nomPais: string, nomCiutat: string, nomOficina: string, nomSala: string } | undefined) => {
+      console.log('Valores del formulario:', result);
+      if (result) {
+        const { nomPais, nomCiutat, nomOficina, nomSala } = result;
+        console.log('Valores desestructurados:', nomPais, nomCiutat, nomOficina);
+        this.apiService.createSalesByNom(nomPais, nomCiutat, nomOficina, nomSala).subscribe(
+
+          response => {
+            console.log('Sala creada: ', response);
+            this.getSalesFromApi();
+          },
+          error => {
+            console.error('Error al crear la sala: ', error);
+          }
+        );
+      }
+    });
+  }
+
+  deleteSala(sala: any): void {
+    const confirmar = confirm('Estàs segur de que vols eliminar la sala?');
+    if (confirmar) {
+      this.apiService.deleteSalesByNom(sala.nomSala).subscribe(
+        response => {
+          console.log('Sala eliminada: ', response);
+          this.getSalesFromApi();
+        },
+        error => {
+          console.error('Error al eliminar la sala: ', error);
+        }
+      );
+    }
+  }
+
   get totalPages(): number {
-    return Math.ceil(this.sales.length / this.pageSize); // Total de páginas
+    return Math.ceil(this.sales.length / this.pageSize); 
   }
 
   nextPage(): void {
