@@ -11,7 +11,7 @@ export class AdminComponent implements OnInit {
   usuaris: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 4;
 
   constructor(private apiService: ApiService, private authService: AuthService) {
     this.isAdmin = authService.isAdmin;
