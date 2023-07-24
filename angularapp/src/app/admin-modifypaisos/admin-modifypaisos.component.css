@@ -54,6 +54,7 @@ thead {
 
 .th-thead{
     border-bottom:none!important;
+    padding:5px;
 }
 
 .btn-create {
