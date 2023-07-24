@@ -66,7 +66,7 @@ import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
 import { UpdateOficinaComponent } from './update-oficina/update-oficina.component';
 import { UpdateSalaComponent } from './update-sala/update-sala.component';
 
-
+import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +129,7 @@ import { UpdateSalaComponent } from './update-sala/update-sala.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-
+    DatepickerDate
   ],
 
   providers: [

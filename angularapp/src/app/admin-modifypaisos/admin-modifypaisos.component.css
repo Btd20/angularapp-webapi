@@ -9,7 +9,7 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
+  margin-top: -10px;
   padding-left: 15px;
 }
 
@@ -29,7 +29,7 @@
     }
 
     .pagination button:hover {
-      color: #2b2b3fcf;
+      color: var(--txt-g3);
     }
 
 .adm-titl {
@@ -48,6 +48,14 @@
   }
 
 /*--BOTÓ DE CREAR--*/
+thead {
+    border:none!important;
+}
+
+.th-thead{
+    border-bottom:none!important;
+}
+
 .btn-create {
   width: 30px;
   height: 30px;
@@ -93,10 +101,85 @@
   transition: 0.3s ease-in-out;
 }
 
-/*--MODIFICAR--*/
+/*--MODIFICAR + ELIMINAR--*/
+.tr-butt .btn-info {
+  font-family: var(--fontK);
+  font-weight: 900;
+  color: rgb(0 0 0 / 84%);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  border-color: #327800;
+  background-color: var(--btn-bg-modify);
+  transition: 0.3s ease-in-out;
+}
 
-/*--ELIMINAR--*/
+.tr-butt .btn-danger {
+  font-family: var(--fontK);
+  font-weight: 900;
+  color: rgb(0 0 0 / 84%);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  background-color: var(--btn-bg-delete);
+  transition: 0.3s ease-in-out;
+}
 
-/*--BOX COMPONENT--*/
+.tr-butt .btn-info:hover {
+  color: var(--txt-g1);
+  letter-spacing: .2px;
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-body-bg);
+  transition: 0.3s ease-in-out;
+}
 
-/*--NAME BOX COMPONENT--*/
+.tr-butt .btn-danger:hover {
+  color: var(--txt-g1);
+  letter-spacing: .2px;
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-body-bg);
+}
+
+
+/*--TABLE--*/
+
+.table-res {
+  width: 100%;
+  height: 90%;
+  margin-bottom:5px;
+}
+
+table > :not(:first-child) {
+  border-top: none !important;
+}
+
+.tr-boxcomponent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.tr-boxcomponent td{
+    border:none!important;
+}
+
+.tr-name {
+  flex: 1;
+  font-weight: 900;
+  font-family: var(--fontK);
+  letter-spacing: 0.7px;
+  color: var(--txt-g1);
+  transition: 0.3s ease-in-out;
+}
+
+.tr-boxcomponent:hover .tr-name {
+  letter-spacing: 0px;
+  color: var(--txt-g3);
+  transition: 0.3s ease-in-out;
+}
+
+.tr-butt{
+    margin-right:5px;
+}
