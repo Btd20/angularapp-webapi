@@ -122,11 +122,6 @@ export class ApiService {
     return this.http.delete(url);
   }
 
-  updateCiutat(ciutat: any): Observable<any> {
-    const url = `${this.apiUrlCiutats}/${ciutat.cityID}`;
-    return this.http.put(url, ciutat);
-  }
-
 
   // CRUD OFICINES
 
@@ -172,7 +167,7 @@ export class ApiService {
   }
 
   updateSala(sala: any): Observable<any> {
-    const url = `${this.apiUrlSales}/${sala.salaID}`;
+    const url = `${this.apiUrlSales}/${sala.meetingRoomID}`;
     return this.http.put(url, sala);
   }
 

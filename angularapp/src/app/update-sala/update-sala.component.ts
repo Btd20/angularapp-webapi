@@ -32,7 +32,7 @@ export class UpdateSalaComponent implements OnInit {
           officeID: this.data.oficina.officeID,
           nomOficina: this.data.oficina.nomOficina,
           ciutat: {
-            cityID: this.data.oficina.ciutat.CityID,
+            cityID: this.data.oficina.ciutat.cityID,
             nomCiutat: this.data.oficina.ciutat.nomCiutat,
             pais: {
               countryID: this.data.oficina.ciutat.pais.countryID,
