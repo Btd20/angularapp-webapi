@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { CreateOficinesComponent } from '../create-oficines/create-oficines.component';
 import { MatDialog } from '@angular/material/dialog';
+import { UpdateOficinaComponent } from '../update-oficina/update-oficina.component';
 
 @Component({
   selector: 'app-admin-modifyoficines',
@@ -54,6 +55,30 @@ export class AdminMOComponent implements OnInit {
           },
           error => {
             console.error('Error al crear la oficina: ', error);
+          }
+        );
+      }
+    });
+  }
+
+
+  updateOficina(oficina: any): void {
+    console.log('Oficina inicial:', JSON.stringify(oficina));
+    const dialogRef = this.dialog.open(UpdateOficinaComponent, {
+      data: { ...oficina }
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        console.log('Resultat:', JSON.stringify(result));
+        this.apiService.updateOficina(result).subscribe(
+          response => {
+            console.log('Oficina actualitzat:', response);
+            this.getOficinesFromApi();
+          },
+          error => {
+            console.log('Quan falla: ', JSON.stringify(result));
+            console.error('Error al actualizar la oficina:', error);
           }
         );
       }

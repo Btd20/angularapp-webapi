@@ -31,6 +31,9 @@ html {
   /*--FILTRE PERFIL IMG--*/
   --imgp-clr: rgb(227 227 227);
   --imgp-blnd: luminosity;
+  /*--ADMIN-MODIFY--*/
+  --btn-bg-modify: #79bf4b;
+  --btn-bg-delete: #e15058;
 }
 
 body { 

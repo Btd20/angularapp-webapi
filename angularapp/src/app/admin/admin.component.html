@@ -5,7 +5,7 @@
     <li class="user-item" *ngFor="let usuario of usuaris | slice:(currentPage-1)*pageSize:currentPage*pageSize">
       <span class="user-icon"><i class="fa-regular fa-user"></i></span>
       <span class="user-name">{{ usuario.userName }}</span>
-      <button class="btn btn-useredit" (click)="editarUsuario(usuario)" *ngIf="mostrarBotonEditar(usuario)"><span>Editar</span></button>
+      <button class="btn btn-useredit btn-info" (click)="editarUsuario(usuario)" *ngIf="mostrarBotonEditar(usuario)"><span>Editar</span></button>
 
       <div class="edit-form" *ngIf="usuario.editando">
         <form class="edit-form" (ngSubmit)="guardarCanvis(usuario)">

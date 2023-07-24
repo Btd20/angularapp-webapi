@@ -63,9 +63,10 @@ import { UpdatePaisComponent } from './update-pais/update-pais.component';
 import { CreateOficinesComponent } from './create-oficines/create-oficines.component';
 import { CreateSalesComponent } from './create-sales/create-sales.component';
 import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
+import { UpdateOficinaComponent } from './update-oficina/update-oficina.component';
+import { UpdateSalaComponent } from './update-sala/update-sala.component';
 
 import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.component';
-import { UpdateSalaComponent } from './update-sala/update-sala.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,8 @@ import { UpdateSalaComponent } from './update-sala/update-sala.component';
     CreateOficinesComponent,
     CreateSalesComponent,
     UpdateCiutatComponent,
-    UpdateSalaComponent,
+    UpdateOficinaComponent,
+    UpdateSalaComponent
 
   ],
   imports: [ 

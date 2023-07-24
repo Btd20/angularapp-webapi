@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AdminMPComponent implements OnInit {
   isAdmin?: boolean;
   currentPage: number = 1;
-  pageSize: number = 6;
+  pageSize: number = 4;
   paisos: any[] = [];
 
   constructor(

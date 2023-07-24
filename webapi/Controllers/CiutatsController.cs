@@ -102,37 +102,6 @@ namespace webapi.Controllers
         }
 
 
-     /*   // PUT: Ciutats/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCiutats(int id, Ciutats ciutats)
-        {
-            if (id != ciutats.CityID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(ciutats).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CiutatsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-     */
-
         //UPDATE: proba 
 
        
