@@ -4,6 +4,7 @@
   margin: 2rem auto auto auto;
   border-radius: 3rem;
   box-shadow: var(--bx-snav);
+  z-index:-0;
 }
 
 .nav-item {

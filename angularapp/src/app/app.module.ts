@@ -67,6 +67,7 @@ import { UpdateOficinaComponent } from './update-oficina/update-oficina.componen
 import { UpdateSalaComponent } from './update-sala/update-sala.component';
 
 import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.component';
+import { SelectReserva } from './select-reserva/select-reserva.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +130,8 @@ import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.componen
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    DatepickerDate
+    DatepickerDate,
+    SelectReserva
   ],
 
   providers: [

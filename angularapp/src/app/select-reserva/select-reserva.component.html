@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Selecciona una hora:</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let hora of hores" [value]="hora.value">
+      {{hora.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
