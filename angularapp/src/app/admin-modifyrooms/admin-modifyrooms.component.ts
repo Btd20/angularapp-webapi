@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateSalesComponent } from '../create-sales/create-sales.component';
+import { UpdateSalaComponent } from '../update-sala/update-sala.component';
 
 @Component({
   selector: 'app-admin-modifyrooms',
@@ -14,6 +15,10 @@ export class AdminMRComponent implements OnInit {
   isAdmin?: boolean;
   currentPage: number = 1;
   pageSize: number = 5;
+  nomPais: string = '';
+  nomCiutat: string = '';
+  nomOficina: string = '';
+  nomSala: string = '';
 
   constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog ) {
     this.isAdmin = authService.isAdmin;
@@ -70,6 +75,29 @@ export class AdminMRComponent implements OnInit {
         }
       );
     }
+  }
+
+  updateSala(sala: any): void {
+    console.log('Sala inicial:', JSON.stringify(sala));
+    const dialogRef = this.dialog.open(UpdateSalaComponent, {
+      data: { ...sala }
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        console.log('Resultat:', JSON.stringify(result));
+        this.apiService.updateSala(result).subscribe(
+          response => {
+            console.log('Sala actualitzada:', response);
+            this.getSalesFromApi();
+          },
+          error => {
+            console.log('Quan falla: ', JSON.stringify(result));
+            console.error('Error al actualizar la sala:', error);
+          }
+        );
+      }
+    });
   }
 
   get totalPages(): number {

@@ -91,11 +91,6 @@ export class ApiService {
     return this.http.put(url, pais);
   }
 
-  updateCiutat(ciutat: any): Observable<any> {
-    const url = `${this.apiUrlCiutats}/${ciutat.cityID}`;
-    return this.http.put(url, ciutat);
-  }
-
   guardarPais(username: string, country: string): void {
     const model = { Username: username, Country: country };
 
@@ -123,6 +118,10 @@ export class ApiService {
     return this.http.delete(url);
   }
 
+  updateCiutat(ciutat: any): Observable<any> {
+    const url = `${this.apiUrlCiutats}/${ciutat.cityID}`;
+    return this.http.put(url, ciutat);
+  }
 
 
   // CRUD OFICINES
@@ -168,6 +167,9 @@ export class ApiService {
     return this.http.delete(url);
   }
 
-
+  updateSala(sala: any): Observable<any> {
+    const url = `${this.apiUrlSales}/${sala.salaID}`;
+    return this.http.put(url, sala);
+  }
 
 }

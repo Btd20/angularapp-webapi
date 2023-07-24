@@ -65,6 +65,7 @@ import { CreateSalesComponent } from './create-sales/create-sales.component';
 import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
 
 import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.component';
+import { UpdateSalaComponent } from './update-sala/update-sala.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +115,7 @@ import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.componen
     CreateOficinesComponent,
     CreateSalesComponent,
     UpdateCiutatComponent,
+    UpdateSalaComponent,
 
   ],
   imports: [ 

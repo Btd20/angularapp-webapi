@@ -16,9 +16,8 @@
       <tbody>
         <tr *ngFor="let sala of sales | slice:(currentPage-1)*pageSize:currentPage*pageSize">
           <td>{{ sala.nomSala }}</td>
-
           <td>
-            <button class="btn btn-sm btn-info"> <!--(click)="updateSales(sala)"-->Modificar</button>
+            <button class="btn btn-sm btn-info" (click)="updateSala(sala)">Modificar</button>
             <button class="btn btn-sm btn-danger" (click)="deleteSala(sala)">Eliminar</button>
           </td>
         </tr>

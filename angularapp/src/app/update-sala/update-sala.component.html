@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Modifica la sala</h1>
+<mat-dialog-content>
+  <form [formGroup]="salaForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nom de la sala</mat-label>
+      <input matInput formControlName="nomSala" placeholder="Escriu la sala" />
+    </mat-form-field>
+    <input type="hidden" />
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="updateSala()">Acceptar</button>
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>

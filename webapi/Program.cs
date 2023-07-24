@@ -85,7 +85,7 @@ using (var scope = app.Services.CreateScope())
         await roleManager.CreateAsync(role);
     }
 
-    var usuario = await userManager.FindByEmailAsync("admin@gmail.com");
+    var usuario = await userManager.FindByNameAsync("Superadmin");
 
     if (usuario != null && !await userManager.IsInRoleAsync(usuario, roleName))
     {
