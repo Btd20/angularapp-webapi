@@ -25,11 +25,23 @@ export class AdminMOComponent implements OnInit {
 
   ngOnInit(): void {
     this.getOficinesFromApi();
+    
   }
+
+  /*getOficinesFromApi(): void {
+    this.apiService.getAllOficines().subscribe(
+      response => {
+        this.oficines = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }*/
 
   getOficinesFromApi(): void {
     this.apiService.getAllOficines().subscribe(
-      response => {
+      (response: any[]) => {
         this.oficines = response;
       },
       error => {
@@ -62,10 +74,10 @@ export class AdminMOComponent implements OnInit {
   }
 
 
-  updateOficina(oficina: any): void {
-    console.log('Oficina inicial:', JSON.stringify(oficina));
+  updateOficina(oficines: any): void {
+    console.log('Oficina inicial:', JSON.stringify(oficines));
     const dialogRef = this.dialog.open(UpdateOficinaComponent, {
-      data: { ...oficina }
+      data: { ...oficines }
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {

@@ -23,7 +23,7 @@ namespace webapi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Oficines>>> GetOficines()
         {
-            var oficines = await _context.Oficines.Include(o => o.ciutat).ToListAsync();
+            var oficines = await _context.Oficines.Include(o => o.ciutat).ThenInclude(c => c.pais).ToListAsync();
             return Ok(oficines);
         }
 
@@ -31,7 +31,7 @@ namespace webapi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Oficines>> GetOficina(int id)
         {
-            var oficina = await _context.Oficines.Include(o => o.ciutat).FirstOrDefaultAsync(m => m.OfficeID == id);
+            var oficina = await _context.Oficines.Include(o => o.ciutat).ThenInclude(c => c.pais).FirstOrDefaultAsync(m => m.OfficeID == id);
 
             if (oficina == null)
             {
@@ -96,7 +96,48 @@ namespace webapi.Controllers
             return CreatedAtAction("GetOficina", new { id = novaOficina.OfficeID }, novaOficina);
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateOficina(int id, Oficines updatedOficina)
+        {
+            if (id != updatedOficina.OfficeID)
+            {
+                return BadRequest();
+            }
 
+
+
+            var oficina = await _context.Oficines.Include(o => o.ciutat).FirstOrDefaultAsync(o => o.OfficeID == id);
+
+            if (oficina == null)
+            {
+                return NotFound(); 
+            }
+
+            
+            oficina.NomOficina = updatedOficina.NomOficina;
+            oficina.CityID = updatedOficina.CityID;
+
+            oficina.ciutat.NomCiutat = updatedOficina.ciutat.NomCiutat;
+            oficina.ciutat.CountryID = updatedOficina.ciutat.CountryID;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!OficinaExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent(); // Retorna un codi 204 No Content per indicar que s'ha actualitzat correctament
+        }
         /*
 
         // PUT: Oficines/5
@@ -130,49 +171,7 @@ namespace webapi.Controllers
         }
         */
 
-        [HttpPut("{id}")] //a ver si funciona
-        public async Task<IActionResult> UpdateOficina(int id, Oficines oficina)
-        {
-            if (id != oficina.OfficeID)
-            {
-                return BadRequest();
-            }
 
-            var oficinaActual = await _context.Oficines.FindAsync(id);
-
-            if (oficinaActual == null)
-            {
-                return NotFound();
-            }
-
-            var ciutat  = await _context.Ciutats.FirstOrDefaultAsync(c => c.NomCiutat == oficina.ciutat.NomCiutat);
-
-            if (ciutat == null)
-            {
-                return NotFound("El país especificado no existe");
-            }
-
-            oficinaActual.NomOficina = oficina.NomOficina;
-            oficinaActual.CityID = ciutat.CityID;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!OficinaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
 
 
         // DELETE: Oficines/5
