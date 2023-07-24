@@ -28,16 +28,6 @@ export class AdminMOComponent implements OnInit {
     
   }
 
-  /*getOficinesFromApi(): void {
-    this.apiService.getAllOficines().subscribe(
-      response => {
-        this.oficines = response;
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }*/
 
   getOficinesFromApi(): void {
     this.apiService.getAllOficines().subscribe(
@@ -53,14 +43,19 @@ export class AdminMOComponent implements OnInit {
   createOficines(): void {
     const dialogRef = this.dialog.open(CreateOficinesComponent);
 
-    
     dialogRef.afterClosed().subscribe((result: { nomPais: string, nomCiutat: string, nomOficina: string } | undefined) => {
       console.log('Valores del formulario:', result);
       if (result) {
         const { nomPais, nomCiutat, nomOficina } = result;
         console.log('Valores desestructurados:', nomPais, nomCiutat, nomOficina);
-        this.apiService.createOficinesByNom(nomPais, nomCiutat, nomOficina).subscribe(
 
+        // Validar que els noms de la ciutat i de l'oficina no siguin espais en blanc
+        if (nomCiutat.trim() === '' || nomOficina.trim() === '') {
+          console.error('Els noms de la ciutat i de l\'oficina no poden estar buits.');
+          return;
+        }
+
+        this.apiService.createOficinesByNom(nomPais, nomCiutat, nomOficina).subscribe(
           response => {
             console.log('Oficina creada: ', response);
             this.getOficinesFromApi();
@@ -73,19 +68,26 @@ export class AdminMOComponent implements OnInit {
     });
   }
 
-
-  updateOficina(oficines: any): void {
-    console.log('Oficina inicial:', JSON.stringify(oficines));
+  updateOficina(oficina: any): void {
+    console.log('Oficina inicial:', JSON.stringify(oficina));
     const dialogRef = this.dialog.open(UpdateOficinaComponent, {
-      data: { ...oficines }
+      data: { ...oficina }
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
         console.log('Resultat:', JSON.stringify(result));
+
+        // Validar que el nom de l'oficina no sigui un espai en blanc
+        if (result.nomOficina.trim() === '') {
+          console.error('El nom de l\'oficina no pot estar buit.');
+          return;
+        }
+
+
         this.apiService.updateOficina(result).subscribe(
           response => {
-            console.log('Oficina actualitzat:', response);
+            console.log('Oficina actualitzada:', response);
             this.getOficinesFromApi();
           },
           error => {
@@ -96,6 +98,7 @@ export class AdminMOComponent implements OnInit {
       }
     });
   }
+
 
   deleteOficina(oficina: any): void {
     const confirmar = confirm('Estàs segur de que vols eliminar la oficina?');

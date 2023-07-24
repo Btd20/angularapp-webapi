@@ -32,10 +32,10 @@ export class UpdateOficinaComponent implements OnInit {
           cityID: this.data.ciutat.cityID,
           nomCiutat: this.data.ciutat.nomCiutat,
           countryID: this.data.ciutat.countryID,
-        },
-        pais: {
-          countryID: this.data.ciutat.pais.countryID,
-          nomPais: this.data.ciutat.pais.nomPais
+          pais: {
+            countryID: this.data.ciutat.pais.countryID,
+            nomPais: this.data.ciutat.pais.nomPais
+          }
         }
       };
       this.dialogRef.close(updatedData);
