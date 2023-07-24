@@ -97,7 +97,7 @@ namespace webapi.Controllers
         }
 
 
-
+        /*
 
         // PUT: Oficines/5
         [HttpPut("{id}")]
@@ -128,8 +128,52 @@ namespace webapi.Controllers
 
             return NoContent();
         }
+        */
 
-   
+        [HttpPut("{id}")] //a ver si funciona
+        public async Task<IActionResult> UpdateOficina(int id, Oficines oficina)
+        {
+            if (id != oficina.OfficeID)
+            {
+                return BadRequest();
+            }
+
+            var oficinaActual = await _context.Oficines.FindAsync(id);
+
+            if (oficinaActual == null)
+            {
+                return NotFound();
+            }
+
+            var ciutat  = await _context.Ciutats.FirstOrDefaultAsync(c => c.NomCiutat == oficina.ciutat.NomCiutat);
+
+            if (ciutat == null)
+            {
+                return NotFound("El país especificado no existe");
+            }
+
+            oficinaActual.NomOficina = oficina.NomOficina;
+            oficinaActual.CityID = ciutat.CityID;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!OficinaExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
 
         // DELETE: Oficines/5
         [HttpDelete("{id}")]

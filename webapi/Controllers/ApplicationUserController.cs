@@ -75,11 +75,11 @@ namespace webapi.Controllers
             {
                 // Si el campo "Rol" es true, agregar el rol "Administrador" al usuario
                 var addToRoleResult = await _userManager.AddToRoleAsync(existingUser, "Administrador");
-                if (!addToRoleResult.Succeeded)
+            /*    if (!addToRoleResult.Succeeded)
                 {
                     return BadRequest(addToRoleResult.Errors);
                 }
-
+            */
                 // Actualizar el campo "Rol" en la entidad webapiUser a true
                 existingUser.Rol = true;
             }

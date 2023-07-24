@@ -63,6 +63,8 @@ import { UpdatePaisComponent } from './update-pais/update-pais.component';
 import { CreateOficinesComponent } from './create-oficines/create-oficines.component';
 import { CreateSalesComponent } from './create-sales/create-sales.component';
 import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
+import { UpdateOficinaComponent } from './update-oficina/update-oficina.component';
+import { UpdateSalaComponent } from './update-sala/update-sala.component';
 
 
 
@@ -113,7 +115,9 @@ import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
     UpdatePaisComponent,
     CreateOficinesComponent,
     CreateSalesComponent,
-    UpdateCiutatComponent
+    UpdateCiutatComponent,
+    UpdateOficinaComponent,
+    UpdateSalaComponent
 
   ],
   imports: [ 

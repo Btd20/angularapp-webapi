@@ -91,11 +91,6 @@ export class ApiService {
     return this.http.put(url, pais);
   }
 
-  updateCiutat(ciutat: any): Observable<any> {
-    const url = `${this.apiUrlCiutats}/${ciutat.cityID}`;
-    return this.http.put(url, ciutat);
-  }
-
   guardarPais(username: string, country: string): void {
     const model = { Username: username, Country: country };
 
@@ -116,7 +111,11 @@ export class ApiService {
     const url = `${this.apiUrlCiutats}/${nomCiutat}?nomPais=${nomPais}`;
     return this.http.post<any>(url, {});
   }
-  
+
+  updateCiutat(ciutat: any): Observable<any> {
+    const url = `${this.apiUrlCiutats}/${ciutat.cityID}`;
+    return this.http.put(url, ciutat);
+  }
 
   deleteCiutatsByNom(nomCiutat: string): Observable<any> {
     const url = `${this.apiUrlCiutats}/nom/${nomCiutat}`;

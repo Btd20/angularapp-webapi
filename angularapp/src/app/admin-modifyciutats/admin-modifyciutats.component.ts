@@ -60,7 +60,7 @@ export class AdminMCComponent implements OnInit {
   }
 
   deleteCiutats(ciutat: any): void {
-    const confirmar = confirm('Estás seguro de que quieres eliminar la ciudad?');
+    const confirmar = confirm('Estàs segur de que vols eliminar la ciutat?');
     if (confirmar) {
       this.apiService.deleteCiutatsByNom(ciutat.nomCiutat).subscribe(
         response => {
