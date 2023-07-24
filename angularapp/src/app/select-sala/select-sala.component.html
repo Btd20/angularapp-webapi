@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Selecciona una sala:</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let sala of sales" [value]="sala.value">
+      {{sala.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

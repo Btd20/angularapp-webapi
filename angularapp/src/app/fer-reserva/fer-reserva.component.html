@@ -3,6 +3,20 @@
   <div class="res-titl"><strong>RESERVA UNA SALA</strong>  <i class="fa-duotone fa-arrow-right"></i>  <span>[NOM SALA]</span></div>
   <div class="res-body">
     <div class="res-gen">
+      <div class="res-subtitlb"><h4>País</h4></div>
+      [User.Pais] || [Selector.Pais]
+
+      <div class="res-subtitlb"><h4>Oficina</h4></div>
+      [User.Oficina] || [Selector.Pais.Oficina]
+
+      <div class="res-subtitlb"><h4>Sales</h4></div>
+      <selectSala></selectSala>
+
+      <div class="res-subtitlb"><h4>Organitzat per</h4></div>
+      [User.userName]
+
+    </div>
+    <div class="res-gen">
       <div class="res-titlb"><h2>hora</h2></div>
       <div class="res-subtitlb"><h4>comença</h4></div>
       <selectReserva></selectReserva>
@@ -17,23 +31,13 @@
       <div class="res-subtitlb"><h4>comença</h4></div>
       <DatepickerDate></DatepickerDate>
       <!--<input type="date" id="start" name="call-start"
-           value="2023-07-31"
-           min="1999-01-01" max="2023-12-31">-->
+         value="2023-07-31"
+         min="1999-01-01" max="2023-12-31">-->
 
       <div class="res-subtitlb"><h4>acaba</h4></div>
       <DatepickerDate></DatepickerDate>
     </div>
-    <div class="res-gen">
-      <div class="res-titlb"><h2>País</h2></div>
-      <div class="res-subtitlb"><h4>[User.Pais] || [Selector.Pais]</h4></div>
-
-      <div class="res-titlb"><h2>Oficina</h2></div>
-      <div class="res-subtitlb"><h4>[User.Oficina] || [Selector.Pais.Oficina]</h4></div>
-
-      <div class="res-titlb"><h2>Organitzat per</h2></div>
-      <div class="res-subtitlb"><h4>[User.userName]</h4></div>
-
-    </div>
+    
   </div>
   <div class="res-btn-g">
     <a class="btn res-btn-reserva" href="/sales"><i class="fa-regular fa-arrow-right-from-arc"></i><span>reservar</span></a>

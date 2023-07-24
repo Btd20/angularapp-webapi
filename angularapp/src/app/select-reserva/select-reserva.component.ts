@@ -24,12 +24,12 @@ export class SelectReserva {
     { value: 'nou-0', viewValue: '09:00' },
     { value: 'deu-1', viewValue: '10:00' },
     { value: 'onze-2', viewValue: '11:00' },
-    { value: 'dotze-0', viewValue: '12:00' },
-    { value: 'tretze-0', viewValue: '13:00' },
-    { value: 'cat-0', viewValue: '14:00' },
-    { value: 'quin-0', viewValue: '15:00' },
-    { value: 'setz-0', viewValue: '16:00' },
-    { value: 'set-0', viewValue: '17:00' },
-    { value: 'div-0', viewValue: '18:00' },
+    { value: 'dotze-3', viewValue: '12:00' },
+    { value: 'tretze-4', viewValue: '13:00' },
+    { value: 'cat-5', viewValue: '14:00' },
+    { value: 'quin-6', viewValue: '15:00' },
+    { value: 'setz-7', viewValue: '16:00' },
+    { value: 'set-8', viewValue: '17:00' },
+    { value: 'div-9', viewValue: '18:00' }
   ];
 }
