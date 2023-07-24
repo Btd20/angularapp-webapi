@@ -27,12 +27,12 @@
 }
 
 .resb-subtitl {
-  color: #2b2b3fcf;
+  color: var(--txt-g3);
   font-family: var(--fontR);
   font-weight: 600;
   font-size: 0.8em;
   letter-spacing: 0.03em;
-  text-transform:lowercase;
+  text-transform: lowercase;
 }
 
 .resb-titl {
@@ -73,7 +73,7 @@
     display: block;
     text-transform: uppercase;
     font-family: var(--fontK);
-    color: #2b2b3fcf;
+    color: var(--txt-g3);
   }
 
   .resb-body strong {

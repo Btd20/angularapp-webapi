@@ -1,10 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   width: 100%;
   max-width: 900px;
@@ -72,10 +65,11 @@ button {
   margin-left: 20px; /* Espacio entre el formulario y la imagen */
 }
 
-  .image-container img {
+  .image-container i {
     margin-top: 30px;
     max-width: 60%;
     align-items: center;
+    font-size:50px;
   }
 
 .txt {

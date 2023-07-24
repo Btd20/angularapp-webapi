@@ -73,7 +73,7 @@
 .prf-info-all-tit {
   font-size: 75%;
   font-family: 'Karla';
-  color: #2b2b3fcf;
+  color: var(--txt-g3);
   font-weight: 900;
   border-bottom: 5px solid #1A1A41;
   padding: 0.7rem 0rem 0rem 0rem;

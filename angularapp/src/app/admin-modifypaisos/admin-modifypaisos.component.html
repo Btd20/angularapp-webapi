@@ -6,7 +6,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th>
+          <th class="th-thead">
             <button class="btn btn-create" (click)="createPais()">
               <i class="fa-solid fa-plus"></i>
             </button>
@@ -14,10 +14,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let pais of paisos | slice:(currentPage-1)*pageSize:currentPage*pageSize">
-          <td>{{ pais.nomPais }}</td>
-          <td>
-            <button class="btn btn-sm btn-info" (click)="updatePais(pais)">Modificar</button>
+        <tr class="tr-boxcomponent" *ngFor="let pais of paisos | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+          <td class="tr-name">{{ pais.nomPais }}</td>
+          <td class="tr-butt">
+            <button class="btn btn-sm btn-info me-2" (click)="updatePais(pais)">Modificar</button>
             <button class="btn btn-sm btn-danger" (click)="deletePais(pais)">Eliminar</button>
           </td>
         </tr>

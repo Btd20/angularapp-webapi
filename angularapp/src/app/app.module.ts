@@ -64,7 +64,7 @@ import { CreateOficinesComponent } from './create-oficines/create-oficines.compo
 import { CreateSalesComponent } from './create-sales/create-sales.component';
 import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
 
-
+import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +113,7 @@ import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
     UpdatePaisComponent,
     CreateOficinesComponent,
     CreateSalesComponent,
-    UpdateCiutatComponent
+    UpdateCiutatComponent,
 
   ],
   imports: [ 
@@ -125,7 +125,7 @@ import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-
+    DatepickerDate
   ],
 
   providers: [
