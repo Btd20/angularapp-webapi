@@ -23,7 +23,7 @@ namespace webapi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Sales>>> GetSales()
         {
-            var sales = await _context.Sales.Include(o => o.oficina).ToListAsync();
+            var sales = await _context.Sales.Include(o => o.oficina).ThenInclude(c => c.ciutat).ThenInclude(p => p.pais).ToListAsync();
             return Ok(sales);
         }
 

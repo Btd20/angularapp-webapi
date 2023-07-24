@@ -168,7 +168,7 @@ export class ApiService {
   }
 
   updateSala(sala: any): Observable<any> {
-    const url = `${this.apiUrlSales}/${sala.salaID}`;
+    const url = `${this.apiUrlSales}/${sala.meetingRoomID}`;
     return this.http.put(url, sala);
   }
 
