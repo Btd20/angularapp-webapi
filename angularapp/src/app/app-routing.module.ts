@@ -16,7 +16,6 @@ import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ReservaMComponent } from './reserva-modify/reserva-modify.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ProfileConfigComponent } from './profile-config/profile-config.component';
 import { DadesComponent } from './dades/dades.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeUserComponent } from './change-user/change-user.component';
@@ -55,12 +54,11 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'profile-config', component: ProfileConfigComponent },
-  { path: 'dades', component: DadesComponent },
+  { path: 'profile-change', component: DadesComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'change-user', component: ChangeUserComponent },
   { path: 'change-email', component: ChangeEmailComponent },
-  { path: 'ubicacio', component: UbicacioComponent },
+  { path: 'change-dates', component: UbicacioComponent },
   { path: 'reserves', component: ReservesComponent},
   { path: '', component: IndexComponent },
 

@@ -32,7 +32,6 @@ import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
-import { ProfileConfigComponent } from './profile-config/profile-config.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeUserComponent } from './change-user/change-user.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
@@ -104,7 +103,6 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     AdminMPComponent,
     AdminMCComponent,
     AdminMRVComponent,
-    ProfileConfigComponent,
     NavprofileComponent,
     DadesComponent,
     ChangePasswordComponent,
