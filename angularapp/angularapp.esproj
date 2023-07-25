@@ -359,10 +359,6 @@
     <None Remove="src\app\alert-registerwarning\**" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\app\alert\services\" />
-    <Folder Include="src\app\alert\types\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="src\app\fer-reserva\fer-reserva.component.css~RF680a6d73.TMP" />
   </ItemGroup>
 </Project>

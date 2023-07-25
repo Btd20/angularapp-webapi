@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, RouterOutlet } from '@angular/router';
-import { AlertComponent } from '../alert/alert.component';
-import { AlertService } from '../alert/services/alert.service';
-import { AlertTypeEnum } from '../alert/types/alertType.enum';
 
 
 interface RegisterData {
@@ -23,20 +20,9 @@ export class RegisterComponent {
   password: string = '';
   errorMessage: string | undefined;
 
-  AlertComponent?: AlertComponent;
-  alertTypes = AlertTypeEnum;
 
 
-  constructor(private http: HttpClient, private router: Router,
-    private alertService: AlertService) {}
-
-  showAlert(type: AlertTypeEnum) {
-    this.alertService.setAlert({
-      type,
-      text: 'Our test'
-    });
-  }
-
+  constructor(private http: HttpClient, private router: Router) {}
 
   register() {
     const data: RegisterData = {
@@ -52,7 +38,6 @@ export class RegisterComponent {
     this.http.post('https://localhost:7240/Auth/register', data, { headers }).subscribe(
       response => {
         console.log('Registro exitoso:', response);
-        this.showAlert(this.alertTypes.success);
         alert('Registrat amb exit');
         this.router.navigate(['/login']);
         //this.showSuccess();
@@ -60,7 +45,6 @@ export class RegisterComponent {
       error => {
         this.errorMessage = 'Error en el registro. Verifica los datos ingresados.';
         console.error('Error en el registro:', error);
-        this.showAlert(this.alertTypes.warning);
         alert('Error en el registre');
         //this.showError();
       }
