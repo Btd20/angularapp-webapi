@@ -9,6 +9,7 @@ namespace webapi.Areas.Identity.Data
         public string? Email { get; set; }
         public string? Oficina { get; set; }
         public bool Rol { get; set; }
+        public byte[]? ProfileImage { get; set; }
     }
 }
 
