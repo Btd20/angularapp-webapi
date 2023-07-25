@@ -14,7 +14,7 @@ export class AdminMRComponent implements OnInit {
   sales: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 4;
   nomPais: string = '';
   nomCiutat: string = '';
   nomOficina: string = '';

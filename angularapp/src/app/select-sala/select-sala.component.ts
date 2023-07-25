@@ -40,7 +40,7 @@ export class SelectSala implements OnInit {
 
   getAllSalesFromApi(): void {
     this.apiService.getAllSales().subscribe(
-      response => {
+      (response: Sala[]) => {
         this.sales = response;
       },
         error => {
