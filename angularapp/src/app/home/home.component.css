@@ -8,8 +8,9 @@
 .home-img {
   background-image: url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80');
   background-size: cover;
+  width: 95%;
   height: 70%;
-  margin: 25px 2em 25px 2em;
+  margin: 25px auto;
   border-radius: 25px;
   overflow: hidden;
 }
@@ -68,3 +69,41 @@
     transition: 0.3s ease-in-out;
   }
 
+@media only screen and (max-width: 1072px) {
+  .home-titl {
+    width: 100%;
+  }
+  .home-titl h5{
+      width:30%;
+      height:80%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .home-titl span {
+    font-size:1.8rem;
+  }
+  .home-titl h5 {
+    display:none;
+  }
+}
+
+
+
+@media only screen and (max-width: 1250px) {
+  .btn-reserva span {
+      font-size:90%;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .btn-reserva span {
+    font-size: 85%;
+  }
+}
+
+
+@media only screen and (max-width: 680px) {
+
+}
