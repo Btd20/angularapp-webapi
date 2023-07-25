@@ -29,6 +29,13 @@
     transition: 0.3s ease-in-out;
   }
 
+.icon-homeg {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
 .icon-home {
   font-size: 1.3rem;
   line-height: initial;

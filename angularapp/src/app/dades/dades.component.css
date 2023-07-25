@@ -8,6 +8,9 @@
 
 .container-items {
   display: flex;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -17,6 +20,7 @@
 }
 
 .item {
+  overflow:hidden;
   width: 300px;
   height: 300px;
   margin: 10px;

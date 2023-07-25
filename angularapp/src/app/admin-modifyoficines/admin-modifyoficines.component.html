@@ -1,25 +1,24 @@
 <app-navadmin></app-navadmin>
 
 <div class="row p-5 container-admin" *ngIf="isAdmin">
-  <div class="adm-titl"><h4>Edició de oficines</h4></div>
+  <div class="adm-titl"><h4>Edició de oficina</h4></div>
   <div class="table-responsive">
-    <table class="table">
+    <table class="table-res">
       <thead>
         <tr>
-          <th>
-            <button class="btn btn-create mb-3" (click)="createOficines()">
+          <th class="th-thead">
+            <button class="btn btn-create" (click)="createOficines()">
               <i class="fa-solid fa-plus"></i>
             </button>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let oficina of oficines | slice:(currentPage-1)*pageSize:currentPage*pageSize">
-          <td>{{ oficina.nomOficina }}</td>
-
-          <td>
-            <button class="btn btn-sm btn-info"(click)="updateOficina(oficina)">Modificar</button>
-            <button class="btn btn-sm btn-danger" (click)="deleteOficina(oficina)">Eliminar</button>
+        <tr class="tr-boxcomponent" *ngFor="let oficina of oficines | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+          <td class="tr-name">{{ oficina.nomOficina }}</td>
+          <td class="tr-butt">
+            <button class="btn btn-info me-2" (click)="updateOficina(oficina)">Modificar</button>
+            <button class="btn btn-danger" (click)="deleteOficina(oficina)">Eliminar</button>
           </td>
         </tr>
       </tbody>
@@ -28,10 +27,10 @@
 
   <div class="pagination">
     <button (click)="previousPage()" [disabled]="currentPage === 1" [class.disabled]="currentPage === 1">
-      <i class="fas fa-chevron-left"></i>
+      <i class="fa-regular fa-chevron-left"></i>
     </button>
     <button (click)="nextPage()" [disabled]="currentPage === totalPages" [class.disabled]="currentPage === totalPages">
-      <i class="fas fa-chevron-right"></i>
+      <i class="fa-regular fa-chevron-right"></i>
     </button>
   </div>
 </div>

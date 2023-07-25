@@ -1,4 +1,36 @@
 <app-navadmin></app-navadmin>
+
 <div class="row p-5 container-admin" *ngIf="isAdmin">
-  <h2> Actualment hi ha un monete treballant en aquesta funcionalitat, espera al proxim sprint :D</h2>
+  <div class="adm-titl"><h4>Edició de reserves</h4></div>
+  <div class="table-responsive">
+    <table class="table-res">
+      <thead>
+        <tr>
+          <th class="th-thead">
+            <button class="btn btn-create" >
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tr-boxcomponent">
+          <td class="tr-name"></td>
+          <td class="tr-butt">
+            <button class="btn btn-info me-2">Modificar</button>
+            <button class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1" [class.disabled]="currentPage === 1">
+      <i class="fa-regular fa-chevron-left"></i>
+    </button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages" [class.disabled]="currentPage === totalPages">
+      <i class="fa-regular fa-chevron-right"></i>
+    </button>
+  </div>
 </div>
