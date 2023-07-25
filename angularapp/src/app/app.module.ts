@@ -69,6 +69,7 @@ import { UpdateSalaComponent } from './update-sala/update-sala.component';
 import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.component';
 import { SelectReserva } from './select-reserva/select-reserva.component';
 import { SelectSala } from './select-sala/select-sala.component';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -131,6 +132,7 @@ import { SelectSala } from './select-sala/select-sala.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatSelectModule,
     DatepickerDate,
     SelectReserva,
     SelectSala

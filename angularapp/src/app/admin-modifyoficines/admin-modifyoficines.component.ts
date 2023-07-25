@@ -51,7 +51,13 @@ export class AdminMOComponent implements OnInit {
 
         // Validar que els noms de la ciutat i de l'oficina no siguin espais en blanc
         if (nomCiutat.trim() === '' || nomOficina.trim() === '') {
-          console.error('Els noms de la ciutat i de l\'oficina no poden estar buits.');
+          alert('Els noms de la ciutat i de l\'oficina no poden estar buits.');
+          return;
+        }
+
+        const oficinaRepetida = this.oficines.find(oficina => oficina.nomOficina === nomOficina);
+        if (oficinaRepetida) {
+          alert('Ja existeix una oficina amb aquest nom.');
           return;
         }
 
@@ -76,14 +82,18 @@ export class AdminMOComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
-        console.log('Resultat:', JSON.stringify(result));
 
-        // Validar que el nom de l'oficina no sigui un espai en blanc
+        console.log('Resultat:', JSON.stringify(result));
         if (result.nomOficina.trim() === '') {
           console.error('El nom de l\'oficina no pot estar buit.');
           return;
         }
 
+        const oficinaRepetida = this.oficines.find(oficina => oficina.nomOficina === result.nomOficina && oficina.officeID !== result.officeID);
+        if (oficinaRepetida) {
+          console.error('Ja existeix una oficina amb aquest nom.');
+          return;
+        }
 
         this.apiService.updateOficina(result).subscribe(
           response => {

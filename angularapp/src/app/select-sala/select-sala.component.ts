@@ -24,7 +24,7 @@ interface Sala {
 })
 export class SelectSala implements OnInit {
 
-  sales: any[] = [];
+  sales: Sala[] = [];
   pais: string = '';
   ciutat: string = '';
   oficina: string = '';
@@ -40,12 +40,12 @@ export class SelectSala implements OnInit {
 
   getAllSalesFromApi(): void {
     this.apiService.getAllSales().subscribe(
-      response => {
-        this.sales = response;
+      (response: any[]) => {
+        this.sales = response.map(sala => ({ value: sala.meetingRoomID, viewValue: sala.nomSala }));
       },
-        error => {
-          console.error(error);
-        }
+      error => {
+        console.error(error);
+      }
     );
   }
 }

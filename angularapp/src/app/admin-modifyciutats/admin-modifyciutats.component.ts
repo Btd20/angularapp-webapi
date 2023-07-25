@@ -42,10 +42,22 @@ export class AdminMCComponent implements OnInit {
   createCiutats(): void {
     const dialogRef = this.dialog.open(CreateCiutatComponent);
 
-    // es subscriu per obtindre les dades una vegada es tanca la finestra
+    // Es subscriu per obtenir les dades un cop es tanca la finestra
     dialogRef.afterClosed().subscribe((result: { nomPais: string, nomCiutat: string } | undefined) => {
       if (result) {
         const { nomPais, nomCiutat } = result;
+
+        if (nomCiutat.trim() === '') {
+          console.error('El nom de la ciutat no pot estar buit.');
+          return;
+        }
+
+        const ciutatRepetida = this.ciutats.find(ciutat => ciutat.nomCiutat === nomCiutat);
+        if (ciutatRepetida) {
+          console.error('Ja existeix una ciutat amb aquest nom.');
+          return;
+        }
+
         this.apiService.createCiutatsByName(nomPais, nomCiutat).subscribe(
           response => {
             console.log('Ciutat creada: ', response);
@@ -82,6 +94,7 @@ export class AdminMCComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
+
         console.log('Resultat:', JSON.stringify(result));
         this.apiService.updateCiutat(result).subscribe(
           response => {
