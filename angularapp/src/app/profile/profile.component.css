@@ -21,8 +21,8 @@
   background-color: var(--imgp-clr);
   background-blend-mode: var(--imgp-blnd);
   /*--PER MÉS ENDAVANT, FER QUE L'USUARI PUGUI INTRODUIR UNA IMATGE DE PERFIL I L'AGAFI. AIXO AMB ANGULAR--*/
-  background-image: url('https://images.unsplash.com/photo-1636445633204-3902d3276ede?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1827&q=80');
-  background-size: 100%;
+  /*background-image: url('https://images.unsplash.com/photo-1636445633204-3902d3276ede?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1827&q=80');
+  background-size: 100%;*/
 }
 
 .prf-info {
