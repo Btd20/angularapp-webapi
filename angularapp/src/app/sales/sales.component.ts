@@ -57,8 +57,8 @@ export class SalesComponent implements OnInit {
     );
   }
 
-  navigateToReserves(): void {
-    this.router.navigate(['/reserves']);
+  navigateToFerReserves(): void {
+    this.router.navigate(['/ferreserva']);
   }
 
 }
