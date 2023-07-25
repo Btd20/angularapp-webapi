@@ -7,8 +7,13 @@
 <div class="container">
   <div class="rectangle">
     <div class="column">
+      <img class="image0" src="https://static.thenounproject.com/png/145683-200.png" />
+    </div>
+    <div class="column">
       <h3 class="ubicacio-titl">Selecciona la teva imatge</h3>
-      <input type="file" (change)="onFileSelected($event)" />
+      <!-- Estilo personalizado para ocultar el campo de selección de archivos -->
+      <input type="file" (change)="onFileSelected($event)" style="display: none;" id="fileInput" />
+      <label for="fileInput" class="txt file" style="cursor: pointer;">Elegir archivo</label>
       <button class="txt" (click)="uploadImage()">Canviar Imatge</button>
     </div>
   </div>
