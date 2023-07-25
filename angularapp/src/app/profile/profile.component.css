@@ -87,3 +87,10 @@
   font-weight: 900;
   padding: 2.5px;
 }
+
+
+@media only screen and (max-width: 1199px) {
+  .prf-img-cnt {
+    display:none;
+  }
+}
