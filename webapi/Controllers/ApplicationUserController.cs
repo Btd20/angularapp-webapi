@@ -6,6 +6,12 @@ using webapi.Models;
 using webapi.Areas.Identity.Data;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 using System.Security.Claims;
+using System.IO;
+using System.Net;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+
 
 namespace webapi.Controllers
 {
@@ -14,10 +20,12 @@ namespace webapi.Controllers
     public class ApplicationUsersController : ControllerBase
     {
         private readonly UserManager<webapiUser> _userManager;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ApplicationUsersController(UserManager<webapiUser> userManager)
+        public ApplicationUsersController(UserManager<webapiUser> userManager, IWebHostEnvironment hostEnvironment)
         {
             _userManager = userManager;
+            _hostEnvironment = hostEnvironment;
         }
 
         // GET: api/ApplicationUsers
@@ -75,11 +83,11 @@ namespace webapi.Controllers
             {
                 // Si el campo "Rol" es true, agregar el rol "Administrador" al usuario
                 var addToRoleResult = await _userManager.AddToRoleAsync(existingUser, "Administrador");
-            /*    if (!addToRoleResult.Succeeded)
-                {
-                    return BadRequest(addToRoleResult.Errors);
-                }
-            */
+                /*    if (!addToRoleResult.Succeeded)
+                    {
+                        return BadRequest(addToRoleResult.Errors);
+                    }
+                */
                 // Actualizar el campo "Rol" en la entidad webapiUser a true
                 existingUser.Rol = true;
             }
@@ -258,5 +266,64 @@ namespace webapi.Controllers
             }
             return BadRequest(updateResult.Errors);
         }
+
+        //POST: api/ApplicationUsers/{username}/UploadProfileImage
+        [HttpPost("{username}/UploadProfileImage")]
+        public async Task<IActionResult> UploadProfileImage(string username, IFormFile file)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+
+            if (user == null)
+            {
+                return BadRequest("Usuario no encontrado.");
+            }
+
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("No se ha proporcionado una imagen válida.");
+            }
+
+            // Convierte la imagen en un array de bytes
+            using (var memoryStream = new MemoryStream())
+            {
+                await file.CopyToAsync(memoryStream);
+                user.ProfileImage = memoryStream.ToArray();
+            }
+
+            // Si la imagen de perfil es NULL, establecer un valor predeterminado (array de bytes vacío)
+            if (user.ProfileImage == null)
+            {
+                user.ProfileImage = new byte[0];
+            }
+
+            var updateResult = await _userManager.UpdateAsync(user);
+            if (updateResult.Succeeded)
+            {
+                return NoContent();
+            }
+
+            return BadRequest(updateResult.Errors);
+        }
+
+
+
+        // GET: api/ApplicationUsers/GetProfileImage
+        [HttpGet("GetProfileImage/{username}")]
+        public async Task<IActionResult> GetProfileImage(string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+
+            if (user == null || user.ProfileImage == null || user.ProfileImage.Length == 0)
+            {
+                // Devuelve una imagen de perfil predeterminada si el usuario no tiene una imagen establecida.
+                // Puedes cambiar esto para que se ajuste a tus necesidades.
+                var defaultImage = Path.Combine(_hostEnvironment.WebRootPath, "images", "default_profile_image.jpg");
+                return PhysicalFile(defaultImage, "image/jpeg");
+            }
+
+            // Devuelve la imagen de perfil del usuario
+            return File(user.ProfileImage, "image/jpeg");
+        }
+
     }
 }
