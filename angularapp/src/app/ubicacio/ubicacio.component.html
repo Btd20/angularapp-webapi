@@ -7,11 +7,9 @@
 <div class="container">
   <div class="rectangle">
     <div class="column">
-      <img class="image1" src="https://i.imgur.com/qyhaabF.png" />
-    </div>
-    <div class="column">
       <h3 class="ubicacio-titl">Selecciona la teva imatge</h3>
-      <button class="txt" (click)="guardarPais()">Guardar</button>
+      <input type="file" (change)="onFileSelected($event)" />
+      <button class="txt" (click)="uploadImage()">Canviar Imatge</button>
     </div>
   </div>
 
