@@ -14,7 +14,7 @@ export class AdminMOComponent implements OnInit {
   oficines: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 4;
   nomCiutat: string = '';
   nomPais: string = '';
   nomOficina: string = '';
