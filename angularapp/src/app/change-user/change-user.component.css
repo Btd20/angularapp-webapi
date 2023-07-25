@@ -1,17 +1,13 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   width: 100%;
   max-width: 900px;
   margin: 50px auto;
   margin-left: 100px;
-  display: flex; /* Flexbox para alinear los elementos en una fila */
-  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 .form-container {
@@ -65,18 +61,15 @@ button {
     background-color: #0056b3;
   }
 
-.image-container {
+.icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px; /* Espacio entre el formulario y la imagen */
+  margin-left: 20%;
+  font-size: 25em;
+  color: var(--txt-g1);
 }
 
-  .image-container img {
-    margin-top: 30px;
-    max-width: 60%;
-    align-items: center;
-  }
 
 .txt {
   font-family: var(--fontR);
