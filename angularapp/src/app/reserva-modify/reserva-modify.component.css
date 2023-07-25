@@ -1,0 +1,134 @@
+.container-reserva {
+  margin: auto;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.res-titl {
+  width: 100%;
+  height: 14%;
+  font-family: var(--fontR);
+  font-size: 35px;
+  overflow: hidden;
+  text-transform:uppercase;
+}
+
+  .res-titl i {
+    color: var(--txt-g3);
+    font-size: 20px;
+    text-align: -webkit-center;
+    vertical-align: middle;
+    padding-left: 5px;
+  }
+
+  .res-titl strong {
+    color: var(--txt-g3);
+    letter-spacing: 0.8px;
+    font-size: 20px;
+    text-align: -webkit-center;
+    vertical-align: middle;
+  }
+
+  .res-titl span {
+    color: var(--txt-g1);
+    font-weight: 800;
+    padding-left: 5px;
+  }
+
+.res-body {
+  width: 100%;
+  height: calc(100% - 19%);
+  display: inline-flex;
+  align-content: flex-end;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+  padding-top: 25px;
+  overflow: hidden;
+  background-color: orangered;
+}
+
+/*--BUTÓ FER RESERVA--*/
+.res-btn-g {
+  width: 95%;
+  height: 20%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.res-btn-reserva {
+  background-color: var(--txt-g1);
+  color: var(--bs-body-bg);
+  border-radius: 15px;
+  padding: 2.5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  margin: auto;
+  transition: 0.3s ease-in-out;
+}
+
+  .res-btn-reserva span {
+    font-family: var(--fontK);
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  .res-btn-reserva i {
+    margin-right: 2%;
+  }
+
+  .res-btn-reserva:hover {
+    background-color: var(--bs-body-bg);
+    color: var(--txt-g1);
+    transition: 0.3s ease-in-out;
+  }
+
+
+/*--MODIFICAR + ELIMINAR--*/
+.res-btn-g .res-modify {
+  font-family: var(--fontK);
+  font-weight: 900;
+  color: rgb(0 0 0 / 84%);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  border-color: #327800;
+  background-color: var(--btn-bg-modify);
+  transition: 0.3s ease-in-out;
+}
+
+.res-btn-g .res-delete {
+  font-family: var(--fontK);
+  font-weight: 900;
+  color: rgb(0 0 0 / 84%);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  background-color: var(--btn-bg-delete);
+  transition: 0.3s ease-in-out;
+}
+
+.res-btn-g .res-modify:hover {
+  color: var(--txt-g1);
+  letter-spacing: .2px;
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-body-bg);
+  transition: 0.3s ease-in-out;
+}
+
+.res-btn-g .res-delete:hover {
+  color: var(--txt-g1);
+  letter-spacing: .2px;
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-body-bg);
+}

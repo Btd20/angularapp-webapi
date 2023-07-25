@@ -212,3 +212,21 @@
     border-radius: 4px;
     margin-bottom: 0px;
   }
+
+
+.btn-danger {
+  font-family: var(--fontK);
+  font-weight: 900;
+  color: rgb(0 0 0 / 84%);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  background-color: var(--btn-bg-delete);
+  transition: 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+  color: var(--txt-g1);
+  letter-spacing: .2px;
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-body-bg);
+}
