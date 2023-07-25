@@ -73,12 +73,16 @@
 
 .res-subtitlb h4 {
   color: var(--txt-g3);
-  margin-bottom: 2.5px auto;
   font-family: var(--fontR);
   font-weight: 900;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 20px;
+  margin-right: 5px;
+}
+
+.res-gen4 .res-subtitlb h4 {
+  margin-right: 5px;
 }
 
 .res-gen input {
@@ -108,7 +112,7 @@
   font-family: var(--fontK);
   font-weight: 900;
   color: var(--txt-g1);
-  font-size: 1em;
+  font-size: 20px;
   overflow: hidden;
   vertical-align: -webkit-baseline-middle;
   flex-direction: row;

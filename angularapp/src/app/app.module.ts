@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,9 +14,6 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
-import { AlertComponent } from './alert/alert.component';
-import { AlertService } from './alert/services/alert.service';
-import { AlertTypeEnum } from './alert/types/alertType.enum';
 import { ReactiveFormsModule } from '@angular/forms';
 
 /*--NAVS--*/
@@ -56,7 +55,6 @@ import { ReservaMComponent } from './reserva-modify/reserva-modify.component';
 import { CreateCiutatComponent } from './create-ciutat/create-ciutat.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatDialogModule } from '@angular/material/dialog';
 import { CreatePaisComponent } from './create-pais/create-pais.component';
 import { UpdatePaisComponent } from './update-pais/update-pais.component';
 import { CreateOficinesComponent } from './create-oficines/create-oficines.component';
