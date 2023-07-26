@@ -14,6 +14,8 @@ import { MatNativeDateModule } from '@angular/material/core';
   imports: [MatFormFieldModule, MatInputModule, MatNativeDateModule, MatDatepickerModule],
 })
 export class DatepickerDate {
+
+
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     // Only highligh dates inside the month view.
     if (view === 'month') {
@@ -22,4 +24,14 @@ export class DatepickerDate {
 
     return '';
   };
+
+  dateFilter = (date: Date | null) => {
+    if (!date) {
+      return false;
+    }
+
+    const day = date.getDay();
+    return day !== 0 && day !== 6;
+  }
+
 }
