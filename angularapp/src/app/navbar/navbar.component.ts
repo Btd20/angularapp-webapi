@@ -9,6 +9,7 @@ import { AuthService } from '../auth-service.service';
 export class NavbarComponent implements OnInit {
   isAdmin?: boolean;
   username: string | null;
+  menuOpen: boolean = false;
 
   constructor(private authService: AuthService) {
     this.username = sessionStorage.getItem('username');
@@ -31,5 +32,9 @@ export class NavbarComponent implements OnInit {
     if (dropbox != null) {
       dropbox.style.display = 'none';
     }
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 }

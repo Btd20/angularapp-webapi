@@ -11,10 +11,10 @@
         <a class="nav-link" href="/paisos">Sales de reunions</a>
       </li>
       <li class="nav-item dropdown d-acme itm-acme">
-        <div class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="dropMenu()">
-         {{username}}
+        <div class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="toggleMenu()">
+          {{username}}
         </div>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dmenu" (click)="notDropMenu()">
+        <div class="dropdown-menu" [class.show]="menuOpen" aria-labelledby="navbarDropdownMenuLink" id="dmenu">
           <a class="dropdown-item" href="/profile">Perfil</a>
           <a class="dropdown-item" href="/settings-user">Configuració</a>
           <a class="dropdown-item" href="/reserves">Les teves reserves</a>
