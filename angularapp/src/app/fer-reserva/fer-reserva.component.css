@@ -165,3 +165,34 @@
   flex-direction: column;
   align-items: center;
 }
+
+
+input {
+  /* remove default behavior */
+  appearance: none;
+  -webkit-appearance: none;
+  /* usual styles */
+  padding: 10px;
+  border: none;
+  background-color: var(--bg-2);
+  color: var(--txt-g1);
+  font-weight: 600;
+  font-family:var(--fontK);
+  border-radius: 25px;
+  width: 80%;
+}
+
+select {
+  /* remove default behavior */
+  appearance: none;
+  -webkit-appearance: none;
+  /* usual styles */
+  padding: 20px;
+  border: none;
+  background-color: var(--bg-2);
+  color: var(--txt-g1);
+  font-weight: 600;
+  font-family: var(--fontK);
+  border-radius: 25px;
+  width: 100%;
+}
