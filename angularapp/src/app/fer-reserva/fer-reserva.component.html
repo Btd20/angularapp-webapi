@@ -7,13 +7,13 @@
       <div class="res-gen4">
         <div class="res-subtitlb"><h4>País: </h4></div>
         <div class="res-txt" *ngIf="pais !== 'No seleccionat'">{{ pais }}</div>
-        <div class="res-txt" *ngIf="pais === 'No seleccionat'">[Selector.Pais]</div>
+        <div class="res-txt" *ngIf="pais === 'No seleccionat'">{{ paisReserva }}</div>
       </div>
 
       <div class="res-gen4">
         <div class="res-subtitlb"><h4>Oficina: </h4></div>
         <div class="res-txt" *ngIf="oficina !== 'No seleccionat'">{{ oficina }}</div>
-        <div class="res-txt" *ngIf="oficina === 'No seleccionat'">[Selector.Pais.Oficina]</div>
+        <div class="res-txt" *ngIf="oficina === 'No seleccionat'">{{ oficinaReserva }}</div>
 
       </div>
 

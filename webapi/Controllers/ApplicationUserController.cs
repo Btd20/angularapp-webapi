@@ -315,13 +315,40 @@ namespace webapi.Controllers
 
             if (user == null || user.ProfileImage == null || user.ProfileImage.Length == 0)
             {
-                // Devuelve una imagen de perfil predeterminada si el usuario no tiene una imagen establecida.
-                // Puedes cambiar esto para que se ajuste a tus necesidades.
-                var defaultImage = Path.Combine(_hostEnvironment.WebRootPath, "images", "default_profile_image.jpg");
-                return PhysicalFile(defaultImage, "image/jpeg");
+                // URL de la imagen predeterminada en Imgur (reemplaza con tu propia URL)
+                string defaultImageUrl = "https://image1.challengermode.com/e09f7c9a-7582-461e-3ba9-08d9251960c2_256_256";
+
+                using (var httpClient = new HttpClient())
+                {
+                    try
+                    {
+                        // Descargar la imagen desde la URL de Imgur
+                        var response = await httpClient.GetAsync(defaultImageUrl);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            // Convertir la imagen descargada a bytes
+                            var imageBytes = await response.Content.ReadAsByteArrayAsync();
+
+                            // Devolver la imagen predeterminada en bytes
+                            return File(imageBytes, "image/jpeg");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar errores de descarga o conversión
+                        // Puedes agregar el registro de errores aquí si lo deseas.
+                        // Por ejemplo, ILogger<NombreDeTuControlador> _logger;
+                        // _logger.LogError(ex, "Error al obtener la imagen predeterminada desde Imgur.");
+                    }
+
+                    // Si hubo un error, puedes devolver una imagen de perfil predeterminada local como respaldo
+                    // Puedes cambiar esto para que se ajuste a tus necesidades.
+                    var defaultImage = Path.Combine(_hostEnvironment.WebRootPath, "images", "default_profile_image.jpg");
+                    return PhysicalFile(defaultImage, "image/jpeg");
+                }
             }
 
-            // Devuelve la imagen de perfil del usuario
+            // Si el usuario tiene una imagen de perfil, devolverla
             return File(user.ProfileImage, "image/jpeg");
         }
 
