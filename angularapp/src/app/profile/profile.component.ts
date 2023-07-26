@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-profile',
@@ -15,12 +16,23 @@ export class ProfileComponent implements OnInit {
 
   profileImageUrl: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.getUsuarisFromApi();
     if (this.username) {
       this.loadProfileImage();
     }
+  }
+
+  getUsuarisFromApi(): void {
+    this.apiService.getUsuaris().subscribe(
+      response => {
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 
   loadProfileImage() {
