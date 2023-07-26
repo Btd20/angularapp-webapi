@@ -183,11 +183,9 @@ input {
 }
 
 select {
-  /* remove default behavior */
   appearance: none;
   -webkit-appearance: none;
-  /* usual styles */
-  padding: 20px;
+  padding: 4px 10px;
   border: none;
   background-color: var(--bg-2);
   color: var(--txt-g1);
