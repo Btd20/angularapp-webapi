@@ -19,7 +19,12 @@
 
       <div class="res-sales">
         <div class="res-subtitlb"><h4>Sala: </h4></div>
-        <selectSala></selectSala>
+        <!--faltarien que aqui les opcions les passes x la BBDD-->
+        <select name="select">
+          <option value="value1">Value 1</option>
+          <option value="value2" selected>Value 2</option>
+          <option value="value3">Value 3</option>
+        </select>
       </div>
 
         <div class="res-gen4">
@@ -44,10 +49,15 @@
       <div class="res-bodydate">
         <div class="res-titlb"><h2>RESERVA</h2></div>
         <div class="res-subtitlb"><h4>nom de la reserva:</h4></div>
-        <!--AQUI INPUT TEXT-->
+        <input type="text" id="name" name="name" required
+               minlength="4" maxlength="28" size="10">
+
         <div class="res-titlb"><h2>DATA</h2></div>
         <div class="res-subtitlb"><h4>COMENÇA:</h4></div>
-        <DatepickerDate></DatepickerDate>
+        <input type="date" id="reunio-start" name="reunio-start"
+               value="2018-07-22"
+               min="1999-01-01" max="2024-12-31">
+
 
       </div>
     </div>

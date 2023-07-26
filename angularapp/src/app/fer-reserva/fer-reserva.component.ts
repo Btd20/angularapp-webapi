@@ -10,4 +10,7 @@ export class FerReservaComponent {
   username: string | null = sessionStorage.getItem('username');
   pais: string | null = sessionStorage.getItem('pais');
   oficina: string | null = sessionStorage.getItem('oficina');
+
+
+
 }
