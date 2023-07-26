@@ -6,16 +6,16 @@
       <div class="res-titlb"><h2>ALTRES</h2></div>
       <div class="res-gen4">
         <div class="res-subtitlb"><h4>País: </h4></div>
-        <div class="res-txt" *ngIf="pais === 'No seleccionat'">{{ paisReserva }}</div>
         <div class="res-txt" *ngIf="pais !== 'No seleccionat'">{{ pais }}</div>
+        <div class="res-txt" *ngIf="pais === 'No seleccionat'">[Selector.Pais]</div>
       </div>
 
       <div class="res-gen4">
         <div class="res-subtitlb"><h4>Oficina: </h4></div>
-        <div class="res-txt" *ngIf="oficina === 'No seleccionat'">{{ oficinaReserva }}</div>
         <div class="res-txt" *ngIf="oficina !== 'No seleccionat'">{{ oficina }}</div>
-      </div>
+        <div class="res-txt" *ngIf="oficina === 'No seleccionat'">[Selector.Pais.Oficina]</div>
 
+      </div>
 
       <div class="res-sales">
         <div class="res-subtitlb"><h4>Sala: </h4></div>
@@ -27,31 +27,30 @@
         </select>
       </div>
 
-      <div class="res-gen4">
-        <div class="res-subtitlb"><h4>Organitzat per: </h4></div>
-        <!--SEMPRE SERÀ L'USERNAME EL PROPIETARI DE LA RESERVA-->
-        <div class="res-txt">{{ username }}</div>
-      </div>
+        <div class="res-gen4">
+          <div class="res-subtitlb"><h4>Organitzat per: </h4></div>
+          <!--SEMPRE SERÀ L'USERNAME EL PROPIETARI DE LA RESERVA-->
+          <div class="res-txt">{{ username }}</div>
+        </div>
 
-    </div>
+      </div>
     <div class="res-gen">
       <div class="res-titlb"><h2>hora</h2></div>
       <div class="res-subtitlb"><h4>comença:</h4></div>
-      <input type="time" id="start" name="start"
+      <input style="width:20%;" type="time" id="start" name="start"
              min="09:00" max="18:00" required>
-
+      <br />
       <div class="res-subtitlb"><h4>acaba:</h4></div>
-      <input type="time" id="finish" name="finish"
+      <input style="width:20%;" type="time" id="finish" name="finish"
              min="09:00" max="18:00" required>
 
     </div>
     <div class="res-gen">
       <div class="res-bodydate">
-        <div class="res-titlb"><h2>RESERVA</h2></div>
         <div class="res-subtitlb"><h4>nom de la reserva:</h4></div>
         <input type="text" id="name" name="name" required
                minlength="4" maxlength="28" size="10">
-
+        <br/>
         <div class="res-titlb"><h2>DATA</h2></div>
         <div class="res-subtitlb"><h4>COMENÇA:</h4></div>
         <input type="date" id="reunio-start" name="reunio-start"
@@ -63,7 +62,7 @@
     </div>
   </div>
   <div class="res-btn-g">
-    <a class="btn res-btn-reserva" href="/sales"><i class="fa-regular fa-arrow-right-from-arc"></i><span>reservar</span></a>
+    <a class="btn res-btn-reserva" href="/reserves"><i class="fa-regular fa-arrow-right-from-arc"></i><span>reservar</span></a>
     </div>
 </div>
 
