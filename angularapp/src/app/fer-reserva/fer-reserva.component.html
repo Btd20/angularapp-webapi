@@ -6,15 +6,14 @@
       <div class="res-titlb"><h2>ALTRES</h2></div>
       <div class="res-gen4">
         <div class="res-subtitlb"><h4>País: </h4></div>
-        <!--falta fer el if:NOT SELECCIONAT A PAIS I OFICINA-->
         <div class="res-txt" *ngIf="pais !== 'No seleccionat'">{{ pais }}</div>
         <div class="res-txt" *ngIf="pais === 'No seleccionat'">[Selector.Pais]</div>
       </div>
 
       <div class="res-gen4">
         <div class="res-subtitlb"><h4>Oficina: </h4></div>
-        <div class="res-txt" *ngIf="pais !== 'No seleccionat'">{{ oficina }}</div>
-        <div class="res-txt" *ngIf="pais === 'No seleccionat'">[Selector.Pais.Oficina]</div>
+        <div class="res-txt" *ngIf="oficina !== 'No seleccionat'">{{ oficina }}</div>
+        <div class="res-txt" *ngIf="oficina === 'No seleccionat'">[Selector.Pais.Oficina]</div>
 
       </div>
 
