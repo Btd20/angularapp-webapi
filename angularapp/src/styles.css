@@ -36,6 +36,9 @@ html {
   --btn-border-modify: #327800;
   --btn-bg-delete: #e15058;
   --btn-border-delete: #bf1818;
+  /*--PADDINGS + BORDER RADIUS--*/
+  --pd-btn: 25px;
+  --br-btn: 25px;
 }
 
 body { 
