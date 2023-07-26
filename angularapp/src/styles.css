@@ -33,7 +33,9 @@ html {
   --imgp-blnd: luminosity;
   /*--ADMIN-MODIFY--*/
   --btn-bg-modify: #79bf4b;
+  --btn-border-modify: #327800;
   --btn-bg-delete: #e15058;
+  --btn-border-delete: #bf1818;
 }
 
 body { 

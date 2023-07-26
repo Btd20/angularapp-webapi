@@ -1,49 +1,49 @@
 <app-navprofile></app-navprofile>
 
-<div class="ubicacio-container">
-  <h4 class="ubicacio-titl">La teva ubicació</h4>
-</div>
+<div class="row p-5 container-admin">
+  <div class="ubicacio-titl"><span>LES TEVES DADES PERSONALS</span></div>
+  <div class="ubicacio-body">
 
-<div class="container">
-  <div class="rectangle">
-    <div class="column">
-      <img class="image0" src="https://static.thenounproject.com/png/145683-200.png" />
+    <div class="ubody-item">
+      <div class="uitem-icon">
+        <i class="fa-regular fa-images"></i>
+      </div>
+      <div class="uitem-body">
+        <h3 class="ubody-titl">Selecciona la teva imatge</h3>
+        <input type="file" (change)="onFileSelected($event)" class="ubtn-edit" style="display: none;" id="fileInput" />
+        <label for="fileInput" class="ubody-txt ubtn-edit" style="cursor: pointer;">Elegir archivo</label>
+        <button class="ubtn-editImg" (click)="uploadImage()">Canviar Imatge</button>
+      </div>
     </div>
-    <div class="column">
-      <h3 class="ubicacio-titl">Selecciona la teva imatge</h3>
-      <input type="file" (change)="onFileSelected($event)" style="display: none;" id="fileInput" />
-      <label for="fileInput" class="txt file" style="cursor: pointer;">Escollir arxiu</label>
-      <div *ngIf="imageSelected" class="txt">Imatge seleccionada, guarda els canvis.</div>
-      <button class="txt" (click)="uploadImage()">Canviar Imatge</button>
+
+    <div class="ubody-item">
+      <div class="uitem-icon">
+        <i class="fa-regular fa-earth-americas"></i>
+      </div>
+      <div class="uitem-body">
+        <h3 class="ubody-titl">Selecciona el teu país</h3>
+        <select [(ngModel)]="selectedCountry">
+          <option value="No seleccionat">No seleccionat</option>
+          <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
+        </select>
+        <button class="ubtn-editImg" (click)="guardarPais()">Guardar</button>
+      </div>
     </div>
+
+    <div class="ubody-item">
+      <div class="uitem-icon">
+        <i class="fa-regular fa-phone-office"></i>
+      </div>
+      <div class="uitem-body">
+        <h3 class="ubody-titl">Selecciona la teva oficina</h3>
+        <select [(ngModel)]="selectedOffice">
+          <option value="No seleccionat">No seleccionat</option>
+          <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
+        </select>
+        <button class="ubtn-editImg" (click)="guardarOficina()">Guardar</button>
+      </div>
+    </div>
+
   </div>
 
-
-  <div class="rectangle">
-    <div class="column">
-      <img class="image1" src="https://i.imgur.com/qyhaabF.png" />
-    </div>
-    <div class="column">
-      <h3 class="ubicacio-titl">Selecciona el teu país:</h3>
-      <select [(ngModel)]="selectedCountry">
-        <option value="No seleccionat">No seleccionat</option>
-        <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
-      </select>
-      <button class="txt" (click)="guardarPais()">Guardar</button>
-    </div>
-  </div>
-
-  <div class="rectangle">
-    <div class="column">
-      <img class="image2" src="https://i.imgur.com/14Rxpzd.png" />
-    </div>
-    <div class="column">
-      <h3 class="ubicacio-titl">Selecciona la teva oficina:</h3>
-      <select [(ngModel)]="selectedOffice">
-        <option value="No seleccionat">No seleccionat</option>
-        <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
-      </select>
-      <button class="txt" (click)="guardarOficina()">Guardar</button>
-    </div>
-  </div>
 </div>

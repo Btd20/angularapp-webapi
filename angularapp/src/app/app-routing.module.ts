@@ -54,7 +54,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'profile-change', component: DadesComponent },
+  { path: 'settings-user', component: DadesComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'change-user', component: ChangeUserComponent },
   { path: 'change-email', component: ChangeEmailComponent },
