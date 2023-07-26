@@ -11,7 +11,6 @@ export class ApiService {
   private apiUrlSales = 'https://localhost:7240/Sales';
   private apiUrlOficines = 'https://localhost:7240/Oficines';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
-  
 
   constructor(private http: HttpClient) { }
 
