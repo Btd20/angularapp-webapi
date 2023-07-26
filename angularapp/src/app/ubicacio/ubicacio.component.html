@@ -10,7 +10,7 @@
       </div>
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona la teva imatge</h3>
-        <input type="ubtn-edit" (change)="onFileSelected($event)" style="display: none;" id="fileInput" />
+        <input type="file" (change)="onFileSelected($event)" class="ubtn-edit" style="display: none;" id="fileInput" />
         <label for="fileInput" class="ubody-txt ubtn-edit" style="cursor: pointer;">Elegir archivo</label>
         <button class="ubtn-editImg" (click)="uploadImage()">Canviar Imatge</button>
       </div>
