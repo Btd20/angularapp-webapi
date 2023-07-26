@@ -1,8 +1,8 @@
 <app-navprofile></app-navprofile>
 
-<div class="container">
-  <div class="form-container">
-    <h4 class="txt">Canviar correu</h4>
+<div class="row p-5 container-admin">
+  <div class="titl"><span>CANVIA EL CORREU ELECTRONIC</span></div>
+  <div class="email-body">
     <form (ngSubmit)="changeEmail()">
       <div class="form-group">
         <label class="txt" for="currentEmail">Correu actual:</label>
@@ -21,9 +21,8 @@
 
       <button type="submit">Canviar correu</button>
     </form>
-  </div>
-
-  <div class="image-container">
-    <i class="fa-duotone fa-envelopes"></i>
+    <div class="icon-pass">
+      <i class="fa-regular fa-at"></i>
+    </div>
   </div>
 </div>
