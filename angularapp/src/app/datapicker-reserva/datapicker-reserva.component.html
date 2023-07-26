@@ -1,7 +1,5 @@
-<mat-form-field class="example-full-width">
-  <mat-label>Escull un dia:</mat-label>
-  <input matInput [matDatepicker]="picker">
-  <mat-hint>DD/MM/YYYY</mat-hint> 
-  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+<mat-form-field>
+  <input matInput [matDatepicker]="myDatepicker " [matDatepickerFilter]=" dateFilter">
+  <mat-datepicker-toggle [for]="myDatepicker" matSuffix></mat-datepicker-toggle>
+  <mat-datepicker #myDatepicker></mat-datepicker>
 </mat-form-field>

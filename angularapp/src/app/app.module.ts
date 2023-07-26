@@ -51,6 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReservaBoxComponent } from './reserva-box/reserva-box.component';
 import { ReservaMComponent } from './reserva-modify/reserva-modify.component';
 
+
 /*--COMPONENTS CRUD--*/
 import { CreateCiutatComponent } from './create-ciutat/create-ciutat.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -67,6 +68,8 @@ import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.componen
 import { SelectReserva } from './select-reserva/select-reserva.component';
 import { SelectSala } from './select-sala/select-sala.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -131,7 +134,9 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     MatSelectModule,
     DatepickerDate,
     SelectReserva,
-    SelectSala
+    SelectSala,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
 
   providers: [
