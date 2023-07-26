@@ -120,6 +120,7 @@ thead {
   color: rgb(0 0 0 / 84%);
   letter-spacing: .5px;
   text-transform: uppercase;
+  border-color: var(--btn-border-delete);
   background-color: var(--btn-bg-delete);
   transition: 0.3s ease-in-out;
 }

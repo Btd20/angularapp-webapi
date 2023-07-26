@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>Modifica el país</h1>
 <mat-dialog-content>
   <form [formGroup]="paisForm">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="matform-pd">
       <mat-label>Nom del país</mat-label>
       <input matInput formControlName="nomPais" placeholder="Escriu el país" />
     </mat-form-field>
@@ -9,6 +9,6 @@
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-raised-button color="primary" (click)="updatePais()">Acceptar</button>
+  <button mat-raised-button class="btn-accepta" color="primary" (click)="updatePais()">Acceptar</button>
   <button mat-raised-button mat-dialog-close>Cancelar</button>
 </mat-dialog-actions>
