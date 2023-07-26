@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UbicacioComponent {
   fileToUpload: File | null = null;
+  imageSelected: boolean = false;
 
   paisos: any[] = [];
   oficines: any[] = [];
@@ -48,6 +49,7 @@ export class UbicacioComponent {
     if (this.selectedCountry) {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarPais(username, this.selectedCountry);
+      sessionStorage.setItem('pais', this.selectedCountry);
     }
   }
 
@@ -55,6 +57,7 @@ export class UbicacioComponent {
     if (this.selectedOffice) {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarOficina(username, this.selectedOffice);
+      sessionStorage.setItem('oficina', this.selectedOffice);
     }
   }
 
@@ -62,6 +65,7 @@ export class UbicacioComponent {
     const file: File = event.target.files[0];
     if (file) {
       this.fileToUpload = file;
+      this.imageSelected = true;
     }
   }
 

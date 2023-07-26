@@ -11,12 +11,13 @@
     </div>
     <div class="column">
       <h3 class="ubicacio-titl">Selecciona la teva imatge</h3>
-      <!-- Estilo personalizado para ocultar el campo de selección de archivos -->
       <input type="file" (change)="onFileSelected($event)" style="display: none;" id="fileInput" />
-      <label for="fileInput" class="txt file" style="cursor: pointer;">Elegir archivo</label>
+      <label for="fileInput" class="txt file" style="cursor: pointer;">Escollir arxiu</label>
+      <div *ngIf="imageSelected" class="txt">Imatge seleccionada, guarda els canvis.</div>
       <button class="txt" (click)="uploadImage()">Canviar Imatge</button>
     </div>
   </div>
+
 
   <div class="rectangle">
     <div class="column">
