@@ -64,12 +64,11 @@ import { UpdateCiutatComponent } from './update-ciutat/update-ciutat.component';
 import { UpdateOficinaComponent } from './update-oficina/update-oficina.component';
 import { UpdateSalaComponent } from './update-sala/update-sala.component';
 
-import { DatepickerDate } from './datapicker-reserva/datapicker-reserva.component';
-import { SelectReserva } from './select-reserva/select-reserva.component';
+
+
 import { SelectSala } from './select-sala/select-sala.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -132,11 +131,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatDialogModule,
     MatSelectModule,
-    DatepickerDate,
-    SelectReserva,
     SelectSala,
-    MatDatepickerModule,
-    MatNativeDateModule
+
   ],
 
   providers: [

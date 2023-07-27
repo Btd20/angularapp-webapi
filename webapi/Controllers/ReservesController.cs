@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration.UserSecrets;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using webapi.Data;
 using webapi.Models;
@@ -51,24 +53,26 @@ namespace webapi.Controllers
             return CreatedAtAction("GetReserve", new { id = reserve.ReserveID }, reserve);
         }
 
-        // POST: CrearReserves
+
         [HttpPost("CreateReserva")]
-        public async Task<IActionResult> CreateReserva(string nomSala, string dataReserva, string horaInici, string horaFi)
+        public async Task<IActionResult> CreateReserva(int meetingRoomID, string dataReserva, string horaInici, string horaFi)
         {
-            // Convertir las cadenas de fecha y hora a objetos DateTime
-            DateTime dataReservaDateTime, horaIniciDateTime, horaFiDateTime;
-            if (!DateTime.TryParse(dataReserva, out dataReservaDateTime) ||
-                !DateTime.TryParse(horaInici, out horaIniciDateTime) ||
-                !DateTime.TryParse(horaFi, out horaFiDateTime))
+            // Convert the strings to DateTime objects
+            if (!DateTime.TryParse(dataReserva, out DateTime dataReservaDateTime) ||
+                !DateTime.TryParse(horaInici, out DateTime horaIniciDateTime) ||
+                !DateTime.TryParse(horaFi, out DateTime horaFiDateTime))
             {
                 return BadRequest("Los valores de fecha y hora no están en el formato correcto.");
             }
 
-            var sala = await _context.Sales.FirstOrDefaultAsync(s => s.NomSala == nomSala);
+            var sala = await _context.Sales.FirstOrDefaultAsync(s => s.MeetingRoomID == meetingRoomID);
             if (sala == null)
             {
-                return NotFound("No se ha encontrado ninguna sala con el nombre especificado.");
+                return NotFound("No se ha encontrado ninguna sala con la ID especificada.");
             }
+
+            // Get the user ID of the authenticated user
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var reserva = new Reserves
             {
@@ -76,6 +80,7 @@ namespace webapi.Controllers
                 DataReserva = dataReservaDateTime,
                 HoraInici = horaIniciDateTime,
                 HoraFi = horaFiDateTime,
+                UserID = userId // Assigning the user ID to the reservation.
             };
 
             _context.Reserves.Add(reserva);
@@ -83,6 +88,8 @@ namespace webapi.Controllers
 
             return CreatedAtAction("GetReserva", new { id = reserva.ReserveID }, reserva);
         }
+
+
 
 
 

@@ -19,7 +19,7 @@
 
       <div class="res-sales">
         <div class="res-subtitlb"><h4>Sala: </h4></div>
-        <selectSala></selectSala>
+        <selectSala (salaSeleccionada)="onSalaSeleccionada($event)"></selectSala>
       </div>
 
         <div class="res-gen4">
@@ -33,27 +33,25 @@
       <div class="res-titlb"><h2>hora</h2></div>
       <div class="res-subtitlb"><h4>comença:</h4></div>
       <input type="time" id="start" name="start"
-             min="09:00" max="18:00" required>
+             min="09:00" max="18:00" required [value] ="horaInici">
 
       <div class="res-subtitlb"><h4>acaba:</h4></div>
       <input type="time" id="finish" name="finish"
-             min="09:00" max="18:00" required>
+             min="09:00" max="18:00" required [value]="horaFi">
 
     </div>
     <div class="res-gen">
-      <div class="res-bodydate">
-        <div class="res-titlb"><h2>RESERVA</h2></div>
-        <div class="res-subtitlb"><h4>nom de la reserva:</h4></div>
-        <!--AQUI INPUT TEXT-->
-        <div class="res-titlb"><h2>DATA</h2></div>
-        <div class="res-subtitlb"><h4>COMENÇA:</h4></div>
-        <DatepickerDate></DatepickerDate>
+      <div class="res-titlb"> <h2>dia</h2></div>
+      <input type="date" id="day" name="day" [value]="dia" />
+      <br />
+      
+      
 
-      </div>
     </div>
-  </div>
+    
+  
   <div class="res-btn-g">
-    <a class="btn res-btn-reserva" href="/sales"><i class="fa-regular fa-arrow-right-from-arc"></i><span>reservar</span></a>
+    <a class="btn res-btn-reserva" (click)="reservarSala()"><i class="fa-regular fa-arrow-right-from-arc"></i><span>reservar</span></a>
     </div>
 </div>
 

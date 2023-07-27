@@ -11,7 +11,7 @@ export class ApiService {
   private apiUrlSales = 'https://localhost:7240/Sales';
   private apiUrlOficines = 'https://localhost:7240/Oficines';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
-  
+  private apiUrlReserves = 'https://localhost:7240/api/Reserves';
 
   constructor(private http: HttpClient) { }
 
@@ -172,4 +172,16 @@ export class ApiService {
     return this.http.put(url, sala);
   }
 
+  // CRUD RESERVES
+
+  CreateReserva(nomSala:string, dataReserva: string, horaInici: string, horaFi: string): Observable<any> {
+    const url = `${this.apiUrlReserves}/Reserves/CreateReserva`;
+    const body = {
+      nomSala: nomSala,
+      dataReserva: dataReserva,
+      horaInici: horaInici,
+      horaFi: horaFi
+    };
+    return this.http.post<any>(url, body);
+  }
 }

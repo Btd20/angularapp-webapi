@@ -1,6 +1,6 @@
 <mat-form-field>
   <mat-label>Selecciona una sala:</mat-label>
-  <mat-select [(ngModel)]="oficina">
+  <mat-select [(ngModel)]="selectedSala">
     <mat-option *ngFor="let sala of sales" [value]="sala.value">
       {{ sala.viewValue }}
     </mat-option>

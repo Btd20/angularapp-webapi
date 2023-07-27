@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { NgFor } from '@angular/common';
@@ -23,11 +23,12 @@ interface Sala {
   imports: [MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule],
 })
 export class SelectSala implements OnInit {
-
+  @Output() salaSeleccionada: EventEmitter<string> = new EventEmitter<string>();
   sales: Sala[] = [];
   pais: string = '';
   ciutat: string = '';
   oficina: string = '';
+  selectedSala: string = '';
 
   constructor(private apiService: ApiService)
   {
@@ -42,10 +43,18 @@ export class SelectSala implements OnInit {
     this.apiService.getAllSales().subscribe(
       (response: any[]) => {
         this.sales = response.map(sala => ({ value: sala.meetingRoomID, viewValue: sala.nomSala }));
+        if (this.sales.length > 0) {
+          this.selectedSala = this.sales[0].value;
+          
+        }
       },
       error => {
         console.error(error);
       }
     );
+  }
+
+  onSalaSeleccionada(): void {
+    this.salaSeleccionada.emit(this.selectedSala);
   }
 }
