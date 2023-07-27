@@ -170,7 +170,6 @@ input {
   font-weight: 600;
   font-family:var(--fontK);
   border-radius: 25px;
-  width: 80%;
 }
 
 select {

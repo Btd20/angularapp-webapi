@@ -40,18 +40,18 @@
         <selectSala (salaSeleccionada)="onSalaSeleccionada($any($event))"></selectSala>  <!-- el nom del event ha de ser el nom del eventEmitter, merci Celia -->
       </div>
 
-        <div class="res-gen4">
-          <div class="res-subtitlb"><h4>Organitzat per: </h4></div>
-          <!--SEMPRE SERÀ L'USERNAME EL PROPIETARI DE LA RESERVA-->
-          <div class="res-txt">{{ username }}</div>
-        </div>
-
+      <div class="res-gen4">
+        <div class="res-subtitlb"><h4>Organitzat per: </h4></div>
+        <!--SEMPRE SERÀ L'USERNAME EL PROPIETARI DE LA RESERVA-->
+        <div class="res-txt">{{ username }}</div>
       </div>
+
+    </div>
     <div class="res-gen">
       <div class="res-titlb"><h2>hora</h2></div>
       <div class="res-subtitlb"><h4>comença:</h4></div>
       <input type="time" id="start" name="start"
-             min="09:00" max="18:00" [(ngModel)]="horaInici" >
+             min="09:00" max="18:00" [(ngModel)]="horaInici">
 
       <div class="res-subtitlb"><h4>acaba:</h4></div>
       <input type="time" id="finish" name="finish"
@@ -62,14 +62,9 @@
       <div class="res-titlb"> <h2>dia</h2></div>
       <input type="date" id="day" name="day" [value]="dia" [(ngModel)]="dia" />
       <br />
-      
-      
-
     </div>
-    
-  
+  </div>
   <div class="res-btn-g">
     <a class="btn res-btn-reserva" (click)="reservarSala()"><i class="fa-regular fa-arrow-right-from-arc"></i><span>reservar</span></a>
-    </div>
-</div>
+  </div>
 
