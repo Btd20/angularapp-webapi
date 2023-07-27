@@ -38,7 +38,7 @@
         <h3 class="ubody-titl">Selecciona la teva ciutat</h3>
         <select>
           <option value="No seleccionat">No seleccionat</option>
-          <option>XXX</option>
+          <option *ngFor="let ciutat of ciutats" [value]="ciutat.nomCiutat">{{ ciutat.nomCiutat }}</option>
         </select>
         <button class="ubtn-editImg">Guardar</button>
       </div>
