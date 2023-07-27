@@ -19,9 +19,14 @@ export class UbicacioComponent {
   selectedCity: string | undefined;
   selectedOffice: string | undefined;
 
+  countryUbicacio: string = '';
+  cityUbicacio: string = '';
+  officeUbicacio: string = '';
+
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
   ngOnInit(): void {
+
     this.getPaisosFromApi();
     this.getAllCiutatsFromApi();
     this.getAllOficinesFromApi();
@@ -39,6 +44,7 @@ export class UbicacioComponent {
   }
 
   getAllCiutatsFromApi(): void {
+    //getCiutatsByPais(this.countryUbicacio)
     this.apiService.getAllCiutats().subscribe(
       response => {
         this.ciutats = response;
@@ -50,6 +56,7 @@ export class UbicacioComponent {
   }
 
   getAllOficinesFromApi(): void {
+    //HAURIA DE SER getOficinesByCity
     this.apiService.getAllOficines().subscribe(
       response => {
         this.oficines = response;

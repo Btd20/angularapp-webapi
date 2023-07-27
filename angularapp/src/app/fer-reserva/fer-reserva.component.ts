@@ -36,7 +36,7 @@ export class FerReservaComponent implements OnInit {
       }
       //this.salaReserva = params['sales'];
       //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}   ${this.userid}`);
-      alert(`${this.pais}    ${this.ciutat}   ${this.oficina}   ${this.userid}`);
+      //alert(`${this.pais}    ${this.ciutat}   ${this.oficina}   ${this.userid}`);
     })
   }
 
