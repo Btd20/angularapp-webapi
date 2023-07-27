@@ -23,7 +23,7 @@
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona el teu país</h3>
         <select [(ngModel)]="selectedCountry">
-          <option value="No seleccionat">No seleccionat</option>
+          <option value="No seleccionat" selected>No seleccionat</option>
           <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
         </select>
         <button class="ubtn-editImg" (click)="guardarPais()">Guardar</button>
@@ -51,7 +51,7 @@
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona la teva oficina</h3>
         <select [(ngModel)]="selectedOffice">
-          <option value="No seleccionat">No seleccionat</option>
+          <option value="No seleccionat" selected>No seleccionat</option>
           <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
         </select>
         <button class="ubtn-editImg" (click)="guardarOficina()">Guardar</button>
