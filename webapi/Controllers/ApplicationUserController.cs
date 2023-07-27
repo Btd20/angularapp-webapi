@@ -316,7 +316,7 @@ namespace webapi.Controllers
             if (user == null || user.ProfileImage == null || user.ProfileImage.Length == 0)
             {
                 // URL de la imagen predeterminada en Imgur (reemplaza con tu propia URL)
-                string defaultImageUrl = "https://image1.challengermode.com/e09f7c9a-7582-461e-3ba9-08d9251960c2_256_256";
+                string defaultImageUrl = "https://i.imgur.com/ct6esaa.png";
 
                 using (var httpClient = new HttpClient())
                 {
