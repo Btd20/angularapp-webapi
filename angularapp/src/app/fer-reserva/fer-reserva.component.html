@@ -19,7 +19,7 @@
 
       <div class="res-sales">
         <div class="res-subtitlb"><h4>Sala: </h4></div>
-        <!--Fer getSalaFromOficina. Ara li passem totes les sales, sense cap filtre.  -->
+        <!--Fet getSalaFromOficina. -->
         <select name="select" [(ngModel)]="selectedSala">
           <option value="No seleccionat">No seleccionat</option>
           <option *ngFor="let sala of sales" [value]="sala.nomSala">{{ sala.nomSala }}</option>
