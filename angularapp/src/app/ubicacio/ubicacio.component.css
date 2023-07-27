@@ -76,7 +76,8 @@
 }
 
 .ubtn-edit:hover {
-  color:red;
+  color:var(--bg-2);
+  background-color:var(--txt-g1);
 }
 
 .ubtn-editImg {
