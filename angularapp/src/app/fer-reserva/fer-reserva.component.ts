@@ -10,6 +10,7 @@ export class FerReservaComponent implements OnInit {
   username: string | null = sessionStorage.getItem('username');
   pais: string | null = sessionStorage.getItem('pais');
   oficina: string | null = sessionStorage.getItem('oficina');
+  userid: string | null = sessionStorage.getItem('id');
 
   paisReserva: string = '';
   ciutatReserva: string = '';
@@ -24,7 +25,7 @@ export class FerReservaComponent implements OnInit {
       this.ciutatReserva = params['ciutat'];
       this.oficinaReserva = params['oficina'];
       //this.salaReserva = params['sales'];
-      //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
+      alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}   ${this.userid}`);
     })
   }
 }

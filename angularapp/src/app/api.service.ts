@@ -53,6 +53,7 @@ export class ApiService {
       tap((usuaris: any[]) => {
         const currentUser = usuaris.find(usuario => usuario.userName === sessionStorage.getItem('username'));
         if (currentUser) {
+          sessionStorage.setItem('id', currentUser.id);
           sessionStorage.setItem('email', currentUser.email);
           if (currentUser.pais == null) {
             sessionStorage.setItem('pais', "No seleccionat");
