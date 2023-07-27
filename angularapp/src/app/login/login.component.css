@@ -108,8 +108,8 @@
   }
 
 .btn-tornaEnrere {
-  background-color: var(--txt-g1);
-  color: var(--bs-body-bg);
+  background-color: var(--bs-body-bg);
+  color: var(--txt-g1);
   border-radius: 15px;
   overflow: hidden;
   display: flex;
@@ -130,7 +130,7 @@
 
 
   .btn-tornaEnrere:hover {
-    background-color: var(--bs-body-bg);
-    color: var(--txt-g1);
+    background-color: var(--txt-g1);
+    color: var(--bs-body-bg);
     transition: 0.3s ease-in-out;
   }

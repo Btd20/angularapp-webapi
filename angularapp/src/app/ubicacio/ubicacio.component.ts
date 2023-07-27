@@ -14,6 +14,7 @@ export class UbicacioComponent {
   paisos: any[] = [];
   ciutats: any[] = [];
   oficines: any[] = [];
+
   selectedCountry: string | undefined;
   selectedCity: string | undefined;
   selectedOffice: string | undefined;
