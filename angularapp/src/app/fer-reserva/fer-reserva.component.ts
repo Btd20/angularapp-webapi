@@ -27,7 +27,7 @@ export class FerReservaComponent implements OnInit {
       this.paisReserva = params['pais'];
       this.ciutatReserva = params['ciutat'];
       this.oficinaReserva = params['oficina'];
-      this.getAllSalesFromApi();
+      this.getSalesByOfiFromApi();
       //this.salaReserva = params['sales'];
       //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
     })
@@ -35,6 +35,17 @@ export class FerReservaComponent implements OnInit {
 
   getAllSalesFromApi(): void {
     this.apiService.getAllSales().subscribe(
+      response => {
+        this.sales = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getSalesByOfiFromApi(): void {
+    this.apiService.getSalaByOficina(this.paisReserva, this.ciutatReserva, this.oficinaReserva).subscribe(
       response => {
         this.sales = response;
       },
