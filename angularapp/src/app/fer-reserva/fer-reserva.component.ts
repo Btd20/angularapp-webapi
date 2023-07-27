@@ -10,7 +10,9 @@ import { ApiService } from '../api.service';
 export class FerReservaComponent implements OnInit {
   username: string | null = sessionStorage.getItem('username');
   pais: string | null = sessionStorage.getItem('pais');
+  ciutat: string | null = sessionStorage.getItem('ciutat');
   oficina: string | null = sessionStorage.getItem('oficina');
+  userid: string | null = sessionStorage.getItem('id');
 
   sales: any[] = [];
   selectedSala: string | undefined;
@@ -27,9 +29,14 @@ export class FerReservaComponent implements OnInit {
       this.paisReserva = params['pais'];
       this.ciutatReserva = params['ciutat'];
       this.oficinaReserva = params['oficina'];
-      this.getSalesByOfiFromApi();
+      if (this.oficinaReserva != null) {
+        this.getSalesByOfiFromApi();
+      } else {
+        this.getSalesByOfiFromUser();
+      }
       //this.salaReserva = params['sales'];
-      //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
+      //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}   ${this.userid}`);
+      alert(`${this.pais}    ${this.ciutat}   ${this.oficina}   ${this.userid}`);
     })
   }
 
@@ -46,6 +53,17 @@ export class FerReservaComponent implements OnInit {
 
   getSalesByOfiFromApi(): void {
     this.apiService.getSalaByOficina(this.paisReserva, this.ciutatReserva, this.oficinaReserva).subscribe(
+      response => {
+        this.sales = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getSalesByOfiFromUser(): void {
+    this.apiService.getSalaByOficina(this.pais ?? '', this.ciutat ?? '', this.oficina ?? '').subscribe(
       response => {
         this.sales = response;
       },

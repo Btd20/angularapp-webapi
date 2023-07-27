@@ -12,9 +12,8 @@ export class UbicacioComponent {
   imageSelected: boolean = false;
 
   paisos: any[] = [];
-  oficines: any[] = [];
   ciutats: any[] = [];
-
+  oficines: any[] = [];
   selectedCountry: string | undefined;
   selectedCity: string | undefined;
   selectedOffice: string | undefined;
@@ -23,8 +22,8 @@ export class UbicacioComponent {
 
   ngOnInit(): void {
     this.getPaisosFromApi();
+    this.getAllCiutatsFromApi();
     this.getAllOficinesFromApi();
-    //this.getCiutatsFromApi();
   }
 
   getPaisosFromApi(): void {
@@ -37,9 +36,9 @@ export class UbicacioComponent {
       }
     );
   }
-  /*
-  getCiutatsFromApi(): void {
-    this.apiService.getCiutatsByPais(this.paisos).subscribe(
+
+  getAllCiutatsFromApi(): void {
+    this.apiService.getAllCiutats().subscribe(
       response => {
         this.ciutats = response;
       },
@@ -47,7 +46,7 @@ export class UbicacioComponent {
         console.error(error);
       }
     );
-  }*/
+  }
 
   getAllOficinesFromApi(): void {
     this.apiService.getAllOficines().subscribe(
@@ -68,14 +67,13 @@ export class UbicacioComponent {
     }
   }
 
-  /*
   guardarCiutat(): void {
     if (this.selectedCity) {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarCiutat(username, this.selectedCity);
       sessionStorage.setItem('ciutat', this.selectedCity);
     }
-  }*/
+  }
 
   guardarOficina(): void {
     if (this.selectedOffice) {

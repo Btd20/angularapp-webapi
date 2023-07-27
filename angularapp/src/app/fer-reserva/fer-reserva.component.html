@@ -6,14 +6,32 @@
       <div class="res-titlb"><h2>ALTRES</h2></div>
       <div class="res-gen4">
         <div class="res-subtitlb"><h4>País: </h4></div>
-        <div class="res-txt" *ngIf="pais !== 'No seleccionat'">{{ pais }}</div>
-        <div class="res-txt" *ngIf="pais === 'No seleccionat'">{{ paisReserva }}</div>
+        <!-- Si pais es "No seleccionat" y oficinaReserva es null -->
+        <div class="res-txt" *ngIf="pais == 'No seleccionat' && oficinaReserva == null">{{ pais }}</div>
+
+        <!-- Si pais es "No seleccionat" y oficinaReserva no es null -->
+        <div class="res-txt" *ngIf="pais == 'No seleccionat' && oficinaReserva != null">{{ paisReserva }}</div>
+
+        <!-- Si pais es diferente a "No seleccionat" y oficinaReserva es null -->
+        <div class="res-txt" *ngIf="pais != 'No seleccionat' && oficinaReserva == null">{{ pais }}</div>
+
+        <!-- Si pais es diferente a "No seleccionat" y oficinaReserva no es null -->
+        <div class="res-txt" *ngIf="pais != 'No seleccionat' && oficinaReserva != null">{{ paisReserva }}</div>
       </div>
 
       <div class="res-gen4">
         <div class="res-subtitlb"><h4>Oficina: </h4></div>
-        <div class="res-txt" *ngIf="oficina !== 'No seleccionat'">{{ oficina }}</div>
-        <div class="res-txt" *ngIf="oficina === 'No seleccionat'">{{ oficinaReserva }}</div>
+        <!-- Si pais es "No seleccionat" y oficinaReserva es null -->
+        <div class="res-txt" *ngIf="oficina == 'No seleccionat' && oficinaReserva == null">{{ oficina }}</div>
+
+        <!-- Si pais es "No seleccionat" y oficinaReserva no es null -->
+        <div class="res-txt" *ngIf="oficina == 'No seleccionat' && oficinaReserva != null">{{ oficinaReserva }}</div>
+
+        <!-- Si pais es diferente a "No seleccionat" y oficinaReserva es null -->
+        <div class="res-txt" *ngIf="oficina != 'No seleccionat' && oficinaReserva == null">{{ oficina }}</div>
+
+        <!-- Si pais es diferente a "No seleccionat" y oficinaReserva no es null -->
+        <div class="res-txt" *ngIf="oficina != 'No seleccionat' && oficinaReserva != null">{{ oficinaReserva }}</div>
 
       </div>
 
