@@ -11,7 +11,7 @@
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona la teva imatge</h3>
         <input type="file" (change)="onFileSelected($event)" class="ubtn-edit" style="display: none;" id="fileInput" />
-        <label for="fileInput" class="ubody-txt ubtn-edit" style="cursor: pointer;">Elegir archivo</label>
+        <label for="fileInput" class="ubody-txt ubtn-edit">Escollir imatge</label>
         <button class="ubtn-editImg" (click)="uploadImage()">Canviar Imatge</button>
       </div>
     </div>
@@ -23,7 +23,7 @@
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona el teu país</h3>
         <select [(ngModel)]="selectedCountry">
-          <option value="No seleccionat">No seleccionat</option>
+          <option value="No seleccionat" selected>No seleccionat</option>
           <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
         </select>
         <button class="ubtn-editImg" (click)="guardarPais()">Guardar</button>
@@ -32,15 +32,15 @@
 
     <div class="ubody-item">
       <div class="uitem-icon">
-        <i class="fa-regular fa-earth-americas"></i>
+        <i class="fa-regular fa-city"></i>
       </div>
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona la teva ciutat</h3>
-        <select [(ngModel)]="selectedCity">
+        <select>
           <option value="No seleccionat">No seleccionat</option>
-          <option *ngFor="let ciutat of ciutats" [value]="ciutat.nomCiutat">{{ ciutat.nomCiutat }}</option>
+          <option>XXX</option>
         </select>
-        <button class="ubtn-editImg" (click)="guardarCiutat()">Guardar</button>
+        <button class="ubtn-editImg">Guardar</button>
       </div>
     </div>
 
@@ -51,7 +51,7 @@
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona la teva oficina</h3>
         <select [(ngModel)]="selectedOffice">
-          <option value="No seleccionat">No seleccionat</option>
+          <option value="No seleccionat" selected>No seleccionat</option>
           <option *ngFor="let oficina of oficines" [value]="oficina.nomOficina">{{ oficina.nomOficina }}</option>
         </select>
         <button class="ubtn-editImg" (click)="guardarOficina()">Guardar</button>
@@ -59,5 +59,4 @@
     </div>
 
   </div>
-
 </div>
