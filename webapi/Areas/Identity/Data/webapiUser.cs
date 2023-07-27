@@ -6,6 +6,7 @@ namespace webapi.Areas.Identity.Data
     public class webapiUser : IdentityUser
     {
         public string? Pais { get; set; }
+        public string? Ciutat { get; set; }
         public string? Email { get; set; }
         public string? Oficina { get; set; }
         public bool Rol { get; set; }
