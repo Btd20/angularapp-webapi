@@ -1,7 +1,8 @@
 <mat-form-field>
   <mat-label>Selecciona una sala:</mat-label>
-  <mat-select [(ngModel)]="selectedSala">
-    <mat-option *ngFor="let sala of sales" [value]="sala.value">
+  <mat-select [(ngModel)]="selectedSala"
+              >
+    <mat-option *ngFor="let sala of sales" [value]="sala.value" (click)="onSalaSeleccionada()">
       {{ sala.viewValue }}
     </mat-option>
   </mat-select>

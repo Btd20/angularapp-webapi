@@ -11,7 +11,7 @@ export class ApiService {
   private apiUrlSales = 'https://localhost:7240/Sales';
   private apiUrlOficines = 'https://localhost:7240/Oficines';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
-  private apiUrlReserves = 'https://localhost:7240/api/Reserves';
+  private apiUrlReserves = 'https://localhost:7240';
 
   constructor(private http: HttpClient) { }
 
@@ -54,6 +54,7 @@ export class ApiService {
       tap((usuaris: any[]) => {
         const currentUser = usuaris.find(usuario => usuario.userName === sessionStorage.getItem('username'));
         if (currentUser) {
+          sessionStorage.setItem('userID', currentUser.id);
           sessionStorage.setItem('email', currentUser.email);
           if (currentUser.pais == null) {
             sessionStorage.setItem('pais', "No seleccionat");
@@ -174,14 +175,15 @@ export class ApiService {
 
   // CRUD RESERVES
 
-  CreateReserva(nomSala:string, dataReserva: string, horaInici: string, horaFi: string): Observable<any> {
-    const url = `${this.apiUrlReserves}/Reserves/CreateReserva`;
+  CreateReserva(meetingRoomID: number, dataReserva: string, horaInici: string, horaFi: string): Observable<any> {
+    const url = `${this.apiUrlReserves}/FerReserva`; //arreclar ruta sisi ouh yeah
     const body = {
-      nomSala: nomSala,
+      meetingRoomID: meetingRoomID, 
       dataReserva: dataReserva,
       horaInici: horaInici,
       horaFi: horaFi
     };
     return this.http.post<any>(url, body);
   }
+
 }

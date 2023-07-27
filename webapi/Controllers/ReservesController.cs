@@ -44,7 +44,7 @@ namespace webapi.Controllers
         }
 
         // POST: Reserves
-        [HttpPost]
+       /* [HttpPost]
         public async Task<ActionResult<Reserves>> CreateReservations(Reserves reserve)
         {
             _context.Reserves.Add(reserve);
@@ -52,9 +52,9 @@ namespace webapi.Controllers
 
             return CreatedAtAction("GetReserve", new { id = reserve.ReserveID }, reserve);
         }
+       */
 
-
-        [HttpPost("CreateReserva")]
+        [HttpPost("/FerReserva")]
         public async Task<IActionResult> CreateReserva(int meetingRoomID, string dataReserva, string horaInici, string horaFi)
         {
             // Convert the strings to DateTime objects

@@ -19,7 +19,7 @@
 
       <div class="res-sales">
         <div class="res-subtitlb"><h4>Sala: </h4></div>
-        <selectSala (salaSeleccionada)="onSalaSeleccionada($event)"></selectSala>
+        <selectSala (salaSeleccionada)="onSalaSeleccionada($any($event))"></selectSala>  <!-- el nom del event ha de ser el nom del eventEmitter, merci Celia -->
       </div>
 
         <div class="res-gen4">
@@ -33,16 +33,16 @@
       <div class="res-titlb"><h2>hora</h2></div>
       <div class="res-subtitlb"><h4>comença:</h4></div>
       <input type="time" id="start" name="start"
-             min="09:00" max="18:00" required [value] ="horaInici">
+             min="09:00" max="18:00" [(ngModel)]="horaInici" >
 
       <div class="res-subtitlb"><h4>acaba:</h4></div>
       <input type="time" id="finish" name="finish"
-             min="09:00" max="18:00" required [value]="horaFi">
+             min="09:00" max="18:00" [(ngModel)]="horaFi">
 
     </div>
     <div class="res-gen">
       <div class="res-titlb"> <h2>dia</h2></div>
-      <input type="date" id="day" name="day" [value]="dia" />
+      <input type="date" id="day" name="day" [value]="dia" [(ngModel)]="dia" />
       <br />
       
       

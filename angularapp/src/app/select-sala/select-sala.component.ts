@@ -1,39 +1,23 @@
-import { Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { NgFor } from '@angular/common';
-import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { ActivatedRoute, Route } from '@angular/router';
+import { Component, OnInit, Output, EventEmitter, Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
-import { AuthService } from '../auth-service.service';
+import { Observable, Subject } from 'rxjs';
 
 interface Sala {
-  value: string;
+  value: number;
   viewValue: string;
 }
 
-/**
- * @title Basic select
- */
 @Component({
   selector: 'selectSala',
   templateUrl: 'select-sala.component.html',
-  standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule],
 })
+
 export class SelectSala implements OnInit {
-  @Output() salaSeleccionada: EventEmitter<string> = new EventEmitter<string>();
+  @Output() salaSeleccionada: EventEmitter<number> = new EventEmitter<number>();
   sales: Sala[] = [];
-  pais: string = '';
-  ciutat: string = '';
-  oficina: string = '';
-  selectedSala: string = '';
+  selectedSala: number = 0;
 
-  constructor(private apiService: ApiService)
-  {
-
-  }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.getAllSalesFromApi();
@@ -44,7 +28,7 @@ export class SelectSala implements OnInit {
       (response: any[]) => {
         this.sales = response.map(sala => ({ value: sala.meetingRoomID, viewValue: sala.nomSala }));
         if (this.sales.length > 0) {
-          this.selectedSala = this.sales[0].value;
+          this.selectedSala = this.sales[1].value;
           
         }
       },
@@ -54,7 +38,8 @@ export class SelectSala implements OnInit {
     );
   }
 
-  onSalaSeleccionada(): void {
+  onSalaSeleccionada() {
+    alert(`${this.selectedSala}`);
     this.salaSeleccionada.emit(this.selectedSala);
   }
 }

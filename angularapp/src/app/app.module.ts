@@ -118,7 +118,8 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     CreateSalesComponent,
     UpdateCiutatComponent,
     UpdateOficinaComponent,
-    UpdateSalaComponent
+    UpdateSalaComponent,
+    SelectSala
 
   ],
   imports: [ 
@@ -131,7 +132,7 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatDialogModule,
     MatSelectModule,
-    SelectSala,
+   
 
   ],
 

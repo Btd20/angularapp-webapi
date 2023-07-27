@@ -1,24 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ApiService } from '../api.service';
+import { ActivatedRoute } from '@angular/router';
+import { SelectSala } from '../select-sala/select-sala.component';
 
 @Component({
   selector: 'app-ferreserva',
   templateUrl: './fer-reserva.component.html',
   styleUrls: ['./fer-reserva.component.css'],
 })
-export class FerReservaComponent implements OnInit{
+export class FerReservaComponent implements OnInit {
+  userid: string | null = sessionStorage.getItem('userID');
   username: string | null = sessionStorage.getItem('username');
   pais: string | null = sessionStorage.getItem('pais');
   oficina: string | null = sessionStorage.getItem('oficina');
   dia: string = '';
   horaInici: string = '';
   horaFi: string = '';
-  selectedSala: string = '';
+  meetingRoomID: number = 0;
+  paisReserva: string = '';
+  ciutatReserva: string = '';
+  oficinaReserva: string = '';
+  salaReserva: string = '';
   nomSala: string = '';
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.paisReserva = params['pais'];
+      this.ciutatReserva = params['ciutat'];
+      this.oficinaReserva = params['oficina'];
+      //this.salaReserva = params['sales'];
+      //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
+    });
+
     // Obtenir la data actual i convertir-la al format AAAA-MM-DD
     const dataActual = new Date();
     const any = dataActual.getFullYear();
@@ -26,35 +41,33 @@ export class FerReservaComponent implements OnInit{
     const dia = String(dataActual.getDate()).padStart(2, '0');
     this.dia = `${any}-${mes}-${dia}`;
 
-
     const hora = String(dataActual.getHours()).padStart(2, '0');
     const minuts = String(dataActual.getMinutes()).padStart(2, '0');
     this.horaInici = `${hora}:${minuts}`;
     this.horaFi = `${hora}:${minuts}`;
   }
-  onSalaSeleccionada(sala: string): void {
-    this.nomSala = sala;
-  }
 
   reservarSala() {
     // Obtenim les dades de reserva dels camps del formulari
-    const nomSala = this.nomSala; // Omple aquest valor amb el nom de la sala seleccionada
+    const meetingRoomID = this.meetingRoomID;
     const dataReserva = this.dia;
     const horaInici = this.horaInici;
     const horaFi = this.horaFi;
 
-    console.log(`Nom de la sala: ${nomSala}, Data Reserva: ${dataReserva}, Hora inici: ${horaInici}, Hora fi: ${horaFi}`);
+    console.log(`id de la sala: ${meetingRoomID}, Data Reserva: ${dataReserva}, Hora inici: ${horaInici}, Hora fi: ${horaFi}, idUsuari: ${this.userid}`);
 
-    // Fem la crida al backend per crear la reserva
-    this.apiService.CreateReserva(nomSala, dataReserva, horaInici, horaFi).subscribe(
+    this.apiService.CreateReserva(meetingRoomID, dataReserva, horaInici, horaFi).subscribe(
       (resposta) => {
-        // Aquí pots tractar la resposta del backend, si és necessari
         console.log('Reserva creada amb èxit:', resposta);
       },
       (error) => {
-        // En cas d'error, mostra un missatge o fes alguna acció addicional
         console.error('Error en crear la reserva:', error);
       }
     );
+  }
+
+  onSalaSeleccionada(salaId: number) {
+    alert(`jhgdshfjidshfdisu`);
+    this.meetingRoomID = salaId;
   }
 }
