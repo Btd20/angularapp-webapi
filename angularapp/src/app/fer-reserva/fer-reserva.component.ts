@@ -12,11 +12,15 @@ export class FerReservaComponent implements OnInit {
   userid: string | null = sessionStorage.getItem('userID');
   username: string | null = sessionStorage.getItem('username');
   pais: string | null = sessionStorage.getItem('pais');
+  ciutat: string | null = sessionStorage.getItem('ciutat');
   oficina: string | null = sessionStorage.getItem('oficina');
   dia: string = '';
   horaInici: string = '';
   horaFi: string = '';
   meetingRoomID: number = 0;
+  sales: any[] = [];
+  selectedSala: string | undefined;
+
   paisReserva: string = '';
   ciutatReserva: string = '';
   oficinaReserva: string = '';
@@ -30,6 +34,11 @@ export class FerReservaComponent implements OnInit {
       this.paisReserva = params['pais'];
       this.ciutatReserva = params['ciutat'];
       this.oficinaReserva = params['oficina'];
+      if (this.oficinaReserva != null) {
+        this.getSalesByOfiFromApi();
+      } else {
+        this.getSalesByOfiFromUser();
+      }
       //this.salaReserva = params['sales'];
       //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
     });
@@ -69,5 +78,38 @@ export class FerReservaComponent implements OnInit {
   onSalaSeleccionada(salaId: number) {
     alert(`jhgdshfjidshfdisu`);
     this.meetingRoomID = salaId;
+  }
+
+  getAllSalesFromApi(): void {
+    this.apiService.getAllSales().subscribe(
+      response => {
+        this.sales = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getSalesByOfiFromApi(): void {
+    this.apiService.getSalaByOficina(this.paisReserva, this.ciutatReserva, this.oficinaReserva).subscribe(
+      response => {
+        this.sales = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getSalesByOfiFromUser(): void {
+    this.apiService.getSalaByOficina(this.pais ?? '', this.ciutat ?? '', this.oficina ?? '').subscribe(
+      response => {
+        this.sales = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 }

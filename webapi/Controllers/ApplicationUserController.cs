@@ -245,6 +245,26 @@ namespace webapi.Controllers
             return BadRequest(updateResult.Errors);
         }
 
+        // POST: api/ApplicationUsers/AssignCity
+        [HttpPost("AssignCity")]
+        public async Task<IActionResult> AssignCity(AssignCity model)
+        {
+            var user = await _userManager.FindByNameAsync(model.Username);
+            if (user == null)
+            {
+                return BadRequest("Usuari no trobat.");
+            }
+
+            // Asigna el país directamente a la propiedad "Pais" del usuario
+            user.Ciutat = model.City;
+
+            var updateResult = await _userManager.UpdateAsync(user);
+            if (updateResult.Succeeded)
+            {
+                return NoContent();
+            }
+            return BadRequest(updateResult.Errors);
+        }
 
         // POST: api/ApplicationUsers/AssignOffice
         [HttpPost("AssignOffice")]

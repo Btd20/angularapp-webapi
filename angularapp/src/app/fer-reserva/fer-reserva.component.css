@@ -15,18 +15,10 @@
 
   .res-titl i {
     color: var(--txt-g3);
-    font-size: 20px;
-    text-align: -webkit-center;
+    font-size: 0.7em;
+    text-align: center;
     vertical-align: middle;
     padding-left: 5px;
-  }
-
-  .res-titl strong {
-    color: var(--txt-g3);
-    letter-spacing: 0.8px;
-    font-size: 20px;
-    text-align: -webkit-center;
-    vertical-align: middle;
   }
 
   .res-titl span {
@@ -77,7 +69,6 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 20px;
-  margin-right: 5px;
 }
 
 .res-gen4 .res-subtitlb h4 {
@@ -101,7 +92,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 20px;
+  padding-bottom: 50px;
 }
 
 .res-txt {

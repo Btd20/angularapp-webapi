@@ -71,12 +71,31 @@ label {
 }
 
 input {
-  width: 100%;
+  /* remove default behavior */
+  appearance: none;
+  -webkit-appearance: none;
+  /* usual styles */
   padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
+  border: none;
+  background-color: var(--bg-2);
+  color: var(--txt-g1);
+  font-weight: 600;
+  font-family: var(--fontK);
+  border-radius: 25px;
+  width: 100%;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 4px 10px;
+  border: none;
+  background-color: var(--bg-2);
+  color: var(--txt-g1);
+  font-weight: 600;
+  font-family: var(--fontK);
+  border-radius: 25px;
+  width: 100%;
 }
 
 button {

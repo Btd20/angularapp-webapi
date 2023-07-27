@@ -54,12 +54,17 @@ export class ApiService {
       tap((usuaris: any[]) => {
         const currentUser = usuaris.find(usuario => usuario.userName === sessionStorage.getItem('username'));
         if (currentUser) {
-          sessionStorage.setItem('userID', currentUser.id);
+          sessionStorage.setItem('id', currentUser.id);
           sessionStorage.setItem('email', currentUser.email);
           if (currentUser.pais == null) {
             sessionStorage.setItem('pais', "No seleccionat");
           } else {
             sessionStorage.setItem('pais', currentUser.pais);
+          }
+          if (currentUser.ciutat == null) {
+            sessionStorage.setItem('ciutat', "No seleccionat");
+          } else {
+            sessionStorage.setItem('ciutat', currentUser.ciutat);
           }
           if (currentUser.oficina == null) {
             sessionStorage.setItem('oficina', "No seleccionat");
@@ -123,6 +128,18 @@ export class ApiService {
     return this.http.delete(url);
   }
 
+  guardarCiutat(username: string, city: string): void {
+    const model = { Username: username, City: city };
+
+    this.http.post(`${this.apiUrlUsuaris}/AssignCity`, model).subscribe(
+      () => {
+        console.log('Ciutat guardada correctament.');
+      },
+      (error) => {
+        console.error('Error al guardar la ciutat:', error);
+      }
+    );
+  }
 
 
   // CRUD OFICINES

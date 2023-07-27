@@ -1,8 +1,49 @@
 <app-navsales></app-navsales>
 <div class="row p-5 container-reserva">
-  <div class="res-titl"><strong>modifica una reserva </strong>  <i class="fa-duotone fa-arrow-right"></i>  <span>[NOM RESERVA]</span></div>
+  <div class="res-titl"><i class="fa-duotone fa-arrow-right"></i><span>MODIFICA LA RESERVA</span></div>
   <div class="res-body">
-    Ha de poguer modificar la SALA, les hores, la data i el nom DE LA RESERVA.
+    <div class="res-gen">
+      <div class="res-titlb"><h2>ALTRES</h2></div>
+      <div class="res-sales">
+        <div class="res-subtitlb"><h4>Sala: </h4></div>
+        <!--Fet getSalaFromOficina. -->
+        <select name="select" [(ngModel)]="selectedSala">
+          <option value="No seleccionat">No seleccionat</option>
+          <option *ngFor="let sala of sales" [value]="sala.nomSala">{{ sala.nomSala }}</option>
+        </select>
+      </div>
+
+      <div class="res-gen4">
+        <div class="res-subtitlb"><h4>Organitzat per: </h4></div>
+        <!--SEMPRE SERÀ L'USERNAME EL PROPIETARI DE LA RESERVA-->
+        <div class="res-txt">{{ username }}</div>
+      </div>
+
+    </div>
+    <div class="res-gen">
+      <div class="res-titlb"><h2>hora</h2></div>
+      <div class="res-subtitlb"><h4>comença:</h4></div>
+      <input style="width:20%;" type="time" id="start" name="start"
+             min="09:00" max="18:00" required>
+      <br />
+      <div class="res-subtitlb"><h4>acaba:</h4></div>
+      <input style="width:20%;" type="time" id="finish" name="finish"
+             min="09:00" max="18:00" required>
+
+    </div>
+    <div class="res-gen">
+      <div class="res-bodydate">
+        <div class="res-subtitlb"><h4>nom de la reserva:</h4></div>
+        <input type="text" id="name" name="name" required
+               minlength="4" maxlength="28" size="10">
+        <br />
+        <div class="res-titlb"><h2>DATA</h2></div>
+        <div class="res-subtitlb"><h4>COMENÇA:</h4></div>
+        <input type="date" id="reunio-start" name="reunio-start"
+               value="2018-07-22"
+               min="1999-01-01" max="2024-12-31">
+      </div>
+    </div>
   </div>
   <div class="res-btn-g">
     <a class="btn res-btn-reserva res-modify" href="/sales"><span>modificar</span></a>

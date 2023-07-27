@@ -12,14 +12,23 @@ export class UbicacioComponent {
   imageSelected: boolean = false;
 
   paisos: any[] = [];
+  ciutats: any[] = [];
   oficines: any[] = [];
+
   selectedCountry: string | undefined;
+  selectedCity: string | undefined;
   selectedOffice: string | undefined;
+
+  countryUbicacio: string = '';
+  cityUbicacio: string = '';
+  officeUbicacio: string = '';
 
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
   ngOnInit(): void {
+
     this.getPaisosFromApi();
+    this.getAllCiutatsFromApi();
     this.getAllOficinesFromApi();
   }
 
@@ -34,7 +43,20 @@ export class UbicacioComponent {
     );
   }
 
+  getAllCiutatsFromApi(): void {
+    //getCiutatsByPais(this.countryUbicacio)
+    this.apiService.getAllCiutats().subscribe(
+      response => {
+        this.ciutats = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
   getAllOficinesFromApi(): void {
+    //HAURIA DE SER getOficinesByCity
     this.apiService.getAllOficines().subscribe(
       response => {
         this.oficines = response;
@@ -50,6 +72,14 @@ export class UbicacioComponent {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarPais(username, this.selectedCountry);
       sessionStorage.setItem('pais', this.selectedCountry);
+    }
+  }
+
+  guardarCiutat(): void {
+    if (this.selectedCity) {
+      const username = sessionStorage.getItem('username') ?? '';
+      this.apiService.guardarCiutat(username, this.selectedCity);
+      sessionStorage.setItem('ciutat', this.selectedCity);
     }
   }
 
