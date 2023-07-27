@@ -63,7 +63,7 @@ export class FerReservaComponent implements OnInit {
   }
 
   getSalesByOfiFromUser(): void {
-    this.apiService.getSalaByOficina(this.pais ?? 'No seleccionat', this.ciutat ?? 'No seleccionat', this.oficina ?? 'No seleccionat').subscribe(
+    this.apiService.getSalaByOficina(this.pais ?? '', this.ciutat ?? '', this.oficina ?? '').subscribe(
       response => {
         this.sales = response;
       },
