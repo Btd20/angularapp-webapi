@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 
-
 @Component({
   selector: 'app-ferreserva',
   templateUrl: './fer-reserva.component.html',

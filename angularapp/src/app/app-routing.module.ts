@@ -46,6 +46,7 @@ const routes: Routes = [
   { path: 'ciutats', component: CiutatsComponent },
   { path: 'oficines', component: OficinesComponent },
   { path: 'oficines/:pais/:ciutat/:oficina/sales', component: SalesComponent },
+  { path: 'ferreserva/:pais/:ciutat/:oficina', component: FerReservaComponent },
   { path: 'ciutats/:pais/oficines/:ciutat', component: OficinesComponent },
   { path: 'ciutats/:pais', component: CiutatsComponent },
   { path: 'paisos', component: PaisosComponent },

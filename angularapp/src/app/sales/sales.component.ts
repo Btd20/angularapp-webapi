@@ -58,7 +58,7 @@ export class SalesComponent implements OnInit {
   }
 
   navigateToFerReserves(): void {
-    this.router.navigate(['/ferreserva']);
+    this.router.navigate(['/ferreserva', this.pais, this.ciutat, this.oficina]);
   }
 
 }
