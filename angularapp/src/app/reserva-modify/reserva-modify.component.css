@@ -35,7 +35,6 @@
     font-weight: 800;
     padding-left: 5px;
   }
-
 .res-body {
   width: 100%;
   height: calc(100% - 19%);
@@ -47,7 +46,115 @@
   align-items: baseline;
   padding-top: 25px;
   overflow: hidden;
-  background-color: orangered;
+}
+
+.res-gen {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+/*--AQUI JA SON ELS FORMULARIS--*/
+.res-titlb h2 {
+  color: var(--txt-g1);
+  padding-bottom: 10px;
+  font-family: var(--fontR);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.res-subtitlb h4 {
+  color: var(--txt-g3);
+  font-family: var(--fontR);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.res-gen4 .res-subtitlb h4 {
+  margin-right: 5px;
+}
+
+.res-gen input {
+  margin: 2.5px auto 10px auto;
+}
+
+.res-gen4 {
+  display: flex;
+  align-items: baseline;
+  margin-top: -5px;
+}
+
+.res-sales {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 20px;
+}
+
+.res-txt {
+  text-align: center;
+  display: flex;
+  text-transform: uppercase;
+  font-family: var(--fontK);
+  font-weight: 900;
+  color: var(--txt-g1);
+  font-size: 20px;
+  overflow: hidden;
+  vertical-align: -webkit-baseline-middle;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.res-bodydate {
+  display: flex;
+  margin-top: 5%;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+input {
+  /* remove default behavior */
+  appearance: none;
+  -webkit-appearance: none;
+  /* usual styles */
+  padding: 10px;
+  border: none;
+  background-color: var(--bg-2);
+  color: var(--txt-g1);
+  font-weight: 600;
+  font-family: var(--fontK);
+  border-radius: 25px;
+  width: 80%;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 4px 10px;
+  border: none;
+  background-color: var(--bg-2);
+  color: var(--txt-g1);
+  font-weight: 600;
+  font-family: var(--fontK);
+  border-radius: 25px;
+  width: 100%;
 }
 
 /*--BUTÓ FER RESERVA--*/
@@ -132,3 +239,5 @@
   background-color: var(--bs-body-bg);
   border-color: var(--bs-body-bg);
 }
+
+
