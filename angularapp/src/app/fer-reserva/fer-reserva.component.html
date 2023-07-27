@@ -19,10 +19,10 @@
 
       <div class="res-sales">
         <div class="res-subtitlb"><h4>Sala: </h4></div>
-        <!--faltarien que aqui les opcions les passes x la BBDD-->
-        <select name="select">
-          <!--<option *ngFor="let sala of sala" [value]="pais.nomPais">{{ sala.nomSala }}</option>-->
-          <option value="---" selected>---</option>
+        <!--Fer getSalaFromOficina. Ara li passem totes les sales, sense cap filtre.  -->
+        <select name="select" [(ngModel)]="selectedSala">
+          <option value="No seleccionat">No seleccionat</option>
+          <option *ngFor="let sala of sales" [value]="sala.nomSala">{{ sala.nomSala }}</option>
         </select>
       </div>
 
