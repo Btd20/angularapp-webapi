@@ -13,7 +13,10 @@ export class UbicacioComponent {
 
   paisos: any[] = [];
   oficines: any[] = [];
+  ciutats: any[] = [];
+
   selectedCountry: string | undefined;
+  selectedCity: string | undefined;
   selectedOffice: string | undefined;
 
   constructor(private apiService: ApiService, private http: HttpClient) { }
@@ -21,12 +24,24 @@ export class UbicacioComponent {
   ngOnInit(): void {
     this.getPaisosFromApi();
     this.getAllOficinesFromApi();
+    this.getCiutatsFromApi();
   }
 
   getPaisosFromApi(): void {
     this.apiService.getPaisos().subscribe(
       response => {
         this.paisos = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getCiutatsFromApi(): void {
+    this.apiService.getCiutatsByPais(this.paisos).subscribe(
+      response => {
+        this.ciutats = response;
       },
       error => {
         console.error(error);
@@ -50,6 +65,15 @@ export class UbicacioComponent {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarPais(username, this.selectedCountry);
       sessionStorage.setItem('pais', this.selectedCountry);
+    }
+  }
+
+
+  guardarCiutat(): void {
+    if (this.selectedCity) {
+      const username = sessionStorage.getItem('username') ?? '';
+      this.apiService.guardarCiutat(username, this.selectedCity);
+      sessionStorage.setItem('ciutat', this.selectedCity);
     }
   }
 

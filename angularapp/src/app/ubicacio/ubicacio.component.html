@@ -32,6 +32,20 @@
 
     <div class="ubody-item">
       <div class="uitem-icon">
+        <i class="fa-regular fa-earth-americas"></i>
+      </div>
+      <div class="uitem-body">
+        <h3 class="ubody-titl">Selecciona la teva ciutat</h3>
+        <select [(ngModel)]="selectedCity">
+          <option value="No seleccionat">No seleccionat</option>
+          <option *ngFor="let ciutat of ciutats" [value]="ciutat.nomCiutat">{{ ciutat.nomCiuat }}</option>
+        </select>
+        <button class="ubtn-editImg" (click)="guardarCiutat()">Guardar</button>
+      </div>
+    </div>
+
+    <div class="ubody-item">
+      <div class="uitem-icon">
         <i class="fa-regular fa-phone-office"></i>
       </div>
       <div class="uitem-body">
