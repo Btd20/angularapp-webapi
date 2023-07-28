@@ -29,7 +29,6 @@ export class UbicacioComponent {
     if (this.selectedCountry && this.selectedCountry !== 'No seleccionat') {
       this.getAllCiutatsFromApi();
     } else {
-      // Reset the cities dropdown when 'No seleccionat' is selected
       this.ciutats = [];
       this.selectedCity = undefined;
     }
@@ -39,7 +38,6 @@ export class UbicacioComponent {
     if (this.selectedCity && this.selectedCity !== 'No seleccionat') {
       this.getAllOficinesFromApi();
     } else {
-      // Reset the offices dropdown when 'No seleccionat' is selected
       this.oficines = [];
       this.selectedOffice = undefined;
     }
@@ -61,10 +59,9 @@ export class UbicacioComponent {
     this.apiService.getCiutatsByPais(this.selectedCountry ?? '').subscribe(
       response => {
         this.ciutats = response;
-        // Automatically select the first city in the list, if available
         if (this.ciutats.length > 0) {
           this.selectedCity = this.ciutats[0].nomCiutat;
-          this.guardarCiutat(); // Save the city automatically
+          this.guardarCiutat();
         } else {
           this.selectedCity = undefined;
         }
@@ -79,10 +76,9 @@ export class UbicacioComponent {
     this.apiService.getOficinesByCiutats(this.selectedCountry ?? '', this.selectedCity ?? '').subscribe(
       response => {
         this.oficines = response;
-        // Automatically select the first office in the list, if available
         if (this.oficines.length > 0) {
           this.selectedOffice = this.oficines[0].nomOficina;
-          this.guardarOficina(); // Save the office automatically
+          this.guardarOficina();
         } else {
           this.selectedOffice = undefined;
         }
