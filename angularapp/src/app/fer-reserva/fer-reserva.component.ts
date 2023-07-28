@@ -14,6 +14,7 @@ export class FerReservaComponent implements OnInit {
   pais: string | null = sessionStorage.getItem('pais');
   ciutat: string | null = sessionStorage.getItem('ciutat');
   oficina: string | null = sessionStorage.getItem('oficina');
+
   dia: string = '';
   horaInici: string = '';
   horaFi: string = '';
