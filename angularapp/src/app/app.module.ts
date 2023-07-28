@@ -37,6 +37,10 @@ import { ChangeEmailComponent } from './change-email/change-email.component';
 import { DadesComponent } from './dades/dades.component';
 import { UbicacioComponent } from './ubicacio/ubicacio.component';
 
+import { VistaReservaPais } from './vista-reserva-pais/vista-reserva-pais.component';
+import { VistaReservaCiutat } from './vista-reserva-ciutat/vista-reserva-ciutat.component';
+import { VistaReservaOficina } from './vista-reserva-oficina/vista-reserva-oficina.component';
+
 /*--ADMIN MODIFY COMPONENTS--*/
 import { AdminComponent } from './admin/admin.component';
 import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component';
@@ -119,7 +123,11 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     UpdateCiutatComponent,
     UpdateOficinaComponent,
     UpdateSalaComponent,
-    SelectSala
+    SelectSala,
+
+    VistaReservaPais,
+    VistaReservaCiutat,
+    VistaReservaOficina
 
   ],
   imports: [ 

@@ -14,10 +14,17 @@
       </tbody>
     </table>
   </div>
-  <div class="row btn-modify" *ngIf="isAdmin">
-    <a href="/admin-modifyoficines">
-      <span>Modifica</span>
-    </a>
+  <div class="d-flex align-items-center jutify-content-center">
+    <div class="btn-modify" *ngIf="isAdmin">
+      <a href="/admin-modifypaisos">
+        <span>Modifica</span>
+      </a>
+    </div>
+    <div class="btn-vista">
+      <a href="/vista-roficina">
+        <span>Veu les reserves</span>
+      </a>
+    </div>
   </div>
 </div>
 
