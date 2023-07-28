@@ -36,6 +36,18 @@ export class AdminComponent implements OnInit {
     usuario.editando = true;
   }
 
+  eliminarUsuari(id: string): void {
+    this.apiService.eliminarUsuari(id).subscribe(
+      () => {
+        console.log('Usuari eliminat.');
+        this.getUsuarisFromApi();
+      },
+      (error) => {
+        console.error('Error al eliminar el usuari:', error);
+      }
+    );
+  }
+
   guardarCanvis(usuario: any): void {
     console.log('Guardar canvis del usuari:', usuario);
 

@@ -76,6 +76,11 @@ export class ApiService {
     );
   }
 
+  eliminarUsuari(id: string): Observable<any> {
+    const url = `${this.apiUrlUsuaris}/${id}`;
+    return this.http.delete(url);
+  }
+
   actualitzarUsuari(usuario: any): Observable<any> {
     const url = `${this.apiUrlUsuaris}/${usuario.id}`;
     return this.http.put(url, usuario);
