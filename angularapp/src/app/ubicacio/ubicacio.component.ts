@@ -19,23 +19,18 @@ export class UbicacioComponent {
   selectedCity: string | undefined;
   selectedOffice: string | undefined;
 
-  countryUbicacio: string = '';
-  cityUbicacio: string = '';
-  officeUbicacio: string = '';
-
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
   ngOnInit(): void {
 
     this.getPaisosFromApi();
-    this.getAllCiutatsFromApi();
-    this.getAllOficinesFromApi();
   }
 
   getPaisosFromApi(): void {
     this.apiService.getPaisos().subscribe(
       response => {
         this.paisos = response;
+      
       },
       error => {
         console.error(error);
@@ -44,8 +39,7 @@ export class UbicacioComponent {
   }
 
   getAllCiutatsFromApi(): void {
-    //getCiutatsByPais(this.countryUbicacio)
-    this.apiService.getAllCiutats().subscribe(
+    this.apiService.getCiutatsByPais(this.selectedCountry ?? '').subscribe(
       response => {
         this.ciutats = response;
       },
@@ -56,8 +50,7 @@ export class UbicacioComponent {
   }
 
   getAllOficinesFromApi(): void {
-    //HAURIA DE SER getOficinesByCity
-    this.apiService.getAllOficines().subscribe(
+    this.apiService.getOficinesByCiutats(this.selectedCountry ?? '', this.selectedCity ?? '').subscribe(
       response => {
         this.oficines = response;
       },
@@ -72,6 +65,8 @@ export class UbicacioComponent {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarPais(username, this.selectedCountry);
       sessionStorage.setItem('pais', this.selectedCountry);
+
+      this.getAllCiutatsFromApi();
     }
   }
 
@@ -80,7 +75,10 @@ export class UbicacioComponent {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarCiutat(username, this.selectedCity);
       sessionStorage.setItem('ciutat', this.selectedCity);
+
+      this.getAllOficinesFromApi();
     }
+
   }
 
   guardarOficina(): void {
