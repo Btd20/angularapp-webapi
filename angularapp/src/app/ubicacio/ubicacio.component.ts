@@ -19,23 +19,35 @@ export class UbicacioComponent {
   selectedCity: string | undefined;
   selectedOffice: string | undefined;
 
-  countryUbicacio: string = '';
-  cityUbicacio: string = '';
-  officeUbicacio: string = '';
-
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
   ngOnInit(): void {
-
     this.getPaisosFromApi();
-    this.getAllCiutatsFromApi();
-    this.getAllOficinesFromApi();
+  }
+
+  onCountrySelected(): void {
+    if (this.selectedCountry && this.selectedCountry !== 'No seleccionat') {
+      this.getAllCiutatsFromApi();
+    } else {
+      this.ciutats = [];
+      this.selectedCity = undefined;
+    }
+  }
+
+  onCitySelected(): void {
+    if (this.selectedCity && this.selectedCity !== 'No seleccionat') {
+      this.getAllOficinesFromApi();
+    } else {
+      this.oficines = [];
+      this.selectedOffice = undefined;
+    }
   }
 
   getPaisosFromApi(): void {
     this.apiService.getPaisos().subscribe(
       response => {
         this.paisos = response;
+      
       },
       error => {
         console.error(error);
@@ -44,10 +56,15 @@ export class UbicacioComponent {
   }
 
   getAllCiutatsFromApi(): void {
-    //getCiutatsByPais(this.countryUbicacio)
-    this.apiService.getAllCiutats().subscribe(
+    this.apiService.getCiutatsByPais(this.selectedCountry ?? '').subscribe(
       response => {
         this.ciutats = response;
+        if (this.ciutats.length > 0) {
+          this.selectedCity = this.ciutats[0].nomCiutat;
+          this.guardarCiutat();
+        } else {
+          this.selectedCity = undefined;
+        }
       },
       error => {
         console.error(error);
@@ -56,10 +73,15 @@ export class UbicacioComponent {
   }
 
   getAllOficinesFromApi(): void {
-    //HAURIA DE SER getOficinesByCity
-    this.apiService.getAllOficines().subscribe(
+    this.apiService.getOficinesByCiutats(this.selectedCountry ?? '', this.selectedCity ?? '').subscribe(
       response => {
         this.oficines = response;
+        if (this.oficines.length > 0) {
+          this.selectedOffice = this.oficines[0].nomOficina;
+          this.guardarOficina();
+        } else {
+          this.selectedOffice = undefined;
+        }
       },
       error => {
         console.error(error);
@@ -72,6 +94,8 @@ export class UbicacioComponent {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarPais(username, this.selectedCountry);
       sessionStorage.setItem('pais', this.selectedCountry);
+
+      this.getAllCiutatsFromApi();
     }
   }
 
@@ -80,7 +104,10 @@ export class UbicacioComponent {
       const username = sessionStorage.getItem('username') ?? '';
       this.apiService.guardarCiutat(username, this.selectedCity);
       sessionStorage.setItem('ciutat', this.selectedCity);
+
+      this.getAllOficinesFromApi();
     }
+
   }
 
   guardarOficina(): void {

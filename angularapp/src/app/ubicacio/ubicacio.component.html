@@ -22,7 +22,7 @@
       </div>
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona el teu país</h3>
-        <select [(ngModel)]="selectedCountry">
+        <select [(ngModel)]="selectedCountry" (change)="onCountrySelected()">
           <option value="No seleccionat" selected>No seleccionat</option>
           <option *ngFor="let pais of paisos" [value]="pais.nomPais">{{ pais.nomPais }}</option>
         </select>
@@ -36,7 +36,7 @@
       </div>
       <div class="uitem-body">
         <h3 class="ubody-titl">Selecciona la teva ciutat</h3>
-        <select [(ngModel)]="selectedCity">
+        <select [(ngModel)]="selectedCity" (change)="onCitySelected()">
           <option value="No seleccionat">No seleccionat</option>
           <option *ngFor="let ciutat of ciutats" [value]="ciutat.nomCiutat">{{ ciutat.nomCiutat }}</option>
         </select>

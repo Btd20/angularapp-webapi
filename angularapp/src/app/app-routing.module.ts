@@ -22,6 +22,10 @@ import { ChangeUserComponent } from './change-user/change-user.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
 import { UbicacioComponent } from './ubicacio/ubicacio.component';
 
+import { VistaReservaPais } from './vista-reserva-pais/vista-reserva-pais.component';
+import { VistaReservaCiutat } from './vista-reserva-ciutat/vista-reserva-ciutat.component';
+import { VistaReservaOficina } from './vista-reserva-oficina/vista-reserva-oficina.component';
+
 /*--ADMIN MODIFY COMPONENTS--*/
 import { AdminComponent } from './admin/admin.component';
 import { AdminMRComponent } from './admin-modifyrooms/admin-modifyrooms.component';
@@ -60,7 +64,12 @@ const routes: Routes = [
   { path: 'change-user', component: ChangeUserComponent },
   { path: 'change-email', component: ChangeEmailComponent },
   { path: 'change-dates', component: UbicacioComponent },
-  { path: 'reserves', component: ReservesComponent},
+  { path: 'reserves', component: ReservesComponent },
+
+  { path: 'vista-rpais', component: VistaReservaPais },
+  { path: 'vista-rciutat', component: VistaReservaCiutat },
+  { path: 'vista-roficina', component: VistaReservaOficina },
+
   { path: '', component: IndexComponent },
 
 ];

@@ -6,6 +6,7 @@
       <span class="user-icon"><i class="fa-regular fa-user"></i></span>
       <span class="user-name">{{ usuario.userName }}</span>
       <button class="btn btn-useredit btn-info" (click)="editarUsuario(usuario)" *ngIf="mostrarBotonEditar(usuario)"><span>Modificar</span></button>
+      <button class="btn btn-danger" (click)="eliminarUsuari(usuario.id)">Eliminar</button>
 
       <div class="edit-form" *ngIf="usuario.editando">
         <form class="edit-form" (ngSubmit)="guardarCanvis(usuario)">
@@ -16,7 +17,7 @@
           <input type="email" id="correo" [(ngModel)]="usuario.email" name="correu" required>
 
           <label for="rol">Administrador:</label>
-          <div class="checkbox-wrapper-2">  
+          <div class="checkbox-wrapper-2">
             <input type="checkbox" class="checkadmin" [(ngModel)]="usuario.rol" name="rol" [checked]="usuario.Rol">
           </div>
           <button class="btn btn-useredit btn-info" type="submit"><span>Guardar canvis</span></button>
