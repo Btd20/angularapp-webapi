@@ -61,6 +61,13 @@ export class UbicacioComponent {
     this.apiService.getCiutatsByPais(this.selectedCountry ?? '').subscribe(
       response => {
         this.ciutats = response;
+        // Automatically select the first city in the list, if available
+        if (this.ciutats.length > 0) {
+          this.selectedCity = this.ciutats[0].nomCiutat;
+          this.guardarCiutat(); // Save the city automatically
+        } else {
+          this.selectedCity = undefined;
+        }
       },
       error => {
         console.error(error);
@@ -72,6 +79,13 @@ export class UbicacioComponent {
     this.apiService.getOficinesByCiutats(this.selectedCountry ?? '', this.selectedCity ?? '').subscribe(
       response => {
         this.oficines = response;
+        // Automatically select the first office in the list, if available
+        if (this.oficines.length > 0) {
+          this.selectedOffice = this.oficines[0].nomOficina;
+          this.guardarOficina(); // Save the office automatically
+        } else {
+          this.selectedOffice = undefined;
+        }
       },
       error => {
         console.error(error);
