@@ -25,9 +25,7 @@ export class AdminMOComponent implements OnInit {
 
   ngOnInit(): void {
     this.getOficinesFromApi();
-    
   }
-
 
   getOficinesFromApi(): void {
     this.apiService.getAllOficines().subscribe(
@@ -108,7 +106,6 @@ export class AdminMOComponent implements OnInit {
       }
     });
   }
-
 
   deleteOficina(oficina: any): void {
     const confirmar = confirm('Estàs segur de que vols eliminar la oficina?');

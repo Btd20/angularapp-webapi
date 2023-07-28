@@ -42,12 +42,20 @@ export class AdminMPComponent implements OnInit {
   }
 
   createPais(): void {
-    const dialogRef = this.dialog.open(CreatePaisComponent, {
-    });
+    const dialogRef = this.dialog.open(CreatePaisComponent, {});
 
     dialogRef.afterClosed().subscribe((result: { nomPais: string } | undefined) => {
       if (result && result.nomPais.trim() !== '') {
-        const nouPais = { nomPais: result.nomPais.trim() };
+        const nomPais = result.nomPais.trim();
+
+        // Check for duplicates
+        const paisExists = this.paisos.some(pais => pais.nomPais.toLowerCase() === nomPais.toLowerCase());
+        if (paisExists) {
+          alert('El país ja existeix.');
+          return;
+        }
+
+        const nouPais = { nomPais };
         this.apiService.createPais(nouPais).subscribe(
           response => {
             console.log('País creat: ', response);
@@ -61,6 +69,7 @@ export class AdminMPComponent implements OnInit {
     });
   }
 
+
   updatePais(pais: any): void {
     console.log('Pais inicial:', JSON.stringify(pais)); 
     const dialogRef = this.dialog.open(UpdatePaisComponent, {
@@ -70,6 +79,19 @@ export class AdminMPComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
         console.log('Resultat:', JSON.stringify(result)); 
+
+        if (result.nomPais.trim() === '') {
+          alert('El nom del pais no pot estar buit.');
+          return;
+        }
+
+        const paisExists = this.paisos.find(pais => pais.nomPais === result.nomPais && pais.CountryID !== result.countryID);
+        if (paisExists) {
+          alert('Ja existeix un pais amb aquest nom.');
+          return;
+        }
+
+
         this.apiService.updatePais(result).subscribe(
           response => {
             console.log('País actualitzat:', response);

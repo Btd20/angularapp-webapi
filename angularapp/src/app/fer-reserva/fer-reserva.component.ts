@@ -9,7 +9,7 @@ import { SelectSala } from '../select-sala/select-sala.component';
   styleUrls: ['./fer-reserva.component.css'],
 })
 export class FerReservaComponent implements OnInit {
-  userid: string | null = sessionStorage.getItem('userID');
+  userid: string | null = sessionStorage.getItem('id');
   username: string | null = sessionStorage.getItem('username');
   pais: string | null = sessionStorage.getItem('pais');
   ciutat: string | null = sessionStorage.getItem('ciutat');
@@ -62,10 +62,11 @@ export class FerReservaComponent implements OnInit {
     const dataReserva = this.dia;
     const horaInici = this.horaInici;
     const horaFi = this.horaFi;
+    const userID = this.userid || '';
 
     console.log(`id de la sala: ${meetingRoomID}, Data Reserva: ${dataReserva}, Hora inici: ${horaInici}, Hora fi: ${horaFi}, idUsuari: ${this.userid}`);
 
-    this.apiService.CreateReserva(meetingRoomID, dataReserva, horaInici, horaFi).subscribe(
+    this.apiService.CreateReserva(meetingRoomID, dataReserva, horaInici, horaFi, userID).subscribe(
       (resposta) => {
         console.log('Reserva creada amb èxit:', resposta);
       },

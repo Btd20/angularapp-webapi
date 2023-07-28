@@ -43,8 +43,8 @@ namespace webapi.Controllers
             return Ok(reserve);
         }
 
-        // POST: Reserves
-       /* [HttpPost]
+      /*  // POST: Reserves
+        [HttpPost]
         public async Task<ActionResult<Reserves>> CreateReservations(Reserves reserve)
         {
             _context.Reserves.Add(reserve);
@@ -52,10 +52,10 @@ namespace webapi.Controllers
 
             return CreatedAtAction("GetReserve", new { id = reserve.ReserveID }, reserve);
         }
-       */
+      */ 
 
         [HttpPost("/FerReserva")]
-        public async Task<IActionResult> CreateReserva(int meetingRoomID, string dataReserva, string horaInici, string horaFi)
+        public async Task<IActionResult> CreateReserva(int meetingRoomID, string dataReserva, string horaInici, string horaFi, string userid)
         {
             // Convert the strings to DateTime objects
             if (!DateTime.TryParse(dataReserva, out DateTime dataReservaDateTime) ||
@@ -72,7 +72,7 @@ namespace webapi.Controllers
             }
 
             // Get the user ID of the authenticated user
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            //string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var reserva = new Reserves
             {
@@ -80,7 +80,7 @@ namespace webapi.Controllers
                 DataReserva = dataReservaDateTime,
                 HoraInici = horaIniciDateTime,
                 HoraFi = horaFiDateTime,
-                UserID = userId // Assigning the user ID to the reservation.
+                UserID = userid // Assigning the user ID to the reservation.
             };
 
             _context.Reserves.Add(reserva);

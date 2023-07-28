@@ -47,6 +47,19 @@ export class AdminMRComponent implements OnInit {
       console.log('Valores del formulario:', result);
       if (result) {
         const { nomPais, nomCiutat, nomOficina, nomSala } = result;
+
+
+        if (nomPais.trim() === '' || nomCiutat.trim() === '' || nomOficina.trim() === '' ||nomSala.trim() === '') {
+          alert('Els noms de la sala, de la ciutat i de l\'oficina no poden estar buits.');
+          return;
+        }
+
+        const salaRepetida = this.sales.find(sala => sala.nomSala === nomSala);
+        if (salaRepetida) {
+          alert('Ja existeix una oficina amb aquest nom.');
+          return;
+        }
+
         console.log('Valores desestructurados:', nomPais, nomCiutat, nomOficina);
         this.apiService.createSalesByNom(nomPais, nomCiutat, nomOficina, nomSala).subscribe(
 
@@ -86,6 +99,18 @@ export class AdminMRComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
         console.log('Resultat:', JSON.stringify(result));
+
+        if (result.nomSala.trim() === '') {
+          alert('El nom de la sala no pot estar buit.');
+          return;
+        }
+
+        const salaRepetida = this.sales.find(sala => sala.nomSala === result.nomSala && sala.meetingRoomID !== result.meetingRoomID);
+        if (salaRepetida) {
+          alert('Ja existeix una sala amb aquest nom.');
+          return;
+        }
+
         this.apiService.updateSala(result).subscribe(
           response => {
             console.log('Sala actualitzada:', response);
