@@ -22,8 +22,27 @@ export class UbicacioComponent {
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
   ngOnInit(): void {
-
     this.getPaisosFromApi();
+  }
+
+  onCountrySelected(): void {
+    if (this.selectedCountry && this.selectedCountry !== 'No seleccionat') {
+      this.getAllCiutatsFromApi();
+    } else {
+      // Reset the cities dropdown when 'No seleccionat' is selected
+      this.ciutats = [];
+      this.selectedCity = undefined;
+    }
+  }
+
+  onCitySelected(): void {
+    if (this.selectedCity && this.selectedCity !== 'No seleccionat') {
+      this.getAllOficinesFromApi();
+    } else {
+      // Reset the offices dropdown when 'No seleccionat' is selected
+      this.oficines = [];
+      this.selectedOffice = undefined;
+    }
   }
 
   getPaisosFromApi(): void {
