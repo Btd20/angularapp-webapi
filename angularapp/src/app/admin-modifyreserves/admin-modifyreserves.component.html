@@ -14,10 +14,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="tr-boxcomponent">
-          <td class="tr-name"></td>
+        <tr class="tr-boxcomponent" *ngFor="let reserva of reserves | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+          <td class="tr-name">Data de la reserva: {{reserva.dataReserva | date: 'dd-MM-yyyy'}}  <br />
+                              Hora inici: {{ formatTimeSpan(reserva.horaInici)}}<br />
+                              Hora fi: {{formatTimeSpan(reserva.horaFi)}}<br /></td>
           <td class="tr-butt">
-            <a href="/reserva-modify"><button class="btn btn-info">Modificar</button></a>
+            <button class="btn btn-info me-2"> <!--(click)="updateOficina(oficina)" -->Modificar</button>
+            <button class="btn btn-danger"> <!--(click)="deleteOficina(oficina)"-->Eliminar</button>
           </td>
         </tr>
       </tbody>

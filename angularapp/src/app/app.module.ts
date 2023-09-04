@@ -69,7 +69,7 @@ import { UpdateOficinaComponent } from './update-oficina/update-oficina.componen
 import { UpdateSalaComponent } from './update-sala/update-sala.component';
 
 
-
+import { DatePipe } from '@angular/common';
 import { SelectSala } from './select-sala/select-sala.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 
@@ -148,7 +148,7 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true
+      multi: true,
     }
   ],
   bootstrap: [AppComponent]

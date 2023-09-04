@@ -65,6 +65,8 @@ const routes: Routes = [
   { path: 'change-email', component: ChangeEmailComponent },
   { path: 'change-dates', component: UbicacioComponent },
   { path: 'reserves', component: ReservesComponent },
+  { path: 'ferreserva/:meetingRoomID/:dataReserva/:horaInici/:horaFi/:userID', component: FerReservaComponent },
+
 
   { path: 'vista-rpais', component: VistaReservaPais },
   { path: 'vista-rciutat', component: VistaReservaCiutat },

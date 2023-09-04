@@ -11,7 +11,7 @@ export class ApiService {
   private apiUrlSales = 'https://localhost:7240/Sales';
   private apiUrlOficines = 'https://localhost:7240/Oficines';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
-  private apiUrlReserves = 'https://localhost:7240';
+  private apiUrlReserves = 'https://localhost:7240/Reserves';
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +21,10 @@ export class ApiService {
 
   getAllCiutats() {
     return this.http.get<any[]>(this.apiUrlCiutats);
+  }
+
+  getAllReserves(){
+    return this.http.get<any[]>(this.apiUrlReserves);
   }
 
   getCiutatsByPais(pais: string) {

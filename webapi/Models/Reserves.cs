@@ -11,8 +11,8 @@ namespace webapi.Models
         public int ReserveID { get; set; }
         public int MeetingRoomID { get; set; }
         public DateTime? DataReserva { get;set; }
-        public DateTime? HoraInici { get;set; }
-        public DateTime? HoraFi { get;set; }
+        public TimeSpan? HoraInici { get;set; }
+        public TimeSpan? HoraFi { get;set; }
         public string UserID { get; set; }
 
         [ForeignKey("MeetingRoomID")]
