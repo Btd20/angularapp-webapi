@@ -72,6 +72,8 @@ import { UpdateSalaComponent } from './update-sala/update-sala.component';
 import { DatePipe } from '@angular/common';
 import { SelectSala } from './select-sala/select-sala.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { CreateReservaComponent } from './create-reserva/create-reserva.component';
+import { UpdateReservaComponent } from './update-reserva/update-reserva.component';
 
 
 @NgModule({
@@ -127,7 +129,9 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
 
     VistaReservaPais,
     VistaReservaCiutat,
-    VistaReservaOficina
+    VistaReservaOficina,
+    CreateReservaComponent,
+    UpdateReservaComponent
 
   ],
   imports: [ 

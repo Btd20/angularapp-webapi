@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateReservaComponent } from '../create-reserva/create-reserva.component';
 
 
 
@@ -41,6 +43,7 @@ export class AdminMRVComponent implements OnInit {
     return `${hours}:${minutes}`;
   }
 
+  
  
   get totalPages(): number {
     return Math.ceil(this.reserves.length / this.pageSize); // Total de páginas

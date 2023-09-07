@@ -62,7 +62,7 @@ namespace webapi.Controllers
                 !TimeSpan.TryParse(horaInici, out TimeSpan horaIniciTimeSpan) ||
                 !TimeSpan.TryParse(horaFi, out TimeSpan horaFiTimeSpan))
             {
-                return BadRequest("Los valores de fecha y hora no están en el formato correcto.");
+                return BadRequest("Els valors de data i hora no són correctes.");
             }
 
             var sala = await _context.Sales.FirstOrDefaultAsync(s => s.MeetingRoomID == meetingRoomID);

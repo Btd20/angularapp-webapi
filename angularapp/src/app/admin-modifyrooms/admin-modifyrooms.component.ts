@@ -44,7 +44,7 @@ export class AdminMRComponent implements OnInit {
 
 
     dialogRef.afterClosed().subscribe((result: { nomPais: string, nomCiutat: string, nomOficina: string, nomSala: string } | undefined) => {
-      console.log('Valores del formulario:', result);
+      console.log('Valors del formulari:', result);
       if (result) {
         const { nomPais, nomCiutat, nomOficina, nomSala } = result;
 
