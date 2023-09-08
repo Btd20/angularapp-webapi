@@ -7,6 +7,8 @@
 
 
 .res-titl {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 14%;
   font-family: var(--fontR);
@@ -14,16 +16,18 @@
   overflow: hidden;
 }
 
-  .res-titl i {
+.res-titl i {
     color: var(--txt-g3);
     font-size: 0.7em;
     text-align: center;
     vertical-align: middle;
     padding-left: 5px;
-  }
+}
 
   .res-titl span {
     color: var(--txt-g1);
     font-weight: 800;
     padding-left: 5px;
   }
+
+

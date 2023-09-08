@@ -8,6 +8,11 @@
   overflow: hidden;
   width: 100%;
   box-shadow: var(--bx-snav);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .resb-header {
@@ -42,6 +47,7 @@
   font-weight: 900;
   letter-spacing: 0.035rem;
   text-transform: uppercase;
+  overflow:hidden;
 }
 
 .resb-icon {
