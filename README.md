@@ -1,6 +1,7 @@
-# DOCUMENTACIÓN TÉCNICA
+# DOCUMENTACIÓ TÉCNICA
+<a href="">1. Introducció.</a>
 
-## 1. Introducción:
+## 1. Introducció:
 <br>
 El projecte descriure'l per sobre. 
 <br>
