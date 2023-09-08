@@ -30,7 +30,6 @@ import { OficinesComponent } from './oficines/oficines.component';
 import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
-import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeUserComponent } from './change-user/change-user.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
@@ -99,7 +98,6 @@ import { UpdateReservaComponent } from './update-reserva/update-reserva.componen
     ProfileComponent,
     ReservesComponent,
     FerReservaComponent,
-    VistaPaisosComponent,
     UbicacioComponent,
 
     /*--ADMIN MODIFY COMPONENTS--*/

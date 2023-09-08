@@ -10,6 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class UbicacioComponent {
   fileToUpload: File | null = null;
   imageSelected: boolean = false;
+  message: string | undefined;
 
   paisos: any[] = [];
   ciutats: any[] = [];
