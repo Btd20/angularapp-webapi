@@ -1,5 +1,5 @@
 # DOCUMENTACIÓ TÉCNICA
-<a href="">1. Introducció.</a>
+<a href="#1-introducci%C3%B3">1. Introducció.</a>
 
 ## 1. Introducció:
 <br>
