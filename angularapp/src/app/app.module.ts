@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,8 +15,6 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 
 /*--NAVS--*/
 import { NavbarComponent } from './navbar/navbar.component';
@@ -30,7 +30,6 @@ import { OficinesComponent } from './oficines/oficines.component';
 import { ReservesComponent } from './reserves/reserves.component';
 import { FerReservaComponent } from './fer-reserva/fer-reserva.component';
 import { ProfileComponent } from './profile/profile.component';
-import { VistaPaisosComponent } from './vista-paisos/vista-paisos.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeUserComponent } from './change-user/change-user.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
@@ -99,7 +98,6 @@ import { UpdateReservaComponent } from './update-reserva/update-reserva.componen
     ProfileComponent,
     ReservesComponent,
     FerReservaComponent,
-    VistaPaisosComponent,
     UbicacioComponent,
 
     /*--ADMIN MODIFY COMPONENTS--*/
