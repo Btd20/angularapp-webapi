@@ -1,14 +1,14 @@
 # DOCUMENTACIÓ TÉCNICA
-<a href="#1-introducci%C3%B3">1. Introducció</a>
-<a href="#1-introducci%C3%B3">2. Arquitectura</a>
-<a href="#1-introducci%C3%B3">3. Components d'Angular.</a>
-<a href="#1-introducci%C3%B3">4. C++ Backend.</a>
-<a href="#1-introducci%C3%B3">5. Configuració i requisits.</a>
-<a href="#1-introducci%C3%B3">6. Us i exemples.</a>
-<a href="#1-introducci%C3%B3">7. Proves.</a>
-<a href="#1-introducci%C3%B3">8. Desplegament.</a>
-<a href="#1-introducci%C3%B3">9. Manteniment.</a>
-<a href="#1-introducci%C3%B3">10. Referencies.</a>
+<a href="#1-introducci%C3%B3">1. Introducció</a><br>
+<a href="#1-introducci%C3%B3">2. Arquitectura</a><br>
+<a href="#1-introducci%C3%B3">3. Components d'Angular.</a><br>
+<a href="#1-introducci%C3%B3">4. C++ Backend.</a><br>
+<a href="#1-introducci%C3%B3">5. Configuració i requisits.</a><br>
+<a href="#1-introducci%C3%B3">6. Us i exemples.</a><br>
+<a href="#1-introducci%C3%B3">7. Proves.</a><br>
+<a href="#1-introducci%C3%B3">8. Desplegament.</a><br>
+<a href="#1-introducci%C3%B3">9. Manteniment.</a><br>
+<a href="#1-introducci%C3%B3">10. Referencies.</a><br>
 <a href="#1-introducci%C3%B3">11. Anexos</a> <!--si es necessari--><br>
 
 <br><br>
