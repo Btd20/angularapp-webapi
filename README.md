@@ -35,11 +35,19 @@ Explicació de com Angular i C++ interactuen en el projecte.
   ##### index.component.ts
   Lorem ipsum.<br><br>
 
-  ### 3.2 Pàgina principal: <br>
+  ### 3.2 Inici i registre: <br>
+  #### 3.2.1 Login:
+  ##### login.component.ts
+  Lorem ipsum.<br><br>
+  #### 3.2.1 Register:
+  ##### register.component.ts
+  Lorem ipsum.<br><br>
+
+  ### 3.3 Pàgina principal: <br>
   ##### home.component.ts
   Lorem ipsum.<br><br>
 
-  ### 3.3 Barres de navegació: <br>
+  ### 3.4 Barres de navegació: <br>
   #### 3.3.1 Barra de navegació general:
    ##### 3.3.1.1 navbar.component.ts
    Lorem ipsum.<br><br>
