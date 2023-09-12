@@ -49,13 +49,13 @@ Explicació de com Angular i C++ interactuen en el projecte.
   #### 3.4.1 Barra de navegació general:
   ##### 3.4.1.1 navbar.component.ts
   <br>
-  - **Descripció**: Proporciona una breu descripció del propòsit i la funció d'aquest component en l'aplicació.
+  - **Descripció** : Proporciona una breu descripció del propòsit i la funció d'aquest component en l'aplicació.
   <br>
-  - **Característiques Principals**: 
+  - **Característiques Principals** : 
 Enumera les característiques clau d'aquest component.<br>
 Descriu les interaccions o característiques més importants que ofereix.<br>
 <br>
-  - **Ús**: 
+  - **Ús** : 
 - Proporciona exemples de com utilitzar aquest component en l'aplicació.<br>
 - Mostra exemples de codi si és necessari.
 <br>
