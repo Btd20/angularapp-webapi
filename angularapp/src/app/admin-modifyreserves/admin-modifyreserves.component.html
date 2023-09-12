@@ -20,7 +20,7 @@
                               Hora fi: {{formatTimeSpan(reserva.horaFi)}}<br /></td>
           <td class="tr-butt">
             <button class="btn btn-info me-2"> <!--(click)="updateOficina(oficina)" -->Modificar</button>
-            <button class="btn btn-danger"> <!--(click)="deleteOficina(oficina)"-->Eliminar</button>
+            <button class="btn btn-danger" (click)="eliminarReserva(reserva.reserveID)">Eliminar</button>
           </td>
         </tr>
       </tbody>
