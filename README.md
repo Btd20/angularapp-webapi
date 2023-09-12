@@ -22,10 +22,10 @@
 ## 2. Arquitectura:<br>
 Arquitectura del projecte en un aspecte general.
 <br><br>
-**Interacció d'Angular juntament amb C++:**<br>
+-Interacció d'Angular juntament amb C++:<br>
 Explicació de com Angular i C++ interactuen en el projecte.
 <br><br>
-**Diagrames d'arquitectura:**<br>
+-Diagrames d'arquitectura:<br>
 (Només si son rellevants)
 <br><br><br>
 ## 3. Components d'Angular:<br>
