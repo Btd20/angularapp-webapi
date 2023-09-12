@@ -6,7 +6,7 @@
       <span class="user-icon"><i class="fa-regular fa-user"></i></span>
       <span class="user-name">{{ usuario.userName }}</span>
       <button class="btn btn-useredit btn-info" (click)="editarUsuario(usuario)" *ngIf="mostrarBotonEditar(usuario)"><span>Modificar</span></button>
-      <button class="btn btn-danger" (click)="eliminarUsuari(usuario.id)">Eliminar</button>
+      <button class="btn btn-danger" (click)="eliminarUsuari(usuario.id)" *ngIf="mostrarBotonEditar(usuario)">Eliminar</button>
 
       <div class="edit-form" *ngIf="usuario.editando">
         <form class="edit-form" (ngSubmit)="guardarCanvis(usuario)">

@@ -12,8 +12,10 @@
         <h3 class="ubody-titl">Selecciona la teva imatge</h3>
         <input type="file" (change)="onFileSelected($event)" class="ubtn-edit" style="display: none;" id="fileInput" />
         <label for="fileInput" class="ubody-txt ubtn-edit">Escollir imatge</label>
+        <span *ngIf="fileToUpload">{{ fileToUpload.name }}</span>
         <button class="ubtn-editImg" (click)="uploadImage()">Canviar Imatge</button>
       </div>
+
     </div>
 
     <div class="ubody-item">
