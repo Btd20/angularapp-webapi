@@ -81,25 +81,19 @@ Lorem ipsum.<br><br>
 
 ## 4. C++ Backend i BBDD:<br>
 ### 4.1 C++ Backend:<br>
-Lorem ipsum dolor.
+
 ### 4.2 BBDD MYSQL Server:<br>
-Lorem ipsum dolor.
-<br><br><br>
+
 ## 5. Configuració i requisits:<br>
-Lorem ipsum dolor. 
-<br><br><br>
+
 ## 6. Us i exemples:<br>
-Lorem ipsum dolor. 
-<br><br><br>
+
 ## 7. Proves:<br>
-Lorem ipsum dolor. 
-<br><br><br>
+
 ## 8. Desplegament:<br>
-Lorem ipsum dolor. 
-<br><br><br>
+
 ## 9. Manteniment:<br>
-Lorem ipsum dolor. 
-<br><br><br>
+
 ## 10. Referencies:<br>
 Lorem ipsum dolor. 
 <br><br><br>
