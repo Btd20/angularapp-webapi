@@ -14,7 +14,7 @@
 <br><br>
 ## 1. Introducció:<br>
 El projecte descriure'l per sobre. 
-<br>
+<br><br>
 **Objectius del projecte:**
 Objectius del projecte. 
 <br><br>
@@ -31,6 +31,11 @@ Explicació de com Angular i C++ interactuen en el projecte.
 (Només si son rellevants)
 <br><br><br>
 ## 3. Components d'Angular:<br>
+
+  # 3.1 Navbars:<br>
+Lorem ipsum dolor. 
+
+  # 3.2 Index & Home:<br>
 Lorem ipsum dolor. 
 <br><br><br>
 ## 4. C++ Backend:<br>
