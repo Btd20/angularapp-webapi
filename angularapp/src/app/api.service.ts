@@ -201,16 +201,22 @@ export class ApiService {
 
   // CRUD RESERVES
 
+  /*CreateReserva(meetingRoomID: number, dataReserva: string, horaInici: string, horaFi: string, userId: string): Observable<any> {
+  const url = `${this.apiUrlReserves}/FerReserva/${meetingRoomID}/${dataReserva}/${horaInici}/${horaFi}/${userId}`;
+
+    
+    return this.http.post(url,null);
+  }*/
+
   CreateReserva(meetingRoomID: number, dataReserva: string, horaInici: string, horaFi: string, userId: string): Observable<any> {
-    const url = `${this.apiUrlReserves}/FerReserva`;
-    const body = {
-      meetingRoomID: meetingRoomID,
-      dataReserva: dataReserva,
-      horaInici: horaInici,
-      horaFi: horaFi,
-      userId: userId
-    };
-    return this.http.post<any>(url, body);
+    // Escapa els paràmetres abans d'afegir-los a la URL
+    const encodedDataReserva = encodeURIComponent(dataReserva);
+    const encodedHoraInici = encodeURIComponent(horaInici);
+    const encodedHoraFi = encodeURIComponent(horaFi);
+
+    const url = `${this.apiUrlReserves}/FerReserva/${meetingRoomID}/${encodedDataReserva}/${encodedHoraInici}/${encodedHoraFi}/${userId}`;
+
+    return this.http.post(url, null);
   }
 
 }

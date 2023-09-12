@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ApiService } from '../api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SelectSala } from '../select-sala/select-sala.component';
 
 @Component({
@@ -28,7 +28,7 @@ export class FerReservaComponent implements OnInit {
   salaReserva: string = '';
   nomSala: string = '';
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -73,12 +73,12 @@ export class FerReservaComponent implements OnInit {
       },
       (error) => {
         console.error('Error en crear la reserva:', error);
+        this.router.navigate(['/reserves']);
       }
     );
   }
 
   onSalaSeleccionada(salaId: number) {
-    alert(`jhgdshfjidshfdisu`);
     this.meetingRoomID = salaId;
   }
 
