@@ -95,8 +95,5 @@ Lorem ipsum.<br><br>
 ## 9. Manteniment:<br>
 
 ## 10. Referencies:<br>
-Lorem ipsum dolor. 
-<br><br><br>
+
 ## 11. Anexos:<br>
-Lorem ipsum dolor. 
-<br><br><br>
