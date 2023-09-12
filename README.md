@@ -36,10 +36,10 @@ Explicació de com Angular i C++ interactuen en el projecte.
   Lorem ipsum.<br><br>
 
   ### 3.2 Inici i registre: <br>
-  #### 3.2.1 Login:
+  #### 3.2.1 Inici:
   ##### login.component.ts
   Lorem ipsum.<br><br>
-  #### 3.2.1 Register:
+  #### 3.2.2 Registre:
   ##### register.component.ts
   Lorem ipsum.<br><br>
 
@@ -48,16 +48,34 @@ Explicació de com Angular i C++ interactuen en el projecte.
   Lorem ipsum.<br><br>
 
   ### 3.4 Barres de navegació: <br>
-  #### 3.3.1 Barra de navegació general:
-   ##### 3.3.1.1 navbar.component.ts
+  #### 3.4.1 Barra de navegació general:
+   ##### 3.4.1.1 navbar.component.ts
    Lorem ipsum.<br><br>
-   ##### 3.3.1.2 navadmin.component.ts
+   ##### 3.4.1.2 navadmin.component.ts
    Lorem ipsum.<br><br>
-  ### 3.3.2 Barres de navegació de configuració:
-   #### 3.3.2.1 navprofile.component.ts
+  ### 3.4.2 Barres de navegació de configuració:
+   #### 3.4.2.1 navprofile.component.ts
    Lorem ipsum.<br><br>
-   #### 3.3.2.2 navsales.component.ts
+   #### 3.4.2.2 navsales.component.ts
   Lorem ipsum.<br><br>
+
+  ### 3.5 Canvi de dades i perfil: <br>
+  #### 3.5.1 Canvi de dades:
+   ##### 3.4.1.1 ubicacio.component.ts
+   Lorem ipsum.<br><br>
+   ##### 3.4.1.2 dades.component.ts
+   Lorem ipsum.<br><br>
+   ##### 3.4.1.2 change-user.component.ts
+   Lorem ipsum.<br><br>
+   ##### 3.4.1.2 change-email.component.ts
+   Lorem ipsum.<br><br>
+   ##### 3.4.1.2 change-password.component.ts
+   Lorem ipsum.<br><br>
+   ##### 3.4.1.2 navadmin.component.ts
+   Lorem ipsum.<br><br>
+  ### 3.5.2 Perfil:
+   #### 3.4.2.1 profile.component.ts
+   Lorem ipsum.<br><br>
 
 ## 4. C++ Backend:<br>
 Lorem ipsum dolor. 
