@@ -35,27 +35,27 @@ Lorem ipsum.<br><br>
 
 ### 3.2 Inici i registre: <br>
 #### 3.2.1 Inici:
-<sub>login.component.ts</sub>
+##### login.component.ts
 Lorem ipsum.<br><br>
 #### 3.2.2 Registre:
-<sub>register.component.ts</sub>
+##### register.component.ts
 Lorem ipsum.<br><br>
 
 ### 3.3 Pàgina principal: <br>
-<sub>home.component.ts</sub>
+##### home.component.ts
 Lorem ipsum.<br><br>
 
 ### 3.4 Barres de navegació: <br>
 #### 3.4.1 Barra de navegació general:
-<sub>3.4.1.1 navbar.component.ts</sub>
+##### 3.4.1.1 navbar.component.ts
 Lorem ipsum.<br><br>
 
-##### <sub>3.4.1.2 navadmin.component.ts</sub>
+##### 3.4.1.2 navadmin.component.ts
 Lorem ipsum.<br><br>
 ### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
-##### <sub>3.4.2.1 navprofile.component.ts</sub>
+##### 3.4.2.1 navprofile.component.ts
 Lorem ipsum.<br><br>
-##### <sub>3.4.2.2 navsales.component.ts</sub>
+##### 3.4.2.2 navsales.component.ts
 Lorem ipsum.<br><br>
 
 ### 3.5 Canvi de dades i perfil: <br>
