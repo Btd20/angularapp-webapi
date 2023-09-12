@@ -2,32 +2,30 @@
 <a href="#1-introducci%C3%B3">1. Introducció</a><br>
 <a href="#2-arquitectura">2. Arquitectura</a><br>
 <a href="#3-components-dangular">3. Components d'Angular.</a><br>
-<a href="#4-c-backend">4. C++ Backend.</a><br>
+<a href="#4-c-backend-i-bbdd">4. C++ Backend i BBDD.</a><br>
 <a href="#5-configuració-i-requisits">5. Configuració i requisits.</a><br>
 <a href="#6-us-i-exemples">6. Us i exemples.</a><br>
 <a href="#7-proves">7. Proves.</a><br>
 <a href="#8-desplegament">8. Desplegament.</a><br>
 <a href="#9-manteniment">9. Manteniment.</a><br>
 <a href="#10-referencies">10. Referencies.</a><br>
-<a href="#11-anexos">11. Anexos</a> <!--si es necessari--><br>
+<a href="#11-anexos">11. Anexos.</a> <!--si es necessari--><br>
 
 <br><br>
 ## 1. Introducció:<br>
-El projecte descriure'l per sobre. 
+- Presentació del projecte.<br>
+- Objectius.<br>
+  - Elemento anidado 1<br>
+  - Elemento anidado 2<br>
+- Tecnologies: Tecnologies utlitzades, explicar més like per què s'ha escollit, quines adventatges i altres.
 <br><br>
-**Objectius del projecte:**
-Objectius del projecte. 
-<br><br>
-**Tecnologies utilitzades:**
-Tecnologies utlitzades, explicar més like per què s'ha escollit, quines adventatges i altres.
-<br><br><br>
 ## 2. Arquitectura:<br>
 Arquitectura del projecte en un aspecte general.
 <br><br>
-**Interacció d'Angular juntament amb C++:**<br>
+- Interacció d'Angular juntament amb C++:<br>
 Explicació de com Angular i C++ interactuen en el projecte.
 <br><br>
-**Diagrames d'arquitectura:**<br>
+- Diagrames d'arquitectura:<br>
 (Només si son rellevants)
 <br><br><br>
 ## 3. Components d'Angular:<br>
@@ -49,11 +47,28 @@ Explicació de com Angular i C++ interactuen en el projecte.
 
   ### 3.4 Barres de navegació: <br>
   #### 3.4.1 Barra de navegació general:
-   ##### 3.4.1.1 navbar.component.ts
-   Lorem ipsum.<br><br>
+  ##### 3.4.1.1 navbar.component.ts
+  <br>
+  - **Descripció** : Proporciona una breu descripció del propòsit i la funció d'aquest component en l'aplicació.
+  <br>
+  - **Característiques Principals** : 
+Enumera les característiques clau d'aquest component.<br>
+Descriu les interaccions o característiques més importants que ofereix.<br>
+<br>
+  - **Ús** : 
+- Proporciona exemples de com utilitzar aquest component en l'aplicació.<br>
+- Mostra exemples de codi si és necessari.
+<br>
+- **Captures de Pantalla**: 
+ Si és rellevant, inclou captures de pantalla o imatges que mostren aquest component en acció.
+<br>
+- **Consideracions Tècniques**: 
+<br>
+- Si hi ha consideracions tècniques importants relacionades amb aquest component, com ara dependències, configuració especial o aspectes de rendiment, descrigues aquí.
+
    ##### 3.4.1.2 navadmin.component.ts
    Lorem ipsum.<br><br>
-  ### 3.4.2 Barres de navegació de configuració:
+  ### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
    #### 3.4.2.1 navprofile.component.ts
    Lorem ipsum.<br><br>
    #### 3.4.2.2 navsales.component.ts
@@ -75,8 +90,16 @@ Lorem ipsum.<br><br>
 #### 3.5.2.1 profile.component.ts
 Lorem ipsum.<br><br>
 
-## 4. C++ Backend:<br>
-Lorem ipsum dolor. 
+### 3.6 Paisos, ciutats, oficines, sales: <br>
+##### [paisos.component.ts] [ciutats.component.ts] [oficines.component.ts] [sales.component.ts]
+#### Funcionalitat:
+Lorem ipsum.<br><br>
+
+## 4. C++ Backend i BBDD:<br>
+### 4.1 C++ Backend:<br>
+Lorem ipsum dolor.
+### 4.2 BBDD MYSQL:<br>
+Lorem ipsum dolor.
 <br><br><br>
 ## 5. Configuració i requisits:<br>
 Lorem ipsum dolor. 
