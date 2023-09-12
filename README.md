@@ -1,4 +1,4 @@
-# DOCUMENTACIÓ TÉCNICA
+ # DOCUMENTACIÓ TÉCNICA
 <a href="#1-introducci%C3%B3">1. Introducció</a><br>
 <a href="#2-arquitectura">2. Arquitectura</a><br>
 <a href="#3-components-dangular">3. Components d'Angular.</a><br>
