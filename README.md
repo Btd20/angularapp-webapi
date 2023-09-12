@@ -31,7 +31,7 @@ Explicació de com Angular i C++ interactuen en el projecte.
 (Només si son rellevants)
 <br><br><br>
 ## 3. Components d'Angular:<br>
-
+  ### Este es un encabezado de nivel 3 (h3)
   #### Este es un encabezado de nivel 4 (h4)
   ## 3.1 Navbars:<br>
 Lorem ipsum dolor. 
