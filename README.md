@@ -13,14 +13,12 @@
 
 <br><br>
 ## 1. Introducció:<br>
-El projecte descriure'l per sobre. 
+- Presentació del projecte.<br>
+- Objectius.<br>
+  - Elemento anidado 1<br>
+  - Elemento anidado 2<br>
+- Tecnologies: Tecnologies utlitzades, explicar més like per què s'ha escollit, quines adventatges i altres.
 <br><br>
-**Objectius del projecte:**
-Objectius del projecte. 
-<br><br>
-**Tecnologies utilitzades:**
-Tecnologies utlitzades, explicar més like per què s'ha escollit, quines adventatges i altres.
-<br><br><br>
 ## 2. Arquitectura:<br>
 Arquitectura del projecte en un aspecte general.
 <br><br>
