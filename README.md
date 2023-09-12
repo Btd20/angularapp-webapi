@@ -29,34 +29,34 @@ Explicació de com Angular i C++ interactuen en el projecte.
 (Només si son rellevants)
 <br><br><br>
 ## 3. Components d'Angular:<br>
-  ### 3.1 Portada:
-  ##### index.component.ts
-  Lorem ipsum.<br><br>
+### 3.1 Portada:
+##### index.component.ts
+Lorem ipsum.<br><br>
 
-  ### 3.2 Inici i registre: <br>
-  #### 3.2.1 Inici:
-  ##### login.component.ts
-  Lorem ipsum.<br><br>
-  #### 3.2.2 Registre:
-  ##### register.component.ts
-  Lorem ipsum.<br><br>
+### 3.2 Inici i registre: <br>
+#### 3.2.1 Inici:
+##### login.component.ts
+Lorem ipsum.<br><br>
+#### 3.2.2 Registre:
+##### register.component.ts
+Lorem ipsum.<br><br>
 
-  ### 3.3 Pàgina principal: <br>
-  ##### home.component.ts
-  Lorem ipsum.<br><br>
+### 3.3 Pàgina principal: <br>
+##### home.component.ts
+Lorem ipsum.<br><br>
 
-  ### 3.4 Barres de navegació: <br>
-  #### 3.4.1 Barra de navegació general:
-  ##### 3.4.1.1 navbar.component.ts
-  Lorem ipsum.<br><br>
+### 3.4 Barres de navegació: <br>
+#### 3.4.1 Barra de navegació general:
+##### 3.4.1.1 navbar.component.ts
+Lorem ipsum.<br><br>
 
-   ##### 3.4.1.2 navadmin.component.ts
-   Lorem ipsum.<br><br>
-  ### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
-   #### 3.4.2.1 navprofile.component.ts
-   Lorem ipsum.<br><br>
-   #### 3.4.2.2 navsales.component.ts
-  Lorem ipsum.<br><br>
+##### 3.4.1.2 navadmin.component.ts
+Lorem ipsum.<br><br>
+### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
+#### 3.4.2.1 navprofile.component.ts
+Lorem ipsum.<br><br>
+#### 3.4.2.2 navsales.component.ts
+Lorem ipsum.<br><br>
 
 ### 3.5 Canvi de dades i perfil: <br>
 #### 3.5.1 Canvi de dades:
