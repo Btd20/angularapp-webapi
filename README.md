@@ -32,10 +32,10 @@ Explicació de com Angular i C++ interactuen en el projecte.
 <br><br><br>
 ## 3. Components d'Angular:<br>
 
-  # 3.1 Navbars:<br>
+  ### 3.1 Navbars:<br>
 Lorem ipsum dolor. 
 
-  # 3.2 Index & Home:<br>
+  ### 3.2 Index & Home:<br>
 Lorem ipsum dolor. 
 <br><br><br>
 ## 4. C++ Backend:<br>
