@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web;
 using webapi.Data;
 using webapi.Models;
 
@@ -86,7 +87,7 @@ namespace webapi.Controllers
             _context.Reserves.Add(reserva);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetReserva", new { id = reserva.ReserveID }, reserva);
+            return CreatedAtAction("GetReserve", new { id = reserva.ReserveID }, reserva);
         }
 
 

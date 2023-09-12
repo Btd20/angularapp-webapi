@@ -202,15 +202,15 @@ export class ApiService {
   // CRUD RESERVES
 
   CreateReserva(meetingRoomID: number, dataReserva: string, horaInici: string, horaFi: string, userId: string): Observable<any> {
-    const url = `${this.apiUrlReserves}/FerReserva`;
-    const body = {
+    const url = `${this.apiUrlReserves}/FerReserva/${meetingRoomID}/${dataReserva}/${horaInici}/${horaFi}/${userId}`;
+    /*const body = {
       meetingRoomID: meetingRoomID,
       dataReserva: dataReserva,
       horaInici: horaInici,
       horaFi: horaFi,
       userId: userId
-    };
-    return this.http.post<any>(url, body);
+    };*/
+    return this.http.post<any>(url, {});
   }
 
   eliminarReserva(id: string): Observable<any> {
