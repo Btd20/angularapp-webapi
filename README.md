@@ -14,7 +14,7 @@
 <br><br>
 ## 1. Introducció:<br>
 El projecte descriure'l per sobre. 
-<br>
+<br><br>
 **Objectius del projecte:**
 Objectius del projecte. 
 <br><br>
@@ -31,8 +31,50 @@ Explicació de com Angular i C++ interactuen en el projecte.
 (Només si son rellevants)
 <br><br><br>
 ## 3. Components d'Angular:<br>
-Lorem ipsum dolor. 
-<br><br><br>
+  ### 3.1 Portada:
+  ##### index.component.ts
+  Lorem ipsum.<br><br>
+
+  ### 3.2 Inici i registre: <br>
+  #### 3.2.1 Inici:
+  ##### login.component.ts
+  Lorem ipsum.<br><br>
+  #### 3.2.2 Registre:
+  ##### register.component.ts
+  Lorem ipsum.<br><br>
+
+  ### 3.3 Pàgina principal: <br>
+  ##### home.component.ts
+  Lorem ipsum.<br><br>
+
+  ### 3.4 Barres de navegació: <br>
+  #### 3.4.1 Barra de navegació general:
+   ##### 3.4.1.1 navbar.component.ts
+   Lorem ipsum.<br><br>
+   ##### 3.4.1.2 navadmin.component.ts
+   Lorem ipsum.<br><br>
+  ### 3.4.2 Barres de navegació de configuració:
+   #### 3.4.2.1 navprofile.component.ts
+   Lorem ipsum.<br><br>
+   #### 3.4.2.2 navsales.component.ts
+  Lorem ipsum.<br><br>
+
+### 3.5 Canvi de dades i perfil: <br>
+#### 3.5.1 Canvi de dades:
+##### 3.5.1.1 dades.component.ts
+Lorem ipsum.<br><br>
+##### 3.5.1.2 ubicacio.component.ts
+Lorem ipsum.<br><br>
+##### 3.5.1.3 change-user.component.ts
+Lorem ipsum.<br><br>
+##### 3.5.1.4 change-email.component.ts
+Lorem ipsum.<br><br>
+##### 3.5.1.5 change-password.component.ts
+Lorem ipsum.<br><br>
+### 3.5.2 Perfil:
+#### 3.5.2.1 profile.component.ts
+Lorem ipsum.<br><br>
+
 ## 4. C++ Backend:<br>
 Lorem ipsum dolor. 
 <br><br><br>
