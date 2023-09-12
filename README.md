@@ -82,7 +82,7 @@ Lorem ipsum.<br><br>
 ## 4. C++ Backend i BBDD:<br>
 ### 4.1 C++ Backend:<br>
 Lorem ipsum dolor.
-### 4.2 BBDD MYSQL:<br>
+### 4.2 BBDD MYSQL Server:<br>
 Lorem ipsum dolor.
 <br><br><br>
 ## 5. Configuració i requisits:<br>
