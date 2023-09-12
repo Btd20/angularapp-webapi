@@ -78,8 +78,11 @@ Lorem ipsum.<br><br>
 #### Funcionalitat:
 Lorem ipsum.<br><br>
 
-## 4. C++ Backend:<br>
-Lorem ipsum dolor. 
+## 4. C++ Backend i BBDD:<br>
+### 4.1 C++ Backend:<br>
+Lorem ipsum dolor.
+### 4.2 BBDD MYSQL:<br>
+Lorem ipsum dolor.
 <br><br><br>
 ## 5. Configuració i requisits:<br>
 Lorem ipsum dolor. 
