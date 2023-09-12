@@ -43,7 +43,17 @@ export class AdminMRVComponent implements OnInit {
     return `${hours}:${minutes}`;
   }
 
-  
+  eliminarReserva(id: string): void {
+    this.apiService.eliminarReserva(id).subscribe(
+      () => {
+        console.log('Reserva eliminada.');
+        this.getAllReservesFromApi();
+      },
+      (error) => {
+        console.error('Error al eliminar la reserva:', error);
+      }
+    );
+  }
  
   get totalPages(): number {
     return Math.ceil(this.reserves.length / this.pageSize); // Total de páginas

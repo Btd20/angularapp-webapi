@@ -213,4 +213,9 @@ export class ApiService {
     return this.http.post<any>(url, body);
   }
 
+  eliminarReserva(id: string): Observable<any> {
+    const url = `${this.apiUrlReserves}/${id}`;
+    return this.http.delete(url);
+  }
+
 }
