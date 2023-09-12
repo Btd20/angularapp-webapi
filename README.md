@@ -59,23 +59,21 @@ Explicació de com Angular i C++ interactuen en el projecte.
    #### 3.4.2.2 navsales.component.ts
   Lorem ipsum.<br><br>
 
-  ### 3.5 Canvi de dades i perfil: <br>
-  #### 3.5.1 Canvi de dades:
-   ##### 3.4.1.1 ubicacio.component.ts
-   Lorem ipsum.<br><br>
-   ##### 3.4.1.2 dades.component.ts
-   Lorem ipsum.<br><br>
-   ##### 3.4.1.2 change-user.component.ts
-   Lorem ipsum.<br><br>
-   ##### 3.4.1.2 change-email.component.ts
-   Lorem ipsum.<br><br>
-   ##### 3.4.1.2 change-password.component.ts
-   Lorem ipsum.<br><br>
-   ##### 3.4.1.2 navadmin.component.ts
-   Lorem ipsum.<br><br>
-  ### 3.5.2 Perfil:
-   #### 3.4.2.1 profile.component.ts
-   Lorem ipsum.<br><br>
+### 3.5 Canvi de dades i perfil: <br>
+#### 3.5.1 Canvi de dades:
+##### 3.5.1.1 dades.component.ts
+Lorem ipsum.<br><br>
+##### 3.5.1.2 ubicacio.component.ts
+Lorem ipsum.<br><br>
+##### 3.5.1.3 change-user.component.ts
+Lorem ipsum.<br><br>
+##### 3.5.1.4 change-email.component.ts
+Lorem ipsum.<br><br>
+##### 3.5.1.5 change-password.component.ts
+Lorem ipsum.<br><br>
+### 3.5.2 Perfil:
+#### 3.5.2.1 profile.component.ts
+Lorem ipsum.<br><br>
 
 ## 4. C++ Backend:<br>
 Lorem ipsum dolor. 
