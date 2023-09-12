@@ -48,8 +48,7 @@ Explicació de com Angular i C++ interactuen en el projecte.
   ### 3.4 Barres de navegació: <br>
   #### 3.4.1 Barra de navegació general:
   ##### 3.4.1.1 navbar.component.ts
-  <br>
-**Descripció** :
+  Lorem ipsum.<br><br>
 
    ##### 3.4.1.2 navadmin.component.ts
    Lorem ipsum.<br><br>
