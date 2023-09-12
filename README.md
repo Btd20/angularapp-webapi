@@ -29,50 +29,34 @@ Explicació de com Angular i C++ interactuen en el projecte.
 (Només si son rellevants)
 <br><br><br>
 ## 3. Components d'Angular:<br>
-  ### 3.1 Portada:
-  ##### index.component.ts
-  Lorem ipsum.<br><br>
+### 3.1 Portada:
+##### index.component.ts
+Lorem ipsum.<br><br>
 
-  ### 3.2 Inici i registre: <br>
-  #### 3.2.1 Inici:
-  ##### login.component.ts
-  Lorem ipsum.<br><br>
-  #### 3.2.2 Registre:
-  ##### register.component.ts
-  Lorem ipsum.<br><br>
+### 3.2 Inici i registre: <br>
+#### 3.2.1 Inici:
+##### login.component.ts
+Lorem ipsum.<br><br>
+#### 3.2.2 Registre:
+##### register.component.ts
+Lorem ipsum.<br><br>
 
-  ### 3.3 Pàgina principal: <br>
-  ##### home.component.ts
-  Lorem ipsum.<br><br>
+### 3.3 Pàgina principal: <br>
+##### home.component.ts
+Lorem ipsum.<br><br>
 
-  ### 3.4 Barres de navegació: <br>
-  #### 3.4.1 Barra de navegació general:
-  ##### 3.4.1.1 navbar.component.ts
-  <br>
-**Descripció** : Proporciona una breu descripció del propòsit i la funció d'aquest component en l'aplicació.
-  <br>
-**Característiques Principals** : 
-Enumera les característiques clau d'aquest component.<br>
-Descriu les interaccions o característiques més importants que ofereix.<br>
-<br>
-**Ús** : 
-- Proporciona exemples de com utilitzar aquest component en l'aplicació.<br>
-- Mostra exemples de codi si és necessari.
-<br>
-**Captures de Pantalla** : 
- Si és rellevant, inclou captures de pantalla o imatges que mostren aquest component en acció.
-<br>
-**Consideracions Tècniques** : 
-<br>
-- Si hi ha consideracions tècniques importants relacionades amb aquest component, com ara dependències, configuració especial o aspectes de rendiment, descrigues aquí.
+### 3.4 Barres de navegació: <br>
+#### 3.4.1 Barra de navegació general:
+##### 3.4.1.1 navbar.component.ts
+Lorem ipsum.<br><br>
 
-   ##### 3.4.1.2 navadmin.component.ts
-   Lorem ipsum.<br><br>
-  ### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
-   #### 3.4.2.1 navprofile.component.ts
-   Lorem ipsum.<br><br>
-   #### 3.4.2.2 navsales.component.ts
-  Lorem ipsum.<br><br>
+##### 3.4.1.2 navadmin.component.ts
+Lorem ipsum.<br><br>
+### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
+##### 3.4.2.1 navprofile.component.ts
+Lorem ipsum.<br><br>
+##### 3.4.2.2 navsales.component.ts
+Lorem ipsum.<br><br>
 
 ### 3.5 Canvi de dades i perfil: <br>
 #### 3.5.1 Canvi de dades:
