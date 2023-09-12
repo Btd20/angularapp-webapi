@@ -76,9 +76,8 @@ Lorem ipsum.<br><br>
 Lorem ipsum.<br><br>
 
 ### 3.6 Paisos, ciutats, oficines, sales: <br>
-##### paisos.component.ts ciutats.component.ts oficines.component.ts [sales.component.ts]
-#### 3.6.1 Canvi de dades:
-##### 3.6.2 dades.component.ts
+##### [paisos.component.ts] [ciutats.component.ts] [oficines.component.ts] [sales.component.ts]
+#### Funcionalitat:
 Lorem ipsum.<br><br>
 
 ## 4. C++ Backend:<br>
