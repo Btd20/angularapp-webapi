@@ -31,10 +31,12 @@ Explicació de com Angular i C++ interactuen en el projecte.
 (Només si son rellevants)
 <br><br><br>
 ## 3. Components d'Angular:<br>
-  ### 3.1 Portada (index.component.ts): <br>
+  ### 3.1 Portada:
+  ##### index.component.ts
   Lorem ipsum.<br><br>
 
-  ### 3.2 Pàgina principal (home.component.ts): <br>
+  ### 3.2 Pàgina principal: <br>
+  ##### home.component.ts
   Lorem ipsum.<br><br>
 
   ### 3.3 Barres de navegació: <br>
