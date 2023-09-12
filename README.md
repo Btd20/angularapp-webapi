@@ -47,8 +47,25 @@ Explicació de com Angular i C++ interactuen en el projecte.
 
   ### 3.4 Barres de navegació: <br>
   #### 3.4.1 Barra de navegació general:
-   ##### 3.4.1.1 navbar.component.ts
-   Lorem ipsum.<br><br>
+  ##### 3.4.1.1 navbar.component.ts
+  <br>
+  - **Descripció**: Proporciona una breu descripció del propòsit i la funció d'aquest component en l'aplicació.
+  <br>
+  - **Característiques Principals**: 
+Enumera les característiques clau d'aquest component.<br>
+Descriu les interaccions o característiques més importants que ofereix.<br>
+<br>
+  - **Ús**: 
+- Proporciona exemples de com utilitzar aquest component en l'aplicació.<br>
+- Mostra exemples de codi si és necessari.
+<br>
+- **Captures de Pantalla**: 
+ Si és rellevant, inclou captures de pantalla o imatges que mostren aquest component en acció.
+<br>
+- **Consideracions Tècniques**: 
+<br>
+- Si hi ha consideracions tècniques importants relacionades amb aquest component, com ara dependències, configuració especial o aspectes de rendiment, descrigues aquí.
+
    ##### 3.4.1.2 navadmin.component.ts
    Lorem ipsum.<br><br>
   ### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
