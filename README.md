@@ -124,6 +124,19 @@ Lorem ipsum.
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
 ### 4.2 BBDD MYSQL Server:
+
+### 4.2.1 Taules:
+##### dbo.AspNetUser
+Lorem ipsum.
+##### dbo.País
+Lorem ipsum.
+##### dbo.Ciutats
+Lorem ipsum.
+##### dbo.Oficines
+Lorem ipsum.
+##### dbo.Sales
+Lorem ipsum.
+##### dbo.Reserves
 Lorem ipsum.
 <br><br>
 ## 5. Configuració i requisits:
