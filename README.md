@@ -18,7 +18,7 @@
   - Elemento anidado 2<br>
 - Tecnologies: Tecnologies utlitzades, explicar més like per què s'ha escollit, quines adventatges i altres.
 <br><br>
-## 2. Arquitectura:<br>
+## 2. Arquitectura:
 Arquitectura del projecte en un aspecte general.
 <br>
 - Interacció d'Angular juntament amb C++:<br>
