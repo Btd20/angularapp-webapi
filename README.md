@@ -12,7 +12,7 @@
 <a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
 <br>
 ## 1. Introducció:<br>
- Breu descripció del projecte. 
+ El projecte ha sigut desenvolupat amb AspNet.Core, MYSQL Server, C# i Angular.<br>Aquest projecte, anomenat ACME-ROOMS està pensat per reservar sales per tal de desenvolupar reunions dintre d'aquestes sales, previament reservades. En aquest projecte, com a usuari normal, podrem veure les reserves de les que som propietaris, 
  Objectius del projecte.
 <br><br>
 ## 2. Arquitectura:
