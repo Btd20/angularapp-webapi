@@ -19,7 +19,11 @@
 - Tecnologies: Tecnologies utlitzades, explicar més like per què s'ha escollit, quines adventatges i altres.
 <br><br>
 ## 2. Arquitectura:
-Arquitectura del projecte en un aspecte general.
+- Presentació del projecte.<br>
+- Objectius.<br>
+  - Elemento anidado 1<br>
+  - Elemento anidado 2<br>
+- Tecnologies: Tecnologies utlitzades, explicar més like per què s'ha escollit, quines adventatges i altres.
 <br>
 - Interacció d'Angular juntament amb C++:<br>
 Explicació de com Angular i C++ interactuen en el projecte.
