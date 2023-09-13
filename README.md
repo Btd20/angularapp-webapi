@@ -20,123 +20,120 @@
 <br><br>
 ## 2. Arquitectura:<br>
 Arquitectura del projecte en un aspecte general.
-<br><br>
+<br>
 - Interacció d'Angular juntament amb C++:<br>
 Explicació de com Angular i C++ interactuen en el projecte.
 <br><br>
-- Diagrames d'arquitectura:<br>
-(Només si son rellevants)
-<br><br><br>
-## 3. Components d'Angular:<br>
+## 3. Components d'Angular:
 ### 3.1 Portada:
 ##### index.component.ts
-Lorem ipsum.<br><br>
-
-### 3.2 Inici i registre: <br>
+Lorem ipsum.<br>
+### 3.2 Inici i registre: 
 #### 3.2.1 Inici:
 ##### login.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 #### 3.2.2 Registre:
 ##### register.component.ts
-Lorem ipsum.<br><br>
-
-### 3.3 Pàgina principal: <br>
+Lorem ipsum.<br>
+### 3.3 Pàgina principal:
 ##### home.component.ts
-Lorem ipsum.<br><br>
-
-### 3.4 Barres de navegació: <br>
+Lorem ipsum.<br>
+### 3.4 Barres de navegació: 
 #### 3.4.1 Barra de navegació general:
 ##### 3.4.1.1 navbar.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.4.1.2 navadmin.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
 ##### 3.4.2.1 navprofile.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.4.2.2 navsales.component.ts
-Lorem ipsum.<br><br>
-
-### 3.5 Canvi de dades i perfil: <br>
+Lorem ipsum.<br>
+### 3.5 Canvi de dades i perfil: 
 #### 3.5.1 Canvi de dades:
 ##### 3.5.1.1 dades.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.5.1.2 ubicacio.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.5.1.3 change-user.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.5.1.4 change-email.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.5.1.5 change-password.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ### 3.5.2 Perfil:
 #### 3.5.2.1 profile.component.ts
-Lorem ipsum.<br><br>
-
-### 3.6 Paisos, ciutats, oficines, sales: <br>
+Lorem ipsum.<br>
+### 3.6 Paisos, ciutats, oficines, sales: 
 ##### [paisos.component.ts] [ciutats.component.ts] [oficines.component.ts] [sales.component.ts]
 #### Funcionalitat:
-Lorem ipsum.<br><br>
-
-### 3.7 Reserva i derivats: <br>
+Lorem ipsum.<br>
+### 3.7 Reserva i derivats:
 ##### 3.7.1 fer-reserva.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.7.2 select-sala.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.7.3 reserves.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.7.4 reserva-box.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.7.5 reserva-modify.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 <!--AIXO NO SÉ SI POSARHO AL 3.8-->
 ##### 3.7.6 admin-modifyreserves.component.ts 
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.7.7 vista-reserva-pais.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.7.8 vista-reserva-ciutat.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.7.9 vista-reserva-oficina.component.ts
-Lorem ipsum.<br><br>
-
-### 3.8 Administrador i els seus modificadors: <br>
+Lorem ipsum.<br>
+### 3.8 Administrador i els seus modificadors: 
 ##### 3.8.1 admin.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.8.1 admin-modifyciutats.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.8.1 admin-modifyoficines.component.ts
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.8.1 admin-modifypaisos.component.ts
-Lorem ipsum.<br><br>
-
-### 3.9 CRUD de paisos, ciutats, oficines, sala i reserva: <br>
-Descripció.
+Lorem ipsum.<br>
+### 3.9 CRUD de paisos, ciutats, oficines, sala i reserva: 
+Descripció.<br>
 ##### 3.9.1 CREATE
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.9.2 READ
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.9.3 UPDATE
-Lorem ipsum.<br><br>
+Lorem ipsum.<br>
 ##### 3.9.4 DELETE
-Lorem ipsum.<br><br>
-
+Lorem ipsum.<br>
 ### 3.10 app.module.ts 
-Lorem ipsum.<br><br>
-
+Lorem ipsum.
+<br><br>
 ## 4. C++ Backend i BBDD:<br>
-### 4.1 C++ Backend:<br>
-
-### 4.2 BBDD MYSQL Server:<br>
-
-## 5. Configuració i requisits:<br>
-
-## 6. Us i exemples:<br>
-
-## 7. Proves:<br>
-
-## 8. Desplegament:<br>
-
-## 9. Manteniment:<br>
-
-## 10. Referencies:<br>
-
-## 11. Anexos:<br>
+### 4.1 C++ Backend:
+Lorem ipsum.<br>
+### 4.2 BBDD MYSQL Server:
+Lorem ipsum.
+<br><br>
+## 5. Configuració i requisits:
+Lorem ipsum.
+<br><br>
+## 6. Us i exemples:
+Lorem ipsum.
+<br><br>
+## 7. Proves:
+Lorem ipsum.
+<br><br>
+## 8. Desplegament:
+Lorem ipsum.
+<br><br>
+## 9. Manteniment:
+Lorem ipsum.
+<br><br>
+## 10. Referencies:
+Lorem ipsum.
+<br><br>
+## 11. Anexos:
+Lorem ipsum.
+<br><br>
