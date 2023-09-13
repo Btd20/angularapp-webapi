@@ -13,4 +13,10 @@ export class ReservaBoxComponent {
     console.log(this.reserva);
   }
 
+  formatTimeSpan(timeSpan: string): string {
+    const parts = timeSpan.split(':');
+    const hours = parts[0];
+    const minutes = parts[1];
+    return `${hours}:${minutes}`;
+  }
 }
