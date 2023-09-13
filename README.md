@@ -25,8 +25,16 @@ Arquitectura del projecte en un aspecte general.
 Explicació de com Angular i C++ interactuen en el projecte.
 <br><br>
 ## 3. Components d'Angular:
-<a href="#3-components-dangular">3.1 Índex.</a><br>
-<a href="#3-components-dangular">3.2 Inici i registre.</a><br>
+<a href="#31-índex">3.1 Índex.</a><br>
+<a href="">3.2 Inici i registre.</a><br>
+<a href="">3.3 Pàgina principal.</a><br>
+<a href="">3.4 Barres de navegació II.</a><br>
+<a href="">3.5 Canvi de dades i perfil.</a><br>
+<a href="">3.6 Paisos, ciutats, oficines i sales.</a><br>
+<a href="">3.7 Reserva i derivats.</a><br>
+<a href="">3.8 Administrador i els seus modificadors.</a><br>
+<a href="">3.9 CRUD.</a><br>
+<a href="">3.10 Inici i registre.</a><br>
 ### 3.1 Índex:
 ##### index.component.ts
 - **Descripción**: Proporciona una breve descripción del propósito y la función de este componente en la aplicación.
