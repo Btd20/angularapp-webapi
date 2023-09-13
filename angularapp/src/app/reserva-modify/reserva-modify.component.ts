@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 })
 export class ReservaMComponent {
   username: string | null = sessionStorage.getItem('username');
-
+  reserves: any[] = [];
   sales: any[] = [];
   selectedSala: string | undefined;
 
@@ -18,9 +18,21 @@ export class ReservaMComponent {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.getAllSalesFromApi();
+      this.getAllReservesFromApi();
       //this.salaReserva = params['sales'];
       //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
     })
+  }
+
+  getAllReservesFromApi(): void {
+    this.apiService.getAllReserves().subscribe(
+      response => {
+        this.sales = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 
   getAllSalesFromApi(): void {
@@ -30,6 +42,18 @@ export class ReservaMComponent {
       },
       error => {
         console.error(error);
+      }
+    );
+  }
+
+  eliminarReserva(id: string): void {
+    this.apiService.eliminarReserva(id).subscribe(
+      () => {
+        console.log('Reserva eliminada.');
+        this.getAllReservesFromApi();
+      },
+      (error) => {
+        console.error('Error al eliminar la reserva:', error);
       }
     );
   }

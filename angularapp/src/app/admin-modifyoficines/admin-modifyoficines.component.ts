@@ -42,10 +42,10 @@ export class AdminMOComponent implements OnInit {
     const dialogRef = this.dialog.open(CreateOficinesComponent);
 
     dialogRef.afterClosed().subscribe((result: { nomPais: string, nomCiutat: string, nomOficina: string } | undefined) => {
-      console.log('Valores del formulario:', result);
+      console.log('Valors del formulari:', result);
       if (result) {
         const { nomPais, nomCiutat, nomOficina } = result;
-        console.log('Valores desestructurados:', nomPais, nomCiutat, nomOficina);
+        console.log('Valors desestructurats:', nomPais, nomCiutat, nomOficina);
 
         // Validar que els noms de la ciutat i de l'oficina no siguin espais en blanc
         if (nomCiutat.trim() === '' || nomOficina.trim() === '') {
