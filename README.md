@@ -26,14 +26,14 @@ Explicació de com Angular i C++ interactuen en el projecte.
 <br><br>
 ## 3. Components d'Angular:
 <a href="#31-índex">3.1 Índex.</a><br>
-<a href="">3.2 Inici i registre.</a><br>
-<a href="">3.3 Pàgina principal.</a><br>
-<a href="">3.4 Barres de navegació II.</a><br>
-<a href="">3.5 Canvi de dades i perfil.</a><br>
-<a href="">3.6 Paisos, ciutats, oficines i sales.</a><br>
-<a href="">3.7 Reserva i derivats.</a><br>
-<a href="">3.8 Administrador i els seus modificadors.</a><br>
-<a href="">3.9 CRUD.</a><br>
+<a href="#32-inici-i-registre">3.2 Inici i registre.</a><br>
+<a href="#33-pàgina-principal">3.3 Pàgina principal.</a><br>
+<a href="#34-barres-de-navegació">3.4 Barres de navegació.</a><br>
+<a href="#35-canvi-de-dades-i-perfil">3.5 Canvi de dades i perfil.</a><br>
+<a href="#36-paisos-ciutats-oficines-sales">3.6 Paisos, ciutats, oficines i sales.</a><br>
+<a href="#37-reserva-i-derivats">3.7 Reserva i derivats.</a><br>
+<a href="#38-administrador-i-els-seus-modificadors">3.8 Administrador i els seus modificadors.</a><br>
+<a href="#39-crud-de-paisos-ciutats-oficines-sala-i-reserva">3.9 CRUD.</a><br>
 <a href="">3.10 Inici i registre.</a><br>
 ### 3.1 Índex:
 ##### index.component.ts
