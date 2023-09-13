@@ -2,7 +2,7 @@
 <a href="#1-introducci%C3%B3">1. Introducció.</a><br>
 <a href="#2-arquitectura">2. Arquitectura.</a><br>
 <a href="#3-components-dangular">3. Components d'Angular.</a><br>
-<a href="#4-c-backend-i-bbdd">4. C++ Backend i BBDD.</a><br>
+<a href="#4-backend-i-bbdd">4. Backend i BBDD.</a><br>
 <a href="#5-configuració-i-requisits">5. Configuració i requisits.</a><br>
 <a href="#6-us-i-exemples">6. Us i exemples.</a><br>
 <a href="#7-proves">7. Proves.</a><br>
@@ -120,8 +120,8 @@ Lorem ipsum.<br>
 ### 3.10 app.module.ts 
 Lorem ipsum.
 <br><br>
-## 4. C++ Backend i BBDD:<br>
-### 4.1 C++ Backend:
+## 4. Backend i BBDD:<br>
+### 4.1 Backend amb C#:
 Lorem ipsum.<br>
 ### 4.2 BBDD MYSQL Server:
 Lorem ipsum.
