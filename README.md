@@ -16,9 +16,8 @@
  Objectius del projecte.
 <br><br>
 ## 2. Arquitectura:
- Visió general de l'arquitectura del projecte.
- Components principals. 
- Diagrames de arquitectura.
+ -Visió general de l'arquitectura del projecte.
+ -Diagrames de arquitectura.
 <br><br>
 ## 3. Components d'Angular:
 <a href="#31-índex">3.1 Índex.</a><br>
