@@ -28,7 +28,6 @@ Explicació de com Angular i C++ interactuen en el projecte.
 ### 3.1 Portada:
 ##### index.component.ts
 - **Descripción**: Proporciona una breve descripción del propósito y la función de este componente en la aplicación.
-<br>
 ### 3.2 Inici i registre: 
 #### 3.2.1 Inici:
 ##### login.component.ts
