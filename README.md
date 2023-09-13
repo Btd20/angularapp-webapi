@@ -54,7 +54,7 @@ Lorem ipsum.<br>
 Lorem ipsum.<br>
 ##### navadmin.component.ts
 Lorem ipsum.<br>
-### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
+#### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
 ##### navprofile.component.ts
 Lorem ipsum.<br>
 ##### navsales.component.ts
@@ -71,7 +71,7 @@ Lorem ipsum.<br>
 Lorem ipsum.<br>
 ##### change-password.component.ts
 Lorem ipsum.<br>
-### 3.5.2 Perfil:
+#### 3.5.2 Perfil:
 #### profile.component.ts
 Lorem ipsum.<br>
 ### 3.6 Paisos, ciutats, oficines, sales: 
