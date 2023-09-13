@@ -70,10 +70,11 @@ export class FerReservaComponent implements OnInit {
     this.apiService.CreateReserva(meetingRoomID, dataReserva, horaInici, horaFi, userID).subscribe(
       (resposta) => {
         console.log('Reserva creada amb èxit:', resposta);
+        this.router.navigate(['/reserves']);
       },
       (error) => {
         console.error('Error en crear la reserva:', error);
-        this.router.navigate(['/reserves']);
+        alert("Ups! Algo ha fallat");
       }
     );
   }
