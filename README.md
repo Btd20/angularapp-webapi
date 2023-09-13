@@ -2,7 +2,6 @@
 <a href="#1-introducci%C3%B3">1. Introducció.</a><br>
 <a href="#2-arquitectura">2. Arquitectura.</a><br>
 <a href="#3-components-dangular">3. Components d'Angular.</a><br>
-<a href="#3-components-dangular">3.1 Portada.</a><br>
 <a href="#4-c-backend-i-bbdd">4. C++ Backend i BBDD.</a><br>
 <a href="#5-configuració-i-requisits">5. Configuració i requisits.</a><br>
 <a href="#6-us-i-exemples">6. Us i exemples.</a><br>
@@ -26,6 +25,8 @@ Arquitectura del projecte en un aspecte general.
 Explicació de com Angular i C++ interactuen en el projecte.
 <br><br>
 ## 3. Components d'Angular:
+<a href="#3-components-dangular">3.1 Portada.</a><br>
+<a href="#3-components-dangular">3.1 Portada.</a><br>
 ### 3.1 Portada:
 ##### index.component.ts
 - **Descripción**: Proporciona una breve descripción del propósito y la función de este componente en la aplicación.
