@@ -119,6 +119,9 @@ Lorem ipsum.<br><br>
 ##### 3.9.4 DELETE
 Lorem ipsum.<br><br>
 
+### 3.10 app.module.ts 
+Lorem ipsum.<br><br>
+
 ## 4. C++ Backend i BBDD:<br>
 ### 4.1 C++ Backend:<br>
 
