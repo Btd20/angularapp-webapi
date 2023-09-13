@@ -12,17 +12,13 @@
 <a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
 <br>
 ## 1. Introducció:<br>
-- Presentació del projecte.<br>
-- Objectius.<br>
-  - Elemento anidado 1<br>
-  - Elemento anidado 2<br>
-- Tecnologies: Tecnologies utlitzades, explicar més like per què s'ha escollit, quines adventatges i altres.
+ Breu descripció del projecte. 
+ Objectius del projecte.
 <br><br>
 ## 2. Arquitectura:
- LOREM IPSUM DOLOR.
-<br>
-- Interacció d'Angular juntament amb C++:<br>
-Explicació de com Angular i C++ interactuen en el projecte.
+ Visió general de l'arquitectura del projecte.
+ Components principals. 
+ Diagrames de arquitectura.
 <br><br>
 ## 3. Components d'Angular:
 <a href="#31-índex">3.1 Índex.</a><br>
