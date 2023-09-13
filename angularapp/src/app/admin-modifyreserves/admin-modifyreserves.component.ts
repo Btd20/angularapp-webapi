@@ -15,7 +15,7 @@ export class AdminMRVComponent implements OnInit {
   reserves: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;
-  pageSize: number = 5;
+  pageSize: number = 2;
 
   constructor(private apiService: ApiService, private authService: AuthService) {
     this.isAdmin = authService.isAdmin;

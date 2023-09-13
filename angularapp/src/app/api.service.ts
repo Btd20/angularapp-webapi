@@ -218,4 +218,9 @@ export class ApiService {
     return this.http.delete(url);
   }
 
+  getReservesByUser(userId: string) {
+    const url = `${this.apiUrlReserves}/GetReservesByUser/${userId}`;
+    return this.http.get<any[]>(url);
+  }
+
 }

@@ -10,17 +10,25 @@ import { AuthService } from '../auth-service.service';
 })
 export class ReservesComponent implements OnInit {
   reserves: any[] = [];
+  
 
   constructor(private apiService: ApiService,
     private router: Router, private authService: AuthService) {
   }
 
   ngOnInit(): void {
-    //this.getReservesFromApi();
+    const userId = sessionStorage.getItem('id');
+
+    if (userId !== null) {
+      this.apiService.getReservesByUser(userId)
+        .subscribe(reservas => {
+          this.reserves = reservas;
+        });
+    }
   }
 
-  /*getReservesFromApi(): void {
-    this.apiService.getReserves().subscribe(
+  /*getAllReservesFromApi(): void {
+    this.apiService.getAllReserves().subscribe(
       response => {
         this.reserves = response;
       },

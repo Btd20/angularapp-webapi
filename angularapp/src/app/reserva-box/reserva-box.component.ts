@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'reserva-box',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./reserva-box.component.css']
 })
 export class ReservaBoxComponent {
+  @Input() reserva: any;
+  username: string | null = sessionStorage.getItem("username");
+
+  ngOnInit() {
+    console.log(this.reserva);
+  }
 
 }

@@ -124,6 +124,17 @@ namespace webapi.Controllers
             return NoContent();
         }
 
+        [HttpGet("GetReservesByUser/{userId}")]
+        public async Task<ActionResult<IEnumerable<Reserves>>> GetReservesByUser(string userId)
+        {
+            var reserves = await _context.Reserves
+                .Where(r => r.UserID == userId)
+                .Include(r => r.sala)
+                .ToListAsync();
+
+            return Ok(reserves);
+        }
+
         // DELETE: Reserves/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReserve(int id)
