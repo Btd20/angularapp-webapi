@@ -109,6 +109,17 @@ Lorem ipsum.<br><br>
 ##### 3.8.1 admin-modifypaisos.component.ts
 Lorem ipsum.<br><br>
 
+### 3.9 CRUD de paisos, ciutats, oficines, sala i reserva: <br>
+Descripció.
+##### 3.9.1 CREATE
+Lorem ipsum.<br><br>
+##### 3.9.2 RRRRRR
+Lorem ipsum.<br><br>
+##### 3.9.3 UPDATE
+Lorem ipsum.<br><br>
+##### 3.9.4 DELETE
+Lorem ipsum.<br><br>
+
 ## 4. C++ Backend i BBDD:<br>
 ### 4.1 C++ Backend:<br>
 
