@@ -50,72 +50,72 @@ Lorem ipsum.<br>
 Lorem ipsum.<br>
 ### 3.4 Barres de navegació: 
 #### 3.4.1 Barra de navegació general:
-##### 3.4.1.1 navbar.component.ts
+##### navbar.component.ts
 Lorem ipsum.<br>
-##### 3.4.1.2 navadmin.component.ts
+##### navadmin.component.ts
 Lorem ipsum.<br>
 ### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
-##### 3.4.2.1 navprofile.component.ts
+##### navprofile.component.ts
 Lorem ipsum.<br>
-##### 3.4.2.2 navsales.component.ts
+##### navsales.component.ts
 Lorem ipsum.<br>
 ### 3.5 Canvi de dades i perfil: 
 #### 3.5.1 Canvi de dades:
-##### 3.5.1.1 dades.component.ts
+##### dades.component.ts
 Lorem ipsum.<br>
-##### 3.5.1.2 ubicacio.component.ts
+##### ubicacio.component.ts
 Lorem ipsum.<br>
-##### 3.5.1.3 change-user.component.ts
+##### change-user.component.ts
 Lorem ipsum.<br>
-##### 3.5.1.4 change-email.component.ts
+##### change-email.component.ts
 Lorem ipsum.<br>
-##### 3.5.1.5 change-password.component.ts
+##### change-password.component.ts
 Lorem ipsum.<br>
 ### 3.5.2 Perfil:
-#### 3.5.2.1 profile.component.ts
+#### profile.component.ts
 Lorem ipsum.<br>
 ### 3.6 Paisos, ciutats, oficines, sales: 
-##### [paisos.component.ts] [ciutats.component.ts] [oficines.component.ts] [sales.component.ts]
+##### paisos.component.ts ciutats.component.ts oficines.component.ts sales.component.ts
 #### Funcionalitat:
 Lorem ipsum.<br>
 ### 3.7 Reserva i derivats:
-##### 3.7.1 fer-reserva.component.ts
+##### fer-reserva.component.ts
 Lorem ipsum.<br>
-##### 3.7.2 select-sala.component.ts
+##### select-sala.component.ts
 Lorem ipsum.<br>
-##### 3.7.3 reserves.component.ts
+##### reserves.component.ts
 Lorem ipsum.<br>
-##### 3.7.4 reserva-box.component.ts
+##### reserva-box.component.ts
 Lorem ipsum.<br>
-##### 3.7.5 reserva-modify.component.ts
+##### reserva-modify.component.ts
 Lorem ipsum.<br>
 <!--AIXO NO SÉ SI POSARHO AL 3.8-->
-##### 3.7.6 admin-modifyreserves.component.ts 
+##### admin-modifyreserves.component.ts 
 Lorem ipsum.<br>
-##### 3.7.7 vista-reserva-pais.component.ts
+##### vista-reserva-pais.component.ts
 Lorem ipsum.<br>
-##### 3.7.8 vista-reserva-ciutat.component.ts
+##### vista-reserva-ciutat.component.ts
 Lorem ipsum.<br>
-##### 3.7.9 vista-reserva-oficina.component.ts
+##### vista-reserva-oficina.component.ts
 Lorem ipsum.<br>
 ### 3.8 Administrador i els seus modificadors: 
-##### 3.8.1 admin.component.ts
+##### admin.component.ts
 Lorem ipsum.<br>
-##### 3.8.1 admin-modifyciutats.component.ts
+##### admin-modifyciutats.component.ts
 Lorem ipsum.<br>
-##### 3.8.1 admin-modifyoficines.component.ts
+##### admin-modifyoficines.component.ts
 Lorem ipsum.<br>
-##### 3.8.1 admin-modifypaisos.component.ts
+##### admin-modifypaisos.component.ts
 Lorem ipsum.<br>
 ### 3.9 CRUD de paisos, ciutats, oficines, sala i reserva: 
 Descripció.<br>
-##### 3.9.1 CREATE
+##### CREATE
 Lorem ipsum.<br>
-##### 3.9.2 READ
+##### READ
 Lorem ipsum.<br>
-##### 3.9.3 UPDATE
+##### UPDATE
 Lorem ipsum.<br>
-##### 3.9.4 DELETE
+##### DELETE
 Lorem ipsum.<br>
 ### 3.10 app.module.ts 
 Lorem ipsum.
