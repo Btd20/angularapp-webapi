@@ -79,6 +79,36 @@ Lorem ipsum.<br><br>
 #### Funcionalitat:
 Lorem ipsum.<br><br>
 
+### 3.7 Reserva i derivats: <br>
+##### 3.7.1 fer-reserva.component.ts
+Lorem ipsum.<br><br>
+##### 3.7.2 select-sala.component.ts
+Lorem ipsum.<br><br>
+##### 3.7.3 reserves.component.ts
+Lorem ipsum.<br><br>
+##### 3.7.4 reserva-box.component.ts
+Lorem ipsum.<br><br>
+##### 3.7.5 reserva-modify.component.ts
+Lorem ipsum.<br><br>
+##### 3.7.6 admin-modifyreserves.component.ts /*--AIXO NO SÉ SI POSARHO AL 3.8--*/
+Lorem ipsum.<br><br>
+##### 3.7.7 vista-reserva-pais.component.ts
+Lorem ipsum.<br><br>
+##### 3.7.8 vista-reserva-ciutat.component.ts
+Lorem ipsum.<br><br>
+##### 3.7.9 vista-reserva-oficina.component.ts
+Lorem ipsum.<br><br>
+
+### 3.8 Administrador i els seus modificadors: <br>
+##### 3.8.1 admin.component.ts
+Lorem ipsum.<br><br>
+##### 3.8.1 admin-modifyciutats.component.ts
+Lorem ipsum.<br><br>
+##### 3.8.1 admin-modifyoficines.component.ts
+Lorem ipsum.<br><br>
+##### 3.8.1 admin-modifypaisos.component.ts
+Lorem ipsum.<br><br>
+
 ## 4. C++ Backend i BBDD:<br>
 ### 4.1 C++ Backend:<br>
 
