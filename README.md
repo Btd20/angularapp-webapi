@@ -90,7 +90,8 @@ Lorem ipsum.<br><br>
 Lorem ipsum.<br><br>
 ##### 3.7.5 reserva-modify.component.ts
 Lorem ipsum.<br><br>
-##### 3.7.6 admin-modifyreserves.component.ts /*--AIXO NO SÉ SI POSARHO AL 3.8--*/
+<!--AIXO NO SÉ SI POSARHO AL 3.8-->
+##### 3.7.6 admin-modifyreserves.component.ts 
 Lorem ipsum.<br><br>
 ##### 3.7.7 vista-reserva-pais.component.ts
 Lorem ipsum.<br><br>
