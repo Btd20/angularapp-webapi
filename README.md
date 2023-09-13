@@ -2,7 +2,7 @@
 <a href="#1-introducci%C3%B3">1. Introducció.</a>
 <a href="#2-arquitectura">2. Arquitectura.</a>
 <a href="#3-components-dangular">3. Components d'Angular.</a>
- - **<a href="#3-components-dangular">3.1 Portada.</a>**
+ - <a href="#3-components-dangular">3.1 Portada.</a>
 <a href="#4-c-backend-i-bbdd">4. C++ Backend i BBDD.</a>
 <a href="#5-configuració-i-requisits">5. Configuració i requisits.</a>
 <a href="#6-us-i-exemples">6. Us i exemples.</a>
