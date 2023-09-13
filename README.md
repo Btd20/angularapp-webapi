@@ -1,6 +1,6 @@
  # DOCUMENTACIÓ TÉCNICA
-<a href="#1-introducci%C3%B3">1. Introducció</a><br>
-<a href="#2-arquitectura">2. Arquitectura</a><br>
+<a href="#1-introducci%C3%B3">1. Introducció.</a><br>
+<a href="#2-arquitectura">2. Arquitectura.</a><br>
 <a href="#3-components-dangular">3. Components d'Angular.</a><br>
 <a href="#4-c-backend-i-bbdd">4. C++ Backend i BBDD.</a><br>
 <a href="#5-configuració-i-requisits">5. Configuració i requisits.</a><br>
@@ -9,9 +9,8 @@
 <a href="#8-desplegament">8. Desplegament.</a><br>
 <a href="#9-manteniment">9. Manteniment.</a><br>
 <a href="#10-referencies">10. Referencies.</a><br>
-<a href="#11-anexos">11. Anexos.</a> <!--si es necessari--><br>
-
-<br><br>
+<a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
+<br>
 ## 1. Introducció:<br>
 - Presentació del projecte.<br>
 - Objectius.<br>
@@ -49,7 +48,6 @@ Lorem ipsum.<br><br>
 #### 3.4.1 Barra de navegació general:
 ##### 3.4.1.1 navbar.component.ts
 Lorem ipsum.<br><br>
-
 ##### 3.4.1.2 navadmin.component.ts
 Lorem ipsum.<br><br>
 ### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
@@ -114,7 +112,7 @@ Lorem ipsum.<br><br>
 Descripció.
 ##### 3.9.1 CREATE
 Lorem ipsum.<br><br>
-##### 3.9.2 RRRRRR
+##### 3.9.2 READ
 Lorem ipsum.<br><br>
 ##### 3.9.3 UPDATE
 Lorem ipsum.<br><br>
