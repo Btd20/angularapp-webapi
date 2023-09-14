@@ -28,9 +28,11 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
 #### 2.1.2 Capa de lògica (Backend):
 - Per desenvolupar aquesta capa hem utilitzat **ASP.NET Core i C#** per tal de tenir una coordinació entre les capes existents. 
 - Aquesta capa és **l'unica que interactua amb les dues restants**. Si es conecta a la BBDD, es guarda informació i llavors, passant per la capa de presentacció, imprimeix la informació.
-- Es pot considerar doncs, una capa prou important dintre d'aquest projecte ja que durant el procés de reserva, la lògica pesa força. Tot i així no podem dir que és la capa més important, ja que en certs casos i força concrets, no necessita estar en coordinació amb la capa de presentació.<br>
+- Es pot considerar doncs, una capa prou important dintre d'aquest projecte ja que durant el procés de reserva, la lògica pesa força. Tot i així no podem dir que és la capa més important, ja que en casos força concrets, no necessita estar en coordinació amb la capa de presentació.<br>
 #### 2.1.3 Capa de dades (BBDD):
-Lorem ipsum <br>
+ - Aquí si que les neuronas hicieron PUUUUUM *inserte meme abuela APM*
+ - uwu2
+<br>
 <!--
  Visió general de l'arquitectura del projecte.
  Proporciona una descripción general de la arquitectura del proyecto, destacando cómo los diferentes componentes se interconectan y trabajan juntos para lograr los objetivos del proyecto. Esto puede incluir una visión general de la arquitectura en capas, la estructura general del sistema y la lógica de flujo de datos-->
