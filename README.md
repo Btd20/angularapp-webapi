@@ -30,9 +30,8 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
 - Aquesta capa és **l'unica que interactua amb les dues restants**. Si es conecta a la BBDD, es guarda informació i llavors, passant per la capa de presentacció, imprimeix la informació.
 - Es pot considerar doncs, una capa prou important dintre d'aquest projecte ja que durant el procés de reserva, la lògica pesa força. Tot i així no podem dir que és la capa més important, ja que en casos força concrets, no necessita estar en coordinació amb la capa de presentació.
 #### 2.1.3 Capa de dades (BBDD):
-- Hem utilitzat **SQL Server** juntament amb **Entity Framework Core** per tal de dur a terme una base de dades per el tipus de projecte desenvolupat.
-- SI NO PUEDO ACERCARME NI OIR OWO EXTREMODURO.
-- No sé ara doncs perque no podía fer abans els punts aquests i se'm trencaba totalment. owo <br>
+- Hem utilitzat **SQL Server** juntament amb **Entity Framework Core** per tal de dur a terme una base de dades per el tipus de projecte desenvolupat. SQL Server ens ha facilitat l'interacció amb la BBDD, mentres que Entity Framework Core, a partir d'ara anomenat EF Core, ens ha proporcionat la opció de mapejar taules per fer-les models d'objectes.
+- No sé perque abans ha petat<br>
 
 
 <br><br>
