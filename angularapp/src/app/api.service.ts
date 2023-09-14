@@ -203,13 +203,6 @@ export class ApiService {
 
   CreateReserva(meetingRoomID: number, dataReserva: string, horaInici: string, horaFi: string, userId: string): Observable<any> {
     const url = `${this.apiUrlReserves}/FerReserva/${meetingRoomID}/${dataReserva}/${horaInici}/${horaFi}/${userId}`;
-    /*const body = {
-      meetingRoomID: meetingRoomID,
-      dataReserva: dataReserva,
-      horaInici: horaInici,
-      horaFi: horaFi,
-      userId: userId
-    };*/
     return this.http.post<any>(url, {});
   }
 
@@ -221,6 +214,11 @@ export class ApiService {
   getReservesByUser(userId: string) {
     const url = `${this.apiUrlReserves}/GetReservesByUser/${userId}`;
     return this.http.get<any[]>(url);
+  }
+
+  getReserve(reserveId: number): Observable<any> {
+    const url = `${this.apiUrlReserves}/${reserveId}`;
+    return this.http.get<any>(url);
   }
 
 }

@@ -39,6 +39,7 @@ const routes: Routes = [
   /*--AQUESTES RUTES HAURIEN DE SER X CADA SALA. amb aixo de ferreserva/:nomSala--*/
   { path: 'ferreserva', component: FerReservaComponent },
   { path: 'reserva-modify', component: ReservaMComponent },
+  { path: 'modify-reserves/:reservaId', component: ReservaMComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin-modifyrooms', component: AdminMRComponent },
   { path: 'admin-modifyoficines', component: AdminMOComponent },
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'change-dates', component: UbicacioComponent },
   { path: 'reserves', component: ReservesComponent },
   { path: 'ferreserva/:meetingRoomID/:dataReserva/:horaInici/:horaFi/:userID', component: FerReservaComponent },
+  
 
 
   { path: 'vista-rpais', component: VistaReservaPais },

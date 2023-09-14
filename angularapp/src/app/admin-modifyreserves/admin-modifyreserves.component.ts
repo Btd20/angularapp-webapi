@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateReservaComponent } from '../create-reserva/create-reserva.component';
+import { Router } from '@angular/router';
 
 
 
@@ -17,7 +18,7 @@ export class AdminMRVComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 2;
 
-  constructor(private apiService: ApiService, private authService: AuthService) {
+  constructor(private apiService: ApiService, private authService: AuthService, private router: Router) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -53,6 +54,11 @@ export class AdminMRVComponent implements OnInit {
         console.error('Error al eliminar la reserva:', error);
       }
     );
+  }
+
+  modificarReserva(reservaId: string) {
+    // Navega a la pàgina "Modify Reserves" i passa l'ID de la reserva com a paràmetre de ruta
+    this.router.navigate(['/modify-reserves', reservaId]);
   }
  
   get totalPages(): number {
