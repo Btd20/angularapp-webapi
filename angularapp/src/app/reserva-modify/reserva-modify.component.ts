@@ -9,16 +9,19 @@ import { ApiService } from '../api.service';
 })
 export class ReservaMComponent {
   username: string | null = sessionStorage.getItem('username');
-  reserves: any[] = [];
   sales: any[] = [];
   selectedSala: string | undefined;
+  reservaId: any;
+  reserva: any;
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
+      this.reservaId = params['reservaId'];
       this.getAllSalesFromApi();
-      this.getAllReservesFromApi();
+      this.loadReserva();
+      console.log(this.reserva.dataReserva);
       //this.salaReserva = params['sales'];
       //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
     })
@@ -57,6 +60,20 @@ export class ReservaMComponent {
       }
     );
   }
+
+  loadReserva() {
+    this.apiService.getReserve(this.reservaId).subscribe(
+      (response) => {
+        this.reserva = response;
+        this.reserva.dataReserva = new Date(this.reserva.dataReserva).toISOString().split('T')[0]; // recordatori personal: el input no agafa format dd/mm/yyyy aixi que s'ha de formatejar
+      },
+      (error) => {
+        console.error('Error al carregar la reserva');
+      }
+    )
+  }
+
+
   /* DE MOMENT NO PUC
   getSalesByOfiFromApi(): void {
     this.apiService.getSalaByOficina(this.paisReserva, this.ciutatReserva, this.oficinaReserva).subscribe(
