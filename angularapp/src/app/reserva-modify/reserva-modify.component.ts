@@ -76,12 +76,12 @@ export class ReservaMComponent {
     )
   }
 
-  guardarReserva() {
+  guardarReserva(reserva: any) {
 
     const reservaActualitzada = {
-      horaInici: this.novaHoraInici,
-      horaFi: this.novaHoraFi,
-      dataReserva: this.novaDataReserva,
+      novaHoraInici: reserva.horaInici,
+      novaHoraFi: reserva.horaFi,
+      novaDataReserva: reserva.dataReserva,
       reserveID: this.reservaId
     };
 
@@ -94,6 +94,8 @@ export class ReservaMComponent {
       (error) => {
         
         console.error('Error en actualitzar la reserva:', error);
+        console.log(reservaActualitzada);
+        console.log(this.reserva);
       }
     );
   }
