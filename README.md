@@ -12,10 +12,11 @@
 <a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
 <br>
 ## 1. Introducció:<br>
-El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant día i hora d'inici. Aixi doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, C#, SQL Server i el framework Angular.<br><br>Els objectius del projecte s'han anat afegint en el Trello, progressivament. En les primeres setmanes, els objectius no eren altres que crear el projecte i conseguir objectius petits, com per exemple: que un usuari es pogues registrar i això es guardes correctament a la BBDD. Durant la duració del propi projecte, els objectius han anat agafant més ambició. Un bon exemple seria l'imatge del perfil. Un cop creat el perfil, vam veure que els usuaris de l'empresa necesitaven afegir la seva imatge de perfil i per això vam investigar com es tractaba una imatge a la BBDD, per llavors passar-la al component adient, en aquest cas profile.component.ts. 
+El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant día i hora d'inici. Aixi doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, C#, SQL Server i el framework Angular.<br><br>Els objectius del projecte s'han anat afegint en el Trello, progressivament. En les primeres setmanes del projecte, els objectius no eren altres que crear el projecte i conseguir objectius petits, com per exemple: que un usuari es pogues registrar i això es guardes correctament a la BBDD. Durant la duració del propi projecte, els objectius han anat agafant més ambició. Un bon exemple seria l'imatge del perfil. Un cop creat el perfil, vam veure que els usuaris de l'empresa necesitaven afegir la seva imatge de perfil i per això vam investigar com es tractaba una imatge a la BBDD, per llavors passar-la al component adient, en aquest cas profile.component.ts. 
 <br><br>
 ## 2. Arquitectura:
- -Visió general de l'arquitectura del projecte.
+ Visió general de l'arquitectura del projecte.
+ Proporciona una descripción general de la arquitectura del proyecto, destacando cómo los diferentes componentes se interconectan y trabajan juntos para lograr los objetivos del proyecto. Esto puede incluir una visión general de la arquitectura en capas, la estructura general del sistema y la lógica de flujo de datos.
 <br><br>
 ## 3. Components d'Angular:
 <a href="#31-índex">3.1 Índex.</a><br>
@@ -30,7 +31,7 @@ El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME 
 <a href="">3.10 Inici i registre.</a><br>
 ### 3.1 Índex:
 ##### index.component.ts
-- **Descripción**: Proporciona una breve descripción del propósito y la función de este componente en la aplicación.
+Proporciona una breve descripción del propósito y la función de este componente en la aplicación.
 ### 3.2 Inici i registre: 
 #### 3.2.1 Inici:
 ##### login.component.ts
