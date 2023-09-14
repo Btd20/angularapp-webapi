@@ -26,8 +26,9 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
  - També s’ha utilitzat Bootstrap, un paquet de clases i ID’s ja predefinides que ens ha agilitzat la feina a la hora de crear estils diferents dintre del projecte.
  - Per últim, s'ha afegit un altre paquet extern, anomenat FontAwsome. Aquest paquet ens permet utilitzar unes icones per el nostre projecte en diferents estils, en el projecte s'ha utilitzat el estil duotone. Hem utilitzat la versió 6.1.1. <br>
 #### 2.1.2 Capa de lògica (Backend):
-- En aquesta capa hem utilitzat ASP.NET Core i C# per tal de desenvolupar la lògica a més de poguer accedir a la BBDD, guardant dades sensibles dintre d'aquesta.
-- No sé que més puc desenvolupar, em costa un pelín. <br>
+- Per desenvolupar aquesta capa hem utilitzat ASP.NET Core i C# per tal de tenir una coordinació entre les capes existents. 
+- Aquesta capa és l'unica que interactua amb les dues restants. Si es conecta a la BBDD, es guarda informació i llavors, passant per la capa de presentacció, imprimeix la informació.
+- Es pot considerar doncs, una capa prou important dintre d'aquest projecte ja que durant el procés de reserva, la lògica pesa força. Tot i així no podem dir que és la capa més important, ja que en certs casos, i força concrets, no necessita estar en coordinació amb la capa de presentació, per exemple.<br>
 #### 2.1.3 Capa de dades (BBDD):
 Lorem ipsum <br>
 <!--
