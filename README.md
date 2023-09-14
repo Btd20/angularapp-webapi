@@ -12,11 +12,10 @@
 <a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
 <br>
 ## 1. Introducció:<br>
-El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant día i hora d'inici. Aixi doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, SQL Server, C# i el framework Angular.<br><br>Els objectius del projecte. Objectius del projecte.
+El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant día i hora d'inici. Aixi doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, SQL Server, C# i el framework Angular.<br><br>Els objectius del projecte. S'han d'incloure entenc, els objectius marcats al trello o anar més enllà? Ni idea. 
 <br><br>
 ## 2. Arquitectura:
- -Visió general de l'arquitectura del projecte.<br>
- -Diagrames de arquitectura.
+ -Visió general de l'arquitectura del projecte.
 <br><br>
 ## 3. Components d'Angular:
 <a href="#31-índex">3.1 Índex.</a><br>
