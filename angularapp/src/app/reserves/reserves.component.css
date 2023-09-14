@@ -38,3 +38,50 @@
   align-content: center;
   justify-content: space-around;
 }
+
+.cap-reserva-txt {
+  color: var(--txt-g1);
+  font-family: var(--fontR);
+  font-size: 25px;
+  text-align: center;
+  margin-left: 35%;
+}
+
+.center-text {
+  margin-left: 27%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+
+.btn-reserva {
+  background-color: var(--txt-g1);
+  color: var(--bs-body-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  width: 12%;
+  margin: auto;
+  margin-bottom: 100px;
+  transition: 0.3s ease-in-out;
+}
+
+  .btn-reserva span {
+    font-family: var(--fontK);
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+
+  .btn-reserva:hover {
+    background-color: var(--bs-body-bg);
+    color: var(--txt-g1);
+    transition: 0.3s ease-in-out;
+  }
+
+.reserva-btn {
+    margin-top: -100px;
+}
