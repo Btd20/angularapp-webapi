@@ -31,89 +31,156 @@ El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME 
 <a href="">3.10 Inici i registre.</a><br>
 ### 3.1 Índex:
 ##### index.component.ts
-Proporciona una breve descripción del propósito y la función de este componente en la aplicación.
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.2 Inici i registre: 
 #### 3.2.1 Inici:
 ##### login.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 #### 3.2.2 Registre:
 ##### register.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.3 Pàgina principal:
 ##### home.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.4 Barres de navegació: 
 #### 3.4.1 Barra de navegació general:
 ##### navbar.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### navadmin.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 #### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
 ##### navprofile.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### navsales.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.5 Canvi de dades i perfil: 
 #### 3.5.1 Canvi de dades:
 ##### dades.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### ubicacio.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### change-user.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### change-email.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### change-password.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 #### 3.5.2 Perfil:
 #### profile.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.6 Paisos, ciutats, oficines, sales: 
 ##### paisos.component.ts ciutats.component.ts oficines.component.ts sales.component.ts
-#### Funcionalitat:
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.7 Reserva i derivats:
 ##### fer-reserva.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### select-sala.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### reserves.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### reserva-box.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### reserva-modify.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 <!--AIXO NO SÉ SI POSARHO AL 3.8-->
 ##### admin-modifyreserves.component.ts 
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### vista-reserva-pais.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### vista-reserva-ciutat.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### vista-reserva-oficina.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.8 Administrador i els seus modificadors: 
 ##### admin.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### admin-modifyciutats.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### admin-modifyoficines.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### admin-modifypaisos.component.ts
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.9 CRUD de paisos, ciutats, oficines, sala i reserva: 
-Descripció.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### CREATE
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### READ
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### UPDATE
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ##### DELETE
-Lorem ipsum.<br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 ### 3.10 app.module.ts 
-Lorem ipsum.
-<br><br>
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
+<br>
 ## 4. Backend i BBDD:<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
