@@ -101,3 +101,7 @@
   padding-right: 2px;
 }
 
+.resb-subtitl {
+  text-transform: capitalize;
+}
+
