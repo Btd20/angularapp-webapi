@@ -101,10 +101,3 @@
   padding-right: 1.5px;
 }
 
-.center-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20vh; /* Esto centra verticalmente en toda la altura de la ventana. Ajusta según sea necesario. */
-}
-
