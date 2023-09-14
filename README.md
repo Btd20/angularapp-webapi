@@ -21,10 +21,10 @@ En aquest apartat entrarem en detall en quant a la arquitectura a capes, utilitz
 Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de la millor manera possible. Dintre del projecte, les capes s'han separat de la següent manera:
 <br>
 #### 2.1.1 Capa de presentació (Frontend):
- - El frontend s’ha portat a terme gràcies a la tecnología anomenada Angular, basada en un altre, anomenada Typescript. Les dues tecnologies han aportat al projecte una interacció per l’usuari, de manera visual i també lògicament. 
- - En la part més pura d’estils, s’ha utilitzat HTML i CSS, tot i que recordem que això no es considera com a tal una tecnología.
+ - El frontend s’ha portat a terme gràcies a la tecnología anomenada Angular, basada en una altre, anomenada Typescript. Les dues tecnologies han aportat al projecte una interacció per l’usuari. Typescript ha servit per desenvolupar la lògica del interfaz d'usuari i en canvi, l'Angular s'ha encarregat de la construcció de la interfície d'usuari i de la interacció. 
+ - En la part més pura de fulls d’estils, s’ha utilitzat HTML i CSS, tot i que recordem que això no es considera com a tal una tecnología, simplement defineixen les seccions de la pàgina a més dels estils. 
  - També s’ha utilitzat Bootstrap, un paquet de clases i ID’s ja predefinides que ens ha agilitzat la feina a la hora de crear estils diferents dintre del projecte.
- - Per últim, s'ha afegit un altre paquet extern, anomenat FontAwsome. Es tracta de la versió 6.1.1<br>
+ - Per últim, s'ha afegit un altre paquet extern, anomenat FontAwsome. Aquest paquet ens permet utilitzar unes icones per el nostre projecte en diferents estils, anomenats duotone. Hem utilitzat la versió 6.1.1. <br>
 #### 2.1.2 Capa de lògica (Backend):
 Lorem ipsum <br>
 #### 2.1.3 Capa de dades (BBDD):
