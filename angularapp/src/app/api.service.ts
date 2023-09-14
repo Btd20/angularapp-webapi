@@ -221,4 +221,9 @@ export class ApiService {
     return this.http.get<any>(url);
   }
 
+  updateReserva(reserva: any): Observable<any> {
+    const url = `${this.apiUrlReserves}/${reserva.reserveID}`;
+    return this.http.put(url, reserva);
+  }
+
 }
