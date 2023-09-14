@@ -28,8 +28,10 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
 #### 2.1.2 Capa de lògica (Backend):
 - Per desenvolupar aquesta capa hem utilitzat **ASP.NET Core i C#** per tal de tenir una coordinació entre les capes existents. 
 - Aquesta capa és **l'unica que interactua amb les dues restants**. Si es conecta a la BBDD, es guarda informació i llavors, passant per la capa de presentacció, imprimeix la informació.
-#### 2.1.3 Capa de dades (BBDD):
 - Es pot considerar doncs, una capa prou important dintre d'aquest projecte ja que durant el procés de reserva, la lògica pesa força. Tot i així no podem dir que és la capa més important, ja que en casos força concrets, no necessita estar en coordinació amb la capa de presentació.
+#### 2.1.3 Capa de dades (BBDD):
+- Hem utilitzat **SQL Server** juntament amb **Entity Framework Core** per tal de dur a terme una base de dades per el tipus de projecte desenvolupat.
+- SI NO PUEDO ACERCARME NI OIR OWO EXTREMODURO.
 - No sé ara doncs perque no podía fer abans els punts aquests i se'm trencaba totalment. owo <br>
 
 
