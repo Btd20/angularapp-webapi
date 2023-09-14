@@ -13,6 +13,9 @@ export class ReservaMComponent {
   selectedSala: string | undefined;
   reservaId: any;
   reserva: any;
+  novaHoraInici: string = '';
+  novaHoraFi: string = '';
+  novaDataReserva: string = '';
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
@@ -73,6 +76,35 @@ export class ReservaMComponent {
     )
   }
 
+  guardarReserva() {
+    // Assegura't de tenir les noves dades prèviament emmagatzemades en aquestes propietats o bé en un formulari
+    const reservaActualitzada = {
+      horaInici: this.novaHoraInici,
+      horaFi: this.novaHoraFi,
+      dataReserva: this.novaDataReserva,
+      reserveID: this.reservaId
+    };
+
+    // Crida la funció d'actualització del teu servei amb les noves dades
+    this.apiService.updateReserva(reservaActualitzada).subscribe(
+      (resposta) => {
+        // Resposta d'èxit de l'API, pots gestionar-la com vulguis
+        console.log('Reserva actualitzada correctament:', resposta);
+      },
+      (error) => {
+        // Gestiona els errors de l'API
+        console.error('Error en actualitzar la reserva:', error);
+      }
+    );
+  }
+}
+
+
+
+
+
+
+
 
   /* DE MOMENT NO PUC
   getSalesByOfiFromApi(): void {
@@ -85,4 +117,3 @@ export class ReservaMComponent {
       }
     );
   }*/
-}
