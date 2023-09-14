@@ -20,17 +20,17 @@ En aquest apartat entrarem en detall en quant a la arquitectura a capes, utilitz
 ### 2.1 Arquitectura a Capes:
 Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de la millor manera possible. Dintre del projecte, les capes s'han separat de la següent manera:
 <br>
-#### 2.1.1 Capa de presentació (Frontend):
+   #### 2.1.1 Capa de presentació (Frontend):
  - El frontend s’ha portat a terme gràcies a la tecnología anomenada **Angular**, basada en una altre, anomenada **Typescript**. Les dues tecnologies han aportat al projecte una interacció per l’usuari. Typescript ha servit per desenvolupar la lògica del interfaz d'usuari i en canvi, l'Angular s'ha encarregat de la construcció de la interfície d'usuari i de la interacció. 
  - En la part més pura de fulls d’estils, s’ha utilitzat **HTML i CSS**, tot i que recordem que això no es considera com a tal una tecnología, simplement defineixen les seccions de la pàgina a més dels estils. 
  - També s’ha utilitzat **Bootstrap**, una llibreria de clases i ID’s ja predefinides que ens ha agilitzat la feina a la hora de crear estils diferents dintre del projecte.
  - Per últim, s'ha afegit un altre paquet extern, anomenat **FontAwsome**. Aquest paquet ens permet utilitzar unes icones per el nostre projecte en diferents estils, en el projecte s'ha utilitzat el estil duotone. Hem utilitzat la versió 6.1.1. <br>
-#### 2.1.2 Capa de lògica (Backend):
+   #### 2.1.2 Capa de lògica (Backend):
 - Per desenvolupar aquesta capa hem utilitzat **ASP.NET Core i C#** per tal de tenir una coordinació entre les capes existents. 
 - Aquesta capa és **l'unica que interactua amb les dues restants**. Si es conecta a la BBDD, es guarda informació i llavors, passant per la capa de presentacció, imprimeix la informació.
    #### 2.1.3 Capa de dades (BBDD):
 - Es pot considerar doncs, una capa prou important dintre d'aquest projecte ja que durant el procés de reserva, la lògica pesa força. Tot i així no podem dir que és la capa més important, ja que en casos força concrets, no necessita estar en coordinació amb la capa de presentació.<br>
-#### 2.1.3 Capa de dades (BBDD):
+
 
 <br><br>
 ## 3. Components d'Angular:
