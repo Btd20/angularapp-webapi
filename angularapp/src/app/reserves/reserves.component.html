@@ -1,9 +1,19 @@
 <app-navsales></app-navsales>
 <div class="row p-5 container-reserva">
   <div class="res-titl"><span>LES TEVES RESERVES</span></div>
-      <!--*ngFor="let reserva of reserves-->
   <div class="res-body">
-    <reserva-box class="res-gen" *ngFor="let reserva of reserves" [reserva]="reserva"></reserva-box>
+    <!-- Verifica si reserves existe y si tiene elementos antes de iterar sobre ellas -->
+    <ng-container *ngIf="reserves && reserves.length > 0">
+      <reserva-box class="res-gen" *ngFor="let reserva of reserves" [reserva]="reserva"></reserva-box>
+    </ng-container>
+
+    <!-- Verifica si reserves no existe o si no tiene elementos para mostrar el mensaje -->
+    <div class="center-text" *ngIf="!reserves || reserves.length === 0">
+      <p class="cap-reserva-txt">No s'ha trobat cap reserva</p>
+    </div>
+  </div>
+  <div class="reserva-btn" *ngIf="!reserves || reserves.length === 0">
+    <a class="btn btn-reserva align-items-center justify-content-center" href="/paisos"><span>Reserva</span></a>
   </div>
 </div>
 
