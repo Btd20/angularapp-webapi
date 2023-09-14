@@ -26,15 +26,4 @@ export class ReservesComponent implements OnInit {
         });
     }
   }
-
-  /*getAllReservesFromApi(): void {
-    this.apiService.getAllReserves().subscribe(
-      response => {
-        this.reserves = response;
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }*/
 }

@@ -64,6 +64,7 @@ export class AdminComponent implements OnInit {
 
   cancelarEdicion(usuario: any): void {
     usuario.editando = false;
+    this.getUsuarisFromApi();
   }
 
   mostrarBotonEditar(usuario: any): boolean {
