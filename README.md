@@ -26,7 +26,8 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
  - També s’ha utilitzat Bootstrap, un paquet de clases i ID’s ja predefinides que ens ha agilitzat la feina a la hora de crear estils diferents dintre del projecte.
  - Per últim, s'ha afegit un altre paquet extern, anomenat FontAwsome. Aquest paquet ens permet utilitzar unes icones per el nostre projecte en diferents estils, anomenats duotone. Hem utilitzat la versió 6.1.1. <br>
 #### 2.1.2 Capa de lògica (Backend):
-Lorem ipsum <br>
+- En aquesta capa hem utilitzat ASP.NET Core i C# per tal de desenvolupar la lògica a més de poguer accedir a la BBDD, guardant dades sensibles dintre d'aquesta.
+- No sé que més puc desenvolupar, em costa un pelín. <br>
 #### 2.1.3 Capa de dades (BBDD):
 Lorem ipsum <br>
 <!--
