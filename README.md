@@ -15,15 +15,18 @@
 El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant dia i hora d'inici. Així doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, C#, SQL Server i el framework Angular, de les que parlarem més endavant.<br><br>Els objectius del projecte s'han anat afegint en el Trello, progressivament. En les primeres setmanes del projecte, els objectius no eren altres que crear el projecte i conseguir objectius petits, com per exemple: que un usuari es pogués registrar i això es guardes correctament a la BBDD. Durant la duració del propi projecte, els objectius han anat agafant més ambició. Un bon exemple seria la imatge del perfil. Un cop creat el perfil, vam veure que els usuaris de l'empresa necessitaven afegir la seva imatge de perfil i per això vam investigar com es tractava una imatge a la BBDD, per llavors passar-la al component adient, en aquest cas profile.component.ts.
 <br><br>
 ## 2. Arquitectura:
-En aquest apartat veurem cada capa desenglosada per tal d'entrar en més profunditat en les tecnologies utilitzades, anomenades en el apartat anterior. 
+En aquest apartat entrarem en detall en quant a la arquitectura a capes, utilitzada per desenvolupar el projecte. També parlarem amb més profunditat en les tecnologies utilitzades, anomenades en el apartat anterior. 
 
 ### 2.1 Arquitectura a Capes:
+Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de la millor manera possible. Dintre del projecte, les capes s'han separat de la següent manera:
+<br>
+#### 2.1.1 Capa de presentació (Frontend):
+ - A veure si no es trenca ara de com owo
+ - OWO
+ - PEPOCLOWN SURT AUTOMATIC<br>
+#### 2.1.2 Capa de lògica (Backend):
 Lorem ipsum <br>
-### 2.1.1 Capa de presentació (Frontend):
-Lorem ipsum <br>
-### 2.1.2 Capa de lògica (Backend):
-Lorem ipsum <br>
-### 2.1.3 Capa de dades (BBDD):
+#### 2.1.3 Capa de dades (BBDD):
 Lorem ipsum <br>
 <!--
  Visió general de l'arquitectura del projecte.
