@@ -21,8 +21,9 @@ En aquest apartat entrarem en detall en quant a la arquitectura a capes, utilitz
 Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de la millor manera possible. Dintre del projecte, les capes s'han separat de la següent manera:
 <br>
 #### 2.1.1 Capa de presentació (Frontend):
- - A veure si no es trenca ara de com owo
- - OWO
+ - El frontend s’ha portat a terme gràcies a la tecnología anomenada Angular, basada en un altre, anomenada Typescript. Les dues tecnologies han aportat al projecte una interacció per l’usuari, de manera visual i també lògicament. 
+ - En la part més pura d’estils, s’ha utilitzat HTML i CSS, tot i que recordem que això no es considera com a tal una tecnología. A més, per fer-ho còmode, també s’ha utilitzat Bootstrap, un paquet de clases i ID’s ja predefinides que ens ha agilitzat la feina a la hora de crear estils diferents dintre del projecte. 
+
  - PEPOCLOWN SURT AUTOMATIC<br>
 #### 2.1.2 Capa de lògica (Backend):
 Lorem ipsum <br>
