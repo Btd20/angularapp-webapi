@@ -12,8 +12,7 @@
 <a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
 <br>
 ## 1. Introducció:<br>
-El projecte s'ha desenvolupat perquè els treballadors de l'empresa ACME puguin reservar sales per tal de reunirse amb altres usuaris, concretant día i la forquilla d'hores que la reunió ocupara durant el dia. Aixi doncs, el usuari pot reservar la sala desitjada i a la vegada, també pugui veurea quines hores la sala no esta disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, MYSQL Server, C# i el framework Angular.<br><br>En aquest projecte, com a usuari normal, podrem veure les reserves de les que som propietaris, 
- <br><br>Objectius del projecte.
+El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant día i hora d'inici. Aixi doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, SQL Server, C# i el framework Angular.<br><br>Els objectius del projecte. Objectius del projecte.
 <br><br>
 ## 2. Arquitectura:
  -Visió general de l'arquitectura del projecte.<br>
@@ -118,7 +117,7 @@ Lorem ipsum.
 ## 4. Backend i BBDD:<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
-### 4.2 BBDD MYSQL Server:
+### 4.2 BBDD SQL Server:
 
 ### 4.2.1 Taules:
 ##### dbo.AspNetUser
