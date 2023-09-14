@@ -12,12 +12,10 @@
 <a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
 <br>
 ## 1. Introducció:<br>
-El projecte s'ha desenvolupat perquè els treballadors de l'empresa ACME puguin reservar sales per tal de reunirse tant presencialment com telematicament. Consisteix, doncs, en que l'usuari, pugui reservar la sala desitjada y pugui veure també a quines hores esta disponible la sala.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, MYSQL Server, C# i el framework Angular.<br><br>En aquest projecte, com a usuari normal, podrem veure les reserves de les que som propietaris, 
- <br><br>Objectius del projecte.
+El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant día i hora d'inici. Aixi doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, SQL Server, C# i el framework Angular.<br><br>Els objectius del projecte. S'han d'incloure entenc, els objectius marcats al trello o anar més enllà? Ni idea. 
 <br><br>
 ## 2. Arquitectura:
- -Visió general de l'arquitectura del projecte.<br>
- -Diagrames de arquitectura.
+ -Visió general de l'arquitectura del projecte.
 <br><br>
 ## 3. Components d'Angular:
 <a href="#31-índex">3.1 Índex.</a><br>
@@ -118,7 +116,7 @@ Lorem ipsum.
 ## 4. Backend i BBDD:<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
-### 4.2 BBDD MYSQL Server:
+### 4.2 BBDD SQL Server:
 
 ### 4.2.1 Taules:
 ##### dbo.AspNetUser
