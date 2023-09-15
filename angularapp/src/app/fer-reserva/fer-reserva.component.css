@@ -79,10 +79,19 @@
   margin:2.5px auto 10px auto;
 }
 
+.res-user {
+  display: flex;
+  align-items: baseline;
+  margin-top: -45px;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .res-gen4 {
   display: flex;
   align-items: baseline;
-  margin-top:-5px;
+  margin-top: -5px;
 }
 
 .res-sales {
