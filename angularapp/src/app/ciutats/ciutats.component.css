@@ -77,29 +77,21 @@
 }
 
 .btn-modify {
-  width: 95%;
-  height: 20%;
-  margin: 0 auto;
+  font-family: var(--fontR);
+  background-color: var(--txt-g1);
+  color: var(--bs-body-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: auto;
+  text-decoration: none !important;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
 }
 
-  .btn-modify a {
-    font-family: var(--fontR);
-    background-color: var(--txt-g1);
-    color: var(--bs-body-bg);
-    border-radius: 15px;
-    overflow: hidden;
-    width: 19%;
-    height: 35%;
-    margin: auto;
-    text-decoration: none !important;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s ease-in-out;
-  }
-
-  .btn-modify:hover a {
+  .btn-modify:hover {
     background-color: var(--bs-body-bg);
     color: var(--txt-g1);
     transition: 0.3s ease-in-out;
@@ -151,4 +143,12 @@
     font-size: 20px;
   }
 
-
+.btn-general-modify {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}

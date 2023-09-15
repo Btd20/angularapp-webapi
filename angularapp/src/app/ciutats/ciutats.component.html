@@ -16,14 +16,15 @@
       </tbody>
     </table>
   </div>
-  <div class="d-flex align-items-center jutify-content-center">
-    <div class="btn-modify" *ngIf="isAdmin">
-      <a href="/admin-modifypaisos">
+
+  <div class="btn-general-modify">
+    <div *ngIf="isAdmin">
+      <a href="/admin-modifyciutats" class="btn btn-modify">
         <span>Modifica</span>
       </a>
     </div>
-    <div class="btn-vista">
-      <a href="/vista-rciutat">
+    <div>
+      <a href="/vista-rciutat" class="btn btn-modify">
         <span>Veu les reserves</span>
       </a>
     </div>
