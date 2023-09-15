@@ -122,7 +122,7 @@ Descripció: Proporciona una discripció del proposit i la funció d'aquest comp
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
 #### 3.5.2 Perfil:
-#### profile.component.ts
+##### profile.component.ts
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
@@ -206,22 +206,22 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-##### CREATE
+##### 3.9.1 CREATE
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-##### READ
+##### 3.9.2 READ
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-##### UPDATE
+##### 3.9.3 UPDATE
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-##### DELETE
+##### 3.9.4 DELETE
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
