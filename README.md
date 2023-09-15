@@ -31,9 +31,7 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
 - Es pot considerar doncs, una capa prou important dintre d'aquest projecte ja que durant el procés de reserva, la lògica pesa força. Tot i així no podem dir que és la capa més important, ja que en casos força concrets, no necessita estar en coordinació amb la capa de presentació.
 #### 2.1.3 Capa de dades (BBDD):
 - Hem utilitzat **SQL Server** juntament amb **Entity Framework Core** per tal de dur a terme una base de dades per el tipus de projecte desenvolupat. SQL Server ens ha facilitat l'interacció amb la BBDD, mentres que Entity Framework Core, a partir d'ara anomenat EF Core, ens ha proporcionat la opció de mapejar taules per fer-les models d'objectes (ORM).
-- No sé perque abans ha petat<br>
-
-
+- Com es treballa amb dades sensibles, com poden ser perfectament les contrasenyes de cada usuari, s’han integrat al projecte i per tant, a la BBDD, tokens. Així doncs, cal deixar clar que les contrasenyes no es guarden mai com un text pla, sino que un cop creat el compte, la contrasenya es transforma en un token. És important recordar que cada usuari tindrà un token únic, protegint així el compte d’usuari i la seguretat del projecte. 
 <br><br>
 ## 3. Components d'Angular:
 <a href="#31-índex">3.1 Índex.</a><br>
@@ -122,7 +120,7 @@ Descripció: Proporciona una discripció del proposit i la funció d'aquest comp
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
 #### 3.5.2 Perfil:
-#### profile.component.ts
+##### profile.component.ts
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
@@ -206,31 +204,31 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-##### CREATE
+##### 3.9.1 CREATE
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-##### READ
+##### 3.9.2 READ
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-##### UPDATE
+##### 3.9.3 UPDATE
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-##### DELETE
+##### 3.9.4 DELETE
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
 ### 3.10 app.module.ts 
-<!--
+
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
-Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 <br>
 ## 4. Backend i BBDD:<br>
 ### 4.1 Backend amb C#:
