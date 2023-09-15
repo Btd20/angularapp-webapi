@@ -33,7 +33,7 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
 - Hem utilitzat **SQL Server** juntament amb **Entity Framework Core** per tal de dur a terme una base de dades per el tipus de projecte desenvolupat. SQL Server ens ha facilitat l'interacció amb la BBDD, mentres que Entity Framework Core, a partir d'ara anomenat EF Core, ens ha proporcionat la opció de mapejar taules per fer-les models d'objectes (ORM).
 - Com es treballa amb dades sensibles, com poden ser perfectament les contrasenyes de cada usuari, s’han integrat al projecte i per tant, a la BBDD, tokens. Així doncs, cal deixar clar que les contrasenyes no es guarden mai com un text pla, sino que un cop creat el compte, la contrasenya es transforma en un token. És important recordar que cada usuari tindrà un token únic, protegint així el compte d’usuari i la seguretat del projecte. 
 <br><br>
-## 3. Components d'Angular:
+## 3. Components d'Angular: [AQUI HA ARRIBAT LA LAIA]
 <a href="#31-índex">3.1 Índex.</a><br>
 <a href="#32-inici-i-registre">3.2 Inici i registre.</a><br>
 <a href="#33-pàgina-principal">3.3 Pàgina principal.</a><br>
