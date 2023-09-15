@@ -227,10 +227,10 @@ Descripció: Proporciona una discripció del proposit i la funció d'aquest comp
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
 ### 3.10 app.module.ts 
-<!--
+
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
-Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
 <br>
 ## 4. Backend i BBDD:<br>
 ### 4.1 Backend amb C#:
