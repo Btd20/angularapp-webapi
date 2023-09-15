@@ -97,12 +97,12 @@
     transition: 0.3s ease-in-out;
   }
 
-  .btn-modify span{
+  .btn-modify span {
     font-family: var(--fontK);
     font-weight: 900;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 1.108em;
   }
 
 
