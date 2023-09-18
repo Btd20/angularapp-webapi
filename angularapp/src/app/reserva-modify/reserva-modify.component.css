@@ -27,6 +27,7 @@
     font-weight: 800;
     padding-left: 5px;
   }
+
 .res-body {
   width: 100%;
   height: calc(100% - 19%);
@@ -48,6 +49,14 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
+}
+
+.res-user {
+  display: flex;
+  align-items: baseline;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /*--AQUI JA SON ELS FORMULARIS--*/
@@ -205,6 +214,8 @@ select {
   border-color: #327800;
   background-color: var(--btn-bg-modify);
   transition: 0.3s ease-in-out;
+  padding: 2.5px;
+  width: 16%;
 }
 
 .res-btn-g .res-delete {
@@ -215,6 +226,8 @@ select {
   text-transform: uppercase;
   background-color: var(--btn-bg-delete);
   transition: 0.3s ease-in-out;
+  padding: 2.5px;
+  width: 16%;
 }
 
 .res-btn-g .res-modify:hover {
