@@ -240,8 +240,8 @@ Lorem ipsum.
 ##### dbo.País
 Lorem ipsum.
 ##### dbo.Ciutats
-**CityID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.
-**NomCiutat - varchar(30):**
+**CityID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**NomCiutat - varchar(30):** Lorem ipsum <br>
 **CountryID - int :** Lorem ipsum.
 ##### dbo.Oficines
 Lorem ipsum.
