@@ -44,6 +44,14 @@ export class AdminMRVComponent implements OnInit {
     return `${hours}:${minutes}`;
   }
 
+  formatDateString(dateString: string): string {
+    const date = new Date(dateString);
+    const day = ('0' + date.getDate()).slice(-2);
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  }
+
   eliminarReserva(id: string): void {
     this.apiService.eliminarReserva(id).subscribe(
       () => {
@@ -56,9 +64,9 @@ export class AdminMRVComponent implements OnInit {
     );
   }
 
-  modificarReserva(reservaId: string) {
-    // Navega a la pàgina "Modify Reserves" i passa l'ID de la reserva com a paràmetre de ruta
-    this.router.navigate(['/modify-reserves', reservaId]);
+  modificarReserva(reservaId: string, dataInici: string, dataFi: string, dataReserva: string) {
+    // Navega a la pàgina "Modify Reserves" i passa l'ID de la reserva i les dates com a paràmetres de ruta
+    this.router.navigate(['/modify-reserves', reservaId, dataInici, dataFi, dataReserva]);
   }
  
   get totalPages(): number {

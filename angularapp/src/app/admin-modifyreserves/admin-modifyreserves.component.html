@@ -23,7 +23,8 @@
               Id reserva: {{reserva.reserveID}}
           </td>
           <td class="tr-butt">
-            <button class="btn btn-info me-2" [routerLink]="['/modify-reserves', reserva.reserveID]">Modificar</button>
+            <button class="btn btn-info me-2" [routerLink]="['/modify-reserves', reserva.reserveID, formatTimeSpan(reserva.horaInici), formatTimeSpan(reserva.horaFi), formatDateString(reserva.dataReserva).split('-').reverse().join('-')]">Modificar</button>
+            <!--, formatTimeSpan(reserva.horaInici), formatTimeSpan(reserva.horaFi), formatDateString(reserva.dataReserva).split('-').reverse().join('-')-->
             <button class="btn btn-danger" (click)="eliminarReserva(reserva.reserveID)">Eliminar</button>
           </td>
         </tr>

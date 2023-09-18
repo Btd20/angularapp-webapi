@@ -221,9 +221,9 @@ export class ApiService {
     return this.http.get<any>(url);
   }
 
-  updateReserva(reserva: any): Observable<any> {
-    const url = `${this.apiUrlReserves}/${reserva.reserveID}`;
-    return this.http.put(url, reserva);
+  updateReserva(id: number, novaHoraInici: string, novaHoraFi: string, novaDataReserva: string): Observable<any> {
+    const url = `${this.apiUrlReserves}/${id}/${novaHoraInici}/${novaHoraFi}/${novaDataReserva}`;
+    return this.http.put(url, null);
   }
 
 }

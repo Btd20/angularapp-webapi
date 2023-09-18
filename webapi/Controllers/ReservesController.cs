@@ -94,16 +94,63 @@ namespace webapi.Controllers
 
 
 
-        // PUT: Reserves/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateReserve(int id, Reserves reserve)
+        /* // PUT: Reserves/5
+         [HttpPut("{id}")]
+         public async Task<IActionResult> UpdateReserve(int id, Reserves reserve)
+         {
+             if (id != reserve.ReserveID)
+             {
+                 return BadRequest();
+             }
+
+             _context.Entry(reserve).State = EntityState.Modified;
+
+             try
+             {
+                 await _context.SaveChangesAsync();
+             }
+             catch (DbUpdateConcurrencyException)
+             {
+                 if (!ReserveExists(id))
+                 {
+                     return NotFound();
+                 }
+                 else
+                 {
+                     throw;
+                 }
+             }
+
+             return NoContent();
+         }
+
+         */
+
+        [HttpPut("{id}/{novaHoraInici}/{novaHoraFi}/{novaDataReserva}")]
+        public async Task<IActionResult> UpdateReserve(int id, string novaHoraInici, string novaHoraFi, string novaDataReserva)
         {
-            if (id != reserve.ReserveID)
+            var reserve = await _context.Reserves.FindAsync(id);
+
+            if (reserve == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(reserve).State = EntityState.Modified;
+            // Només actualitza els camps si s'han proporcionat
+            if (!string.IsNullOrEmpty(novaHoraInici))
+            {
+                reserve.HoraInici = TimeSpan.Parse(novaHoraInici);
+            }
+
+            if (!string.IsNullOrEmpty(novaHoraFi))
+            {
+                reserve.HoraFi = TimeSpan.Parse(novaHoraFi);
+            }
+
+            if (!string.IsNullOrEmpty(novaDataReserva))
+            {
+                reserve.DataReserva = DateTime.Parse(novaDataReserva);
+            }
 
             try
             {
