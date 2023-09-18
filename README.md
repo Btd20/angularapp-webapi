@@ -236,7 +236,17 @@ Lorem ipsum.<br>
 
 ### 4.2.1 Taules:
 ##### dbo.AspNetUser
-Lorem ipsum.
+**Id -  nvarchar(450):** Lorem ipsum <br> 
+**UserName -  nvarchar(256):** Lorem ipsum <br> 
+**Email -  nvarchar(256):** Lorem ipsum <br> 
+**Cognom -  nvarchar(MAX):** Lorem ipsum <br> 
+**Nom -  nvarchar(MAX):** Lorem ipsum <br> 
+**Rol - bit:** Lorem ipsum <br> 
+**Pais -  nvarchar(30):** Lorem ipsum <br> 
+**Ciutat -  nvarchar(30):** Lorem ipsum <br> 
+**Oficina -  nvarchar(30):** Lorem ipsum <br> 
+**ProfileImage -  image:** Lorem ipsum <br> 
+<br>
 ##### dbo.País
 **CountryID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
 **NomPais - varchar(30):** Lorem ipsum <br>
