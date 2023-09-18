@@ -44,15 +44,15 @@
   font-family: var(--fontR);
   font-size: 25px;
   text-align: center;
-  margin-left: 35%;
+  margin: auto;
 }
 
 .center-text {
-  margin-left: 27%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 75%;
+  margin:auto;
 }
 
 .btn-reserva {
