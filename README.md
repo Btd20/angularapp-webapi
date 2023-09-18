@@ -46,10 +46,9 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
 <a href="">3.10 Inici i registre.</a><br>
 ### 3.1 Índex:
 ##### index.component.ts
-<!--
-Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
-Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
-Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
+Com que el projecte es tracta d'una empresa que reserva sales per els seus treballadors, a la portada només podem veure el nom de l'empresa i dos botons. <br>
+Tecnologies i biblioteques utilitzades: Dintre d'aquest component s'ha utilitzat Bootstrap en els botons i també en el container del component.  <br>
+Funcionalitats principals: Aquest component no té cap funcionalitat ja que com a . <br>
 ### 3.2 Inici i registre: 
 #### 3.2.1 Inici:
 ##### login.component.ts

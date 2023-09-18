@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'reserves', component: ReservesComponent },
   { path: 'ferreserva', component: FerReservaComponent },
   { path: 'reserva-modify', component: ReservaMComponent },
-  { path: 'modify-reserves/:reservaId', component: ReservaMComponent },
+  { path: 'modify-reserves/:reservaId/:horaInici/:horaFi/:dataReserva', component: ReservaMComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin-modifyrooms', component: AdminMRComponent },
   { path: 'admin-modifyoficines', component: AdminMOComponent },

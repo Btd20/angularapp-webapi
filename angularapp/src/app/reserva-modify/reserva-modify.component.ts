@@ -13,18 +13,21 @@ export class ReservaMComponent {
   selectedSala: string | undefined;
   reservaId: any;
   reserva: any;
-  novaHoraInici: string = '';
-  novaHoraFi: string = '';
-  novaDataReserva: string = '';
+  horaInici: any;
+  horaFi: any;
+  dataReserva: any;
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.reservaId = params['reservaId'];
+      this.horaInici = params['horaInici'];
+      this.horaFi = params['horaFi'];
+      this.dataReserva = params['dataReserva'];
       this.getAllSalesFromApi();
       this.loadReserva();
-      console.log(this.reserva.dataReserva);
+      console.log(this.reservaId,this.horaInici, this.horaFi, this.dataReserva);
       //this.salaReserva = params['sales'];
       //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
     })
@@ -76,26 +79,18 @@ export class ReservaMComponent {
     )
   }
 
-  guardarReserva(reserva: any) {
-
-    const reservaActualitzada = {
-      novaHoraInici: reserva.horaInici,
-      novaHoraFi: reserva.horaFi,
-      novaDataReserva: reserva.dataReserva,
-      reserveID: this.reservaId
-    };
-
-    // Crida la funció d'actualització del teu servei amb les noves dades
-    this.apiService.updateReserva(reservaActualitzada).subscribe(
+  guardarReserva() {
+    this.apiService.updateReserva(
+      this.reservaId,
+      this.horaInici,
+      this.horaFi,
+      this.dataReserva
+    ).subscribe(
       (resposta) => {
-        
         console.log('Reserva actualitzada correctament:', resposta);
       },
       (error) => {
-        
         console.error('Error en actualitzar la reserva:', error);
-        console.log(reservaActualitzada);
-        console.log(this.reserva);
       }
     );
   }
