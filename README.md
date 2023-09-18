@@ -238,17 +238,23 @@ Lorem ipsum.<br>
 ##### dbo.AspNetUser
 Lorem ipsum.
 ##### dbo.País
-Lorem ipsum.
+**CountryID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**NomPais - varchar(30):** Lorem ipsum <br>
 ##### dbo.Ciutats
 **CityID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
 **NomCiutat - varchar(30):** Lorem ipsum <br>
-**CountryID - int :** Lorem ipsum.
 ##### dbo.Oficines
-Lorem ipsum.
+**OfficeID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**NomOficina - varchar(30):** Lorem ipsum <br>
 ##### dbo.Sales
-Lorem ipsum.
+**MeetingRoomID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**NomSala- varchar(30):** Lorem ipsum <br>
 ##### dbo.Reserves
-Lorem ipsum.
+**ReserveID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**DataReserva -  date:** Lorem ipsum.<br>
+**HoraInici -  time(7):** Lorem ipsum.<br>
+**HoraFi -  time(7):** Lorem ipsum.<br>
+**UserID -  nvarchar(450):** Lorem ipsum.<br>
 <br><br>
 ## 5. Configuració i requisits:
 Lorem ipsum.
