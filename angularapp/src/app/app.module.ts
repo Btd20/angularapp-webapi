@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavsalesComponent } from './navsales/navsales.component';
 import { NavadminComponent } from './navadmin/navadmin.component';
+import { NavprofileComponent } from './navprofile/navprofile.component';
 
 /*--COMPONENTS D'USUARI--*/
 import { HomeComponent } from './home/home.component';
@@ -47,7 +48,6 @@ import { AdminMOComponent } from './admin-modifyoficines/admin-modifyoficines.co
 import { AdminMPComponent } from './admin-modifypaisos/admin-modifypaisos.component'; 
 import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.component';
 import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.component';
-import { NavprofileComponent } from './navprofile/navprofile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /*--RESERVA COMPONENTS--*/
@@ -88,6 +88,7 @@ import { UpdateReservaComponent } from './update-reserva/update-reserva.componen
     NavbarComponent,
     NavsalesComponent,
     NavadminComponent,
+    NavprofileComponent,
 
     /*--COMPONENTS D'USUARI--*/
     HomeComponent,
@@ -107,7 +108,6 @@ import { UpdateReservaComponent } from './update-reserva/update-reserva.componen
     AdminMPComponent,
     AdminMCComponent,
     AdminMRVComponent,
-    NavprofileComponent,
     DadesComponent,
     ChangePasswordComponent,
     ChangeUserComponent,

@@ -36,7 +36,6 @@ import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.c
 
 const routes: Routes = [
   { path: 'reserves', component: ReservesComponent },
-  /*--AQUESTES RUTES HAURIEN DE SER X CADA SALA. amb aixo de ferreserva/:nomSala--*/
   { path: 'ferreserva', component: FerReservaComponent },
   { path: 'reserva-modify', component: ReservaMComponent },
   { path: 'modify-reserves/:reservaId', component: ReservaMComponent },
