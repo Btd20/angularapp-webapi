@@ -234,8 +234,8 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Lorem ipsum.<br>
 ### 4.2 BBDD SQL Server:
 
-### 4.2.1 Taules:
-##### dbo.AspNetUser
+### Taules:
+##### 4.2.1 dbo.AspNetUser
 **Id -  nvarchar(450):** Lorem ipsum <br> 
 **UserName -  nvarchar(256):** Lorem ipsum <br> 
 **Email -  nvarchar(256):** Lorem ipsum <br> 
@@ -247,22 +247,22 @@ Lorem ipsum.<br>
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
 **ProfileImage -  image:** Lorem ipsum <br> 
 <br>
-##### dbo.Pais
+##### 4.2.2 dbo.Pais
 **CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>
 **NomPais - varchar(30):** Nom del país. Aquest valor un límit de 30 caràcters.<br>
-##### dbo.Ciutats
+##### 4.2.3 dbo.Ciutats
 **CityID -  int:** La clau primaria de la taula dbo.Ciutats.<br>
 **NomCiutat - varchar(30):** Nom de la ciutat. Aquest valor un límit de 30 caràcters.<br>
 **CountryID - FOREIGN KEY de [dbo.Pais] - int:** Identificador del país.<br>
-##### dbo.Oficines
+##### 4.2.4 dbo.Oficines
 **OfficeID -  int:** És la clau primaria de la taula dbo.Office.<br>
 **NomOficina - varchar(30):** Nom de la oficina en la que trobarem la sala. Aquest valor un límit de 30 caràcters.<br>
 **CityID - FOREIGN KEY de [dbo.Ciutat] - int:** Identificador de la ciutat.<br>
-##### dbo.Sales
+##### 4.2.5 dbo.Sales
 **MeetingRoomID -  int:** La clau primaria de la taula dbo.Sales.<br>
 **NomSala - varchar(30):** Nom de la sala que es reserva. Aquest valor un límit de 30 caràcters.<br>
 **OfficeID - FOREIGN KEY de [dbo.Oficines] - int:** Identificador de la oficina.<br>
-##### dbo.Reserves
+##### 4.2.6 dbo.Reserves
 **ReserveID -  int:** És la clau primaria de la taula dbo.Reserves.<br>
 **DataReserva -  date:** Data en la que es durà a lloc la reunió a la sala pertinent.<br>
 **HoraInici -  time:** Hora d'inici de la reserva.<br>
