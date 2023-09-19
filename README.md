@@ -232,6 +232,24 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 ## 4. Backend i BBDD:<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
+##### 4.1.1 ApplicationUserController.cs
+Lorem ipsum.<br>
+##### 4.1.2 AuthController.cs
+Lorem ipsum.<br>
+##### 4.1.3 AdminController.cs
+Lorem ipsum.<br>
+##### 4.1.4 RolesController.cs
+Lorem ipsum.<br>
+##### 4.1.5 PaisController.cs
+Lorem ipsum.<br>
+##### 4.1.6 CiutatsController.cs
+Lorem ipsum.<br>
+##### 4.1.7 OficinesController.cs
+Lorem ipsum.<br>
+##### 4.1.8 SalesController.cs
+Lorem ipsum.<br>
+##### 4.1.9 ReservesController.cs
+Lorem ipsum.<br>
 ### 4.2 BBDD SQL Server:
 Descripció.<br>
 ### Taules:
