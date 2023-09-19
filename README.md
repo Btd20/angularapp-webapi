@@ -247,21 +247,23 @@ Lorem ipsum.<br>
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
 **ProfileImage -  image:** Lorem ipsum <br> 
 <br>
-##### dbo.País
-**CountryID -  int:** És la clau primaria de la taula dbo.Ciutats.<br>
-**NomPais - varchar(30):** Lorem ipsum <br>
+##### dbo.Pais
+**CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>
+**NomPais - varchar(30):** Nom del país. Aquest valor un límit de 30 caràcters.<br>
 ##### dbo.Ciutats
-**CityID -  int:** És la clau primaria de la taula dbo.Ciutats.<br>
-**NomCiutat - varchar(30):** Lorem ipsum <br>
+**CityID -  int:** La clau primaria de la taula dbo.Ciutats.<br>
+**NomCiutat - varchar(30):** Nom de la ciutat. Aquest valor un límit de 30 caràcters.<br>
+**CountryID - FOREIGN KEY de [dbo.Pais] - int:** Identificador del país.<br>
 ##### dbo.Oficines
 **OfficeID -  int:** És la clau primaria de la taula dbo.Office.<br>
-**NomOficina - varchar(30):** Lorem ipsum <br>
+**NomOficina - varchar(30):** Nom de la oficina en la que trobarem la sala. Aquest valor un límit de 30 caràcters.<br>
+**CityID - FOREIGN KEY de [dbo.Ciutat] - int:** Identificador de la ciutat.<br>
 ##### dbo.Sales
-**MeetingRoomID -  int:** És la clau primaria de la taula dbo.Sales.<br>
-**NomSala- varchar(30):** Lorem ipsum <br>
+**MeetingRoomID -  int:** La clau primaria de la taula dbo.Sales.<br>
+**NomSala - varchar(30):** Nom de la sala que es reserva. Aquest valor un límit de 30 caràcters.<br>
 **[OfficeID] - FOREIGN KEY de [dbo.Oficines] - int:** Identificador de la oficina.<br>
 ##### dbo.Reserves
-**ReserveID -  int:** És la clau primaria, de la taula dbo.Reserves.<br>
+**ReserveID -  int:** És la clau primaria de la taula dbo.Reserves.<br>
 **DataReserva -  date:** Data en la que es durà a lloc la reunió a la sala pertinent.<br>
 **HoraInici -  time:** Hora d'inici de la reserva.<br>
 **HoraFi -  time:** Hora de finalització de la reserva.<br>
