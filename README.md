@@ -254,9 +254,10 @@ Lorem ipsum.<br>
 La base de dades SQL Serves és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Taules:
 ##### 4.2.1 dbo.AspNetUser
-**Id -  nvarchar(450):** Lorem ipsum <br> 
-**UserName -  nvarchar(256):** Lorem ipsum <br> 
-**Email -  nvarchar(256):** Lorem ipsum <br> 
+**Id -  nvarchar(450):** Aquesta és la clau primaria de cada un dels usuaris. Recordem que al ser una clau primaria doncs, serà unica per cada usuari. <br> 
+**UserName -  nvarchar(256):** Nom que es passarà per la capa de lógica i també per la capa de la presentació, mostrant-se per exemple en el navbar.  <br> 
+**PasswordHash -  nvarchar(MAX):** MOLTA DADA SENSIBLE? Aqui haig de explicar com entra en joc el token. Preguntar per més info al yeraY <br>
+**Email -  nvarchar(256):** Dada sensible? <br> 
 **Cognom -  nvarchar(MAX):** Lorem ipsum <br> 
 **Nom -  nvarchar(MAX):** Lorem ipsum <br> 
 **Rol - bit:** Lorem ipsum <br> 
