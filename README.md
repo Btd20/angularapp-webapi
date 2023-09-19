@@ -262,9 +262,9 @@ Lorem ipsum.<br>
 ##### dbo.Reserves
 **ReserveID -  int:** És la clau primaria, de la taula dbo.Reserves.<br>
 **DataReserva -  date:** <br>
-**HoraInici -  time(7):** Hora d'inici de la reserva. En aquest <br>
-**HoraFi -  time(7):** Hora de finalització de la reserva. <br>
-**UserID -  nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
+**HoraInici -  time:** Hora d'inici de la reserva. En aquest <br>
+**HoraFi -  time:** Hora de finalització de la reserva. <br>
+**UserID - FOREIGN KEY de [dbo.AspNetCore.Users] - nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
 <br><br>
 ## 5. Configuració i requisits:
 Lorem ipsum.
