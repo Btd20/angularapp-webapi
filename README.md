@@ -260,11 +260,11 @@ Lorem ipsum.<br>
 **MeetingRoomID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
 **NomSala- varchar(30):** Lorem ipsum <br>
 ##### dbo.Reserves
-**ReserveID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
-**DataReserva -  date:** Lorem ipsum.<br>
-**HoraInici -  time(7):** Lorem ipsum.<br>
-**HoraFi -  time(7):** Lorem ipsum.<br>
-**UserID -  nvarchar(450):** Lorem ipsum.<br>
+**ReserveID -  int:** És la clau primaria, de la taula dbo.Reserves.<br>
+**DataReserva -  date:** <br>
+**HoraInici -  time(7):** Hora d'inici de la reserva. En aquest <br>
+**HoraFi -  time(7):** Hora de finalització de la reserva. <br>
+**UserID -  nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
 <br><br>
 ## 5. Configuració i requisits:
 Lorem ipsum.
