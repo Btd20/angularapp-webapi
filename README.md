@@ -266,7 +266,7 @@ Lorem ipsum.<br>
 **HoraFi -  time:** Hora de finalització de la reserva. <br>
 **UserID - FOREIGN KEY de [dbo.AspNetCore.Users] - nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
 **MeetingRoomID - FOREIGN KEY de [dbo.Sales] - int:** Identificador de la sala.<br>
-<br><br>
+<br>
 ## 5. Configuració i requisits:
 Lorem ipsum.
 <br><br>
