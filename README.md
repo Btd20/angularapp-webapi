@@ -256,7 +256,7 @@ La base de dades SQL Serves és un component clau en la arquitectura d'aquest pr
 ##### 4.2.1 dbo.AspNetUser
 **Id -  nvarchar(450):** Aquesta és la clau primaria de cada un dels usuaris. Recordem que al ser una clau primaria doncs, serà unica per cada usuari. <br> 
 **UserName -  nvarchar(256):** Nom que es passarà per la capa de lógica i també per la capa de la presentació, mostrant-se per exemple en el navbar.  <br> 
-**PasswordHash -  nvarchar(MAX):** MOLTA DADA SENSIBLE? Aqui haig de explicar com entra en joc el token. Preguntar per més info al yeraY <br>
+**PasswordHash -  nvarchar(MAX):** MOLTA DADA SENSIBLE? Aqui haig de explicar com entra en joc el token. Preguntar per més info al yeray. <br>
 **Email -  nvarchar(256):** Dada sensible? <br> 
 **Cognom -  nvarchar(MAX):** Lorem ipsum <br> 
 **Nom -  nvarchar(MAX):** Lorem ipsum <br> 
