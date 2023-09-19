@@ -233,7 +233,7 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
 ### 4.2 BBDD SQL Server:
-
+Descripció.<br>
 ### Taules:
 ##### 4.2.1 dbo.AspNetUser
 **Id -  nvarchar(450):** Lorem ipsum <br> 
@@ -246,7 +246,6 @@ Lorem ipsum.<br>
 **Ciutat -  nvarchar(30):** Lorem ipsum <br> 
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
 **ProfileImage -  image:** Lorem ipsum <br> 
-<br>
 ##### 4.2.2 dbo.Pais
 **CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>
 **NomPais - varchar(30):** Nom del país. Aquest valor un límit de 30 caràcters.<br>
