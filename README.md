@@ -261,7 +261,7 @@ Lorem ipsum.<br>
 ##### dbo.Sales
 **MeetingRoomID -  int:** La clau primaria de la taula dbo.Sales.<br>
 **NomSala - varchar(30):** Nom de la sala que es reserva. Aquest valor un límit de 30 caràcters.<br>
-**[OfficeID] - FOREIGN KEY de [dbo.Oficines] - int:** Identificador de la oficina.<br>
+**OfficeID - FOREIGN KEY de [dbo.Oficines] - int:** Identificador de la oficina.<br>
 ##### dbo.Reserves
 **ReserveID -  int:** És la clau primaria de la taula dbo.Reserves.<br>
 **DataReserva -  date:** Data en la que es durà a lloc la reunió a la sala pertinent.<br>
