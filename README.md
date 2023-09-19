@@ -251,9 +251,7 @@ Lorem ipsum.<br>
 ##### 4.1.9 ReservesController.cs
 Lorem ipsum.<br>
 ### 4.2 BBDD SQL Server:
-La base de dades SQL Serves és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. 
-
-En aquest apartat podrem apreciar millor sobre cóm <br>
+La base de dades SQL Serves és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Taules:
 ##### 4.2.1 dbo.AspNetUser
 **Id -  nvarchar(450):** Lorem ipsum <br> 
