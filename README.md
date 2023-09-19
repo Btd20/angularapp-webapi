@@ -248,22 +248,23 @@ Lorem ipsum.<br>
 **ProfileImage -  image:** Lorem ipsum <br> 
 <br>
 ##### dbo.País
-**CountryID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**CountryID -  int:** És la clau primaria de la taula dbo.Ciutats.<br>
 **NomPais - varchar(30):** Lorem ipsum <br>
 ##### dbo.Ciutats
-**CityID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**CityID -  int:** És la clau primaria de la taula dbo.Ciutats.<br>
 **NomCiutat - varchar(30):** Lorem ipsum <br>
 ##### dbo.Oficines
-**OfficeID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**OfficeID -  int:** És la clau primaria de la taula dbo.Office.<br>
 **NomOficina - varchar(30):** Lorem ipsum <br>
 ##### dbo.Sales
-**MeetingRoomID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**MeetingRoomID -  int:** És la clau primaria de la taula dbo.Sales.<br>
 **NomSala- varchar(30):** Lorem ipsum <br>
+**[OfficeID] - FOREIGN KEY de [dbo.Oficines] - int:** Identificador de la oficina.<br>
 ##### dbo.Reserves
 **ReserveID -  int:** És la clau primaria, de la taula dbo.Reserves.<br>
 **DataReserva -  date:** Data en la que es durà a lloc la reunió a la sala pertinent.<br>
-**HoraInici -  time:** Hora d'inici de la reserva. En aquest <br>
-**HoraFi -  time:** Hora de finalització de la reserva. <br>
+**HoraInici -  time:** Hora d'inici de la reserva.<br>
+**HoraFi -  time:** Hora de finalització de la reserva.<br>
 **UserID - FOREIGN KEY de [dbo.AspNetCore.Users] - nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
 **MeetingRoomID - FOREIGN KEY de [dbo.Sales] - int:** Identificador de la sala.<br>
 <br>
