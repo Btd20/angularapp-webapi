@@ -80,7 +80,7 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-#### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
+#### 3.4.2 Barres de navegació utilitzades en situacions especifiques:
 ##### navprofile.component.ts
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
