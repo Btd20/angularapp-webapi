@@ -89,6 +89,7 @@
   }
 
 .btn-useredit {
+  margin-right: 5px;
   font-family: var(--fontK);
   font-weight: 900;
   color: rgb(0 0 0 / 84%);
@@ -230,4 +231,8 @@
   letter-spacing: .2px;
   background-color: var(--bs-body-bg);
   border-color: var(--bs-body-bg);
+}
+
+.bg-nom {
+  background-color: #F4F4FB;
 }

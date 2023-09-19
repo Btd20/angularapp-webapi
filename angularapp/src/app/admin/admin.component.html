@@ -10,7 +10,7 @@
 
       <div class="edit-form" *ngIf="usuario.editando">
         <form class="edit-form" (ngSubmit)="guardarCanvis(usuario)">
-          <label for="nombre">Nom:</label>
+          <label for="nombre" class="bg-nom">Nom:</label>
           <input type="text" id="nombre" [(ngModel)]="usuario.userName" name="nom" required>
 
           <label for="correo">Correu:</label>

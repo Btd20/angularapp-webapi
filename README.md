@@ -46,10 +46,9 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
 <a href="">3.10 Inici i registre.</a><br>
 ### 3.1 Índex:
 ##### index.component.ts
-<!--
-Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
-Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
-Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
+Com que el projecte es tracta d'una empresa que reserva sales per els seus treballadors, a la portada només podem veure el nom de l'empresa i dos botons. <br>
+Tecnologies i biblioteques utilitzades: Dintre d'aquest component s'ha utilitzat Bootstrap en els botons i també en el container del component.  <br>
+Funcionalitats principals: Aquest component no té cap funcionalitat ja que com a . <br>
 ### 3.2 Inici i registre: 
 #### 3.2.1 Inici:
 ##### login.component.ts
@@ -237,17 +236,35 @@ Lorem ipsum.<br>
 
 ### 4.2.1 Taules:
 ##### dbo.AspNetUser
-Lorem ipsum.
+**Id -  nvarchar(450):** Lorem ipsum <br> 
+**UserName -  nvarchar(256):** Lorem ipsum <br> 
+**Email -  nvarchar(256):** Lorem ipsum <br> 
+**Cognom -  nvarchar(MAX):** Lorem ipsum <br> 
+**Nom -  nvarchar(MAX):** Lorem ipsum <br> 
+**Rol - bit:** Lorem ipsum <br> 
+**Pais -  nvarchar(30):** Lorem ipsum <br> 
+**Ciutat -  nvarchar(30):** Lorem ipsum <br> 
+**Oficina -  nvarchar(30):** Lorem ipsum <br> 
+**ProfileImage -  image:** Lorem ipsum <br> 
+<br>
 ##### dbo.País
-Lorem ipsum.
+**CountryID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**NomPais - varchar(30):** Lorem ipsum <br>
 ##### dbo.Ciutats
-Lorem ipsum.
+**CityID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**NomCiutat - varchar(30):** Lorem ipsum <br>
 ##### dbo.Oficines
-Lorem ipsum.
+**OfficeID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**NomOficina - varchar(30):** Lorem ipsum <br>
 ##### dbo.Sales
-Lorem ipsum.
+**MeetingRoomID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
+**NomSala- varchar(30):** Lorem ipsum <br>
 ##### dbo.Reserves
-Lorem ipsum.
+**ReserveID -  int:** És la clau primaria, de la taula dbo.Reserves.<br>
+**DataReserva -  date:** <br>
+**HoraInici -  time(7):** Hora d'inici de la reserva. En aquest <br>
+**HoraFi -  time(7):** Hora de finalització de la reserva. <br>
+**UserID -  nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
 <br><br>
 ## 5. Configuració i requisits:
 Lorem ipsum.
