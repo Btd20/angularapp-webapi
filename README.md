@@ -226,9 +226,12 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 ### 3.10 app.module.ts i app-routing.module.ts
 
 ##### 3.10.1 app.module.ts
-Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
-Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
-Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
+Aquest arxiu és el módul arrel del framework d'Angular. En aquest arxiu s'hi defineixen móduls, components, serveis i altres dependencies que es troben dintre de l'aplicació. <br>
+
+**Funcionalitats principals:** 
+ - Implementació de móduls, components i serveis del projecte de l'aplicació d'Angular.
+ - S'estableix una lògica global dintre del mateix projecte.
+ - Configurar móduls de tercers, com per exemple Angular CLI, de ser necessari.<br>
 
 ##### 3.10.2 app-routing.module.ts
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
