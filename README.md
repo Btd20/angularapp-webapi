@@ -234,10 +234,11 @@ Aquest arxiu és el módul arrel del framework d'Angular. En aquest arxiu s'hi d
  - Configurar móduls de tercers, com per exemple Angular CLI, de ser necessari.<br>
 
 ##### 3.10.2 app-routing.module.ts
-Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
-Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
-Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
-<br>
+Aquest arxiu és un módul d'enrutament, definint les rutes del entorn del client amb les corresponents vistes de l'aplicació.<br>
+
+**Funcionalitats principals:** 
+ - Aixo haig de veure com ho faig, perque es clar
+ - només son posar rutes i prou<br>
 ## 4. Backend i BBDD:<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
