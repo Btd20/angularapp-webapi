@@ -260,7 +260,7 @@ La base de dades SQL Serves és un component clau en la arquitectura d'aquest pr
 **Email -  nvarchar(256):** Dada sensible? <br> 
 **Cognom -  nvarchar(MAX):** Lorem ipsum <br> 
 **Nom -  nvarchar(MAX):** Lorem ipsum <br> 
-**Rol - bit:** Lorem ipsum <br> 
+**Rol - bit:** Aquesta clau és la que determina com veurà diversos components el usuari o directament, accedir o no a diversos components de la pàgina web.<br> 
 **Pais -  nvarchar(30):** Lorem ipsum <br> 
 **Ciutat -  nvarchar(30):** Lorem ipsum <br> 
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
