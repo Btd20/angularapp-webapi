@@ -223,8 +223,14 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-### 3.10 app.module.ts 
+### 3.10 app.module.ts i app-routing.module.ts
 
+##### 3.10.1 app.module.ts
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
+
+##### 3.10.2 app-routing.module.ts
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
