@@ -17,6 +17,7 @@ export class ReservaMComponent {
   horaFi: any;
   dataReserva: any;
 
+
   constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
   ngOnInit(): void {
@@ -79,12 +80,36 @@ export class ReservaMComponent {
     )
   }
 
-  guardarReserva() {
+
+  /*guardarReserva() {
     this.apiService.updateReserva(
       this.reservaId,
       this.horaInici,
       this.horaFi,
       this.dataReserva
+    ).subscribe(
+      (resposta) => {
+        console.log('Reserva actualitzada correctament:', resposta);
+        console.log(this.reservaId,this.horaInici,this.horaFi,this.dataReserva);
+      },
+      (error) => {
+        console.error('Error en actualitzar la reserva:', error);
+      }
+    );
+  }*/
+
+  guardarReserva() {
+    const reservaActualitzada = {
+      horaInici: this.reserva.horaInici,
+      horaFi: this.reserva.horaFi,
+      dataReserva: this.reserva.dataReserva
+    };
+
+    this.apiService.updateReserva(
+      this.reservaId,
+      reservaActualitzada.horaInici,
+      reservaActualitzada.horaFi,
+      reservaActualitzada.dataReserva
     ).subscribe(
       (resposta) => {
         console.log('Reserva actualitzada correctament:', resposta);
@@ -94,6 +119,7 @@ export class ReservaMComponent {
       }
     );
   }
+
 }
 
 
