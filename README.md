@@ -261,10 +261,11 @@ Lorem ipsum.<br>
 **NomSala- varchar(30):** Lorem ipsum <br>
 ##### dbo.Reserves
 **ReserveID -  int:** És la clau primaria, de la taula dbo.Reserves.<br>
-**DataReserva -  date:** <br>
+**DataReserva -  date:** Data en la que es durà a lloc la reunió a la sala pertinent.<br>
 **HoraInici -  time:** Hora d'inici de la reserva. En aquest <br>
 **HoraFi -  time:** Hora de finalització de la reserva. <br>
 **UserID - FOREIGN KEY de [dbo.AspNetCore.Users] - nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
+**MeetingRoomID - FOREIGN KEY de [dbo.Sales] - int:** Identificador de la sala.<br>
 <br><br>
 ## 5. Configuració i requisits:
 Lorem ipsum.
