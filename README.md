@@ -11,7 +11,7 @@
 <a href="#10-referencies">10. Referencies.</a><br>
 <a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
 <br>
-## 1. Introducció:<br>
+## 1. Introducció:
 El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant dia i hora d'inici. Així doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, C#, SQL Server i el framework Angular, de les que parlarem més endavant.<br><br>Els objectius del projecte s'han anat afegint en el Trello, progressivament. En les primeres setmanes del projecte, els objectius no eren altres que crear el projecte i conseguir objectius petits, com per exemple: que un usuari es pogués registrar i això es guardes correctament a la BBDD. Durant la duració del propi projecte, els objectius han anat agafant més ambició. Un bon exemple seria la imatge del perfil. Un cop creat el perfil, vam veure que els usuaris de l'empresa necessitaven afegir la seva imatge de perfil i per això vam investigar com es tractava una imatge a la BBDD, per llavors passar-la al component adient, en aquest cas profile.component.ts.
 <br><br>
 ## 2. Arquitectura:
@@ -80,7 +80,7 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-#### 3.4.2 Barres de navegació utilitzades en components especifics: buscar altre nom
+#### 3.4.2 Barres de navegació utilitzades en situacions especifiques:
 ##### navprofile.component.ts
 <!--
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
@@ -223,49 +223,82 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-### 3.10 app.module.ts 
+### 3.10 app.module.ts i app-routing.module.ts
 
-Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
-Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
-Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>
-<br>
-## 4. Backend i BBDD:<br>
+##### 3.10.1 app.module.ts
+Aquest arxiu és el módul arrel del framework d'Angular. En aquest arxiu s'hi defineixen móduls, components, serveis i altres dependencies que es troben dintre de l'aplicació. <br>
+
+**Funcionalitats principals:** 
+ - Implementació de móduls, components i serveis del projecte de l'aplicació d'Angular.
+ - S'estableix una lògica global dintre del mateix projecte.
+ - Configurar móduls de tercers, com per exemple Angular CLI, que s'utilitza en el fer-reserva a l'hora d'escollir la sala.<br>
+
+##### 3.10.2 app-routing.module.ts
+Aquest arxiu és on escollirem una ruta de l'entorn del client amb les corresponents vistes de l'aplicació. En definitiva, aquest arxiu no és més que un módul d'enrutament.<br>
+
+**Funcionalitats principals:** 
+ - S'enllaçen components i URL's, fent que depenent de la URL, l'usuari vegi un el component A, B, C... Això ens porta directament al següent punt.
+ - Ens permet facilitar la navegació entre diferents components.
+ - Podem crear rutes anidades i també passant-li parametres. En aquest projecte ho veurem quan passem per el component Paisos. Quan l'usuari vagi fent click als parametres que ell vulgui, veura una ruta similar a aquesta: /oficines/Alemanya/Munic/ACME%20Munich/sales.
+## 4. Backend i BBDD:
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
+##### 4.1.1 ApplicationUserController.cs
+Lorem ipsum.<br>
+##### 4.1.2 AuthController.cs
+Lorem ipsum.<br>
+##### 4.1.3 AdminController.cs
+Lorem ipsum.<br>
+##### 4.1.4 RolesController.cs
+Lorem ipsum.<br>
+##### 4.1.5 PaisController.cs
+Lorem ipsum.<br>
+##### 4.1.6 CiutatsController.cs
+Lorem ipsum.<br>
+##### 4.1.7 OficinesController.cs
+Lorem ipsum.<br>
+##### 4.1.8 SalesController.cs
+Lorem ipsum.<br>
+##### 4.1.9 ReservesController.cs
+Lorem ipsum.<br>
 ### 4.2 BBDD SQL Server:
-
-### 4.2.1 Taules:
-##### dbo.AspNetUser
-**Id -  nvarchar(450):** Lorem ipsum <br> 
-**UserName -  nvarchar(256):** Lorem ipsum <br> 
-**Email -  nvarchar(256):** Lorem ipsum <br> 
+La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
+### Taules:
+##### 4.2.1 dbo.AspNetUser
+**Id -  nvarchar(450):** Aquesta és la clau primaria de cada un dels usuaris. Recordem que al ser una clau primaria doncs, serà unica per cada usuari. <br> 
+**UserName -  nvarchar(256):** Nom que es passarà per la capa de lógica i també per la capa de la presentació, mostrant-se per exemple en el navbar.  <br> 
+**PasswordHash -  nvarchar(MAX):** MOLTA DADA SENSIBLE? Aqui haig de explicar com entra en joc el token. Preguntar per més info al yeray. <br>
+**Email -  nvarchar(256):** Dada sensible? <br> 
 **Cognom -  nvarchar(MAX):** Lorem ipsum <br> 
 **Nom -  nvarchar(MAX):** Lorem ipsum <br> 
-**Rol - bit:** Lorem ipsum <br> 
+**Rol - bit:** Aquesta clau és la que determina com veurà diversos components el usuari o directament, accedir o no a diversos components de la pàgina web.<br> 
 **Pais -  nvarchar(30):** Lorem ipsum <br> 
 **Ciutat -  nvarchar(30):** Lorem ipsum <br> 
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
-**ProfileImage -  image:** Lorem ipsum <br> 
+**ProfileImage -  image:** Dada que es mostrarà a l'entorn client quan l'usuari vulgui visualitzar el seu perfil. Aquesta dada es tracta d'una imatge, per lo tant s'ha tingut que guardar en (?????<br> 
+##### 4.2.2 dbo.Pais
+**CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>
+**NomPais - varchar(30):** Nom del país. Aquest valor un límit de 30 caràcters.<br>
+##### 4.2.3 dbo.Ciutats
+**CityID -  int:** La clau primaria de la taula dbo.Ciutats.<br>
+**NomCiutat - varchar(30):** Nom de la ciutat. Aquest valor un límit de 30 caràcters.<br>
+**CountryID - FOREIGN KEY de [dbo.Pais] - int:** Identificador del país.<br>
+##### 4.2.4 dbo.Oficines
+**OfficeID -  int:** És la clau primaria de la taula dbo.Office.<br>
+**NomOficina - varchar(30):** Nom de la oficina en la que trobarem la sala. Aquest valor un límit de 30 caràcters.<br>
+**CityID - FOREIGN KEY de [dbo.Ciutat] - int:** Identificador de la ciutat.<br>
+##### 4.2.5 dbo.Sales
+**MeetingRoomID -  int:** La clau primaria de la taula dbo.Sales.<br>
+**NomSala - varchar(30):** Nom de la sala que es reserva. Aquest valor un límit de 30 caràcters.<br>
+**OfficeID - FOREIGN KEY de [dbo.Oficines] - int:** Identificador de la oficina.<br>
+##### 4.2.6 dbo.Reserves
+**ReserveID -  int:** És la clau primaria de la taula dbo.Reserves.<br>
+**DataReserva -  date:** Data en la que es durà a lloc la reunió a la sala pertinent.<br>
+**HoraInici -  time:** Hora d'inici de la reserva.<br>
+**HoraFi -  time:** Hora de finalització de la reserva.<br>
+**UserID - FOREIGN KEY de [dbo.AspNetCore.Users] - nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
+**MeetingRoomID - FOREIGN KEY de [dbo.Sales] - int:** Identificador de la sala.<br>
 <br>
-##### dbo.País
-**CountryID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
-**NomPais - varchar(30):** Lorem ipsum <br>
-##### dbo.Ciutats
-**CityID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
-**NomCiutat - varchar(30):** Lorem ipsum <br>
-##### dbo.Oficines
-**OfficeID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
-**NomOficina - varchar(30):** Lorem ipsum <br>
-##### dbo.Sales
-**MeetingRoomID -  int:** És la clau primaria de la taula dbo.Ciutats. Aquest valor és únic.<br>
-**NomSala- varchar(30):** Lorem ipsum <br>
-##### dbo.Reserves
-**ReserveID -  int:** És la clau primaria, de la taula dbo.Reserves.<br>
-**DataReserva -  date:** <br>
-**HoraInici -  time(7):** Hora d'inici de la reserva. En aquest <br>
-**HoraFi -  time(7):** Hora de finalització de la reserva. <br>
-**UserID -  nvarchar(450):** Identificador del usuari, propietari d'aquesta reunió.<br>
-<br><br>
 ## 5. Configuració i requisits:
 Lorem ipsum.
 <br><br>

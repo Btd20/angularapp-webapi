@@ -7,7 +7,7 @@
       <thead>
         <tr>
           <th class="th-thead">
-            <button class="btn btn-create" routerLink="/ferreserva" >
+            <button class="btn btn-create" routerLink="/ferreserva">
               <i class="fa-solid fa-plus"></i>
             </button>
           </th>
@@ -16,7 +16,7 @@
       <tbody>
         <tr class="tr-boxcomponent" *ngFor="let reserva of reserves | slice:(currentPage-1)*pageSize:currentPage*pageSize">
           <td class="tr-name">
-              Nom sala : {{reserva.sala.nomSala}} <br />
+              Nom sala: {{reserva.sala.nomSala}} <br />
               Data de la reserva: {{reserva.dataReserva | date: 'dd-MM-yyyy'}}  <br />
               Hora inici: {{ formatTimeSpan(reserva.horaInici)}}<br />
               Hora fi: {{formatTimeSpan(reserva.horaFi)}}<br />
