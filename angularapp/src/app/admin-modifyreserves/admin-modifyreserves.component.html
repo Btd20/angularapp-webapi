@@ -7,20 +7,32 @@
       <thead>
         <tr>
           <th class="th-thead">
-            <button class="btn btn-create" routerLink="/ferreserva">
-              <i class="fa-solid fa-plus"></i>
-            </button>
+            <div class="d-flex align-items-center">
+              <!-- Contenedor de botón e input -->
+              <button class="btn btn-create me-2" routerLink="/ferreserva">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <mat-form-field class="flex-grow-1">
+                <!-- Autocomplete ocupa todo el espacio restante -->
+                <input matInput placeholder="Buscar reserva per ID" [formControl]="reservaControl">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let reserva of filteredReserves" [value]="reserva.reserveID">
+                    {{ reserva.reserveID }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr class="tr-boxcomponent" *ngFor="let reserva of reserves | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+        <tr class="tr-boxcomponent" *ngFor="let reserva of filteredReserves | slice:(currentPage-1)*pageSize:currentPage*pageSize">
           <td class="tr-name">
-              Nom sala: {{reserva.sala.nomSala}} <br />
-              Data de la reserva: {{reserva.dataReserva | date: 'dd-MM-yyyy'}}  <br />
-              Hora inici: {{ formatTimeSpan(reserva.horaInici)}}<br />
-              Hora fi: {{formatTimeSpan(reserva.horaFi)}}<br />
-              Id reserva: {{reserva.reserveID}}
+            Nom sala: {{reserva.sala.nomSala}} <br />
+            Data de la reserva: {{reserva.dataReserva | date: 'dd-MM-yyyy'}}  <br />
+            Hora inici: {{ formatTimeSpan(reserva.horaInici)}}<br />
+            Hora fi: {{formatTimeSpan(reserva.horaFi)}}<br />
+            Id reserva: {{reserva.reserveID}}
           </td>
           <td class="tr-butt">
             <button class="btn btn-info me-2" [routerLink]="['/modify-reserves', reserva.reserveID, formatTimeSpan(reserva.horaInici), formatTimeSpan(reserva.horaFi), formatDateString(reserva.dataReserva).split('-').reverse().join('-')]">Modificar</button>

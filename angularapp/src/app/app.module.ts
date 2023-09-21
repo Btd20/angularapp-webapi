@@ -6,6 +6,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -142,6 +143,7 @@ import { UpdateReservaComponent } from './update-reserva/update-reserva.componen
     MatInputModule,
     MatDialogModule,
     MatSelectModule,
+    MatAutocompleteModule
    
 
   ],

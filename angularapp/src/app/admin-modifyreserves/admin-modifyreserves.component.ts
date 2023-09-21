@@ -4,6 +4,7 @@ import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateReservaComponent } from '../create-reserva/create-reserva.component';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 
 
@@ -17,9 +18,18 @@ export class AdminMRVComponent implements OnInit {
   isAdmin?: boolean;
   currentPage: number = 1;
   pageSize: number = 2;
+  reservaControl = new FormControl();
+  filteredReserves: any[] = [];
 
   constructor(private apiService: ApiService, private authService: AuthService, private router: Router) {
     this.isAdmin = authService.isAdmin;
+    this.filteredReserves = this.reserves.slice();
+
+    this.reservaControl = new FormControl(); // ¡Asegúrate de inicializar reservaControl!
+
+    this.reservaControl.valueChanges.subscribe(value => {
+      this.filterReserves(value);
+    });
   }
 
   ngOnInit(): void {
@@ -30,6 +40,7 @@ export class AdminMRVComponent implements OnInit {
     this.apiService.getAllReserves().subscribe(
       response => {
         this.reserves = response;
+        this.filteredReserves = this.reserves.slice(); // Inicializa filteredReserves con todas las reservas
       },
       error => {
         console.error(error);
@@ -83,5 +94,9 @@ export class AdminMRVComponent implements OnInit {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
+  }
+
+  filterReserves(value: string) {
+    this.filteredReserves = this.reserves.filter(reserva => reserva.reserveID.toString().includes(value));
   }
 }
