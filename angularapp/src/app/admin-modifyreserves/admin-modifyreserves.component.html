@@ -8,15 +8,13 @@
         <tr>
           <th class="th-thead">
             <div class="d-flex align-items-center">
-              <!-- Contenedor de botón e input -->
               <button class="btn btn-create me-2" routerLink="/ferreserva">
                 <i class="fa-solid fa-plus"></i>
               </button>
-              <mat-form-field class="flex-grow-1">
-                <!-- Autocomplete ocupa todo el espacio restante -->
+              <mat-form-field class="flex-grow-1 custom-input">
                 <input matInput placeholder="Buscar reserva per ID" [formControl]="reservaControl">
-                <mat-autocomplete #auto="matAutocomplete">
-                  <mat-option *ngFor="let reserva of filteredReserves" [value]="reserva.reserveID">
+                <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+                  <mat-option class="custom-option" *ngFor="let reserva of filteredReserves" [value]="reserva.reserveID">
                     {{ reserva.reserveID }}
                   </mat-option>
                 </mat-autocomplete>

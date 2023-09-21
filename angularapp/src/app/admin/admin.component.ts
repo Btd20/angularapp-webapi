@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
@@ -12,9 +13,19 @@ export class AdminComponent implements OnInit {
   isAdmin?: boolean;
   currentPage: number = 1;
   pageSize: number = 4;
+  userControl = new FormControl();
+  filteredUsers: any[] = [];
 
   constructor(private apiService: ApiService, private authService: AuthService) {
     this.isAdmin = authService.isAdmin;
+
+    this.filteredUsers = this.usuaris.slice();
+
+    this.userControl = new FormControl(); // ¡Asegúrate de inicializar reservaControl!
+
+    this.userControl.valueChanges.subscribe(value => {
+      this.filterUsers(value);
+    });
   }
 
   ngOnInit(): void {
@@ -25,6 +36,7 @@ export class AdminComponent implements OnInit {
     this.apiService.getUsuaris().subscribe(
       response => {
         this.usuaris = response;
+        this.filteredUsers = this.usuaris.slice();
       },
       error => {
         console.error(error);
@@ -85,5 +97,9 @@ export class AdminComponent implements OnInit {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
+  }
+
+  filterUsers(value: string) {
+    this.filteredUsers = this.usuaris.filter(usuari => usuari.userName.includes(value));
   }
 }

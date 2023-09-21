@@ -2,7 +2,15 @@
 <div class="row p-5 container-admin" *ngIf="isAdmin">
   <div class="adm-titl"><h4>Edició d'usuaris</h4></div>
   <ul class="user-list">
-    <li class="user-item" *ngFor="let usuario of usuaris | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+    <mat-form-field class="flex-grow-1 custom-input">
+      <input matInput placeholder="Buscar usuari per Nom" [formControl]="userControl">
+      <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+        <mat-option class="custom-option" *ngFor="let usuari of filteredUsers" [value]="usuari.userName">
+          {{ usuari.userName }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <li class="user-item" *ngFor="let usuario of filteredUsers | slice:(currentPage-1)*pageSize:currentPage*pageSize">
       <span class="user-icon"><i class="fa-regular fa-user"></i></span>
       <span class="user-name">{{ usuario.userName }}</span>
       <button class="btn btn-useredit btn-info" (click)="editarUsuario(usuario)" *ngIf="mostrarBotonEditar(usuario)"><span>Modificar</span></button>
