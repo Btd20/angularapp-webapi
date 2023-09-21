@@ -11,7 +11,7 @@
 <a href="#10-referencies">10. Referencies.</a><br>
 <a href="#11-anexos">11. Anexos.</a> <!--si es necessari-->
 <br>
-## 1. Introducció:<br>
+## 1. Introducció:
 El projecte s'ha desenvolupat per tal de que els treballadors de l'empresa ACME puguin reservar sales amb la finalitat de reunir-se amb altres treballadors de l'empresa, concretant dia i hora d'inici. Així doncs, el usuari pot reservar la sala desitjada i a la vegada, també pot veure a quines hores la sala no està disponible.<br><br>El projecte ha sigut desenvolupat amb les següents tecnologies: AspNet.Core, C#, SQL Server i el framework Angular, de les que parlarem més endavant.<br><br>Els objectius del projecte s'han anat afegint en el Trello, progressivament. En les primeres setmanes del projecte, els objectius no eren altres que crear el projecte i conseguir objectius petits, com per exemple: que un usuari es pogués registrar i això es guardes correctament a la BBDD. Durant la duració del propi projecte, els objectius han anat agafant més ambició. Un bon exemple seria la imatge del perfil. Un cop creat el perfil, vam veure que els usuaris de l'empresa necessitaven afegir la seva imatge de perfil i per això vam investigar com es tractava una imatge a la BBDD, per llavors passar-la al component adient, en aquest cas profile.component.ts.
 <br><br>
 ## 2. Arquitectura:
@@ -240,7 +240,7 @@ Aquest arxiu és on escollirem una ruta de l'entorn del client amb les correspon
  - S'enllaçen components i URL's, fent que depenent de la URL, l'usuari vegi un el component A, B, C... Això ens porta directament al següent punt.
  - Ens permet facilitar la navegació entre diferents components.
  - Podem crear rutes anidades i també passant-li parametres. En aquest projecte ho veurem quan passem per el component Paisos. Quan l'usuari vagi fent click als parametres que ell vulgui, veura una ruta similar a aquesta: /oficines/Alemanya/Munic/ACME%20Munich/sales.
-## 4. Backend i BBDD:<br>
+## 4. Backend i BBDD:
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
 ##### 4.1.1 ApplicationUserController.cs
@@ -275,7 +275,7 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 **Pais -  nvarchar(30):** Lorem ipsum <br> 
 **Ciutat -  nvarchar(30):** Lorem ipsum <br> 
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
-**ProfileImage -  image:** Lorem ipsum <br> 
+**ProfileImage -  image:** Dada que es mostrarà a l'entorn client quan l'usuari vulgui visualitzar el seu perfil. Aquesta dada es tracta d'una imatge, per lo tant s'ha tingut que guardar en (?????<br> 
 ##### 4.2.2 dbo.Pais
 **CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>
 **NomPais - varchar(30):** Nom del país. Aquest valor un límit de 30 caràcters.<br>
