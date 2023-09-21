@@ -28,6 +28,7 @@ export class FerReservaComponent implements OnInit {
   salaReserva: string = '';
   nomSala: string = '';
 
+
   constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -35,7 +36,8 @@ export class FerReservaComponent implements OnInit {
       this.paisReserva = params['pais'];
       this.ciutatReserva = params['ciutat'];
       this.oficinaReserva = params['oficina'];
-      if (this.oficinaReserva != null) {
+
+      if (this.oficinaReserva) {
         this.getSalesByOfiFromApi();
       } else {
         this.getSalesByOfiFromUser();
@@ -98,6 +100,7 @@ export class FerReservaComponent implements OnInit {
     this.apiService.getSalaByOficina(this.paisReserva, this.ciutatReserva, this.oficinaReserva).subscribe(
       response => {
         this.sales = response;
+
       },
       error => {
         console.error(error);

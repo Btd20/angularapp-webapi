@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class ReservaMComponent {
   dataReserva: any;
 
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -60,10 +60,12 @@ export class ReservaMComponent {
     this.apiService.eliminarReserva(id).subscribe(
       () => {
         console.log('Reserva eliminada.');
+        this.router.navigate(['/reserves']);
         //this.getAllReservesFromApi();
       },
       (error) => {
         console.error('Error al eliminar la reserva:', error);
+        alert('No es pot eliminar la reserva');
       }
     );
   }
@@ -80,27 +82,9 @@ export class ReservaMComponent {
     )
   }
 
-
-  /*guardarReserva() {
-    this.apiService.updateReserva(
-      this.reservaId,
-      this.horaInici,
-      this.horaFi,
-      this.dataReserva
-    ).subscribe(
-      (resposta) => {
-        console.log('Reserva actualitzada correctament:', resposta);
-        console.log(this.reservaId,this.horaInici,this.horaFi,this.dataReserva);
-      },
-      (error) => {
-        console.error('Error en actualitzar la reserva:', error);
-      }
-    );
-  }*/
-
   guardarReserva() {
-    const reservaActualitzada = {
-      horaInici: this.reserva.horaInici,
+    const reservaActualitzada = {                  //per alguna raó es feia un load de la anterior al donar a modificar així que amb una constant
+      horaInici: this.reserva.horaInici,           // assegure'm que no es reverteixin els canvis
       horaFi: this.reserva.horaFi,
       dataReserva: this.reserva.dataReserva
     };
@@ -113,9 +97,11 @@ export class ReservaMComponent {
     ).subscribe(
       (resposta) => {
         console.log('Reserva actualitzada correctament:', resposta);
+        this.router.navigate(['/reserves']);
       },
       (error) => {
         console.error('Error en actualitzar la reserva:', error);
+        alert('Ha fallat la modificació de reserva');
       }
     );
   }
