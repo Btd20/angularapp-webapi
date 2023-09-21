@@ -231,14 +231,15 @@ Aquest arxiu és el módul arrel del framework d'Angular. En aquest arxiu s'hi d
 **Funcionalitats principals:** 
  - Implementació de móduls, components i serveis del projecte de l'aplicació d'Angular.
  - S'estableix una lògica global dintre del mateix projecte.
- - Configurar móduls de tercers, com per exemple Angular CLI, de ser necessari.<br>
+ - Configurar móduls de tercers, com per exemple Angular CLI, que s'utilitza en el fer-reserva a l'hora d'escollir la sala.<br>
 
 ##### 3.10.2 app-routing.module.ts
-Aquest arxiu és un módul d'enrutament, definint les rutes del entorn del client amb les corresponents vistes de l'aplicació.<br>
+Aquest arxiu és on escollirem una ruta de l'entorn del client amb les corresponents vistes de l'aplicació. En definitiva, aquest arxiu no és més que un módul d'enrutament.<br>
 
 **Funcionalitats principals:** 
- - Aixo haig de veure com ho faig, perque es clar
- - només son posar rutes i prou<br>
+ - S'enllaçen components i URL's, fent que depenent de la URL, l'usuari vegi un el component A, B, C... Això ens porta directament al següent punt.
+ - Ens permet facilitar la navegació entre diferents components.
+ - Podem crear rutes anidades i també passant-li parametres. En aquest projecte ho veurem quan passem per el component Paisos. Quan l'usuari vagi fent click als parametres que ell vulgui, veura una ruta similar a aquesta: /oficines/Alemanya/Munic/ACME%20Munich/sales.
 ## 4. Backend i BBDD:<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
