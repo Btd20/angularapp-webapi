@@ -1,11 +1,12 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-update-ciutat',
   templateUrl: './update-ciutat.component.html',
-  styleUrls: ['./update-ciutat.component.css']
+  styleUrls: ['./update-ciutat.component.css'], 
+  encapsulation: ViewEncapsulation.None
 })
 export class UpdateCiutatComponent implements OnInit {
   ciutatForm!: FormGroup;

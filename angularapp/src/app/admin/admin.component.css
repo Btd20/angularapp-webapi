@@ -74,6 +74,7 @@
   }
 
   .user-item .user-name {
+    max-width: 150px; /*--VALOR PERQUE L'USUARI NO TRENQUI LA PAGIN ENTERA--*/
     flex: 1;
     font-weight: 900;
     font-family: var(--fontK);
@@ -89,6 +90,7 @@
   }
 
 .btn-useredit {
+  margin-left: 55%;
   margin-right: 5px;
   font-family: var(--fontK);
   font-weight: 900;
@@ -179,6 +181,7 @@
   }
 
 .edit-form {
+  background-color: var(--bs-body-bg);
   transform: translateX(-50px);
   font-size: 14px;
   display: flex;
