@@ -1,14 +1,33 @@
-/*-- editar dintre del component de Angular Material, prova
 
-.prova-laia{
-    color:red!important;
-    background-color:black;
+.prova-laia {
+  background-color: var(--bg-2);
 }
 
-.container-prova-laia {
-  width:100%;
-  height:100%;
-  background-color: cyan;
+/*--Perque no es talli el 'Nom de la X'--*/
+.mat-mdc-form-field { 
+  padding-top: 10px;
 }
 
---*/
+/*--TITOL--*/
+.mat-mdc-dialog-container {
+  --mdc-dialog-subhead-color: var(--txt-g1);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: var(--txt-g3);
+}
+
+/*--BUTTONS--*/
+
+.mat-mdc-dialog-actions{
+    justify-content:space-around;
+}
+
+/*--INTENTANT MODIFICAR EL ROSA DE: NOM DE LA CIUTAT QUAN ESTA ACTIU--*/
+html {
+  --mat-option-selected-state-label-text-color: cyan; 
+  --mat-option-label-text-color: black!important;
+  --mat-option-hover-state-layer-color: rgba(255, 255, 255, 0.08);
+  --mat-option-focus-state-layer-color: rgba(255, 255, 255, 0.08);
+  --mat-option-selected-state-layer-color: rgba(255, 255, 255, 0.08);
+}
