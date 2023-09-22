@@ -231,7 +231,7 @@ Aquest arxiu és el módul arrel del framework d'Angular. En aquest arxiu s'hi d
 **Funcionalitats principals:** 
  - Implementació de móduls, components i serveis del projecte de l'aplicació d'Angular.
  - S'estableix una lògica global dintre del mateix projecte.
- - Configurar móduls de tercers, com per exemple Angular CLI, que s'utilitza en el fer-reserva a l'hora d'escollir la sala.<br>
+ - Configurar móduls de tercers, com per exemple Angular Material, que s'utilitza en el fer-reserva a l'hora d'escollir la sala.<br>
 
 ##### 3.10.2 app-routing.module.ts
 Aquest arxiu és on escollirem una ruta de l'entorn del client amb les corresponents vistes de l'aplicació. En definitiva, aquest arxiu no és més que un módul d'enrutament.<br>
