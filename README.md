@@ -223,7 +223,7 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-### 3.10 app.module.ts i app-routing.module.ts
+### 3.10 Configuració de moduls i enrutament
 
 ##### 3.10.1 app.module.ts
 Aquest arxiu és el módul arrel del framework d'Angular. En aquest arxiu s'hi defineixen móduls, components, serveis i altres dependencies que es troben dintre de l'aplicació. <br>
@@ -244,28 +244,28 @@ Aquest arxiu és on escollirem una ruta de l'entorn del client amb les correspon
 En aquest apartat veurem la part del backend i la BBDD que son les parts que sostenen el nostre projecte. Puntualitzarem com es gestionen les dades, es podrà veure com es connecten els components i a la vegada, s'asegura la integritat de les dades sensibles dins de la funcionalitat de l'aplicació.<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
-##### 4.1.1 ApplicationUserController.cs
+##### ApplicationUserController.cs
 Lorem ipsum.<br>
-##### 4.1.2 AuthController.cs
+##### AuthController.cs
 Lorem ipsum.<br>
-##### 4.1.3 AdminController.cs
+##### AdminController.cs
 Lorem ipsum.<br>
-##### 4.1.4 RolesController.cs
+##### RolesController.cs
 Lorem ipsum.<br>
-##### 4.1.5 PaisController.cs
+##### PaisController.cs
 Lorem ipsum.<br>
-##### 4.1.6 CiutatsController.cs
+##### CiutatsController.cs
 Lorem ipsum.<br>
-##### 4.1.7 OficinesController.cs
+##### OficinesController.cs
 Lorem ipsum.<br>
-##### 4.1.8 SalesController.cs
+##### SalesController.cs
 Lorem ipsum.<br>
-##### 4.1.9 ReservesController.cs
+##### ReservesController.cs
 Lorem ipsum.<br>
 ### 4.2 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
-##### 4.2.1 dbo.AspNetUser
+##### dbo.AspNetUser
 **Id -  nvarchar(450):** Aquesta és la clau primaria de cada un dels usuaris. Recordem que al ser una clau primaria doncs, serà unica per cada usuari. <br> 
 **UserName -  nvarchar(256):** Nom que passarà per la capa de lógica i també per la capa de la presentació, mostrant-se per exemple, en el navbar.  <br> 
 **PasswordHash -  nvarchar(MAX):** Lorem ipsum. <br>
@@ -277,22 +277,22 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 **Ciutat -  nvarchar(30):** Lorem ipsum <br> 
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
 **ProfileImage -  image:** Dada que es mostrarà a l'entorn client quan l'usuari vulgui visualitzar el seu perfil. Aquesta dada es tracta d'una imatge, per lo tant s'ha tingut que guardar en [YERAY, LA DADA EN SI ES UN STRING?]<br> 
-##### 4.2.2 dbo.Pais
+##### dbo.Pais
 **CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>
 **NomPais - varchar(30):** Nom del país. Aquest valor un límit de 30 caràcters.<br>
-##### 4.2.3 dbo.Ciutats
+##### dbo.Ciutats
 **CityID -  int:** La clau primaria de la taula dbo.Ciutats.<br>
 **NomCiutat - varchar(30):** Nom de la ciutat. Aquest valor un límit de 30 caràcters.<br>
 **CountryID - FOREIGN KEY de [dbo.Pais] - int:** Identificador del país.<br>
-##### 4.2.4 dbo.Oficines
+##### dbo.Oficines
 **OfficeID -  int:** És la clau primaria de la taula dbo.Office.<br>
 **NomOficina - varchar(30):** Nom de la oficina en la que trobarem la sala. Aquest valor un límit de 30 caràcters.<br>
 **CityID - FOREIGN KEY de [dbo.Ciutat] - int:** Identificador de la ciutat.<br>
-##### 4.2.5 dbo.Sales
+##### dbo.Sales
 **MeetingRoomID -  int:** La clau primaria de la taula dbo.Sales.<br>
 **NomSala - varchar(30):** Nom de la sala que es reserva. Aquest valor un límit de 30 caràcters.<br>
 **OfficeID - FOREIGN KEY de [dbo.Oficines] - int:** Identificador de la oficina.<br>
-##### 4.2.6 dbo.Reserves
+##### dbo.Reserves
 **ReserveID -  int:** És la clau primaria de la taula dbo.Reserves.<br>
 **DataReserva -  date:** Data en la que es durà a lloc la reunió a la sala pertinent.<br>
 **HoraInici -  time:** Hora d'inici de la reserva.<br>
@@ -304,7 +304,7 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 Lorem ipsum.<br>
 ### 5.1 Configuració d'entorn servidor:
 Lorem ipsum.<br>
-### 5.1.1 Configuració del projecte C++:
+### 5.1.1 Configuració del projecte C#:
 Lorem ipsum.<br>
 ### 5.1.2 Configuració de BBDD:
 Lorem ipsum.<br>
