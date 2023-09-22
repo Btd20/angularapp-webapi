@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'reserva-box',
@@ -10,7 +11,7 @@ export class ReservaBoxComponent {
   @Input() reserva: any;
   username: string | null = sessionStorage.getItem("username");
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
     console.log(this.reserva);
@@ -38,4 +39,9 @@ export class ReservaBoxComponent {
   eliminarReservaBox() {
     this.eliminarReserva(this.reserva.reserveID);
   }
+
+  modificarReserva() {
+    this.router.navigate(['/modify-reserves', this.reserva.reservaId, this.reserva.horaInici, this.reserva.horaFi, this.reserva.dataReserva]);
+  }
+
 }

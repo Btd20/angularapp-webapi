@@ -25,7 +25,7 @@ export class AdminMRVComponent implements OnInit {
     this.isAdmin = authService.isAdmin;
     this.filteredReserves = this.reserves.slice();
 
-    this.reservaControl = new FormControl(); // ¡Asegúrate de inicializar reservaControl!
+    this.reservaControl = new FormControl(); 
 
     this.reservaControl.valueChanges.subscribe(value => {
       this.filterReserves(value);
@@ -40,7 +40,7 @@ export class AdminMRVComponent implements OnInit {
     this.apiService.getAllReserves().subscribe(
       response => {
         this.reserves = response;
-        this.filteredReserves = this.reserves.slice(); // Inicializa filteredReserves con todas las reservas
+        this.filteredReserves = this.reserves.slice(); 
       },
       error => {
         console.error(error);
@@ -76,7 +76,6 @@ export class AdminMRVComponent implements OnInit {
   }
 
   modificarReserva(reservaId: string, dataInici: string, dataFi: string, dataReserva: string) {
-    // Navega a la pàgina "Modify Reserves" i passa l'ID de la reserva i les dates com a paràmetres de ruta
     this.router.navigate(['/modify-reserves', reservaId, dataInici, dataFi, dataReserva]);
   }
  
