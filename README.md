@@ -241,6 +241,7 @@ Aquest arxiu és on escollirem una ruta de l'entorn del client amb les correspon
  - Ens permet facilitar la navegació entre diferents components.
  - Podem crear rutes anidades i també passant-li parametres. En aquest projecte ho veurem quan passem per el component Paisos. Quan l'usuari vagi fent click als parametres que ell vulgui, veura una ruta similar a aquesta: /oficines/Alemanya/Munic/ACME%20Munich/sales.
 ## 4. Backend i BBDD:
+En aquest apartat veurem la part del backend i la BBDD que son les parts que sostenen el nostre projecte. Puntualitzarem com es gestionen les dades i també es podrà veure com es connecten els components i a la vegada, s'asegura la integritat de les dades sensibles dins de la funcionalitat de l'aplicació.<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
 ##### 4.1.1 ApplicationUserController.cs
@@ -263,7 +264,7 @@ Lorem ipsum.<br>
 Lorem ipsum.<br>
 ### 4.2 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
-### Taules:
+### Estructura de BBDD:
 ##### 4.2.1 dbo.AspNetUser
 **Id -  nvarchar(450):** Aquesta és la clau primaria de cada un dels usuaris. Recordem que al ser una clau primaria doncs, serà unica per cada usuari. <br> 
 **UserName -  nvarchar(256):** Nom que passarà per la capa de lógica i també per la capa de la presentació, mostrant-se per exemple, en el navbar.  <br> 
