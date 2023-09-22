@@ -39,9 +39,6 @@ html {
   /*--PADDINGS + BORDER RADIUS--*/
   --pd-btn: 25px;
   --br-btn: 25px;
-
-  /*--ANGULAR MATERIAL--*/
-  --mdc-dialog-container-color:#cbc0c0!important;
 }
 
 body {
@@ -66,7 +63,3 @@ mat-app-background {
     height: 2px;
     background-color: transparent !important;
 }
-
-/*--ANGULAR MATERIAL PROVA--*/
-
-
