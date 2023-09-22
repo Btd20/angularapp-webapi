@@ -39,16 +39,23 @@ html {
   /*--PADDINGS + BORDER RADIUS--*/
   --pd-btn: 25px;
   --br-btn: 25px;
+
+  /*--ANGULAR MATERIAL--*/
+  --mdc-dialog-container-color:#cbc0c0!important;
 }
 
-body { 
+body {
   background-color: var(--bg-2);
 }
 
+mat-app-background {
+  background-color: var(--mdc-dialog-container-color)!important;
+}
+
 ::-webkit-scrollbar-track {
-    background-color: transparent !important;
-    border: none !important;
-  }
+  background-color: transparent !important;
+  border: none !important;
+}
 
 ::-webkit-scrollbar-thumb {
     background: var(--txt-g1);
@@ -59,4 +66,7 @@ body {
     height: 2px;
     background-color: transparent !important;
 }
+
+/*--ANGULAR MATERIAL PROVA--*/
+
 
