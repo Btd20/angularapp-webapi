@@ -41,7 +41,11 @@ export class ReservaBoxComponent {
   }
 
   modificarReserva() {
-    this.router.navigate(['/modify-reserves', this.reserva.reservaId, this.reserva.horaInici, this.reserva.horaFi, this.reserva.dataReserva]);
+    console.log('ReservaId:', this.reserva.reserveId);
+    console.log('DataInici:', this.reserva.horaInici);
+    console.log('DataFi:', this.reserva.horaFi);
+    console.log('DataReserva:', this.reserva.dataReserva);
+    this.router.navigate(['/modify-reserves', this.reserva.reserveID, this.reserva.horaInici, this.reserva.horaFi, this.reserva.dataReserva]);
   }
 
 }
