@@ -276,7 +276,7 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 **Pais -  nvarchar(30):** Lorem ipsum <br> 
 **Ciutat -  nvarchar(30):** Lorem ipsum <br> 
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
-**ProfileImage -  image:** Dada que es mostrarà a l'entorn client quan l'usuari vulgui visualitzar el seu perfil. Aquesta dada es tracta d'una imatge, per lo tant s'ha tingut que guardar en [YERAY, LA DADA EN SI ES UN STRING?]<br> 
+**ProfileImage -  image:** Dada que es mostrarà a l'entorn client quan l'usuari vulgui visualitzar el seu perfil. Aquesta dada es tracta d'una imatge, per tant s'ha tingut que guardar com a tal perquè llavor es pugui descodificar al component d'Angular pertinent, en aquest cas: **profile.component.ts**<br> 
 ##### dbo.Pais
 **CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>
 **NomPais - varchar(30):** Nom del país. Aquest valor un límit de 30 caràcters.<br>
