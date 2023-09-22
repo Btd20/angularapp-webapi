@@ -241,7 +241,7 @@ Aquest arxiu és on escollirem una ruta de l'entorn del client amb les correspon
  - Ens permet facilitar la navegació entre diferents components.
  - Podem crear rutes anidades i també passant-li parametres. En aquest projecte ho veurem quan passem per el component Paisos. Quan l'usuari vagi fent click als parametres que ell vulgui, veura una ruta similar a aquesta: /oficines/Alemanya/Munic/ACME%20Munich/sales.
 ## 4. Backend i BBDD:
-En aquest apartat veurem la part del backend i la BBDD que son les parts que sostenen el nostre projecte. Puntualitzarem com es gestionen les dades i també es podrà veure com es connecten els components i a la vegada, s'asegura la integritat de les dades sensibles dins de la funcionalitat de l'aplicació.<br>
+En aquest apartat veurem la part del backend i la BBDD que son les parts que sostenen el nostre projecte. Puntualitzarem com es gestionen les dades, es podrà veure com es connecten els components i a la vegada, s'asegura la integritat de les dades sensibles dins de la funcionalitat de l'aplicació.<br>
 ### 4.1 Backend amb C#:
 Lorem ipsum.<br>
 ##### 4.1.1 ApplicationUserController.cs
