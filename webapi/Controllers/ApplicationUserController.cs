@@ -91,7 +91,7 @@ namespace webapi.Controllers
                 // Actualizar el campo "Rol" en la entidad webapiUser a true
                 existingUser.Rol = true;
             }
-            else
+            else if (!user.Rol && existingUser.Rol == true)
             {
                 // Si el campo "Rol" es false, quitar el rol "Administrador" del usuario (si lo tiene)
                 var removeFromRoleResult = await _userManager.RemoveFromRoleAsync(existingUser, "Administrador");

@@ -24,7 +24,7 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
  - El frontend s’ha portat a terme gràcies a la tecnología anomenada **Angular**, basada en una altre, anomenada **Typescript**. Les dues tecnologies han aportat al projecte una interacció per l’usuari. Typescript ha servit per desenvolupar la lògica del interfaz d'usuari i en canvi, l'Angular s'ha encarregat de la construcció de la interfície d'usuari i de la interacció. 
  - En la part més pura de fulls d’estils, s’ha utilitzat **HTML i CSS**, tot i que recordem que això no es considera com a tal una tecnología, simplement defineixen les seccions de la pàgina a més dels estils. 
  - També s’ha utilitzat **Bootstrap**, una llibreria de clases i ID’s ja predefinides que ens ha agilitzat la feina a la hora de crear estils diferents dintre del projecte.
- - Per últim, s'ha afegit un altre paquet extern, anomenat **FontAwsome**. Aquest paquet ens permet utilitzar unes icones per el nostre projecte en diferents estils, en el projecte s'ha utilitzat el estil duotone. Hem utilitzat la versió 6.1.1. <br>
+ - Finalment, s'ha afegit un altre paquet extern, anomenat **FontAwsome.** Aquest paquet ens permet utilitzar unes icones per el nostre projecte en diferents estils, en el projecte s'ha utilitzat l'estil duotone. Hem fet servir la versió 6.1.1. <br>
 #### 2.1.2 Capa de lògica (Backend):
 - Per desenvolupar aquesta capa hem utilitzat **ASP.NET Core i C#** per tal de tenir una coordinació entre les capes existents. 
 - Aquesta capa és **l'unica que interactua amb les dues restants**. Si es conecta a la BBDD, es guarda informació i llavors, passant per la capa de presentacció, imprimeix la informació.
@@ -231,7 +231,7 @@ Aquest arxiu és el módul arrel del framework d'Angular. En aquest arxiu s'hi d
 **Funcionalitats principals:** 
  - Implementació de móduls, components i serveis del projecte de l'aplicació d'Angular.
  - S'estableix una lògica global dintre del mateix projecte.
- - Configurar móduls de tercers, com per exemple Angular CLI, que s'utilitza en el fer-reserva a l'hora d'escollir la sala.<br>
+ - Configurar móduls de tercers, com per exemple Angular Material, que s'utilitza en el fer-reserva a l'hora d'escollir la sala.<br>
 
 ##### 3.10.2 app-routing.module.ts
 Aquest arxiu és on escollirem una ruta de l'entorn del client amb les corresponents vistes de l'aplicació. En definitiva, aquest arxiu no és més que un módul d'enrutament.<br>
