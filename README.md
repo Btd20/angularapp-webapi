@@ -266,16 +266,16 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 ### Taules:
 ##### 4.2.1 dbo.AspNetUser
 **Id -  nvarchar(450):** Aquesta és la clau primaria de cada un dels usuaris. Recordem que al ser una clau primaria doncs, serà unica per cada usuari. <br> 
-**UserName -  nvarchar(256):** Nom que es passarà per la capa de lógica i també per la capa de la presentació, mostrant-se per exemple en el navbar.  <br> 
-**PasswordHash -  nvarchar(MAX):** MOLTA DADA SENSIBLE? Aqui haig de explicar com entra en joc el token. Preguntar per més info al yeray. <br>
-**Email -  nvarchar(256):** Dada sensible? <br> 
-**Cognom -  nvarchar(MAX):** Lorem ipsum <br> 
-**Nom -  nvarchar(MAX):** Lorem ipsum <br> 
-**Rol - bit:** Aquesta clau és la que determina com veurà diversos components el usuari o directament, accedir o no a diversos components de la pàgina web.<br> 
+**UserName -  nvarchar(256):** Nom que passarà per la capa de lógica i també per la capa de la presentació, mostrant-se per exemple, en el navbar.  <br> 
+**PasswordHash -  nvarchar(MAX):** Lorem ipsum. <br>
+**Email -  nvarchar(256):** Lorem ipsum. <br> 
+**Cognom -  nvarchar(MAX):** Lorem ipsum.<br> 
+**Nom -  nvarchar(MAX):** Lorem ipsum. <br> 
+**Rol - bit:** Aquesta clau és la que determina com veurà diversos components el usuari ja que podrà o no, accedir o no a diversos components de la pàgina web.<br> 
 **Pais -  nvarchar(30):** Lorem ipsum <br> 
 **Ciutat -  nvarchar(30):** Lorem ipsum <br> 
 **Oficina -  nvarchar(30):** Lorem ipsum <br> 
-**ProfileImage -  image:** Dada que es mostrarà a l'entorn client quan l'usuari vulgui visualitzar el seu perfil. Aquesta dada es tracta d'una imatge, per lo tant s'ha tingut que guardar en (?????<br> 
+**ProfileImage -  image:** Dada que es mostrarà a l'entorn client quan l'usuari vulgui visualitzar el seu perfil. Aquesta dada es tracta d'una imatge, per lo tant s'ha tingut que guardar en [YERAY, LA DADA EN SI ES UN STRING?]<br> 
 ##### 4.2.2 dbo.Pais
 **CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>
 **NomPais - varchar(30):** Nom del país. Aquest valor un límit de 30 caràcters.<br>
