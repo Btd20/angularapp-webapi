@@ -236,3 +236,8 @@
 .bg-nom {
   background-color: #F4F4FB;
 }
+
+#user-list mat-form-field .mat-mdc-form-field-infix {
+  padding: 0;
+  min-height: initial;
+}
