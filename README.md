@@ -301,8 +301,19 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 **MeetingRoomID - FOREIGN KEY de [dbo.Sales] - int:** Identificador de la sala.<br>
 <br>
 ## 5. Configuració i requisits:
-Lorem ipsum.
-<br><br>
+Lorem ipsum.<br>
+### 5.1 Configuració d'entorn servidor:
+Lorem ipsum.<br>
+### 5.1.1 Configuració del projecte C++:
+Lorem ipsum.<br>
+### 5.1.2 Configuració de BBDD:
+Lorem ipsum.<br>
+### 5.2 Configuració d'entorn client:
+Lorem ipsum.<br>
+### 5.2.1 Configuració d'Angular:
+Lorem ipsum.<br>
+### 5.3 Versions i actualitzacions:
+Lorem ipsum.<br><br>
 ## 6. Us i exemples:
 Lorem ipsum.
 <br><br>
