@@ -30,7 +30,7 @@ export class FerReservaComponent implements OnInit {
 
 
   constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { }
-
+  
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.paisReserva = params['pais'];
@@ -40,10 +40,11 @@ export class FerReservaComponent implements OnInit {
       if (this.oficinaReserva) {
         this.getSalesByOfiFromApi();
       } else {
+        this.paisReserva = this.pais || '';
+        this.ciutatReserva = this.ciutat || '';
+        this.oficinaReserva = this.oficina || '';
         this.getSalesByOfiFromUser();
       }
-      //this.salaReserva = params['sales'];
-      //alert(`${this.paisReserva}    ${this.ciutatReserva}   ${this.oficinaReserva}`);
     });
 
     // Obtenir la data actual i convertir-la al format AAAA-MM-DD
@@ -106,16 +107,21 @@ export class FerReservaComponent implements OnInit {
         console.error(error);
       }
     );
-  }
+  } 
 
   getSalesByOfiFromUser(): void {
-    this.apiService.getSalaByOficina(this.pais ?? '', this.ciutat ?? '', this.oficina ?? '').subscribe(
-      response => {
-        this.sales = response;
-      },
-      error => {
-        console.error(error);
-      }
-    );
+    if (!this.pais && !this.ciutat && !this.oficina) {
+      this.getAllSalesFromApi();
+    } else {
+      this.apiService.getSalaByOficina(this.pais || '', this.ciutat || '', this.oficina || '').subscribe(
+        response => {
+          this.sales = response;
+        },
+        error => {
+          console.error(error);
+        }
+      );
+    }
   }
+  
 }

@@ -25,12 +25,11 @@ export class SelectSala implements OnInit {
 
   ngOnInit(): void {
 
-    //this.getAllSalesFromApi();
-    this.getSalesByOfiFromApi();
-    console.log('Aquesta es la info de la ofi :' + this.pais, this.ciutat, this.nomOficina);
-    console.log("les sales venen de select sala");
-    alert(this.pais + this.ciutat + this.nomOficina);
-    console.log('Contingut de la sala:', JSON.stringify(this.sales));
+    if (this.nomOficina && this.nomOficina !== 'No seleccionat') {
+      this.getSalesByOfiFromApi();
+    } else {
+      this.getAllSalesFromApi();
+    }
 
   } 
 
