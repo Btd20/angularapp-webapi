@@ -264,3 +264,14 @@
     color: red;
 }
 
+.mdc-text-field .mdc-text-field__input {
+  caret-color: var(--txt-g1);
+}
+
+:root {
+  --mdc-typography-subtitle1-text-decoration:var(--txt-g1);
+}
+
+.mdc-text-field__input {
+  -webkit-text-decoration: var(--mdc-typography-subtitle1-text-decoration, inherit);
+}
