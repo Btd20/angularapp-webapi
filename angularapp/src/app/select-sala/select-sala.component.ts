@@ -11,6 +11,7 @@ interface Sala {
 @Component({
   selector: 'selectSala',
   templateUrl: 'select-sala.component.html',
+  styleUrls: ['./select-sala.component.css']
 })
 
 export class SelectSala implements OnInit {
