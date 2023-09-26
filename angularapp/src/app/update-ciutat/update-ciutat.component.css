@@ -11,6 +11,7 @@
 /*--TITOL--*/
 .mat-mdc-dialog-container {
   --mdc-dialog-subhead-color: var(--txt-g1);
+  --mdc-dialog-subhead-font: var(--fontR);
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
@@ -20,13 +21,24 @@
 /*--BUTTONS--*/
 
 .mat-mdc-dialog-actions{
-    justify-content:space-around;
+  justify-content:space-around;
+  padding-bottom:10px;
 }
+
+  .mat-mdc-dialog-actions > button {
+    background-color: red;
+    border: 1px solid var(--txt-g1);
+    font-family: var(--fontK);
+    font-weight: 800;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
 
 /*--INTENTANT MODIFICAR EL ROSA DE: NOM DE LA CIUTAT QUAN ESTA ACTIU--*/
 html {
-  --mat-option-selected-state-label-text-color: cyan; 
-  --mat-option-label-text-color: black!important;
+  --mat-option-selected-state-label-text-color: cyan;
+  --mat-option-label-text-color: black !important;
   --mat-option-hover-state-layer-color: rgba(255, 255, 255, 0.08);
   --mat-option-focus-state-layer-color: rgba(255, 255, 255, 0.08);
   --mat-option-selected-state-layer-color: rgba(255, 255, 255, 0.08);
