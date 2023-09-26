@@ -51,6 +51,7 @@
   }
 
 .user-item {
+  overflow:hidden;
   display: flex;
   align-items: center;
   margin-bottom: 10px;

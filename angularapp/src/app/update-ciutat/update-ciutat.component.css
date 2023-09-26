@@ -7,6 +7,10 @@
   padding-top: 10px;
 }
 
+.mdc-dialog .mdc-dialog__content {
+  padding: 2.5px 24px 2.5px 24px;
+}
+
 .mat-mdc-dialog-container {
   --mdc-dialog-subhead-color: var(--txt-g1);
   --mdc-dialog-subhead-font: var(--fontR);
@@ -31,6 +35,7 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: .8px;
+  line-height: 120%;
 }
 
 /*--BUTTONS--*/
@@ -59,14 +64,6 @@
 }
 
 /*--INTENTANT MODIFICAR EL ROSA DE: NOM DE LA CIUTAT QUAN ESTA ACTIU--*/
-html {
-  --mat-option-selected-state-label-text-color: cyan;
-  --mat-option-label-text-color: black !important;
-  --mat-option-hover-state-layer-color: rgba(255, 255, 255, 0.08);
-  --mat-option-focus-state-layer-color: rgba(255, 255, 255, 0.08);
-  --mat-option-selected-state-layer-color: rgba(255, 255, 255, 0.08);
-}
-
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
   border-color: var(--txt-g2);
 }
@@ -80,8 +77,3 @@ html {
     border-color:var(--txt2-g2);
 }
 
-.cdk-text-field-autofill-monitored ng-touched:active{
-    color:red;
-    border-color:RED;
-
-}
