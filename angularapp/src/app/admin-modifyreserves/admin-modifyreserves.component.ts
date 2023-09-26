@@ -96,6 +96,6 @@ export class AdminMRVComponent implements OnInit {
   }
 
   filterReserves(value: string) {
-    this.filteredReserves = this.reserves.filter(reserva => reserva.reserveID.toString().includes(value));
+    this.filteredReserves = this.reserves.filter(reserva => reserva.reserveID.toString().startsWith(value));
   }
 }

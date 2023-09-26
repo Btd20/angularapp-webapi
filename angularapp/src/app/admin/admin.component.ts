@@ -101,6 +101,6 @@ export class AdminComponent implements OnInit {
   }
 
   filterUsers(value: string) {
-    this.filteredUsers = this.usuaris.filter(usuari => usuari.userName.includes(value));
+    this.filteredUsers = this.usuaris.filter(usuari => usuari.userName.startsWith(value));
   }
 }

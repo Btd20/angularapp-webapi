@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreatePaisComponent } from '../create-pais/create-pais.component';
 import { UpdatePaisComponent } from '../update-pais/update-pais.component';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-modifypaisos',
@@ -16,24 +17,31 @@ export class AdminMPComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 4;
   paisos: any[] = [];
+  paisosControl = new FormControl();
+  filteredPaisos: any[] = [];
 
   constructor(
-    private apiService: ApiService,
-    private authService: AuthService,
-    private dialog: MatDialog,
-    private route: ActivatedRoute
-  ) {
+    private apiService: ApiService, private authService: AuthService, private dialog: MatDialog, private route: ActivatedRoute) {
     this.isAdmin = authService.isAdmin;
+    this.filteredPaisos = this.paisos.slice();
+
+    this.paisosControl = new FormControl;
+
+    this.paisosControl.valueChanges.subscribe(value => {
+      this.filterPaisos(value);
+    });
   }
 
   ngOnInit(): void {
     this.getPaisosFromApi();
+    
   }
 
   getPaisosFromApi(): void {
     this.apiService.getPaisos().subscribe(
       response => {
         this.paisos = response;
+        this.filteredPaisos = this.paisos.slice();
       },
       error => {
         console.error(error);
@@ -48,7 +56,7 @@ export class AdminMPComponent implements OnInit {
       if (result && result.nomPais.trim() !== '') {
         const nomPais = result.nomPais.trim();
 
-        // Check for duplicates
+        
         const paisExists = this.paisos.some(pais => pais.nomPais.toLowerCase() === nomPais.toLowerCase());
         if (paisExists) {
           alert('El país ja existeix.');
@@ -137,5 +145,14 @@ export class AdminMPComponent implements OnInit {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
+  }
+
+  filterPaisos(value: string) {
+
+    const valueLowerCase = value.toLowerCase();
+    this.filteredPaisos = this.paisos.filter(pais => {
+      const nomPaisLowerCase = pais.nomPais.toLowerCase();
+      return nomPaisLowerCase.startsWith(valueLowerCase);
+    });
   }
 }

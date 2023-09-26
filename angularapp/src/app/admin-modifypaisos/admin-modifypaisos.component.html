@@ -10,11 +10,19 @@
             <button class="btn btn-create" (click)="createPais()">
               <i class="fa-solid fa-plus"></i>
             </button>
+            <mat-form-field class="flex-grow-1 custom-input">
+              <input matInput placeholder="Buscar pais per nom" [formControl]="paisosControl">
+              <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+                <mat-option class="custom-option" *ngFor="let paisos of filteredPaisos" [value]="paisos.nomPais">
+                  {{ paisos.nomPais }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr class="tr-boxcomponent" *ngFor="let pais of paisos | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+        <tr class="tr-boxcomponent" *ngFor="let pais of filteredPaisos | slice:(currentPage-1)*pageSize:currentPage*pageSize">
           <td class="tr-name">{{ pais.nomPais }}</td>
           <td class="tr-butt">
             <button class="btn btn-info me-2" (click)="updatePais(pais)">Modificar</button>
