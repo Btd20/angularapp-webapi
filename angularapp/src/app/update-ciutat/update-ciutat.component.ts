@@ -5,7 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-update-ciutat',
   templateUrl: './update-ciutat.component.html',
-  styleUrls: ['./update-ciutat.component.css'], 
+  styleUrls: ['./update-ciutat.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class UpdateCiutatComponent implements OnInit {

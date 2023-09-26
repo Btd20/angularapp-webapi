@@ -2,7 +2,7 @@
 <h1 mat-dialog-title>Modifica la ciutat</h1>
 <mat-dialog-content>
   <form [formGroup]="ciutatForm">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="border-red">
       <mat-label>Nom de la ciutat</mat-label>
       <input matInput formControlName="nomCiutat" placeholder="Escriu la ciutat" />
     </mat-form-field>
@@ -10,7 +10,7 @@
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-raised-button class="btn btn-btn-primary" (click)="updateCiutat()">Acceptar</button>
+  <button mat-raised-button class="btn" (click)="updateCiutat()">Acceptar</button>
   <button mat-raised-button mat-dialog-close class="btn btn-btn-primary">Cancelar</button>
 </mat-dialog-actions>
 </div>
