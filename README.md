@@ -243,9 +243,59 @@ Aquest arxiu és on escollirem una ruta de l'entorn del client amb les correspon
 ## 4. Backend i BBDD:
 En aquest apartat veurem la part del backend i la BBDD que son les parts que sostenen el nostre projecte. Puntualitzarem com es gestionen les dades, es podrà veure com es connecten els components i a la vegada, s'asegura la integritat de les dades sensibles dins de la funcionalitat de l'aplicació.<br>
 ### 4.1 Backend amb C#:
-Lorem ipsum.<br>
+A l'apartat del backend trobem tot allò que no es veu al costat client: rutes, endpoints, maneig de peticions, accés a la BBDD, seguretat i autenticació, maneig d'errors i excepcions, rendiment i serveis addicionals i més.<br>
+##### Program.cs
+Aquest fitxer és fonamental per al projecte d'ASP.NET.<br>
+
+**Funcionalitats principals:** 
+ - Iniciar el servidor web.
+ - Configurar l'entorn on s'executarà l'aplicació ASP.NET Core.
+### 4.2 Controladors:
+La seva funció principal és fer servir les sol·licituds HTTP que arriben al servidor i coordinar la interacció entre el model de dades, la vista i altres parts de l'aplicació.
 ##### ApplicationUserController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<br>
+
+**GET: api/ApplicationUsers**
+ - Torna tots els usuaris de la base de dades amb tota la seva informació en format JSON.<br>
+ 
+**GET: api/ApplicationUsers/{id}**
+ - Torna l'usuari amb la ID que se li passa amb tota la informació en format JSON.<br>
+ 
+**POST: api/ApplicationUsers**
+ - Es crea o s'actualitza un usuari a la base de dades.<br>
+
+**PUT: api/ApplicationUsers/{id}**
+ - S'actualitzen diferents paràmetres de l'usuari amb la ID que se li passa.<br>
+
+**DELETE: api/ApplicationUsers/{id}**
+ - S'esborra l'usuari amb la ID que se li passa de la base de dades.<br>
+
+**GET: api/ApplicationUsers/{id}/role**
+ - Torna el nom del rol de l'usuari amb la ID que se li passa.<br>
+
+**POST: api/ApplicationUsers/ChangePassword**
+ - Actualitza la contrasenya d'un usuari. Aquesta contrasenya serà la que l'usuari hagi escrit i confirmat al formulari de la web.<br>
+
+**POST: api/ApplicationUsers/ChangeUsername**
+ - Actualitza el nom d'usuari d'un usuari. Aquest nom d'usuari serà el que l'usuari hagi escrit i confirmat al formulari de la web.<br>
+
+**POST: api/ApplicationUsers/ChangeEmail**
+ - Actualitza el correu d'un usuari. Aquest correu serà el que l'usuari hagi escrit i confirmat al formulari de la web.<br>
+
+**POST: api/ApplicationUsers/AssignCountry**
+ - Assigna un país a un usuari. Aquest país serà el que l'usuari hagi seleccionat a la web.<br>
+
+**POST: api/ApplicationUsers/AssignCity**
+ - Assigna una ciutat a un usuari. Aquesta ciutat serà la que l'usuari hagi seleccionat a la web, filtrada pel país que hagi seleccionat anteriorment.<br>
+
+**POST: api/ApplicationUsers/AssignOffice**
+ - Assigna una oficina a un usuari. Aquesta oficina serà la que l'usuari hagi seleccionat a la web, filtrada pel país i ciutat que hagi seleccionat anteriorment.<br>
+
+**POST: api/ApplicationUsers/{username}/UploadProfileImage**
+ - Puja o actualitza a la base de dades la imatge de perfil d'un usuari. Aquesta imatge es guarda com a tipus image. Si l'usuari no ha pujat cap imatge anteriorment s'estableix una per defecte.<br>
+
+**GET: api/ApplicationUsers/GetProfileImage/{username}**
+ - Torna la imatge del nom d'usuari que se li passa.<br>
 ##### AuthController.cs
 Lorem ipsum.<br>
 ##### AdminController.cs
@@ -262,7 +312,9 @@ Lorem ipsum.<br>
 Lorem ipsum.<br>
 ##### ReservesController.cs
 Lorem ipsum.<br>
-### 4.2 BBDD SQL Server:
+### 4.3 Models:
+
+### 4.4 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
 ##### dbo.AspNetUser
