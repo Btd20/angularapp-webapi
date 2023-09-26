@@ -1,4 +1,4 @@
-<mat-form-field>
+<!--<mat-form-field>
   <mat-label>Selecciona una sala:</mat-label>
   <mat-select [(ngModel)]="selectedSala" >
     <mat-option *ngFor="let sala of sales" [value]="sala.value" (click)="onSalaSeleccionada(sala.value)">
@@ -7,3 +7,10 @@
   </mat-select>
 </mat-form-field>
 
+-->
+<select>
+  <option [ngValue]="null">Selecciona una sala:</option>
+  <option *ngFor="let sala of sales" [ngValue]="sala.value" (click)="onSalaSeleccionada(sala.value)">
+    {{ sala.nomSala }}
+  </option>
+</select>

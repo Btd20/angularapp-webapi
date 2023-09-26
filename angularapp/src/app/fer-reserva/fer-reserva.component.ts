@@ -61,12 +61,17 @@ export class FerReservaComponent implements OnInit {
   }
 
   reservarSala() {
-    // Obtenim les dades de reserva dels camps del formulari
     const meetingRoomID = this.meetingRoomID;
     const dataReserva = this.dia;
     const horaInici = this.horaInici;
     const horaFi = this.horaFi;
     const userID = this.userid || '';
+    const validHora = this.validateHoraIniciFi();
+
+    if (!validHora) {
+      alert('L\'hora d\'inici ha de ser anterior a l\'hora de finalització.');
+      return;
+    }
 
     console.log(`id de la sala: ${meetingRoomID}, Data Reserva: ${dataReserva}, Hora inici: ${horaInici}, Hora fi: ${horaFi}, idUsuari: ${this.userid}`);
 
@@ -81,6 +86,7 @@ export class FerReservaComponent implements OnInit {
       }
     );
   }
+
 
   onSalaSeleccionada(salaId: number) {
     this.meetingRoomID = salaId;
@@ -122,6 +128,12 @@ export class FerReservaComponent implements OnInit {
         }
       );
     }
+  }
+
+  validateHoraIniciFi(): boolean {
+    const horaInici = new Date(`2000-01-01T${this.horaInici}`);
+    const horaFi = new Date(`2000-01-01T${this.horaFi}`);
+    return horaInici < horaFi;
   }
   
 }
