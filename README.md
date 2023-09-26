@@ -271,9 +271,9 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 **PasswordHash -  nvarchar(MAX):** [PENDENT] <br>
 **Email -  nvarchar(256):** Correu electronic que s'utilitzarà més endavant.  <br> 
 **Rol - bit:** Aquesta clau és la que determina com veurà diversos components el usuari ja que podrà o no, accedir o no a diversos components de la pàgina web.<br> 
-**Pais -  nvarchar(30):** Identificador que es guarda per determinar el país on el usuari treballa.<br> 
-**Ciutat -  nvarchar(30):** Identificador que es guarda per determinar la ciutat on el usuari treballa.<br> 
-**Oficina -  nvarchar(30):** Identificador que es guarda per determinar la oficina on el usuari treballa.<br> 
+**Pais -  nvarchar(30):** Identificador que es guarda per determinar **el país** on el usuari treballa.<br> 
+**Ciutat -  nvarchar(30):** Identificador que es guarda per determinar **la ciutat** on el usuari treballa.<br> 
+**Oficina -  nvarchar(30):** Identificador que es guarda per determinar **la oficina** on el usuari treballa.<br> 
 **ProfileImage -  image:** Dada que es mostrarà a l'entorn client quan l'usuari vulgui visualitzar el seu perfil. Aquesta dada es tracta d'una imatge, per tant s'ha tingut que guardar com a tal perquè llavor es pugui descodificar al component d'Angular pertinent, en aquest cas: **profile.component.ts**<br> 
 ##### dbo.Pais
 **CountryID -  int:** És la clau primaria de la taula dbo.Pais.<br>

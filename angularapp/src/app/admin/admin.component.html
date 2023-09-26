@@ -1,7 +1,7 @@
 <app-navadmin></app-navadmin>
 <div class="row p-5 container-admin" *ngIf="isAdmin">
   <div class="adm-titl"><h4>Edició d'usuaris</h4></div>
-  <ul class="user-list">
+  <ul class="user-list" id="user-list">
     <mat-form-field class="flex-grow-1 custom-input">
       <input matInput placeholder="Buscar usuari per Nom" [formControl]="userControl">
       <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
