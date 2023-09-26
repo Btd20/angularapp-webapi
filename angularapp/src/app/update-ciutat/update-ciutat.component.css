@@ -63,17 +63,6 @@
   transition: 0.3s ease-in-out;
 }
 
-/*--INTENTANT MODIFICAR EL ROSA DE: NOM DE LA CIUTAT QUAN ESTA ACTIU--*/
-.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
-  border-color: var(--txt-g2);
-}
-
 .mdc-text-field .mdc-text-field__input {
   caret-color: var(--txt-g2);
 }
-
-.border-red{
-    caret-color:var(--txt2-g2);
-    border-color:var(--txt2-g2);
-}
-
