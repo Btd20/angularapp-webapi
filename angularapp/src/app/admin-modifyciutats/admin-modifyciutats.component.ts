@@ -4,6 +4,7 @@ import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateCiutatComponent } from '../create-ciutat/create-ciutat.component';
 import { UpdateCiutatComponent } from '../update-ciutat/update-ciutat.component';
+import { FormControl } from '@angular/forms';
 
 
 
@@ -19,9 +20,18 @@ export class AdminMCComponent implements OnInit {
   pageSize: number = 4;
   nomPais: string = '';
   nomCiutat: string = '';
+  ciutatsControl = new FormControl();
+  filteredCiutats: any[] = [];
 
   constructor(private apiService: ApiService, private authService: AuthService, private dialog:MatDialog) {
     this.isAdmin = authService.isAdmin;
+    this.filteredCiutats = this.ciutats.slice();
+
+    this.ciutatsControl = new FormControl;
+
+    this.ciutatsControl.valueChanges.subscribe(value => {
+      this.filterCiutats(value);
+    });
   }
 
   ngOnInit(): void {
@@ -32,6 +42,7 @@ export class AdminMCComponent implements OnInit {
     this.apiService.getAllCiutats().subscribe(
       response => {
         this.ciutats = response;
+        this.filteredCiutats = this.ciutats.slice();
       },
       error => {
         console.error(error);
@@ -123,5 +134,14 @@ export class AdminMCComponent implements OnInit {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
+  }
+
+  filterCiutats(value: string) {
+
+    const valueLowerCase = value.toLowerCase();
+    this.filteredCiutats = this.ciutats.filter(ciutat => {
+      const nomCiutatsLowerCase = ciutat.nomCiutat.toLowerCase();
+      return nomCiutatsLowerCase.startsWith(valueLowerCase);
+    });
   }
 }

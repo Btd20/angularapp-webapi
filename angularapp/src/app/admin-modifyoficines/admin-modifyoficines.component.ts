@@ -4,6 +4,7 @@ import { AuthService } from '../auth-service.service';
 import { CreateOficinesComponent } from '../create-oficines/create-oficines.component';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateOficinaComponent } from '../update-oficina/update-oficina.component';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-modifyoficines',
@@ -18,9 +19,18 @@ export class AdminMOComponent implements OnInit {
   nomCiutat: string = '';
   nomPais: string = '';
   nomOficina: string = '';
+  oficinesControl = new FormControl();
+  filteredOficines: any[] = [];
 
   constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog) {
     this.isAdmin = authService.isAdmin;
+    this.filteredOficines = this.oficines.slice();
+
+    this.oficinesControl = new FormControl;
+
+    this.oficinesControl.valueChanges.subscribe(value => {
+      this.filterOficines(value);
+    });
   }
 
   ngOnInit(): void {
@@ -31,6 +41,7 @@ export class AdminMOComponent implements OnInit {
     this.apiService.getAllOficines().subscribe(
       (response: any[]) => {
         this.oficines = response;
+        this.filteredOficines = this.oficines.slice();
       },
       error => {
         console.error(error);
@@ -137,4 +148,27 @@ export class AdminMOComponent implements OnInit {
       this.currentPage--;
     }
   }
+
+  /*filterOficines(value: string) {
+
+    const valueLowerCase = value.toLowerCase();
+    this.filteredOficines = this.oficines.filter(oficina => {
+      const nomOficinaLowerCase = oficina.nomOficina.toLowerCase();
+      const trimmedOficinaName = nomOficinaLowerCase.replace('ACME', '');
+      return trimmedOficinaName.startsWith(valueLowerCase);
+    });
+  }
+  */
+
+  filterOficines(value: string) {
+    const valueLowerCase = value.toLowerCase();
+    const prefixToIgnore = 'ACME ';
+
+    this.filteredOficines = this.oficines.filter(oficina => {
+      const nomOficinaLowerCase = oficina.nomOficina.toLowerCase();
+      const trimmedOficinaName = nomOficinaLowerCase.replace(new RegExp(`^${prefixToIgnore}`, 'i'), '');
+      return trimmedOficinaName.startsWith(valueLowerCase);
+    });
+  }
+
 }

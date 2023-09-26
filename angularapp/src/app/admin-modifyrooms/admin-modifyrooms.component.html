@@ -10,11 +10,19 @@
             <button class="btn btn-create" (click)="createSales()">
               <i class="fa-solid fa-plus"></i>
             </button>
+            <mat-form-field class="flex-grow-1 custom-input">
+              <input matInput placeholder="Buscar sala per nom" [formControl]="salesControl">
+              <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+                <mat-option class="custom-option" *ngFor="let sales of filteredSales" [value]="sales.nomSala">
+                  {{ sales.nomSala }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr class="tr-boxcomponent" *ngFor="let sala of sales | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+        <tr class="tr-boxcomponent" *ngFor="let sala of filteredSales | slice:(currentPage-1)*pageSize:currentPage*pageSize">
           <td class="tr-name">{{ sala.nomSala }}</td>
           <td class="tr-butt">
             <button class="btn btn-info me-2" (click)="updateSala(sala)">Modificar</button>

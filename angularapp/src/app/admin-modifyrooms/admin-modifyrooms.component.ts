@@ -4,6 +4,7 @@ import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateSalesComponent } from '../create-sales/create-sales.component';
 import { UpdateSalaComponent } from '../update-sala/update-sala.component';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-modifyrooms',
@@ -19,9 +20,18 @@ export class AdminMRComponent implements OnInit {
   nomCiutat: string = '';
   nomOficina: string = '';
   nomSala: string = '';
+  salesControl = new FormControl();
+  filteredSales: any[] = [];
 
   constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog ) {
     this.isAdmin = authService.isAdmin;
+    this.filteredSales = this.sales.slice();
+
+    this.salesControl = new FormControl;
+
+    this.salesControl.valueChanges.subscribe(value => {
+      this.filterSales(value);
+    });
   }
 
   ngOnInit(): void {
@@ -32,6 +42,7 @@ export class AdminMRComponent implements OnInit {
     this.apiService.getAllSales().subscribe(
       response => {
         this.sales = response;
+        this.filteredSales = this.sales.slice();
       },
       error => {
         console.error(error);
@@ -139,5 +150,16 @@ export class AdminMRComponent implements OnInit {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
+  }
+
+
+  filterSales(value: string) {
+
+    const valueLowerCase = value.toLowerCase();
+    this.filteredSales = this.sales.filter(sala => {
+      const nomSalaLowerCase = sala.nomSala.toLowerCase();
+      const trimmedSalaName = nomSalaLowerCase.replace('sala ', '');
+      return trimmedSalaName.startsWith(valueLowerCase);
+    });
   }
 }

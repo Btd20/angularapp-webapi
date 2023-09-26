@@ -10,11 +10,19 @@
             <button class="btn btn-create" (click)="createCiutats()">
               <i class="fa-solid fa-plus"></i>
             </button>
+            <mat-form-field class="flex-grow-1 custom-input">
+              <input matInput placeholder="Buscar ciutat per nom" [formControl]="ciutatsControl">
+              <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+                <mat-option class="custom-option" *ngFor="let ciutat of filteredCiutats" [value]="ciutat.nomCiutat">
+                  {{ ciutat.nomCiutat }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr class="tr-boxcomponent" *ngFor="let ciutat of ciutats | slice:(currentPage-1)*pageSize:currentPage*pageSize">
+        <tr class="tr-boxcomponent" *ngFor="let ciutat of filteredCiutats | slice:(currentPage-1)*pageSize:currentPage*pageSize">
           <td class="tr-name">{{ ciutat.nomCiutat }}</td>
           <td class="tr-butt">
             <button class="btn btn-info me-2" (click)="updateCiutat(ciutat)">Modificar</button>
