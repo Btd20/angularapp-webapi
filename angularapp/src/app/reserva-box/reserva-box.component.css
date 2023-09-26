@@ -93,11 +93,12 @@
 }
 
 #icon-padding-l {
+  border: none;
   padding-left: 2px;
 }
 
-
 #icon-padding-r {
+  border: none;
   padding-right: 2px;
 }
 
