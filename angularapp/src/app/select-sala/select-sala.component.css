@@ -1,0 +1,12 @@
+.selectSala {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 4px 10px;
+  border: none;
+  background-color: var(--bg-2);
+  color: var(--txt-g1);
+  font-weight: 600;
+  font-family: var(--fontK);
+  border-radius: 25px;
+  width: 100%;
+}
