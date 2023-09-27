@@ -60,12 +60,18 @@ export class SelectSala implements OnInit {
     );
   }
 
-  onSalaSeleccionada(salaId: number) {
+ /* onSalaSeleccionada(salaId: number) {
     //alert(`${this.selectedSala}`);
     this.selectedSala = salaId;
     this.salaSeleccionada.emit(this.selectedSala);
   }
+  */
 
+  onSalaSeleccionada(event: any) {
+    const selectedValue = parseInt(event.target.value, 10); 
+    this.selectedSala = selectedValue;
+    this.salaSeleccionada.emit(selectedValue);
+  }
   
 
 
