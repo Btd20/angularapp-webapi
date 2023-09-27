@@ -149,24 +149,13 @@ export class AdminMOComponent implements OnInit {
     }
   }
 
-  /*filterOficines(value: string) {
-
-    const valueLowerCase = value.toLowerCase();
-    this.filteredOficines = this.oficines.filter(oficina => {
-      const nomOficinaLowerCase = oficina.nomOficina.toLowerCase();
-      const trimmedOficinaName = nomOficinaLowerCase.replace('ACME', '');
-      return trimmedOficinaName.startsWith(valueLowerCase);
-    });
-  }
-  */
-
+  
   filterOficines(value: string) {
-    const valueLowerCase = value.toLowerCase();
-    const prefixToIgnore = 'ACME ';
 
+    const valueLowerCase = value.toLowerCase();
     this.filteredOficines = this.oficines.filter(oficina => {
       const nomOficinaLowerCase = oficina.nomOficina.toLowerCase();
-      const trimmedOficinaName = nomOficinaLowerCase.replace(new RegExp(`^${prefixToIgnore}`, 'i'), '');
+      const trimmedOficinaName = nomOficinaLowerCase.replace('acme ', '');
       return trimmedOficinaName.startsWith(valueLowerCase);
     });
   }
