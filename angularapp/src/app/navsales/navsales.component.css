@@ -7,6 +7,11 @@
   z-index:-0;
 }
 
+.d-spacebetween{
+    display:flex!important;
+    justify-content:space-between;
+}
+
 .nav-item {
   border-radius: 25px;
   margin-left: 2px;
@@ -22,10 +27,10 @@
   transition: 0.3s ease-in-out;
 }
 
-  .nav-link:hover {
-    color: var(--txt-g3);
-    transition: 0.3s ease-in-out;
-  }
+.nav-link:hover {
+  color: var(--txt-g3);
+  transition: 0.3s ease-in-out;
+}
 
 .icon-homeg {
   display: flex;
@@ -42,5 +47,3 @@
 .d-acme {
   direction: rtl;
 }
-
-

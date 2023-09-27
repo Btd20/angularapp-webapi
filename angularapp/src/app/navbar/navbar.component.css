@@ -14,8 +14,13 @@
   font-weight: 600;
 }
 
+.d-spacebetween {
+  display: flex !important;
+  justify-content: space-between;
+}
+
 .itm-acme{
-    text-transform:uppercase;
+  text-transform:uppercase;
 }
 
 .nav-link {
@@ -44,7 +49,6 @@
 .d-acme {
   direction: rtl;
 }
-
 
 /*--DROPDOWN--*/
 .dropdown-menu {

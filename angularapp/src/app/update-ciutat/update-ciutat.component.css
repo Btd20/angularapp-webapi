@@ -1,10 +1,9 @@
-.prova-laia {
+.container-popup {
   background-color: var(--bg-2);
 }
 
-/*--Perque no es talli el 'Nom de la X'--*/
-.mat-mdc-form-field { 
-  padding-top: 10px;
+.mat-mdc-form-field {
+  padding-top: 20px;
 }
 
 .mdc-dialog .mdc-dialog__content {
@@ -63,6 +62,6 @@
   transition: 0.3s ease-in-out;
 }
 
-.mdc-text-field .mdc-text-field__input {
-  caret-color: var(--txt-g2);
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline:active .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: var(--txt-g2);
 }

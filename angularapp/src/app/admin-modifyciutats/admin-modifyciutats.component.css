@@ -185,3 +185,22 @@ table > :not(:first-child) {
 .tr-butt {
   margin-right: 5px;
 }
+
+.zona-busq {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*--ANGULAR MATERIAL, BUSCADOR--*/
+.mdc-text-field .mdc-text-field__input {
+  caret-color: var(--txt-g2);
+}
+
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: var(--txt-g1);
+}

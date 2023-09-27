@@ -2,14 +2,16 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <div class="collapse navbar-collapse d-spacebetween" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active icon-homeg">
         <a class="nav-link" href="/home"><i class="fa-regular fa-house icon-home"></i></a>
       </li>
       <li class="nav-item active itm-acme">
-        <a class="nav-link" href="/paisos">Sales de reunions</a>
+        <a class="nav-link" href="/paisos">Reserva una sala</a>
       </li>
+    </ul>
+    <ul class="navbar-nav">
       <li class="nav-item dropdown d-acme itm-acme">
         <div class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="toggleMenu()">
           {{username}}
