@@ -7,17 +7,19 @@
       <thead>
         <tr>
           <th class="th-thead">
-            <button class="btn btn-create" (click)="createOficines()">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-            <mat-form-field class="flex-grow-1 custom-input">
-              <input matInput placeholder="Buscar oficina per nom" [formControl]="oficinesControl">
-              <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
-                <mat-option class="custom-option" *ngFor="let oficina of filteredOficines" [value]="oficina.nomOficina">
-                  {{ oficina.nomOficina }}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
+            <div class="d-flex align-items-center">
+              <button class="btn btn-create me-2" (click)="createOficines()">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <mat-form-field class="flex-grow-1 custom-input">
+                <input matInput placeholder="Buscar oficina per nom" [formControl]="oficinesControl">
+                <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+                  <mat-option class="custom-option" *ngFor="let oficina of filteredOficines" [value]="oficina.nomOficina">
+                    {{ oficina.nomOficina }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
           </th>
         </tr>
       </thead>

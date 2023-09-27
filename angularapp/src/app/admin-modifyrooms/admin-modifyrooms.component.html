@@ -7,17 +7,19 @@
       <thead>
         <tr>
           <th class="th-thead">
-            <button class="btn btn-create" (click)="createSales()">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-            <mat-form-field class="flex-grow-1 custom-input">
-              <input matInput placeholder="Buscar sala per nom" [formControl]="salesControl">
-              <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
-                <mat-option class="custom-option" *ngFor="let sales of filteredSales" [value]="sales.nomSala">
-                  {{ sales.nomSala }}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
+            <div class="d-flex align-items-center">
+              <button class="btn btn-create me-2" (click)="createSales()">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <mat-form-field class="flex-grow-1 custom-input">
+                <input matInput placeholder="Buscar sala per nom" [formControl]="salesControl">
+                <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+                  <mat-option class="custom-option" *ngFor="let sales of filteredSales" [value]="sales.nomSala">
+                    {{ sales.nomSala }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
           </th>
         </tr>
       </thead>
