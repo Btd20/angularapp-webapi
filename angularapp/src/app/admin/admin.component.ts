@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   usuaris: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;
-  pageSize: number = 4;
+  pageSize: number = 3;
   userControl = new FormControl();
   filteredUsers: any[] = [];
 

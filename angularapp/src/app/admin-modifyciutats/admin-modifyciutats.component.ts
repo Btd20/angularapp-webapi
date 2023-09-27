@@ -17,7 +17,7 @@ export class AdminMCComponent implements OnInit {
   ciutats: any[] = [];
   isAdmin?: boolean;
   currentPage: number = 1;
-  pageSize: number = 4;
+  pageSize: number = 3;
   nomPais: string = '';
   nomCiutat: string = '';
   ciutatsControl = new FormControl();
