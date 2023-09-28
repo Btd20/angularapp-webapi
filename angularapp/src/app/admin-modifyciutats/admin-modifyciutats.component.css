@@ -204,3 +204,8 @@ table > :not(:first-child) {
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
   color: var(--txt-g1);
 }
+
+
+.mdc-text-field{
+    border-color:red!important;
+}

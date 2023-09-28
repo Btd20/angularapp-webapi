@@ -1,15 +1,18 @@
-<h2>Crear Ciutat</h2>
-<form [formGroup]="ciutatForm" (ngSubmit)="createCiutat()">
-  <mat-form-field>
-    <mat-label>Nom del País</mat-label>
-    <input matInput formControlName="nomPais" required>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-label>Nom de la Ciutat</mat-label>
-    <input matInput formControlName="nomCiutat" required>
-  </mat-form-field>
-  <br>
-  <button mat-button type="button" (click)="cancel()">Cancel</button>
-  <button mat-raised-button color="primary" type="submit">Crear</button>
-</form>
+<div class="container-popup">
+  <h2 class="titl-dialog">Crear Ciutat</h2>
+  <form [formGroup]="ciutatForm" class="container-flex" (ngSubmit)="createCiutat()">
+    <mat-form-field appearance="outline" >
+      <mat-label class="input-ciutat">Nom del país</mat-label>
+      <input class="input-ciutat2" matInput formControlName="nomPais" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label class="input-ciutat">Nom de la ciutat</mat-label>
+      <input class="input-ciutat2" matInput formControlName="nomCiutat" required>
+    </mat-form-field>
+  </form>
+    <mat-dialog-actions>
+      <button mat-raised-button class="btn btn-create" type="submit">Acceptar</button>
+      <button mat-button type="button" class="btn btn-create" (click)="cancel()">Cancelar</button>
+    </mat-dialog-actions>
+</div>
