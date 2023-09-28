@@ -1,11 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration.UserSecrets;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
 using webapi.Data;
 using webapi.Models;
 
@@ -16,10 +10,12 @@ namespace webapi.Controllers
     public class ReservesController : ControllerBase
     {
         private readonly webapiContext _context;
+        private readonly EmailService _emailService;
 
-        public ReservesController(webapiContext context)
+        public ReservesController(webapiContext context, EmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         // GET: Reserves
@@ -58,7 +54,6 @@ namespace webapi.Controllers
         [HttpPost("FerReserva/{meetingRoomID}/{dataReserva}/{horaInici}/{horaFi}/{userId}")]
         public async Task<IActionResult> CreateReserva(int meetingRoomID, string dataReserva, string horaInici, string horaFi, string userId)
         {
-            // Convert the strings to DateTime objects
             if (!DateTime.TryParse(dataReserva, out DateTime dataReservaDateTime) ||
                 !TimeSpan.TryParse(horaInici, out TimeSpan horaIniciTimeSpan) ||
                 !TimeSpan.TryParse(horaFi, out TimeSpan horaFiTimeSpan))
@@ -72,61 +67,83 @@ namespace webapi.Controllers
                 return NotFound("No se ha encontrado ninguna sala con la ID especificada.");
             }
 
-            // Get the user ID of the authenticated user
-            /*  string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);*/
-
             var reserva = new Reserves
             {
                 MeetingRoomID = sala.MeetingRoomID,
                 DataReserva = dataReservaDateTime,
                 HoraInici = horaIniciTimeSpan,
                 HoraFi = horaFiTimeSpan,
-                UserID = userId // Assigning the user ID to the reservation.
+                UserID = userId
             };
 
             _context.Reserves.Add(reserva);
             await _context.SaveChangesAsync();
 
+            // Envía el correo de confirmación
+            var userEmail = ObtenerEmailPorUserId(userId);
+
+            var body = "<div style=\"text-align: center;\">" +
+           "<img src=\"https://i.imgur.com/U6hSDAJ.png\" width=\"60%\">" +
+           "<h2>La teva reserva ha sigut creada i confirmada amb èxit.<br>A continuació, trobaràs tots els detalls de la reserva realitzada:</h2>" +
+           $"<h3 style=\"margin: 0;\"><b>Sala:</b> {sala.NomSala}</h3>" +
+           $"<h3 style=\"margin: 0;\"><b>Data de Reserva:</b> {dataReservaDateTime.ToShortDateString()}</h3>" +
+           $"<h3 style=\"margin: 0;\"><b>Hora d'Inici:</b> {horaIniciTimeSpan}</h3>" +
+           $"<h3 style=\"margin: 0;\"><b>Hora de Fi:</b> {horaFiTimeSpan}</h3><br><br>" +
+           "<img src =\"https://i.imgur.com/kj6hX9K.png\" width=\"60%\">" +
+           "</div>";
+
+
+
+
+
+            _emailService.SendEmail(userEmail, "Confirmación de reserva", body);
+
             return CreatedAtAction("GetReserve", new { id = reserva.ReserveID }, reserva);
+        }
+
+        private string ObtenerEmailPorUserId(string userId)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+            return user?.Email;
         }
 
 
 
 
 
-        /* // PUT: Reserves/5
-         [HttpPut("{id}")]
-         public async Task<IActionResult> UpdateReserve(int id, Reserves reserve)
+    /* // PUT: Reserves/5
+     [HttpPut("{id}")]
+     public async Task<IActionResult> UpdateReserve(int id, Reserves reserve)
+     {
+         if (id != reserve.ReserveID)
          {
-             if (id != reserve.ReserveID)
-             {
-                 return BadRequest();
-             }
-
-             _context.Entry(reserve).State = EntityState.Modified;
-
-             try
-             {
-                 await _context.SaveChangesAsync();
-             }
-             catch (DbUpdateConcurrencyException)
-             {
-                 if (!ReserveExists(id))
-                 {
-                     return NotFound();
-                 }
-                 else
-                 {
-                     throw;
-                 }
-             }
-
-             return NoContent();
+             return BadRequest();
          }
 
-         */
+         _context.Entry(reserve).State = EntityState.Modified;
 
-        [HttpPut("{id}/{novaHoraInici}/{novaHoraFi}/{novaDataReserva}")]
+         try
+         {
+             await _context.SaveChangesAsync();
+         }
+         catch (DbUpdateConcurrencyException)
+         {
+             if (!ReserveExists(id))
+             {
+                 return NotFound();
+             }
+             else
+             {
+                 throw;
+             }
+         }
+
+         return NoContent();
+     }
+
+     */
+
+    [HttpPut("{id}/{novaHoraInici}/{novaHoraFi}/{novaDataReserva}")]
         public async Task<IActionResult> UpdateReserve(int id, string novaHoraInici, string novaHoraFi, string novaDataReserva)
         {
             var reserve = await _context.Reserves.FindAsync(id);
