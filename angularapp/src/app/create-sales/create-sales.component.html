@@ -1,28 +1,30 @@
-<h1 mat-dialog-title>Create Sala</h1>
-<mat-dialog-content>
-  <form [formGroup]="salesForm">
-    <mat-form-field appearance="outline">
-      <mat-label>Nom del País</mat-label>
-      <input matInput formControlName="nomPais" required>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Nom de la Ciutat</mat-label>
-      <input matInput formControlName="nomCiutat" required>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Oficina Name</mat-label>
-      <input matInput formControlName="nomOficina" placeholder="Enter Oficina Name" />
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Nom de la Sala</mat-label>
-      <input matInput formControlName="nomSala" required>
-    </mat-form-field>
-  </form>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-raised-button color="primary" (click)="createOficina()">Create</button>
-  <button mat-raised-button mat-dialog-close (click)="cancel()">Cancel</button>
-</mat-dialog-actions>
+<div class="container-popup">
+  <h1 mat-dialog-title class="titl-dialog">Create Sala</h1>
+  <mat-dialog-content>
+    <form [formGroup]="salesForm" class="container-flex">
+      <mat-form-field appearance="outline">
+        <mat-label class="input-ciutat">Nom del País</mat-label>
+        <input matInput class="input-ciutat2" formControlName="nomPais" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label class="input-ciutat">Nom de la Ciutat</mat-label>
+        <input matInput class="input-ciutat2" formControlName="nomCiutat" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label class="input-ciutat">Oficina Name</mat-label>
+        <input matInput class="input-ciutat2" formControlName="nomOficina" placeholder="Enter Oficina Name" />
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label class="input-ciutat">Nom de la Sala</mat-label>
+        <input matInput class="input-ciutat2" formControlName="nomSala" required>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button class="btn btn-create" (click)="createOficina()">Create</button>
+    <button mat-raised-button mat-dialog-close class="btn btn-create" (click)="cancel()">Cancel</button>
+  </mat-dialog-actions>
+</div>
