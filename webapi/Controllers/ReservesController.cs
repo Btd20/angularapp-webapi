@@ -131,7 +131,7 @@ namespace webapi.Controllers
                             <div class=""container"">
                                 <div class=""header"">
                                     <img src=""https://i.imgur.com/U6hSDAJ.png"" alt=""Portada"" width=""100%"">
-                                    <h2>La teva reserva ha sigut creada i confirmada amb èxit. ✔</h2>
+                                    <h2>La teva reserva ha sigut creada i confirmada amb èxit.</h2>
                                 </div>
                                 <div class=""details"">
                                     <h3><b>● Sala:</b> " + sala.NomSala + @"</h3>
