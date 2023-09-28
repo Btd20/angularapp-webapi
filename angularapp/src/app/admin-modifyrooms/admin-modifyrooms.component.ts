@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateSalesComponent } from '../create-sales/create-sales.component';
 import { UpdateSalaComponent } from '../update-sala/update-sala.component';
 import { FormControl } from '@angular/forms';
+import fuzzysearch from "fuzzysearch-ts";
 
 @Component({
   selector: 'app-admin-modifyrooms',
@@ -153,13 +154,24 @@ export class AdminMRComponent implements OnInit {
   }
 
 
-  filterSales(value: string) {
+  /*filterSales(value: string) {
 
     const valueLowerCase = value.toLowerCase();
     this.filteredSales = this.sales.filter(sala => {
       const nomSalaLowerCase = sala.nomSala.toLowerCase();
       const trimmedSalaName = nomSalaLowerCase.replace('sala ', '');
       return trimmedSalaName.startsWith(valueLowerCase);
+    });
+  }*/
+
+  filterSales(value: string) {
+    const valueLowerCase = value.trim().toLowerCase();
+
+    this.filteredSales = this.sales.filter(sala => {
+      const nomSalaLowerCase = sala.nomSala.toLowerCase();
+      const trimmedSalaName = nomSalaLowerCase.replace('sala ', '').trim();
+
+      return fuzzysearch(valueLowerCase, trimmedSalaName);
     });
   }
 }
