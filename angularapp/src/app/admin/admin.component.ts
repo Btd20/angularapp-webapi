@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { FormControl } from '@angular/forms';
+import fuzzysearch from "fuzzysearch-ts";
 
 @Component({
   selector: 'app-admin',
@@ -100,7 +101,18 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  /* filterUsers(value: string) {
+     this.filteredUsers = this.usuaris.filter(usuari => usuari.userName.startsWith(value));
+   }
+   */
+
   filterUsers(value: string) {
-    this.filteredUsers = this.usuaris.filter(usuari => usuari.userName.startsWith(value));
+    const trimmedValue = value.trim().toLowerCase();
+
+    this.filteredUsers = this.usuaris.filter(usuari => {
+      const trimmedUserName = usuari.userName.trim().toLowerCase();
+
+      return fuzzysearch(trimmedValue, trimmedUserName);
+    });
   }
 }

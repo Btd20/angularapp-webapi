@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateCiutatComponent } from '../create-ciutat/create-ciutat.component';
 import { UpdateCiutatComponent } from '../update-ciutat/update-ciutat.component';
 import { FormControl } from '@angular/forms';
+import fuzzysearch from 'fuzzysearch-ts';
 
 
 
@@ -138,10 +139,12 @@ export class AdminMCComponent implements OnInit {
 
   filterCiutats(value: string) {
 
-    const valueLowerCase = value.toLowerCase();
+    const valueLowerCase = value.trim().toLowerCase();
+
     this.filteredCiutats = this.ciutats.filter(ciutat => {
       const nomCiutatsLowerCase = ciutat.nomCiutat.toLowerCase();
-      return nomCiutatsLowerCase.startsWith(valueLowerCase);
+
+      return fuzzysearch(valueLowerCase, nomCiutatsLowerCase);
     });
   }
 }

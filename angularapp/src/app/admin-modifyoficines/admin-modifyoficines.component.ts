@@ -5,6 +5,7 @@ import { CreateOficinesComponent } from '../create-oficines/create-oficines.comp
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateOficinaComponent } from '../update-oficina/update-oficina.component';
 import { FormControl } from '@angular/forms';
+import fuzzysearch from "fuzzysearch-ts";
 
 @Component({
   selector: 'app-admin-modifyoficines',
@@ -152,11 +153,11 @@ export class AdminMOComponent implements OnInit {
   
   filterOficines(value: string) {
 
-    const valueLowerCase = value.toLowerCase();
+    const valueLowerCase = value.trim().toLowerCase();
     this.filteredOficines = this.oficines.filter(oficina => {
       const nomOficinaLowerCase = oficina.nomOficina.toLowerCase();
-      const trimmedOficinaName = nomOficinaLowerCase.replace('acme ', '');
-      return trimmedOficinaName.startsWith(valueLowerCase);
+      const trimmedOficinaName = nomOficinaLowerCase.replace('acme ', '').trim();
+      return fuzzysearch(valueLowerCase,nomOficinaLowerCase);
     });
   }
 

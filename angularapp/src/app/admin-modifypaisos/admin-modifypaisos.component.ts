@@ -6,7 +6,7 @@ import { CreatePaisComponent } from '../create-pais/create-pais.component';
 import { UpdatePaisComponent } from '../update-pais/update-pais.component';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
-import fuzzysearch from 'fuzzysearch-ts';
+import fuzzysearch from "fuzzysearch-ts";
 
 @Component({
   selector: 'app-admin-modifypaisos',
@@ -156,6 +156,7 @@ export class AdminMPComponent implements OnInit {
 
       
       return fuzzysearch(valueLowerCase, nomPaisLowerCase);
+
     });
   }
 
