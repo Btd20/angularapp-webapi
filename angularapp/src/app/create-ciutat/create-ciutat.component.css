@@ -30,6 +30,7 @@
   color: var(--txt-g1) !important;
   letter-spacing: .8px !important;
   font-weight: 900 !important;
+  text-align: center !important;
   text-transform: uppercase !important;
   padding-bottom: 10px;
 }

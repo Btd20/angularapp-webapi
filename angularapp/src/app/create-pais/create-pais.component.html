@@ -2,12 +2,11 @@
   <h2 class="titl-dialog">Crear País</h2>
   <form [formGroup]="paisForm" (ngSubmit)="createPais()" class="container-flex">
     <mat-form-field appearance="outline">
-      <mat-label class="input-ciutat">Nom del País</mat-label>
+      <mat-label class="input-ciutat">Nom del país</mat-label>
       <input matInput formControlName="nomPais" required class="input-ciutat2">
     </mat-form-field>
-    <br>
     <mat-dialog-actions>
-      <button mat-raised-button class="btn btn-create" type="submit">Acceptar</button>
+      <button mat-raised-button class="btn btn-create" type="submit">Crear</button>
       <button mat-button type="button" class="btn btn-create" (click)="cancel()">Cancelar</button>
     </mat-dialog-actions>
   </form>
