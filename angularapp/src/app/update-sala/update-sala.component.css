@@ -1,13 +1,10 @@
 .container-popup {
   background-color: var(--bg-2);
+  padding: 25px;
 }
 
 .mat-mdc-form-field {
-  padding-top: 22px;
-}
-
-.mdc-dialog .mdc-dialog__content {
-  padding: 2.5px 24px 2.5px 24px;
+  padding-top: 5px;
 }
 
 .mat-mdc-dialog-container {
@@ -22,6 +19,8 @@
   letter-spacing: .8px !important;
   font-weight: 900 !important;
   text-transform: uppercase !important;
+  text-align: center !important;
+  font-size: 1.8rem;
 }
 
 /*--TXT USUARI--*/

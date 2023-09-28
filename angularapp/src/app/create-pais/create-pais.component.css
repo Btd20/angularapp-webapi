@@ -1,7 +1,21 @@
 .container-popup {
   background-color: var(--bg-2);
-  padding: 25px;
+  padding: 50px;
 }
+
+.mat-mdc-form-field {
+  padding-top: 5px;
+}
+
+.mat-mdc-dialog-container {
+  --mdc-dialog-subhead-color: var(--txt-g1);
+  --mdc-dialog-subhead-font: var(--fontR);
+}
+
+.mdc-dialog .mdc-dialog__content {
+  padding: 0px !important;
+}
+
 
 .container-flex {
   display: flex !important;
