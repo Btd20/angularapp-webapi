@@ -131,7 +131,6 @@ import { ProvageoipComponent } from './provageoip/provageoip.component';
     VistaReservaCiutat,
     VistaReservaOficina,
     CreateReservaComponent,
-    UpdateReservaComponent,
     ProvageoipComponent
 
   ],

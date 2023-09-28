@@ -6,6 +6,7 @@ import { CreatePaisComponent } from '../create-pais/create-pais.component';
 import { UpdatePaisComponent } from '../update-pais/update-pais.component';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import fuzzysearch from 'fuzzysearch-ts';
 
 @Component({
   selector: 'app-admin-modifypaisos',
@@ -148,11 +149,27 @@ export class AdminMPComponent implements OnInit {
   }
 
   filterPaisos(value: string) {
-
     const valueLowerCase = value.toLowerCase();
+
     this.filteredPaisos = this.paisos.filter(pais => {
       const nomPaisLowerCase = pais.nomPais.toLowerCase();
-      return nomPaisLowerCase.startsWith(valueLowerCase);
+
+      
+      return fuzzysearch(valueLowerCase, nomPaisLowerCase);
     });
   }
+
+
+  /* filterPaisos(value: string) {
+
+   const valueLowerCase = value.toLowerCase();
+   this.filteredPaisos = this.paisos.filter(pais => {
+     const nomPaisLowerCase = pais.nomPais.toLowerCase();
+     return nomPaisLowerCase.startsWith(valueLowerCase);
+   });
+ }
+ */
+
 }
+
+
