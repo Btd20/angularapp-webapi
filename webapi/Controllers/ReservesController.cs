@@ -140,7 +140,7 @@ namespace webapi.Controllers
                                     <h3><b>● Hora de Fi:</b> " + horaFiTimeSpan + @"</h3>
                                 </div>
                                 <div class=""footer"">
-                                    <img src=""https://i.imgur.com/kj6hX9K.png"" alt=""Footer"" width=""100%"">
+                                    <img src=""https://i.imgur.com/X1rcIu9.png"" alt=""Footer"" width=""100%"">
                                 </div>
                             </div>
                         </body>
