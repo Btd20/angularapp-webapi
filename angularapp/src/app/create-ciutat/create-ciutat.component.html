@@ -5,14 +5,13 @@
       <mat-label class="input-ciutat">Nom del país</mat-label>
       <input class="input-ciutat2" matInput formControlName="nomPais" required>
     </mat-form-field>
-    <br>
     <mat-form-field appearance="outline">
       <mat-label class="input-ciutat">Nom de la ciutat</mat-label>
       <input class="input-ciutat2" matInput formControlName="nomCiutat" required>
     </mat-form-field>
   </form>
     <mat-dialog-actions>
-      <button mat-raised-button class="btn btn-create" (click)="createCiutat()" type="submit">Acceptar</button>
+      <button mat-raised-button class="btn btn-create" (click)="createCiutat()" type="submit">Crear</button>
       <button mat-button type="button" class="btn btn-create" (click)="cancel()">Cancelar</button>
     </mat-dialog-actions>
 </div>

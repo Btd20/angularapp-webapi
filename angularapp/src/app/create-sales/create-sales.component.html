@@ -3,28 +3,25 @@
   <mat-dialog-content>
     <form [formGroup]="salesForm" class="container-flex">
       <mat-form-field appearance="outline">
-        <mat-label class="input-ciutat">Nom del País</mat-label>
+        <mat-label class="input-ciutat">Nom del país</mat-label>
         <input matInput class="input-ciutat2" formControlName="nomPais" required>
       </mat-form-field>
-      <br>
       <mat-form-field appearance="outline">
-        <mat-label class="input-ciutat">Nom de la Ciutat</mat-label>
+        <mat-label class="input-ciutat">Nom de la ciutat</mat-label>
         <input matInput class="input-ciutat2" formControlName="nomCiutat" required>
       </mat-form-field>
-      <br>
       <mat-form-field appearance="outline">
-        <mat-label class="input-ciutat">Oficina Name</mat-label>
+        <mat-label class="input-ciutat">Nom de la oficina</mat-label>
         <input matInput class="input-ciutat2" formControlName="nomOficina" placeholder="Enter Oficina Name" />
       </mat-form-field>
-      <br>
       <mat-form-field appearance="outline">
-        <mat-label class="input-ciutat">Nom de la Sala</mat-label>
+        <mat-label class="input-ciutat">Nom de la sala</mat-label>
         <input matInput class="input-ciutat2" formControlName="nomSala" required>
       </mat-form-field>
     </form>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-raised-button class="btn btn-create" (click)="createOficina()">Create</button>
-    <button mat-raised-button mat-dialog-close class="btn btn-create" (click)="cancel()">Cancel</button>
+    <button mat-raised-button class="btn btn-create" (click)="createOficina()">Crear</button>
+    <button mat-raised-button mat-dialog-close class="btn btn-create" (click)="cancel()">Cancelar</button>
   </mat-dialog-actions>
 </div>
