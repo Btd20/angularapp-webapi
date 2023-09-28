@@ -3,6 +3,14 @@
   padding: 25px;
 }
 
+.container-flex {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+}
+
+
 .mat-mdc-form-field {
   padding-top: 5px;
 }
@@ -20,7 +28,7 @@
   font-weight: 900 !important;
   text-transform: uppercase !important;
   text-align: center !important;
-  font-size: 1.8rem;
+  font-size: 1.8rem!important;
 }
 
 /*--TXT USUARI--*/

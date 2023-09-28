@@ -156,6 +156,7 @@ export class AdminMPComponent implements OnInit {
 
       
       return fuzzysearch(valueLowerCase, nomPaisLowerCase);
+
     });
   }
 
