@@ -7,6 +7,14 @@ using webapi.Areas.Identity.Data;
 using webapi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var emailConfig = builder.Configuration
+    .GetSection("EmailConfiguration")
+    .Get<EmailConfiguration>();
+builder.Services.AddSingleton(emailConfig);
+
+builder.Services.AddScoped<EmailService>();
+
 var connectionString = builder.Configuration.GetConnectionString("webapiContextConnection") ?? throw new InvalidOperationException("Connection string 'webapiContextConnection' not found.");
 
 builder.Services.AddDbContext<webapiContext>(options => options.UseSqlServer(connectionString));
