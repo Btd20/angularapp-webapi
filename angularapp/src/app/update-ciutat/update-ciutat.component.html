@@ -1,15 +1,15 @@
 <div class="container-popup">
-<h1 mat-dialog-title>Modifica la ciutat</h1>
-<mat-dialog-content>
-  <form [formGroup]="ciutatForm">
-    <mat-form-field appearance="outline">
-      <mat-label>Nom de la ciutat</mat-label>
-      <input matInput formControlName="nomCiutat" placeholder="Escriu la ciutat" />
-    </mat-form-field>
-  </form>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-raised-button class="btn" (click)="updateCiutat()">Acceptar</button>
-  <button mat-raised-button mat-dialog-close class="btn">Cancelar</button>
-</mat-dialog-actions>
+  <h1 mat-dialog-title class="titl-dialog">Modifica la ciutat</h1>
+  <mat-dialog-content>
+    <form [formGroup]="ciutatForm">
+      <mat-form-field appearance="outline">
+        <mat-label class="input-ciutat">Nom de la ciutat</mat-label>
+        <input matInput class="input-ciutat" formControlName="nomCiutat" placeholder="Escriu la ciutat" />
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button class="btn" (click)="updateCiutat()">Acceptar</button>
+    <button mat-raised-button mat-dialog-close class="btn">Cancelar</button>
+  </mat-dialog-actions>
 </div>

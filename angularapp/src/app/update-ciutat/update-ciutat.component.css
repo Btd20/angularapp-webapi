@@ -15,27 +15,23 @@
   --mdc-dialog-subhead-font: var(--fontR);
 }
 
-/*--TXT INPUT--*/
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
-  color: var(--txt-g3);
-  font-weight:600;
-  font-family:var(--fontK);
-}
-
-/*--TXT NOM DE...--*/
-.mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
-  color: var(--txt-g3);
-  font-weight: 500;
-  letter-spacing: .8px;
-}
-
 /*--TITOL--*/
-.mat-mdc-dialog-container .mdc-dialog__title {
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  line-height: 120%;
+.titl-dialog {
+  font-family: var(--fontR) !important;
+  color: var(--txt-g1) !important;
+  letter-spacing: .8px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
 }
+
+/*--TXT USUARI--*/
+.input-ciutat {
+  color: var(--txt-g1) !important;
+  font-weight: 800 !important;
+  letter-spacing: .8px !important;
+  font-family: var(--fontK) !important;
+}
+
 
 /*--BUTTONS--*/
 .mat-mdc-dialog-actions {
@@ -43,7 +39,7 @@
   padding-bottom: 10px;
 }
 
-  .mat-mdc-dialog-actions > button {
+.mat-mdc-dialog-actions > button {
     font-family: var(--fontK);
     font-weight: 900;
     color: var(--bg-2);
@@ -52,16 +48,13 @@
     border-color: var(--txt-g2);
     background-color: var(--txt-g1);
     transition: 0.3s ease-in-out;
+}
+
+  .mat-mdc-dialog-actions > button:hover {
+    color: var(--txt-g2);
+    letter-spacing: .2px;
+    border-color: var(--bg-2);
+    background-color: var(--bg-2);
+    transition: 0.3s ease-in-out;
   }
 
-.mat-mdc-dialog-actions > button:hover {
-  color: var(--txt-g2);
-  letter-spacing: .2px;
-  border-color: var(--bs-body-bg);
-  background-color: var(--bg-2);
-  transition: 0.3s ease-in-out;
-}
-
-.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline:active .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
-  border-color: var(--txt-g2);
-}
