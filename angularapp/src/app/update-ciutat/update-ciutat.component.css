@@ -1,5 +1,6 @@
 .container-popup {
   background-color: var(--bg-2);
+  padding:15px;
 }
 
 .mat-mdc-form-field {
