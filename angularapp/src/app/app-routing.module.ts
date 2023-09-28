@@ -33,6 +33,7 @@ import { AdminMOComponent } from './admin-modifyoficines/admin-modifyoficines.co
 import { AdminMPComponent } from './admin-modifypaisos/admin-modifypaisos.component';
 import { AdminMCComponent } from './admin-modifyciutats/admin-modifyciutats.component';
 import { AdminMRVComponent } from './admin-modifyreserves/admin-modifyreserves.component';
+import { ProvageoipComponent } from './provageoip/provageoip.component';
 
 const routes: Routes = [
   { path: 'reserves', component: ReservesComponent },
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'change-dates', component: UbicacioComponent },
   { path: 'reserves', component: ReservesComponent },
   { path: 'ferreserva/:meetingRoomID/:dataReserva/:horaInici/:horaFi/:userID', component: FerReservaComponent },
+  {path: 'geoip', component: ProvageoipComponent},
   
 
 

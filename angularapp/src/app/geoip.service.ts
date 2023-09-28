@@ -10,6 +10,6 @@ export class GeoIpService {
 
   // Exemple de mètode per fer una crida GET
   getData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${ipAddress}`);
+    return this.http.get<any>(`${this.apiUrl}`);
   }
 }

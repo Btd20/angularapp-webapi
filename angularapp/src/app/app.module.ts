@@ -74,6 +74,7 @@ import { SelectSala } from './select-sala/select-sala.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { CreateReservaComponent } from './create-reserva/create-reserva.component';
 import { UpdateReservaComponent } from './update-reserva/update-reserva.component';
+import { ProvageoipComponent } from './provageoip/provageoip.component';
 
 
 @NgModule({
@@ -130,7 +131,8 @@ import { UpdateReservaComponent } from './update-reserva/update-reserva.componen
     VistaReservaCiutat,
     VistaReservaOficina,
     CreateReservaComponent,
-    UpdateReservaComponent
+    UpdateReservaComponent,
+    ProvageoipComponent
 
   ],
   imports: [ 

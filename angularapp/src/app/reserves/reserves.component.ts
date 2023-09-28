@@ -22,8 +22,20 @@ export class ReservesComponent implements OnInit {
     if (userId !== null) {
       this.apiService.getReservesByUser(userId)
         .subscribe(reservas => {
-          this.reserves = reservas;
+          this.reserves = this.sortReservesByDate(reservas);
         });
     }
+  }
+
+  // mira que la data no hagi passat i ordena cronològicament les reserves per mostrar-les
+  private sortReservesByDate(reserves: any[]): any[] {
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+
+    const validReserves = reserves.filter(reserva => new Date(reserva.dataReserva) >= currentDate
+    )
+    console.log(currentDate );
+    return validReserves.sort((a, b) => new Date(a.dataReserva).getTime() - new Date(b.dataReserva).getTime()
+    );
   }
 }
