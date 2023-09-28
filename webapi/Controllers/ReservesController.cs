@@ -146,7 +146,7 @@ namespace webapi.Controllers
                         </body>
                         </html>";
 
-            _emailService.SendEmail(userEmail, "Confirmación de reserva", body);
+            _emailService.SendEmail(userEmail, "Confirmació de reserva", body);
 
             return CreatedAtAction("GetReserve", new { id = reserva.ReserveID }, reserva);
         }
