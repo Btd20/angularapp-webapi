@@ -32,6 +32,12 @@
   font-family: var(--fontK) !important;
 }
 
+.input-ciutat2 {
+  color: var(--txt-g3) !important;
+  font-weight: 800 !important;
+  letter-spacing: .8px !important;
+  font-family: var(--fontK) !important;
+}
 
 /*--BUTTONS--*/
 .mat-mdc-dialog-actions {
