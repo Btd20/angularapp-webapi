@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { CiutatsService } from '../ciutats.service';
 
 @Component({
   selector: 'app-oficines',
@@ -15,7 +16,12 @@ export class OficinesComponent implements OnInit {
   sales: any[] = [];
   isAdmin?: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute, private apiService: ApiService, private authService: AuthService) {
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private apiService: ApiService,
+    private authService: AuthService,
+    private ciutatsService: CiutatsService
+  ) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -36,7 +42,7 @@ export class OficinesComponent implements OnInit {
   }
 
   getOficinesByCiutats(pais: string, ciutat: string): void {
-    this.apiService.getOficinesByCiutats(pais, ciutat).subscribe(
+    this.ciutatsService.getOficinesByCiutats(pais, ciutat).subscribe(
       response => {
         this.oficina = response; 
       },

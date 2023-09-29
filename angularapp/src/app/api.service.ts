@@ -2,45 +2,29 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { PaisosService } from './paisos.service';
+import { CiutatsService } from './ciutats.service';
+import { OficinesService } from './oficines.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-//  private apiUrlPaisos = 'https://localhost:7240/Pais';
-  private apiUrlCiutats = 'https://localhost:7240/Ciutats';
   private apiUrlSales = 'https://localhost:7240/Sales';
-  private apiUrlOficines = 'https://localhost:7240/Oficines';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
   private apiUrlReserves = 'https://localhost:7240/Reserves';
 
   constructor(
     private http: HttpClient,
-    private paisosService: PaisosService
+    private paisosService: PaisosService,
+    private ciutatsService: CiutatsService,
+    private oficinesService: OficinesService,
+
   ) { }
-
- /* getPaisos() {
-    return this.http.get<any[]>(this.apiUrlPaisos);
-  }
-  */
-
-  getAllCiutats() {
-    return this.http.get<any[]>(this.apiUrlCiutats);
-  }
 
   getAllReserves(){
     return this.http.get<any[]>(this.apiUrlReserves);
   }
 
-  getCiutatsByPais(pais: string) {
-    const url = `${this.apiUrlCiutats}/pais/${pais}`;
-    return this.http.get<any[]>(url);
-  }
-
-  getAllOficines() {
-   
-    return this.http.get<any[]>(this.apiUrlOficines);
-  }
   getAllSales() {
     return this.http.get<any[]>(this.apiUrlSales);
   }
@@ -49,14 +33,6 @@ export class ApiService {
     const url = `https://localhost:7240/Oficines/pais/${pais}/ciutats/${ciutat}/oficines/${nomOficina}/sales`;
     return this.http.get<any[]>(url);
   }
-
-
-
-  getOficinesByCiutats(nomPais: string, nomCiutat: string) {
-    const url = `${this.apiUrlCiutats}/pais/${nomPais}/ciutats/${nomCiutat}/oficines`;
-    return this.http.get<any[]>(url);
-  }
-
 
   getUsuaris(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrlUsuaris).pipe(
@@ -94,23 +70,7 @@ export class ApiService {
     const url = `${this.apiUrlUsuaris}/${usuario.id}`;
     return this.http.put(url, usuario);
   }
- /* // CRUD PAISOS //
 
-  createPais(pais: any): Observable<any> {
-    return this.http.post<any>(this.apiUrlPaisos, pais);
-  }
-
-
-  deletePaisByNom(nomPais: string): Observable<any> {
-    const url = `${this.apiUrlPaisos}/nom/${nomPais}`;
-    return this.http.delete(url);
-  }
-
-  updatePais(pais: any): Observable<any> {
-    const url = `${this.apiUrlPaisos}/${pais.countryID}`; 
-    return this.http.put(url, pais);
-  }
- */
 
   guardarPais(username: string, country: string): void {
     const model = { Username: username, Country: country };
@@ -125,24 +85,6 @@ export class ApiService {
     );
   }
 
-
-  // CRUD CIUTATS
-
-  createCiutatsByName(nomPais: string, nomCiutat: string): Observable<any> {
-    const url = `${this.apiUrlCiutats}/${nomCiutat}?nomPais=${nomPais}`;
-    return this.http.post<any>(url, {});
-  }
-
-  updateCiutat(ciutat: any): Observable<any> {
-    const url = `${this.apiUrlCiutats}/${ciutat.cityID}`;
-    return this.http.put(url, ciutat);
-  }
-
-  deleteCiutatsByNom(nomCiutat: string): Observable<any> {
-    const url = `${this.apiUrlCiutats}/nom/${nomCiutat}`;
-    return this.http.delete(url);
-  }
-
   guardarCiutat(username: string, city: string): void {
     const model = { Username: username, City: city };
 
@@ -154,24 +96,6 @@ export class ApiService {
         console.error('Error al guardar la ciutat:', error);
       }
     );
-  }
-
-
-  // CRUD OFICINES
-
-  createOficinesByNom(nomPais: string, nomCiutat: string, nomOficina: string): Observable<any> {
-    const url = `${this.apiUrlOficines}/Pais/${nomPais}/Ciutats/${nomCiutat}/Oficines/${nomOficina}`;
-    return this.http.post(url, {});
-  }
-
-  updateOficina(oficina: any): Observable<any> {
-    const url = `${this.apiUrlOficines}/${oficina.officeID}`;
-    return this.http.put(url, oficina);
-  }
-
-  deleteOficinesByNom(nomOficina: string): Observable<any> {
-    const url = `${this.apiUrlOficines}/nom/${nomOficina}`;
-    return this.http.delete(url);
   }
 
 

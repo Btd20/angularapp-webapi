@@ -6,6 +6,7 @@ import { CreateCiutatComponent } from '../create-ciutat/create-ciutat.component'
 import { UpdateCiutatComponent } from '../update-ciutat/update-ciutat.component';
 import { FormControl } from '@angular/forms';
 import fuzzysearch from 'fuzzysearch-ts';
+import { CiutatsService } from '../ciutats.service';
 
 
 
@@ -24,7 +25,8 @@ export class AdminMCComponent implements OnInit {
   ciutatsControl = new FormControl();
   filteredCiutats: any[] = [];
 
-  constructor(private apiService: ApiService, private authService: AuthService, private dialog:MatDialog) {
+  constructor(private authService: AuthService, private dialog: MatDialog, private ciutatsService: CiutatsService) {
+
     this.isAdmin = authService.isAdmin;
     this.filteredCiutats = this.ciutats.slice();
 
@@ -40,7 +42,7 @@ export class AdminMCComponent implements OnInit {
   }
 
   getCiutatsFromApi(): void {
-    this.apiService.getAllCiutats().subscribe(
+    this.ciutatsService.getAllCiutats().subscribe(
       response => {
         this.ciutats = response;
         this.filteredCiutats = this.ciutats.slice();
@@ -70,7 +72,7 @@ export class AdminMCComponent implements OnInit {
           return;
         }
 
-        this.apiService.createCiutatsByName(nomPais, nomCiutat).subscribe(
+        this.ciutatsService.createCiutatsByName(nomPais, nomCiutat).subscribe(
           response => {
             console.log('Ciutat creada: ', response);
             this.getCiutatsFromApi();
@@ -86,7 +88,7 @@ export class AdminMCComponent implements OnInit {
   deleteCiutats(ciutat: any): void {
     const confirmar = confirm('Estàs segur de que vols eliminar la ciutat?');
     if (confirmar) {
-      this.apiService.deleteCiutatsByNom(ciutat.nomCiutat).subscribe(
+      this.ciutatsService.deleteCiutatsByNom(ciutat.nomCiutat).subscribe(
         response => {
           console.log('Ciudad eliminada: ', response);
           this.getCiutatsFromApi();
@@ -108,7 +110,7 @@ export class AdminMCComponent implements OnInit {
       if (result) {
 
         console.log('Resultat:', JSON.stringify(result));
-        this.apiService.updateCiutat(result).subscribe(
+        this.ciutatsService.updateCiutat(result).subscribe(
           response => {
             console.log('Ciutat actualitzat:', response);
             this.getCiutatsFromApi();

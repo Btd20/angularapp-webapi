@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PaisosService } from '../paisos.service';
 import { ApiService } from '../api.service';
+import { CiutatsService } from '../ciutats.service';
 
 @Component({
   selector: 'app-ubicacio',
@@ -21,7 +22,12 @@ export class UbicacioComponent {
   selectedCity: string | undefined;
   selectedOffice: string | undefined;
 
-  constructor(private paisosService: PaisosService, private http: HttpClient, private apiService: ApiService) { }
+  constructor(private paisosService: PaisosService,
+    private http: HttpClient,
+    private apiService: ApiService,
+    private ciutatsService: CiutatsService
+
+  ) { }
 
   ngOnInit(): void {
     this.getPaisosFromApi();
@@ -58,7 +64,7 @@ export class UbicacioComponent {
   }
 
   getAllCiutatsFromApi(): void {
-    this.apiService.getCiutatsByPais(this.selectedCountry ?? '').subscribe(
+    this.ciutatsService.getCiutatsByPais(this.selectedCountry ?? '').subscribe(
       response => {
         this.ciutats = response;
         if (this.ciutats.length > 0) {
@@ -75,7 +81,7 @@ export class UbicacioComponent {
   }
 
   getAllOficinesFromApi(): void {
-    this.apiService.getOficinesByCiutats(this.selectedCountry ?? '', this.selectedCity ?? '').subscribe(
+    this.ciutatsService.getOficinesByCiutats(this.selectedCountry ?? '', this.selectedCity ?? '').subscribe(
       response => {
         this.oficines = response;
         if (this.oficines.length > 0) {

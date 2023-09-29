@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { CiutatsService } from '../ciutats.service';
 
 @Component({
   selector: 'app-ciutats',
@@ -14,8 +14,13 @@ export class CiutatsComponent implements OnInit {
   oficines: any[] = [];
   isAdmin?: boolean;
 
-  constructor(private apiService: ApiService, private router: Router,
-    private route: ActivatedRoute, private authService: AuthService) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private ciutatsService: CiutatsService
+  ) {
+
     this.isAdmin = authService.isAdmin;
   }
 
@@ -33,7 +38,7 @@ export class CiutatsComponent implements OnInit {
 
   getCiutatsFromApi(): void {
     if (this.pais) {
-      this.apiService.getCiutatsByPais(this.pais).subscribe(
+      this.ciutatsService.getCiutatsByPais(this.pais).subscribe(
         response => {
           this.ciutats = response;
         },
@@ -45,7 +50,7 @@ export class CiutatsComponent implements OnInit {
   }
 
   getOficinesByCiutats(nomPais: string, nomCiutat: string): void {
-    this.apiService.getOficinesByCiutats(nomPais, nomCiutat).subscribe(
+    this.ciutatsService.getOficinesByCiutats(nomPais, nomCiutat).subscribe(
       response => {
         this.oficines = response;
         this.router.navigate(['ciutats', nomPais, 'oficines', nomCiutat]);
@@ -57,7 +62,7 @@ export class CiutatsComponent implements OnInit {
   }
 
   getAllCiutatsFromApi(): void {
-    this.apiService.getAllCiutats().subscribe(
+    this.ciutatsService.getAllCiutats().subscribe(
       response => {
         this.ciutats = response;
       },
