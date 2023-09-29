@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UpdateOficinaComponent } from '../update-oficina/update-oficina.component';
 import { FormControl } from '@angular/forms';
 import fuzzysearch from "fuzzysearch-ts";
+import { OficinesService } from '../oficines.service';
 
 @Component({
   selector: 'app-admin-modifyoficines',
@@ -23,7 +24,7 @@ export class AdminMOComponent implements OnInit {
   oficinesControl = new FormControl();
   filteredOficines: any[] = [];
 
-  constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog) {
+  constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog, private oficinesService: OficinesService) {
     this.isAdmin = authService.isAdmin;
     this.filteredOficines = this.oficines.slice();
 
@@ -39,7 +40,7 @@ export class AdminMOComponent implements OnInit {
   }
 
   getOficinesFromApi(): void {
-    this.apiService.getAllOficines().subscribe(
+    this.oficinesService.getAllOficines().subscribe(
       (response: any[]) => {
         this.oficines = response;
         this.filteredOficines = this.oficines.slice();
@@ -71,7 +72,7 @@ export class AdminMOComponent implements OnInit {
           return;
         }
 
-        this.apiService.createOficinesByNom(nomPais, nomCiutat, nomOficina).subscribe(
+        this.oficinesService.createOficinesByNom(nomPais, nomCiutat, nomOficina).subscribe(
           response => {
             console.log('Oficina creada: ', response);
             this.getOficinesFromApi();
@@ -105,7 +106,7 @@ export class AdminMOComponent implements OnInit {
           return;
         }
 
-        this.apiService.updateOficina(result).subscribe(
+        this.oficinesService.updateOficina(result).subscribe(
           response => {
             console.log('Oficina actualitzada:', response);
             this.getOficinesFromApi();
@@ -122,7 +123,7 @@ export class AdminMOComponent implements OnInit {
   deleteOficina(oficina: any): void {
     const confirmar = confirm('Estàs segur de que vols eliminar la oficina?');
     if (confirmar) {
-      this.apiService.deleteOficinesByNom(oficina.nomOficina).subscribe(
+      this.oficinesService.deleteOficinesByNom(oficina.nomOficina).subscribe(
         response => {
           console.log('Oficina eliminada: ', response);
           this.getOficinesFromApi();

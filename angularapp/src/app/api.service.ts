@@ -4,6 +4,7 @@ import { Observable, tap } from 'rxjs';
 import { PaisosService } from './paisos.service';
 import { CiutatsService } from './ciutats.service';
 import { OficinesService } from './oficines.service';
+import { ReservesService } from './reserves.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,16 @@ import { OficinesService } from './oficines.service';
 export class ApiService {
   private apiUrlSales = 'https://localhost:7240/Sales';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
-//  private apiUrlReserves = 'https://localhost:7240/Reserves';
 
   constructor(
     private http: HttpClient,
     private paisosService: PaisosService,
     private ciutatsService: CiutatsService,
     private oficinesService: OficinesService,
+    private reservesService: ReservesService,
 
   ) { }
 
-  getAllReserves(){
-    return this.http.get<any[]>(this.apiUrlReserves);
-  }*/
 
   getAllSales() {
     return this.http.get<any[]>(this.apiUrlSales);
@@ -129,30 +127,4 @@ export class ApiService {
     return this.http.put(url, sala);
   }
 
-  // CRUD RESERVES
-
-  /*CreateReserva(meetingRoomID: number, dataReserva: string, horaInici: string, horaFi: string, userId: string): Observable<any> {
-    const url = `${this.apiUrlReserves}/FerReserva/${meetingRoomID}/${dataReserva}/${horaInici}/${horaFi}/${userId}`;
-    return this.http.post<any>(url, {});
-  }
-
-  eliminarReserva(id: string): Observable<any> {
-    const url = `${this.apiUrlReserves}/${id}`;
-    return this.http.delete(url);
-  }
-
-  getReservesByUser(userId: string) {
-    const url = `${this.apiUrlReserves}/GetReservesByUser/${userId}`;
-    return this.http.get<any[]>(url);
-  }
-
-  getReserve(reserveId: number): Observable<any> {
-    const url = `${this.apiUrlReserves}/${reserveId}`;
-    return this.http.get<any>(url);
-  }
-
-  updateReserva(id: number, novaHoraInici: string, novaHoraFi: string, novaDataReserva: string): Observable<any> {
-    const url = `${this.apiUrlReserves}/${id}/${novaHoraInici}/${novaHoraFi}/${novaDataReserva}`;
-    return this.http.put(url, null);
-  }*/
 }

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { CiutatsService } from '../ciutats.service';
+import { OficinesService } from '../oficines.service';
 
 @Component({
   selector: 'app-oficines',
@@ -20,7 +21,8 @@ export class OficinesComponent implements OnInit {
     private route: ActivatedRoute,
     private apiService: ApiService,
     private authService: AuthService,
-    private ciutatsService: CiutatsService
+    private ciutatsService: CiutatsService,
+    private oficinesService: OficinesService
   ) {
     this.isAdmin = authService.isAdmin;
   }
@@ -53,7 +55,7 @@ export class OficinesComponent implements OnInit {
   }
 
   getAllOficinesFromApi(): void {
-    this.apiService.getAllOficines().subscribe(
+    this.oficinesService.getAllOficines().subscribe(
       response => {
         this.oficina = response; 
       },
