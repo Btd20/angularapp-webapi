@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { SalesService } from '../sales.service';
 
 @Component({
   selector: 'app-sales',
@@ -16,7 +17,9 @@ export class SalesComponent implements OnInit {
   isAdmin?: boolean;
 
   constructor(private router: Router, private route: ActivatedRoute,
-    private apiService: ApiService, private authService: AuthService) {
+    private apiService: ApiService, private authService: AuthService,
+    private salesService: SalesService
+  ) {
     this.isAdmin = authService.isAdmin;
   }
 
@@ -36,7 +39,7 @@ export class SalesComponent implements OnInit {
   }
 
   getAllSalesFromApi(): void {
-    this.apiService.getAllSales().subscribe(
+    this.salesService.getAllSales().subscribe(
       response => {
         this.sales = response;
       },

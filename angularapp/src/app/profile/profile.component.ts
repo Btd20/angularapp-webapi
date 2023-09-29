@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { UsuarisService } from '../usuaris.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
   profileImageUrl: string | undefined;
 
-  constructor(private http: HttpClient, private apiService: ApiService) { }
+  constructor(private http: HttpClient, private apiService: ApiService, private usuarisService: UsuarisService) { }
 
   ngOnInit(): void {
     this.getUsuarisFromApi();
@@ -26,7 +27,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getUsuarisFromApi(): void {
-    this.apiService.getUsuaris().subscribe(
+    this.usuarisService.getUsuaris().subscribe(
       response => {
       },
       error => {

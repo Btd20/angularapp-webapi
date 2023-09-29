@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { UsuarisService } from '../usuaris.service';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,14 @@ import { ApiService } from '../api.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private usuarisService: UsuarisService) { }
 
 ngOnInit(): void {
   this.getUsuarisFromApi();
 }
 
 getUsuarisFromApi(): void {
-  this.apiService.getUsuaris().subscribe(
+  this.usuarisService.getUsuaris().subscribe(
     response => {
     },
     error => {

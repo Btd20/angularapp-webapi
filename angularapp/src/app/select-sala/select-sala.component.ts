@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Injectable, Input } from '@angular/core';
 import { ApiService } from '../api.service'; 
 import { Observable, Subject } from 'rxjs';
+import { SalesService } from '../sales.service';
 
 
 interface Sala {
@@ -22,7 +23,7 @@ export class SelectSala implements OnInit {
   sales: Sala[] = [];
   selectedSala: number = 0;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private salesService: SalesService) { }
 
   ngOnInit(): void {
 
@@ -35,7 +36,7 @@ export class SelectSala implements OnInit {
   } 
 
   getAllSalesFromApi(): void {
-    this.apiService.getAllSales().subscribe(
+    this.salesService.getAllSales().subscribe(
       response => {
         this.sales = response.map(sala => ({ value: sala.meetingRoomID, nomSala: sala.nomSala }));
         if (this.sales.length > 0) {

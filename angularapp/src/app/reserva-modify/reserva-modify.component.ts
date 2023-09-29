@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { ReservesService } from '../reserves.service';
+import { SalesService } from '../sales.service';
 
 @Component({
   selector: 'reserva-modify',
@@ -18,7 +19,7 @@ export class ReservaMComponent {
   horaFi: any;
   dataReserva: any;
 
-  constructor(private route: ActivatedRoute, private reservesService: ReservesService, private apiService: ApiService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private reservesService: ReservesService, private apiService: ApiService, private router: Router, private salesService : SalesService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -46,7 +47,7 @@ export class ReservaMComponent {
   }
 
   getAllSalesFromApi(): void {
-    this.apiService.getAllSales().subscribe(
+    this.salesService.getAllSales().subscribe(
       response => {
         this.sales = response;
       },

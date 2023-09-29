@@ -6,6 +6,7 @@ import { CreateSalesComponent } from '../create-sales/create-sales.component';
 import { UpdateSalaComponent } from '../update-sala/update-sala.component';
 import { FormControl } from '@angular/forms';
 import fuzzysearch from "fuzzysearch-ts";
+import { SalesService } from '../sales.service';
 
 @Component({
   selector: 'app-admin-modifyrooms',
@@ -24,7 +25,12 @@ export class AdminMRComponent implements OnInit {
   salesControl = new FormControl();
   filteredSales: any[] = [];
 
-  constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog ) {
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService,
+    private dialog: MatDialog,
+    private salesService: SalesService
+  ) {
     this.isAdmin = authService.isAdmin;
     this.filteredSales = this.sales.slice();
 
@@ -40,7 +46,7 @@ export class AdminMRComponent implements OnInit {
   }
 
   getSalesFromApi(): void {
-    this.apiService.getAllSales().subscribe(
+    this.salesService.getAllSales().subscribe(
       response => {
         this.sales = response;
         this.filteredSales = this.sales.slice();
@@ -73,7 +79,7 @@ export class AdminMRComponent implements OnInit {
         }
 
         console.log('Valores desestructurados:', nomPais, nomCiutat, nomOficina);
-        this.apiService.createSalesByNom(nomPais, nomCiutat, nomOficina, nomSala).subscribe(
+        this.salesService.createSalesByNom(nomPais, nomCiutat, nomOficina, nomSala).subscribe(
 
           response => {
             console.log('Sala creada: ', response);
@@ -90,7 +96,7 @@ export class AdminMRComponent implements OnInit {
   deleteSala(sala: any): void {
     const confirmar = confirm('Estàs segur de que vols eliminar la sala?');
     if (confirmar) {
-      this.apiService.deleteSalesByNom(sala.nomSala).subscribe(
+      this.salesService.deleteSalesByNom(sala.nomSala).subscribe(
         response => {
           console.log('Sala eliminada: ', response);
           this.getSalesFromApi();
@@ -123,7 +129,7 @@ export class AdminMRComponent implements OnInit {
           return;
         }
 
-        this.apiService.updateSala(result).subscribe(
+        this.salesService.updateSala(result).subscribe(
           response => {
             console.log('Sala actualitzada:', response);
             this.getSalesFromApi();

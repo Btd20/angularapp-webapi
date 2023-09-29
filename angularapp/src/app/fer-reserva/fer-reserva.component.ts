@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { ReservesService } from '../reserves.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SelectSala } from '../select-sala/select-sala.component';
+import { SalesService } from '../sales.service';
 
 @Component({
   selector: 'app-ferreserva',
@@ -30,7 +31,7 @@ export class FerReservaComponent implements OnInit {
   nomSala: string = '';
 
 
-  constructor(private apiService: ApiService, private reservesService: ReservesService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private apiService: ApiService, private reservesService: ReservesService, private route: ActivatedRoute, private router: Router, private salesService: SalesService) { }
   
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -94,7 +95,7 @@ export class FerReservaComponent implements OnInit {
   }
 
   getAllSalesFromApi(): void {
-    this.apiService.getAllSales().subscribe(
+    this.salesService.getAllSales().subscribe(
       response => {
         this.sales = response;
       },

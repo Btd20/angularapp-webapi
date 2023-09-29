@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PaisosService } from '../paisos.service';
 import { ApiService } from '../api.service';
 import { CiutatsService } from '../ciutats.service';
+import { UsuarisService } from '../usuaris.service';
 
 @Component({
   selector: 'app-ubicacio',
@@ -25,7 +26,8 @@ export class UbicacioComponent {
   constructor(private paisosService: PaisosService,
     private http: HttpClient,
     private apiService: ApiService,
-    private ciutatsService: CiutatsService
+    private ciutatsService: CiutatsService,
+    private usuarisService: UsuarisService
 
   ) { }
 
@@ -100,7 +102,7 @@ export class UbicacioComponent {
   guardarPais(): void {
     if (this.selectedCountry) {
       const username = sessionStorage.getItem('username') ?? '';
-      this.apiService.guardarPais(username, this.selectedCountry);
+      this.usuarisService.guardarPais(username, this.selectedCountry);
       sessionStorage.setItem('pais', this.selectedCountry);
 
       this.getAllCiutatsFromApi();
@@ -110,7 +112,7 @@ export class UbicacioComponent {
   guardarCiutat(): void {
     if (this.selectedCity) {
       const username = sessionStorage.getItem('username') ?? '';
-      this.apiService.guardarCiutat(username, this.selectedCity);
+      this.usuarisService.guardarCiutat(username, this.selectedCity);
       sessionStorage.setItem('ciutat', this.selectedCity);
 
       this.getAllOficinesFromApi();
@@ -121,7 +123,7 @@ export class UbicacioComponent {
   guardarOficina(): void {
     if (this.selectedOffice) {
       const username = sessionStorage.getItem('username') ?? '';
-      this.apiService.guardarOficina(username, this.selectedOffice);
+      this.usuarisService.guardarOficina(username, this.selectedOffice);
       sessionStorage.setItem('oficina', this.selectedOffice);
     }
   }

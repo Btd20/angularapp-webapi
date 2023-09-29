@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { FormControl } from '@angular/forms';
 import fuzzysearch from "fuzzysearch-ts";
+import { UsuarisService } from '../usuaris.service';
 
 @Component({
   selector: 'app-admin',
@@ -18,7 +19,7 @@ export class AdminComponent implements OnInit {
   userControl = new FormControl();
   filteredUsers: any[] = [];
 
-  constructor(private apiService: ApiService, private authService: AuthService) {
+  constructor(private apiService: ApiService, private authService: AuthService, private usuarisService: UsuarisService) {
     this.isAdmin = authService.isAdmin;
 
     this.filteredUsers = this.usuaris.slice();
@@ -35,7 +36,7 @@ export class AdminComponent implements OnInit {
   }
 
   getUsuarisFromApi(): void {
-    this.apiService.getUsuaris().subscribe(
+    this.usuarisService.getUsuaris().subscribe(
       response => {
         this.usuaris = response;
         this.filteredUsers = this.usuaris.slice();
@@ -51,7 +52,7 @@ export class AdminComponent implements OnInit {
   }
 
   eliminarUsuari(id: string): void {
-    this.apiService.eliminarUsuari(id).subscribe(
+    this.usuarisService.eliminarUsuari(id).subscribe(
       () => {
         console.log('Usuari eliminat.');
         this.getUsuarisFromApi();
@@ -65,7 +66,7 @@ export class AdminComponent implements OnInit {
   guardarCanvis(usuario: any): void {
     console.log('Guardar canvis del usuari:', usuario);
 
-    this.apiService.actualitzarUsuari(usuario).subscribe(
+    this.usuarisService.actualitzarUsuari(usuario).subscribe(
       response => {
         console.log('Canvis guardats');
         usuario.editando = false;
