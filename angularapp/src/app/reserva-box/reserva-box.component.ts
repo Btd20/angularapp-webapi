@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ApiService } from '../api.service';
+import { ReservesService } from '../reserves.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +12,7 @@ export class ReservaBoxComponent {
   @Input() reserva: any;
   username: string | null = sessionStorage.getItem("username");
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private reservesService: ReservesService, private router: Router) { }
 
   ngOnInit() {
     console.log(this.reserva);
@@ -25,7 +26,7 @@ export class ReservaBoxComponent {
   }
 
   eliminarReserva(id: string): void {
-    this.apiService.eliminarReserva(id).subscribe(
+    this.reservesService.eliminarReserva(id).subscribe(
       () => {
         console.log('Reserva eliminada.');
         //this.getAllReservesFromApi();

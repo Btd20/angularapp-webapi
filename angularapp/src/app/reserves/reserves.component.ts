@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
+import { ReservesService } from '../reserves.service';
 
 @Component({
   selector: 'app-reserves',
@@ -13,14 +14,14 @@ export class ReservesComponent implements OnInit {
   
 
   constructor(private apiService: ApiService,
-    private router: Router, private authService: AuthService) {
+    private router: Router, private authService: AuthService, private reservesService: ReservesService) {
   }
 
   ngOnInit(): void {
     const userId = sessionStorage.getItem('id');
 
     if (userId !== null) {
-      this.apiService.getReservesByUser(userId)
+      this.reservesService.getReservesByUser(userId)
         .subscribe(reservas => {
           this.reserves = this.sortReservesByDate(reservas);
         });

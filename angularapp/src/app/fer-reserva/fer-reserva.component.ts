@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ApiService } from '../api.service';
+import { ReservesService } from '../reserves.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SelectSala } from '../select-sala/select-sala.component';
 
@@ -29,7 +30,7 @@ export class FerReservaComponent implements OnInit {
   nomSala: string = '';
 
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private apiService: ApiService, private reservesService: ReservesService, private route: ActivatedRoute, private router: Router) { }
   
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -75,7 +76,7 @@ export class FerReservaComponent implements OnInit {
 
     console.log(`id de la sala: ${meetingRoomID}, Data Reserva: ${dataReserva}, Hora inici: ${horaInici}, Hora fi: ${horaFi}, idUsuari: ${this.userid}`);
 
-    this.apiService.CreateReserva(meetingRoomID, dataReserva, horaInici, horaFi, userID).subscribe(
+    this.reservesService.CreateReserva(meetingRoomID, dataReserva, horaInici, horaFi, userID).subscribe(
       (resposta) => {
         console.log('Reserva creada amb èxit:', resposta);
         this.router.navigate(['/reserves']);
