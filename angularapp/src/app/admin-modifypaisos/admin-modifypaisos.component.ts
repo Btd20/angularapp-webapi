@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreatePaisComponent } from '../create-pais/create-pais.component';
@@ -7,6 +6,7 @@ import { UpdatePaisComponent } from '../update-pais/update-pais.component';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import  fuzzysearch  from "fuzzysearch-ts";
+import { PaisosService } from '../paisos.service';
 
 @Component({
   selector: 'app-admin-modifypaisos',
@@ -22,7 +22,7 @@ export class AdminMPComponent implements OnInit {
   filteredPaisos: any[] = [];
 
   constructor(
-    private apiService: ApiService, private authService: AuthService, private dialog: MatDialog, private route: ActivatedRoute) {
+    private paisosService: PaisosService, private authService: AuthService, private dialog: MatDialog, private route: ActivatedRoute) {
     this.isAdmin = authService.isAdmin;
     this.filteredPaisos = this.paisos.slice();
 
@@ -39,7 +39,7 @@ export class AdminMPComponent implements OnInit {
   }
 
   getPaisosFromApi(): void {
-    this.apiService.getPaisos().subscribe(
+    this.paisosService.getPaisos().subscribe(
       response => {
         this.paisos = response;
         this.filteredPaisos = this.paisos.slice();
@@ -65,7 +65,7 @@ export class AdminMPComponent implements OnInit {
         }
 
         const nouPais = { nomPais };
-        this.apiService.createPais(nouPais).subscribe(
+        this.paisosService.createPais(nouPais).subscribe(
           response => {
             console.log('País creat: ', response);
             this.getPaisosFromApi();
@@ -101,7 +101,7 @@ export class AdminMPComponent implements OnInit {
         }
 
 
-        this.apiService.updatePais(result).subscribe(
+        this.paisosService.updatePais(result).subscribe(
           response => {
             console.log('País actualitzat:', response);
             this.getPaisosFromApi();
@@ -120,7 +120,7 @@ export class AdminMPComponent implements OnInit {
 
   deletePais(pais: any): void {
     if (confirm('Estás seguro de que quieres eliminar este país?')) {
-      this.apiService.deletePaisByNom(pais.nomPais).subscribe(
+      this.paisosService.deletePaisByNom(pais.nomPais).subscribe(
         response => {
           console.log('País eliminat: ', response);
           this.getPaisosFromApi();

@@ -1,23 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
+import { PaisosService } from './paisos.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrlPaisos = 'https://localhost:7240/Pais';
+//  private apiUrlPaisos = 'https://localhost:7240/Pais';
   private apiUrlCiutats = 'https://localhost:7240/Ciutats';
   private apiUrlSales = 'https://localhost:7240/Sales';
   private apiUrlOficines = 'https://localhost:7240/Oficines';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
   private apiUrlReserves = 'https://localhost:7240/Reserves';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private paisosService: PaisosService
+  ) { }
 
-  getPaisos() {
+ /* getPaisos() {
     return this.http.get<any[]>(this.apiUrlPaisos);
   }
+  */
 
   getAllCiutats() {
     return this.http.get<any[]>(this.apiUrlCiutats);
@@ -89,7 +94,7 @@ export class ApiService {
     const url = `${this.apiUrlUsuaris}/${usuario.id}`;
     return this.http.put(url, usuario);
   }
-  // CRUD PAISOS //
+ /* // CRUD PAISOS //
 
   createPais(pais: any): Observable<any> {
     return this.http.post<any>(this.apiUrlPaisos, pais);
@@ -105,6 +110,7 @@ export class ApiService {
     const url = `${this.apiUrlPaisos}/${pais.countryID}`; 
     return this.http.put(url, pais);
   }
+ */
 
   guardarPais(username: string, country: string): void {
     const model = { Username: username, Country: country };

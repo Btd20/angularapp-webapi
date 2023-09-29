@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../api.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { PaisosService } from '../paisos.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-ubicacio',
@@ -20,7 +21,7 @@ export class UbicacioComponent {
   selectedCity: string | undefined;
   selectedOffice: string | undefined;
 
-  constructor(private apiService: ApiService, private http: HttpClient) { }
+  constructor(private paisosService: PaisosService, private http: HttpClient, private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.getPaisosFromApi();
@@ -45,7 +46,7 @@ export class UbicacioComponent {
   }
 
   getPaisosFromApi(): void {
-    this.apiService.getPaisos().subscribe(
+    this.paisosService.getPaisos().subscribe(
       response => {
         this.paisos = response;
       

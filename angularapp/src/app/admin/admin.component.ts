@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
 
     this.filteredUsers = this.usuaris.slice();
 
-    this.userControl = new FormControl(); // ¡Asegúrate de inicializar reservaControl!
+    this.userControl = new FormControl(); 
 
     this.userControl.valueChanges.subscribe(value => {
       this.filterUsers(value);
