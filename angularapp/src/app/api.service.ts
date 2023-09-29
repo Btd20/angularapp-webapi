@@ -11,7 +11,7 @@ import { OficinesService } from './oficines.service';
 export class ApiService {
   private apiUrlSales = 'https://localhost:7240/Sales';
   private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
-  private apiUrlReserves = 'https://localhost:7240/Reserves';
+//  private apiUrlReserves = 'https://localhost:7240/Reserves';
 
   constructor(
     private http: HttpClient,
@@ -23,7 +23,7 @@ export class ApiService {
 
   getAllReserves(){
     return this.http.get<any[]>(this.apiUrlReserves);
-  }
+  }*/
 
   getAllSales() {
     return this.http.get<any[]>(this.apiUrlSales);
@@ -131,7 +131,7 @@ export class ApiService {
 
   // CRUD RESERVES
 
-  CreateReserva(meetingRoomID: number, dataReserva: string, horaInici: string, horaFi: string, userId: string): Observable<any> {
+  /*CreateReserva(meetingRoomID: number, dataReserva: string, horaInici: string, horaFi: string, userId: string): Observable<any> {
     const url = `${this.apiUrlReserves}/FerReserva/${meetingRoomID}/${dataReserva}/${horaInici}/${horaFi}/${userId}`;
     return this.http.post<any>(url, {});
   }
@@ -154,6 +154,5 @@ export class ApiService {
   updateReserva(id: number, novaHoraInici: string, novaHoraFi: string, novaDataReserva: string): Observable<any> {
     const url = `${this.apiUrlReserves}/${id}/${novaHoraInici}/${novaHoraFi}/${novaDataReserva}`;
     return this.http.put(url, null);
-  }
-
+  }*/
 }

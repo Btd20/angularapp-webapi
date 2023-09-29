@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { ReservesService } from '../reserves.service';
 import { AuthService } from '../auth-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateReservaComponent } from '../create-reserva/create-reserva.component';
@@ -21,7 +22,7 @@ export class AdminMRVComponent implements OnInit {
   reservaControl = new FormControl();
   filteredReserves: any[] = [];
 
-  constructor(private apiService: ApiService, private authService: AuthService, private router: Router) {
+  constructor(private apiService: ApiService, private reservesService: ReservesService, private authService: AuthService, private router: Router) {
     this.isAdmin = authService.isAdmin;
     this.filteredReserves = this.reserves.slice();
 
@@ -37,7 +38,7 @@ export class AdminMRVComponent implements OnInit {
   }
 
   getAllReservesFromApi(): void {
-    this.apiService.getAllReserves().subscribe(
+    this.reservesService.getAllReserves().subscribe(
       response => {
         this.reserves = response;
         this.filteredReserves = this.reserves.slice(); 
@@ -64,7 +65,7 @@ export class AdminMRVComponent implements OnInit {
   }
 
   eliminarReserva(id: string): void {
-    this.apiService.eliminarReserva(id).subscribe(
+    this.reservesService.eliminarReserva(id).subscribe(
       () => {
         console.log('Reserva eliminada.');
         this.getAllReservesFromApi();

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { ReservesService } from '../reserves.service';
 
 @Component({
   selector: 'reserva-modify',
@@ -17,8 +18,7 @@ export class ReservaMComponent {
   horaFi: any;
   dataReserva: any;
 
-
-  constructor(private route: ActivatedRoute, private apiService: ApiService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private reservesService: ReservesService, private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -35,7 +35,7 @@ export class ReservaMComponent {
   }
 
   getAllReservesFromApi(): void {
-    this.apiService.getAllReserves().subscribe(
+    this.reservesService.getAllReserves().subscribe(
       response => {
         this.sales = response;
       },
@@ -57,7 +57,7 @@ export class ReservaMComponent {
   }
 
   eliminarReserva(id: string): void {
-    this.apiService.eliminarReserva(id).subscribe(
+    this.reservesService.eliminarReserva(id).subscribe(
       () => {
         console.log('Reserva eliminada.');
         this.router.navigate(['/reserves']);
@@ -71,7 +71,7 @@ export class ReservaMComponent {
   }
 
   loadReserva() {
-    this.apiService.getReserve(this.reservaId).subscribe(
+    this.reservesService.getReserve(this.reservaId).subscribe(
       (response) => {
         this.reserva = response;
         this.reserva.dataReserva = new Date(this.reserva.dataReserva).toISOString().split('T')[0]; // recordatori personal: el input no agafa format dd/mm/yyyy aixi que s'ha de formatejar
@@ -89,7 +89,7 @@ export class ReservaMComponent {
       dataReserva: this.reserva.dataReserva
     };
 
-    this.apiService.updateReserva(
+    this.reservesService.updateReserva(
       this.reservaId,
       reservaActualitzada.horaInici,
       reservaActualitzada.horaFi,
