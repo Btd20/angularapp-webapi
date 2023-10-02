@@ -2,6 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using webapi.Data;
 using webapi.Models;
+using Mjml.Net;
+using Microsoft.Extensions.Options;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace webapi.Controllers
 {
@@ -82,71 +85,22 @@ namespace webapi.Controllers
             // Envía el correo de confirmación
             var userEmail = ObtenerEmailPorUserId(userId);
 
-            var body = @"<!DOCTYPE html>
-                        <html lang=""es"">
-                        <head>
-                            <meta charset=""UTF-8"">
-                            <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
-                            <title>Confirmación de Reserva</title>
-                            <style>
-                                body {
-                                    font-family: Arial, sans-serif;
-                                    color: #202067; /* Texto en color azul oscuro */
-                                }
-                                .container {
-                                    max-width: 600px;
-                                    margin: 0 auto;
-                                    padding: 20px;
-                                    background-color: #f9f9f9;
-                                    border-radius: 10px;
-                                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                                }
-                                .header img {
-                                    max-width: 100%;
-                                    height: auto;
-                                    display: block;
-                                    margin: 0 auto;
-                                }
-                                .details {
-                                    margin-top: 20px;
-                                    text-align: left;
-                                }
-                                .details h3 {
-                                    margin: 10px 0;
-                                    font-size: 18px;
-                                    color: #202067;
-                                }
-                                .footer img {
-                                    max-width: 100%;
-                                    height: auto;
-                                    display: block;
-                                    margin: 20px auto 0;
-                                }
-                                h2 {
-                                    color: green;
-                                }
-                            </style>
-                        </head>
-                        <body>
-                            <div class=""container"">
-                                <div class=""header"">
-                                    <img src=""https://i.imgur.com/U6hSDAJ.png"" alt=""Portada"" width=""100%"">
-                                    <h2>La teva reserva ha sigut creada i confirmada amb èxit.</h2>
-                                </div>
-                                <div class=""details"">
-                                    <h3><b>  ● Sala:</b> " + sala.NomSala + @"</h3>
-                                    <h3><b>  ● Data de Reserva:</b> " + dataReservaDateTime.ToShortDateString() + @"</h3>
-                                    <h3><b>  ● Hora d'Inici:</b> " + horaIniciTimeSpan + @"</h3>
-                                    <h3><b>  ● Hora de Fi:</b> " + horaFiTimeSpan + @"</h3>
-                                </div>
-                                <div class=""footer"">
-                                    <img src=""https://i.imgur.com/X1rcIu9.png"" alt=""Footer"" width=""100%"">
-                                </div>
-                            </div>
-                        </body>
-                        </html>";
+            var mjmlRenderer = new MjmlRenderer();
+            var correu = System.IO.File.ReadAllText("./Emails/confirmacio_reserva.mjml");
 
-            _emailService.SendEmail(userEmail, "Confirmació de reserva", body);
+            correu = correu.Replace("{NomSala}", sala.NomSala);
+            correu = correu.Replace("{DataReserva}", dataReservaDateTime.ToShortDateString());
+            correu = correu.Replace("{HoraInici}", horaIniciTimeSpan.ToString());
+            correu = correu.Replace("{HoraFi}", horaFiTimeSpan.ToString());
+
+            var options = new MjmlOptions
+            {
+                Beautify = false
+            };
+
+            var (html, errors) = mjmlRenderer.Render(correu, options);
+
+            _emailService.SendEmail(userEmail, "Confirmació de reserva", html);
 
             return CreatedAtAction("GetReserve", new { id = reserva.ReserveID }, reserva);
         }
