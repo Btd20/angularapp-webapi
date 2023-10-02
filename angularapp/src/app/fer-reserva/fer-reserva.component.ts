@@ -16,7 +16,7 @@ export class FerReservaComponent implements OnInit {
   pais: string | null = sessionStorage.getItem('pais');
   ciutat: string | null = sessionStorage.getItem('ciutat');
   oficina: string | null = sessionStorage.getItem('oficina');
-
+  minDate: string = '';
   dia: string = '';
   horaInici: string = '';
   horaFi: string = '';
@@ -38,6 +38,7 @@ export class FerReservaComponent implements OnInit {
       this.paisReserva = params['pais'];
       this.ciutatReserva = params['ciutat'];
       this.oficinaReserva = params['oficina'];
+      this.minDate = this.dia;
 
       if (this.oficinaReserva) {
         this.getSalesByOfiFromApi();
@@ -60,6 +61,8 @@ export class FerReservaComponent implements OnInit {
     const minuts = String(dataActual.getMinutes()).padStart(2, '0');
     this.horaInici = `${hora}:${minuts}`;
     this.horaFi = `${hora}:${minuts}`;
+
+    this.minDate = this.dia;
   }
 
   reservarSala() {

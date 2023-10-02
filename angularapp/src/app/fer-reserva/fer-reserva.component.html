@@ -51,16 +51,16 @@
       <div class="res-titlb"><h2>hora</h2></div>
       <div class="res-subtitlb"><h4>comença:</h4></div>
       <input type="time" id="hora" name="start"
-             min="09:00" max="18:00" [(ngModel)]="horaInici">
+             min="09:00" max="18:00" step="900" [(ngModel)]="horaInici">
 
       <div class="res-subtitlb"><h4>acaba:</h4></div>
       <input type="time" id="hora" name="finish"
-             min="09:00" max="18:00" [(ngModel)]="horaFi">
+             min="09:00" max="18:00" step="900" [(ngModel)]="horaFi">
 
     </div>
     <div class="res-gen">
       <div class="res-titlb"> <h2>dia</h2></div>
-      <input type="date" id="day" name="day" [value]="dia" [(ngModel)]="dia" />
+      <input type="date" id="day" name="day"  [min]="minDate" [value]="dia" [(ngModel)]="dia" />
       <br />
     </div>
   </div>
