@@ -134,10 +134,10 @@ namespace webapi.Controllers
                                     <h2>La teva reserva ha sigut creada i confirmada amb èxit.</h2>
                                 </div>
                                 <div class=""details"">
-                                    <h3><b>● Sala:</b> " + sala.NomSala + @"</h3>
-                                    <h3><b>● Data de Reserva:</b> " + dataReservaDateTime.ToShortDateString() + @"</h3>
-                                    <h3><b>● Hora d'Inici:</b> " + horaIniciTimeSpan + @"</h3>
-                                    <h3><b>● Hora de Fi:</b> " + horaFiTimeSpan + @"</h3>
+                                    <h3><b>  ● Sala:</b> " + sala.NomSala + @"</h3>
+                                    <h3><b>  ● Data de Reserva:</b> " + dataReservaDateTime.ToShortDateString() + @"</h3>
+                                    <h3><b>  ● Hora d'Inici:</b> " + horaIniciTimeSpan + @"</h3>
+                                    <h3><b>  ● Hora de Fi:</b> " + horaFiTimeSpan + @"</h3>
                                 </div>
                                 <div class=""footer"">
                                     <img src=""https://i.imgur.com/X1rcIu9.png"" alt=""Footer"" width=""100%"">

@@ -7,6 +7,7 @@ using webapi.Areas.Identity.Data;
 using webapi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var emailKey = builder.Configuration["EMailKey"];
 
 var emailConfig = builder.Configuration
     .GetSection("EmailConfiguration")
