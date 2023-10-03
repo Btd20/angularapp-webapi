@@ -313,8 +313,10 @@ Lorem ipsum.<br>
 ##### ReservesController.cs
 Lorem ipsum.<br>
 ### 4.3 Models:
-
-### 4.4 BBDD SQL Server:
+Lorem ipsum.<br>
+### 4.4 Microserveis:
+Lorem ipsum.<br>
+### 4.5 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
 ##### dbo.AspNetUser
