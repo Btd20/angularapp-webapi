@@ -299,19 +299,44 @@ Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<
 ##### AuthController.cs
 Lorem ipsum.<br>
 ##### AdminController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats al administrador de l'aplicació.<br>
 ##### RolesController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats als rols d'usuari dintre de l'aplicació.<br>
 ##### PaisController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats als paisos de l'aplicació.<br>
 ##### CiutatsController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats a les ciutats de l'aplicació.<br>
 ##### OficinesController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats a les oficines de l'aplicació.<br>
 ##### SalesController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<br>
+
+**GET: api/GetSales**
+ - Torna totes les sales de la base de dades amb tota la seva informació en format JSON.<br>
+
+**GET: api/GetOficina/{id}**
+ - Torna la oficina amb la ID que se li passa, en format JSON.<br>
+
+**POST: api/CreateSales**
+ - Crea una nova sala de reunions utilitzant el nom de país, ciutat i oficina. <br>
+
+**POST: api/CreateSalesByNom/{id}**
+ - Crea una nova sala de reunions utilitzant el nom de país, ciutat i oficina. <br>
+
+**PUT: api/UpdateSales/{id}**
+ - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
+
+**DELETE: api/UpdateSales/{id}**
+ - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
+
+**DELETE: api/UpdateSales/{id}**
+ - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
+
+**GET: api/SalesExists/{id}**
+ - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
+ 
 ##### ReservesController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
 ### 4.3 Models:
 Lorem ipsum.<br>
 ### 4.4 Microserveis:
