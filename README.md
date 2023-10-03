@@ -335,7 +335,7 @@ Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<
 **GET: api/SalesExists/{id}**
  - Aquest métode privat comprova que la sala de reunions amb la ID introduida, existeix a la BBDD.<br>
  
-##### ReservesController.cs
+### ReservesController.cs
 Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
 ### 4.3 Models:
 Lorem ipsum.<br>
