@@ -326,14 +326,14 @@ Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<
 **PUT: api/UpdateSales/{id}**
  - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
 
-**DELETE: api/UpdateSales/{id}**
- - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
+**DELETE: api/DeleteSales/{id}**
+ - El métode elimina la sala de reunions amb la ID introduida per l'usuari.<br>
 
-**DELETE: api/UpdateSales/{id}**
- - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
+**DELETE: api/DeleteSalesByNom/{nomSala}**
+ - El métode elimina la sala de reunions amb el nom de la sala introduit per l'usuari.<br>
 
 **GET: api/SalesExists/{id}**
- - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
+ - Aquest métode privat comprova que la sala de reunions amb la ID introduida, existeix a la BBDD.<br>
  
 ##### ReservesController.cs
 Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
