@@ -314,8 +314,8 @@ Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<
 **GET: api/GetSales**
  - Torna totes les sales de la base de dades amb tota la seva informació en format JSON.<br>
 
-**GET: api/GetOficina/{id}**
- - Torna la oficina amb la ID que se li passa, en format JSON.<br>
+**GET: api/GetSala/{id}** 
+ - Torna la informació de la sala amb la ID que se li introdueix, en format JSON.<br>
 
 **POST: api/CreateSales**
  - Crea una nova sala de reunions utilitzant el nom de país, ciutat i oficina. <br>
