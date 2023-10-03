@@ -315,7 +315,17 @@ Lorem ipsum.<br>
 ### 4.3 Models:
 Lorem ipsum.<br>
 ### 4.4 Microserveis:
+Els microserveis no són més que programaris dividits per tal de que aquests tinguin una autonomía. Aquesta utilitat s'ha implementat per tal de que, en el cas de que caigui un servei, per exemple el de Reserva, no es vegi afectat també el servei de País. Es a dir, que tots els serveis en la mesura del possible, siguin autonoms i no depenguin dels altres serveis ja que això pot fer que, si cau un servei caiguin tots per dependre del anterior. 
+
+##### 4.4.1 API:
 Lorem ipsum.<br>
+##### 4.4.2 Idependència:
+Lorem ipsum.<br>
+##### 4.4.3 Comunicació entre serveis:
+Lorem ipsum.<br>
+##### 4.4.4 Manteniment i escalabilitat:
+Lorem ipsum.
+<br>
 ### 4.5 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
@@ -353,7 +363,7 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 **MeetingRoomID - FOREIGN KEY de [dbo.Sales] - int:** Identificador de la sala.<br>
 <br>
 ## 5. Configuració i requisits:
-Lorem ipsum.<br>
+En aquesta secció entrarem en detall en quant a les configuracions de cada apartat del projecte, entorn servidor i entorn client a més dels requisits essencials per compilar i executar correctament la nostra aplicació. S'inclou també informació sobre les versions utilitzades en els paquets a més d'informació detallada sobre el software i les configuracions necessàries.<br>
 ### 5.1 Configuració d'entorn servidor:
 Lorem ipsum.<br>
 #### 5.1.1 Configuració del projecte C#:
