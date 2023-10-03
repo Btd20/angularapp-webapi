@@ -252,7 +252,7 @@ Aquest fitxer és fonamental per al projecte d'ASP.NET.<br>
  - Configurar l'entorn on s'executarà l'aplicació ASP.NET Core.
 ### 4.2 Controladors:
 La seva funció principal és fer servir les sol·licituds HTTP que arriben al servidor i coordinar la interacció entre el model de dades, la vista i altres parts de l'aplicació.
-##### ApplicationUserController.cs
+### ApplicationUserController.cs
 Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<br>
 
 **GET: api/ApplicationUsers**
@@ -296,19 +296,19 @@ Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<
 
 **GET: api/ApplicationUsers/GetProfileImage/{username}**
  - Torna la imatge del nom d'usuari que se li passa.<br>
-##### AuthController.cs
+### AuthController.cs
 Lorem ipsum.<br>
-##### AdminController.cs
+### AdminController.cs
 Aquest arxiu conté tots els controladors dedicats al administrador de l'aplicació.<br>
-##### RolesController.cs
+### RolesController.cs
 Aquest arxiu conté tots els controladors dedicats als rols d'usuari dintre de l'aplicació.<br>
-##### PaisController.cs
+### PaisController.cs
 Aquest arxiu conté tots els controladors dedicats als paisos de l'aplicació.<br>
-#### CiutatsController.cs
+### CiutatsController.cs
 Aquest arxiu conté tots els controladors dedicats a les ciutats de l'aplicació.<br>
 ### OficinesController.cs
 Aquest arxiu conté tots els controladors dedicats a les oficines de l'aplicació.<br>
-## SalesController.cs
+### SalesController.cs
 Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<br>
 
 **GET: api/GetSales**
