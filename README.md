@@ -356,13 +356,15 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 Lorem ipsum.<br>
 ### 5.1 Configuració d'entorn servidor:
 Lorem ipsum.<br>
-### 5.1.1 Configuració del projecte C#:
+#### 5.1.1 Configuració del projecte C#:
 Lorem ipsum.<br>
-### 5.1.2 Configuració de BBDD:
+#### 5.1.2 Configuració de BBDD:
+Lorem ipsum.<br>
+#### 5.1.3 Configuració de microserveis:
 Lorem ipsum.<br>
 ### 5.2 Configuració d'entorn client:
 Lorem ipsum.<br>
-### 5.2.1 Configuració d'Angular:
+#### 5.2.1 Configuració d'Angular:
 Lorem ipsum.<br>
 ### 5.3 Versions i actualitzacions:
 Lorem ipsum.<br><br>
