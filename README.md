@@ -304,11 +304,11 @@ Aquest arxiu conté tots els controladors dedicats al administrador de l'aplicac
 Aquest arxiu conté tots els controladors dedicats als rols d'usuari dintre de l'aplicació.<br>
 ##### PaisController.cs
 Aquest arxiu conté tots els controladors dedicats als paisos de l'aplicació.<br>
-##### CiutatsController.cs
+#### CiutatsController.cs
 Aquest arxiu conté tots els controladors dedicats a les ciutats de l'aplicació.<br>
-##### OficinesController.cs
+### OficinesController.cs
 Aquest arxiu conté tots els controladors dedicats a les oficines de l'aplicació.<br>
-##### SalesController.cs
+## SalesController.cs
 Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<br>
 
 **GET: api/GetSales**
