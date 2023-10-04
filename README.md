@@ -252,7 +252,7 @@ Aquest fitxer és fonamental per al projecte d'ASP.NET.<br>
  - Configurar l'entorn on s'executarà l'aplicació ASP.NET Core.
 ### 4.2 Controladors:
 La seva funció principal és fer servir les sol·licituds HTTP que arriben al servidor i coordinar la interacció entre el model de dades, la vista i altres parts de l'aplicació.
-##### ApplicationUserController.cs
+### ApplicationUserController.cs
 Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<br>
 
 **GET: api/ApplicationUsers**
@@ -296,25 +296,62 @@ Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<
 
 **GET: api/ApplicationUsers/GetProfileImage/{username}**
  - Torna la imatge del nom d'usuari que se li passa.<br>
-##### AuthController.cs
+### AuthController.cs
 Lorem ipsum.<br>
-##### AdminController.cs
-Lorem ipsum.<br>
-##### RolesController.cs
-Lorem ipsum.<br>
-##### PaisController.cs
-Lorem ipsum.<br>
-##### CiutatsController.cs
-Lorem ipsum.<br>
-##### OficinesController.cs
-Lorem ipsum.<br>
-##### SalesController.cs
-Lorem ipsum.<br>
-##### ReservesController.cs
-Lorem ipsum.<br>
-### 4.3 Models:
+### AdminController.cs
+Aquest arxiu conté tots els controladors dedicats al administrador de l'aplicació.<br>
+### RolesController.cs
+Aquest arxiu conté tots els controladors dedicats als rols d'usuari dintre de l'aplicació.<br>
+### PaisController.cs
+Aquest arxiu conté tots els controladors dedicats als paisos de l'aplicació.<br>
+### CiutatsController.cs
+Aquest arxiu conté tots els controladors dedicats a les ciutats de l'aplicació.<br>
+### OficinesController.cs
+Aquest arxiu conté tots els controladors dedicats a les oficines de l'aplicació.<br>
+### SalesController.cs
+Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<br>
 
-### 4.4 BBDD SQL Server:
+**GET: api/GetSales**
+ - Torna totes les sales de la base de dades amb tota la seva informació en format JSON.<br>
+
+**GET: api/GetSala/{id}** 
+ - Torna la informació de la sala amb la ID que se li introdueix, en format JSON.<br>
+
+**POST: api/CreateSales**
+ - Crea una nova sala de reunions utilitzant el nom de país, ciutat i oficina. <br>
+
+**POST: api/CreateSalesByNom/{id}**
+ - Crea una nova sala de reunions utilitzant el nom de país, ciutat i oficina. <br>
+
+**PUT: api/UpdateSales/{id}**
+ - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
+
+**DELETE: api/DeleteSales/{id}**
+ - El métode elimina la sala de reunions amb la ID introduida per l'usuari.<br>
+
+**DELETE: api/DeleteSalesByNom/{nomSala}**
+ - El métode elimina la sala de reunions amb el nom de la sala introduit per l'usuari.<br>
+
+**GET: api/SalesExists/{id}**
+ - Aquest métode privat comprova que la sala de reunions amb la ID introduida, existeix a la BBDD.<br>
+ 
+### ReservesController.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+### 4.3 Models:
+Lorem ipsum.<br>
+### 4.4 Microserveis:
+Els microserveis no són més que programaris dividits per tal de que aquests tinguin una autonomía. Aquesta utilitat s'ha implementat per tal de que, en el cas de que caigui un servei, per exemple el de Reserva, no es vegi afectat també el servei de País. Es a dir, que tots els serveis en la mesura del possible, siguin autonoms i no depenguin dels altres serveis ja que això pot provocar una cadena perquè si cau un servei, caurien tots per dependre del anterior. 
+
+##### 4.4.1 API:
+Lorem ipsum.<br>
+##### 4.4.2 Idependència:
+Lorem ipsum.<br>
+##### 4.4.3 Comunicació entre serveis:
+Lorem ipsum.<br>
+##### 4.4.4 Manteniment i escalabilitat:
+Lorem ipsum.
+<br>
+### 4.5 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
 ##### dbo.AspNetUser
@@ -351,16 +388,18 @@ La base de dades SQL Server és un component clau en la arquitectura d'aquest pr
 **MeetingRoomID - FOREIGN KEY de [dbo.Sales] - int:** Identificador de la sala.<br>
 <br>
 ## 5. Configuració i requisits:
-Lorem ipsum.<br>
+En aquesta secció entrarem en detall en quant a les configuracions de cada apartat del projecte, entorn servidor i entorn client a més dels requisits essencials per compilar i executar correctament la nostra aplicació. S'inclou també informació sobre les versions utilitzades en els paquets a més d'informació detallada sobre el software i les configuracions necessàries.<br>
 ### 5.1 Configuració d'entorn servidor:
 Lorem ipsum.<br>
-### 5.1.1 Configuració del projecte C#:
+#### 5.1.1 Configuració del projecte C#:
 Lorem ipsum.<br>
-### 5.1.2 Configuració de BBDD:
+#### 5.1.2 Configuració de BBDD:
+Lorem ipsum.<br>
+#### 5.1.3 Configuració de microserveis:
 Lorem ipsum.<br>
 ### 5.2 Configuració d'entorn client:
 Lorem ipsum.<br>
-### 5.2.1 Configuració d'Angular:
+#### 5.2.1 Configuració d'Angular:
 Lorem ipsum.<br>
 ### 5.3 Versions i actualitzacions:
 Lorem ipsum.<br><br>
