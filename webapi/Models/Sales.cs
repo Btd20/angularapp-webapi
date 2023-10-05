@@ -11,6 +11,8 @@ namespace webapi.Models
 
         public int OfficeID { get; set; }
 
+        public int Capacitat { get; set; }
+
         [ForeignKey("OfficeID")]
         public Oficines oficina { get; set; }
     }
