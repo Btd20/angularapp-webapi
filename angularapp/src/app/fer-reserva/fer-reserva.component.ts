@@ -30,7 +30,11 @@ export class FerReservaComponent implements OnInit {
   salaReserva: string = '';
   nomSala: string = '';
 
+  selectedValue = 5;
 
+  showValue(event: any) {
+    this.selectedValue = event.target.value;
+  }
   constructor(private apiService: ApiService, private reservesService: ReservesService, private route: ActivatedRoute, private router: Router, private salesService: SalesService) { }
   
   ngOnInit(): void {
@@ -72,6 +76,9 @@ export class FerReservaComponent implements OnInit {
     const horaFi = this.horaFi;
     const userID = this.userid || '';
     const validHora = this.validateHoraIniciFi();
+
+
+
 
     if (!validHora) {
       alert('L\'hora d\'inici ha de ser anterior a l\'hora de finalització.');
@@ -140,5 +147,5 @@ export class FerReservaComponent implements OnInit {
     const horaFi = new Date(`2000-01-01T${this.horaFi}`);
     return horaInici < horaFi;
   }
-  
+
 }
