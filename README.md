@@ -43,7 +43,8 @@ Hem seguit aquesta arquitectura tant per el projecte com per organitzar-nos de l
 <a href="#37-reserva-i-derivats">3.7 Reserva i derivats.</a><br>
 <a href="#38-administrador-i-els-seus-modificadors">3.8 Administrador i els seus modificadors.</a><br>
 <a href="#39-crud-de-paisos-ciutats-oficines-sala-i-reserva">3.9 CRUD.</a><br>
-<a href="">3.10 Inici i registre.</a><br>
+<a href="">3.10 Configuració de microserveis.</a><br>
+<a href="">3.11 Configuració de moduls i enrutament.</a><br>
 ### 3.1 Índex:
 ##### index.component.ts
 Com que el projecte es tracta d'una empresa que reserva sales per els seus treballadors, a la portada només podem veure el nom de l'empresa i dos botons. <br>
@@ -223,7 +224,20 @@ Funcionalitats principals: Això depen de quin component, veuras tu per descriur
 Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
 Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
 Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
-### 3.10 Configuració de moduls i enrutament
+
+### 3.10 Configuració de microserveis.
+##### 3.10.1 Introducció
+<!--
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
+##### 3.10.2 Model
+<!--
+Descripció: Proporciona una discripció del proposit i la funció d'aquest component en la aplicació.<br>
+Tecnologies i biblioteques utilitzades: Pensa que has utilitzat bootstrap en la gran part del projecte i FontAwsome.<br>
+Funcionalitats principals: Això depen de quin component, veuras tu per descriure'ho.<br>-->
+
+### 3.11 Configuració de moduls i enrutament
 
 ##### 3.10.1 app.module.ts
 Aquest arxiu és el módul arrel del framework d'Angular. En aquest arxiu s'hi defineixen móduls, components, serveis i altres dependencies que es troben dintre de l'aplicació. <br>
