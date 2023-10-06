@@ -4,6 +4,14 @@
   <div class="res-body">
     <!-- Verifica si reserves existe y si tiene elementos antes de iterar sobre ellas -->
     <ng-container *ngIf="reserves && reserves.length > 0">
+      <mat-form-field class="flex-grow-1 custom-input">
+        <input matInput placeholder="Buscar usuari per Nom" [formControl]="userControl">
+        <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+          <mat-option class="custom-option" *ngFor="let usuari of filteredUsers" [value]="usuari.userName">
+            {{ usuari.userName }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
       <reserva-box class="res-gen" *ngFor="let reserva of reserves" [reserva]="reserva"></reserva-box>
     </ng-container>
 
