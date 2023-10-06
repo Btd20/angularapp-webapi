@@ -29,7 +29,7 @@ export class ReservesComponent implements OnInit {
     this.salaControl = new FormControl();
 
     this.salaControl.valueChanges.subscribe(value => {
-      this.filterUsers(value);
+      this.filterSala(value);
     });
   }
 
