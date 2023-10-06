@@ -5,7 +5,7 @@ import { AuthService } from '../auth-service.service';
 import { ReservesService } from '../reserves.service';
 import { FormControl } from '@angular/forms';
 import fuzzysearch from "fuzzysearch-ts";
-import { UsuarisService } from '../usuaris.service';
+import { SalesService } from '../sales.service';
 
 @Component({
   selector: 'app-reserves',
