@@ -264,7 +264,21 @@ Aquest fitxer és fonamental per al projecte d'ASP.NET.<br>
 **Funcionalitats principals:** 
  - Iniciar el servidor web.
  - Configurar l'entorn on s'executarà l'aplicació ASP.NET Core.
-### 4.2 Controladors:
+   
+### 4.2 Microserveis:
+Els microserveis no són més que programaris dividits per tal de que aquests tinguin una autonomía. Aquesta utilitat s'ha implementat per tal de que, en el cas de que caigui un servei, per exemple el de Reserva, no es vegi afectat també el servei de País. Es a dir, que tots els serveis en la mesura del possible, siguin autonoms i no depenguin dels altres serveis ja que això pot provocar una cadena perquè si cau un servei, caurien tots per dependre del anterior. 
+
+##### 4.2.1 API:
+Lorem ipsum.<br>
+##### 4.2.2 Idependència:
+Lorem ipsum.<br>
+##### 4.2.3 Comunicació entre serveis:
+Lorem ipsum.<br>
+##### 4.2.4 Manteniment i escalabilitat:
+Lorem ipsum.
+<br>
+
+### 4.2.5 Controladors:
 La seva funció principal és fer servir les sol·licituds HTTP que arriben al servidor i coordinar la interacció entre el model de dades, la vista i altres parts de l'aplicació.
 ### ApplicationUserController.cs
 Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<br>
@@ -351,20 +365,8 @@ Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<
  
 ### ReservesController.cs
 Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
-### 4.3 Models:
+### 4.2.6 Models:
 Lorem ipsum.<br>
-### 4.4 Microserveis:
-Els microserveis no són més que programaris dividits per tal de que aquests tinguin una autonomía. Aquesta utilitat s'ha implementat per tal de que, en el cas de que caigui un servei, per exemple el de Reserva, no es vegi afectat també el servei de País. Es a dir, que tots els serveis en la mesura del possible, siguin autonoms i no depenguin dels altres serveis ja que això pot provocar una cadena perquè si cau un servei, caurien tots per dependre del anterior. 
-
-##### 4.4.1 API:
-Lorem ipsum.<br>
-##### 4.4.2 Idependència:
-Lorem ipsum.<br>
-##### 4.4.3 Comunicació entre serveis:
-Lorem ipsum.<br>
-##### 4.4.4 Manteniment i escalabilitat:
-Lorem ipsum.
-<br>
 ### 4.5 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
