@@ -7,20 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Compile Remove="Models\**" />
     <Compile Remove="NewFolder\**" />
+    <Content Remove="Data\**" />
+    <Content Remove="Models\**" />
     <Content Remove="NewFolder\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="Data\**" />
+    <None Remove="Models\**" />
     <None Remove="NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

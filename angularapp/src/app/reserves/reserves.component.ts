@@ -23,7 +23,9 @@ export class ReservesComponent implements OnInit {
     if (userId !== null) {
       this.reservesService.getReservesByUser(userId)
         .subscribe(reservas => {
+          console.log('Dades de les reserves rebudes de l\'API:', reservas);
           this.reserves = this.sortReservesByDate(reservas);
+          console.log('Reserves després de la ordenació:', this.reserves);
         });
     }
   }
@@ -39,4 +41,5 @@ export class ReservesComponent implements OnInit {
     return validReserves.sort((a, b) => new Date(a.dataReserva).getTime() - new Date(b.dataReserva).getTime()
     );
   }
+
 }
