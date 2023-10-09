@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ReservesAPI.Data;
 using ReservesAPI.Models;
-using Mjml.Net;
+//using Mjml.Net;
 using Microsoft.Extensions.Options;
 using static System.Net.Mime.MediaTypeNames;
 
