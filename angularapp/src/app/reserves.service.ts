@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ReservesService {
 
-  private apiUrlReserves = 'https://localhost:7240/Reserves';
+  //private apiUrlReserves = 'https://localhost:7240/Reserves';
+  private apiUrlReserves = 'https://localhost:7055/Reserves';
   constructor(private http: HttpClient) { }
 
   getAllReserves() {

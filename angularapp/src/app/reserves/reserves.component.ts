@@ -15,22 +15,10 @@ import { SalesService } from '../sales.service';
 export class ReservesComponent implements OnInit {
   reserves: any[] = [];
 
-  //BUSCADOR PER SALES. 
-  sales: any[] = [];
-  salaControl = new FormControl();
-  filteredSala: any[] = [];
-  
 
   constructor(private apiService: ApiService,
     private router: Router, private authService: AuthService, private reservesService: ReservesService) {
-
-    this.filteredSala = this.sales.slice();
-
-    this.salaControl = new FormControl();
-
-    this.salaControl.valueChanges.subscribe(value => {
-      this.filterSala(value);
-    });
+ 
   }
 
   ngOnInit(): void {
@@ -39,20 +27,14 @@ export class ReservesComponent implements OnInit {
     if (userId !== null) {
       this.reservesService.getReservesByUser(userId)
         .subscribe(reservas => {
+          console.log('Dades de les reserves rebudes de l\'API:', reservas);
           this.reserves = this.sortReservesByDate(reservas);
+          console.log('Reserves després de la ordenació:', this.reserves);
         });
     }
   }
 
-  filterSala(value: string) {
-    const trimmedValue = value.trim().toLowerCase();
 
-    this.filteredSala = this.sales.filter(usuari => {
-      const trimmedUserName = usuari.userName.trim().toLowerCase();
-
-      return fuzzysearch(trimmedValue, trimmedUserName);
-    });
-  }
 
   // mira que la data no hagi passat i ordena cronològicament les reserves per mostrar-les
   private sortReservesByDate(reserves: any[]): any[] {
@@ -65,4 +47,5 @@ export class ReservesComponent implements OnInit {
     return validReserves.sort((a, b) => new Date(a.dataReserva).getTime() - new Date(b.dataReserva).getTime()
     );
   }
+
 }

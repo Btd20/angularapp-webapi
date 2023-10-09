@@ -16,6 +16,7 @@ export class ReservaBoxComponent {
 
   ngOnInit() {
     console.log(this.reserva);
+
   }
 
   formatTimeSpan(timeSpan: string): string {

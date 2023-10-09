@@ -12,6 +12,7 @@ namespace ReservesAPI.Models
         public DateTime? DataReserva { get; set; }
         public TimeSpan? HoraInici { get; set; }
         public TimeSpan? HoraFi { get; set; }
+        public string UserID { get; set; }
 
         //public string UserID { get; set; }
 

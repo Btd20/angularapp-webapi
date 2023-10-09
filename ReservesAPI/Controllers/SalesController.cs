@@ -13,9 +13,9 @@ namespace ReservesAPI.Controllers
     [Route("[controller]")]
     public class SalesController : ControllerBase
     {
-        private readonly SalesAPIContext _context;
+        private readonly ReservesAPIContext _context;
 
-        public SalesController(SalesAPIContext context)
+        public SalesController(ReservesAPIContext context)
         {
             _context = context;
         }
@@ -47,7 +47,6 @@ namespace ReservesAPI.Controllers
         */
 
         // POST: Sales
-        
         [HttpPost]
         public async Task<ActionResult<Sales>> CreateSales(Sales sala)
         {
@@ -56,8 +55,6 @@ namespace ReservesAPI.Controllers
 
             return CreatedAtAction("GetSales", new { id = sala.MeetingRoomID }, sala);
         }
-        
-
 
         /*
         [HttpPost("Pais/{nomPais}/Ciutats/{nomCiutat}/Oficines/{nomOficina}/Sales/{nomSala}")]

@@ -12,6 +12,7 @@
   <div class="resb-body">
     <span>DATA: <strong>{{reserva.dataReserva | date: 'dd-MM-yyyy'}}</strong></span>
     <span>HORA: <strong>{{formatTimeSpan(reserva.horaInici)}} / {{formatTimeSpan(reserva.horaFi)}}</strong></span>
+    <span>CAPACITAT: <strong>{{reserva.sala.capacitat}}</strong></span>
     <span>ORGANITZAT PER: <strong id="username">{{username}}</strong></span>
   </div>
 </div>

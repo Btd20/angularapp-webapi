@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CiutatsService {
 
-  private apiUrlCiutats = 'https://localhost:7240/Ciutats';
+ // private apiUrlCiutats = 'https://localhost:7240/Ciutats';
+  private apiUrlCiutats = 'https://localhost:7276/Ciutats';
   constructor(private http: HttpClient) { }
 
   getCiutatsByPais(pais: string) {

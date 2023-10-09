@@ -15,7 +15,7 @@
                 <input matInput placeholder="Buscar sala per nom" [formControl]="salesControl">
                 <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
                   <mat-option class="custom-option" *ngFor="let sales of filteredSales" [value]="sales.nomSala">
-                    {{ sales.nomSala }}
+                    {{ sales.nomSala }} 
                   </mat-option>
                 </mat-autocomplete>
               </mat-form-field>

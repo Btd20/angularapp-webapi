@@ -1,6 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace PaisosAPI.Models
+namespace GeoLocalization.Models
+
 {
     public class Pais
     {
@@ -10,4 +12,5 @@ namespace PaisosAPI.Models
 
     }
 }
+
 

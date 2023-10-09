@@ -1,21 +1,22 @@
-using Microsoft.AspNetCore.Mvc;
-using PaisosAPI.Data;
-using PaisosAPI.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using GeoLocalization.Data;
+using GeoLocalization.Models;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-namespace PaisosAPI.Controllers
+namespace GeoLocalization.Controllers
 {
+
     [ApiController]
     [Route("[controller]")]
     [EnableCors("AllowAll")]
     public class PaisController : ControllerBase
     {
-        private readonly PaisosAPIContext _context;
+        private readonly GeoLocalizationContext _context;
 
 
 
-        public PaisController(PaisosAPIContext context)
+        public PaisController(GeoLocalizationContext context)
         {
             _context = context;
         }
@@ -53,22 +54,22 @@ namespace PaisosAPI.Controllers
             return Ok(paises);
         }
 
-     /*   [HttpGet("{id}/Ciutats")]
-        public async Task<ActionResult<IEnumerable<Ciutats>>> GetCiutatsByPais(int id)
-        {
-            var ciutats = await _context.Ciutats
-                .Where(c => c.CountryID == id)
-                .ToListAsync();
+        /*   [HttpGet("{id}/Ciutats")]
+           public async Task<ActionResult<IEnumerable<Ciutats>>> GetCiutatsByPais(int id)
+           {
+               var ciutats = await _context.Ciutats
+                   .Where(c => c.CountryID == id)
+                   .ToListAsync();
 
-            if (ciutats == null || ciutats.Count == 0)
-            {
-                return NotFound("No s'han trobat ciutats per aquest pa�s.");
-            }
+               if (ciutats == null || ciutats.Count == 0)
+               {
+                   return NotFound("No s'han trobat ciutats per aquest país.");
+               }
 
-            return Ok(ciutats);
-        }
+               return Ok(ciutats);
+           }
 
-        */
+           */
 
         // POST: Pais
         [HttpPost]
@@ -151,3 +152,4 @@ namespace PaisosAPI.Controllers
         }
     }
 }
+

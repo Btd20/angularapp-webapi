@@ -1,10 +1,5 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using GeoLocalization.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using PaisosAPI.Data;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Add Entity Framework Core
-builder.Services.AddDbContext<PaisosAPIContext>(options =>
+builder.Services.AddDbContext<GeoLocalizationContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PaisosAPIContextConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GeoLocalizationContextConnection"));
 });
 
 
