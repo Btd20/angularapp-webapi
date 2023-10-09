@@ -16,14 +16,17 @@ export class ChangeUserComponent {
   changeUsername() {
     if (this.newUsername !== this.confirmUsername) {
       console.log('Els usuaris no coincideixen.')
+      alert('✘ Els usuaris no coincideixen.');
       return;
     }
 
     this.authService.changeUsername(this.currentUsername, this.newUsername)
       .subscribe(() => {
         console.log('Usuari canviat.');
+        alert('✔ Usuari canviat correctament.');
       }, error => {
         console.log('Error en el canvi de usuari: ', error);
+        alert('✘ Error en canviar el teu usuari.');
       });
   }
 }

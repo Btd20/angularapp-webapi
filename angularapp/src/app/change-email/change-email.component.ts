@@ -15,14 +15,17 @@ export class ChangeEmailComponent {
   changeEmail() {
     if (this.newEmail !== this.confirmEmail) {
       console.log('Els correus no coincideixen.')
+      alert('✘ Els correus no coincideixen.');
       return;
     }
 
     this.authService.changeEmail(this.currentEmail, this.newEmail)
       .subscribe(() => {
         console.log('Correu canviat.');
+        alert('✔ Correu canviat correctament.');
       }, error => {
         console.log('Error en el canvi de correu: ', error);
+        alert('✘ Error en el canvi de correu.');
       });
   }
 

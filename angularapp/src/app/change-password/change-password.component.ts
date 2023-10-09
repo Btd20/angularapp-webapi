@@ -15,14 +15,17 @@ export class ChangePasswordComponent {
   changePassword() {
     if (this.newPassword !== this.confirmPassword) {
       console.log('Les contrasenyes no coincideixen.')
+      alert('✘ Les contrasenyes no coincideixen.');
       return;
     }
 
     this.authService.changePassword(this.currentPassword, this.newPassword)
       .subscribe(() => {
-        console.log('Contrassenya canviada.');
+        console.log('Contrasenya canviada.');
+        alert('✔ Contrasenya canviada correctament.');
       }, error => {
         console.log('Error en el canvi de contrasenya: ', error);
+        alert('✘ Error en el canvi de contrasenya.');
       });
   }
 }
