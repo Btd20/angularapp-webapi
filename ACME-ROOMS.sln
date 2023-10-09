@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaisosAPI", "PaisosAPI\Pais
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocalization", "GeoLocalization\GeoLocalization.csproj", "{6FC736A6-D2E5-45F0-9488-077C39ADBCE5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersAPI", "UsersAPI\UsersAPI.csproj", "{DF4417A3-CDFA-479F-94AF-3DDB05B062D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservesAPI", "ReservesAPI\ReservesAPI.csproj", "{2D2EE9EB-0F51-45E8-93D6-68768C73455E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{6FC736A6-D2E5-45F0-9488-077C39ADBCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FC736A6-D2E5-45F0-9488-077C39ADBCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FC736A6-D2E5-45F0-9488-077C39ADBCE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF4417A3-CDFA-479F-94AF-3DDB05B062D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4417A3-CDFA-479F-94AF-3DDB05B062D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4417A3-CDFA-479F-94AF-3DDB05B062D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4417A3-CDFA-479F-94AF-3DDB05B062D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D2EE9EB-0F51-45E8-93D6-68768C73455E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2EE9EB-0F51-45E8-93D6-68768C73455E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2EE9EB-0F51-45E8-93D6-68768C73455E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2EE9EB-0F51-45E8-93D6-68768C73455E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
