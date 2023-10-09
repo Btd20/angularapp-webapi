@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class PaisosService {
 
-  private apiUrlPaisos = 'https://localhost:7240/Pais';
- // private apiUrlPaisos = 'https://localhost:7246/Pais';
+ // private apiUrlPaisos = 'https://localhost:7240/Pais';
+  private apiUrlPaisos = 'https://localhost:7276/Pais';
   constructor(private http: HttpClient) { }
 
   getPaisos() {

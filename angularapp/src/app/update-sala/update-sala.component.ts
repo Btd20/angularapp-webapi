@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SalesService } from '../sales.service';
 
 @Component({
   selector: 'app-update-sala',
@@ -13,12 +14,14 @@ export class UpdateSalaComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private dialogRef: MatDialogRef<UpdateSalaComponent>,
+    private salesService: SalesService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit(): void {
     this.salaForm = this.formBuilder.group({
-      nomSala: [this.data.nomSala, Validators.required]
+      nomSala: [this.data.nomSala, Validators.required],
+      capacitat: [this.data.capacitat, Validators.required]
     });
   }
 
@@ -27,6 +30,7 @@ export class UpdateSalaComponent implements OnInit {
       const updatedData = {
         meetingRoomID: this.data.meetingRoomID,
         nomSala: this.salaForm.value.nomSala,
+        capacitat: this.salaForm.value.capacitat,
         officeID: this.data.oficina.officeID,
         oficina: {
           officeID: this.data.oficina.officeID,

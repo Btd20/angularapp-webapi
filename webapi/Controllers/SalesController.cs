@@ -51,8 +51,8 @@ namespace webapi.Controllers
             return CreatedAtAction("GetSales", new { id = sala.MeetingRoomID }, sala);
         }
 
-        [HttpPost("Pais/{nomPais}/Ciutats/{nomCiutat}/Oficines/{nomOficina}/Sales/{nomSala}")]
-        public async Task<ActionResult<Sales>> CreateSalesByNom(string nomPais, string nomCiutat, string nomOficina, string nomSala)
+        /*[HttpPost("Pais/{nomPais}/Ciutats/{nomCiutat}/Oficines/{nomOficina}/Sales/{nomSala}")]
+        public async Task<ActionResult<Sales>> CreateSalesByNom(string nomPais, string nomCiutat, string nomOficina, string nomSala, int capacitat)
         {
             var pais = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == nomPais);
 
@@ -79,6 +79,45 @@ namespace webapi.Controllers
             {
                 NomSala = nomSala,
                 OfficeID = oficina.OfficeID,
+                Capacitat = capacitat,
+            };
+
+            _context.Sales.Add(novaSala);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetOficina", new { id = novaSala.MeetingRoomID }, novaSala);
+        }
+        */
+
+        [HttpPost("Pais/{nomPais}/Ciutats/{nomCiutat}/Oficines/{nomOficina}/Sales/{nomSala}")]
+        public async Task<ActionResult<Sales>> CreateSalesByNom(string nomPais, string nomCiutat, string nomOficina, string nomSala, int capacitat)
+        {
+            var pais = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == nomPais);
+
+            if (pais == null)
+            {
+                return NotFound("El país no existeix");
+            }
+
+            var ciutat = await _context.Ciutats.FirstOrDefaultAsync(c => c.NomCiutat == nomCiutat && c.CountryID == pais.CountryID);
+
+            if (ciutat == null)
+            {
+                return NotFound("La ciutat no existeix en aquest país");
+            }
+
+            var oficina = await _context.Oficines.FirstOrDefaultAsync(o => o.NomOficina == nomOficina && o.CityID == ciutat.CityID);
+
+            if (oficina == null)
+            {
+                return NotFound("La oficina no existeix en aquesta ciutat");
+            }
+
+            var novaSala = new Sales
+            {
+                NomSala = nomSala,
+                OfficeID = oficina.OfficeID,
+                Capacitat = capacitat, // Assigna la capacitat
             };
 
             _context.Sales.Add(novaSala);
@@ -87,19 +126,26 @@ namespace webapi.Controllers
             return CreatedAtAction("GetOficina", new { id = novaSala.MeetingRoomID }, novaSala);
         }
 
-        // PUT: Sales/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateSales(int id, Sales sala)
+        public async Task<IActionResult> UpdateSales(int id, [FromBody] Sales updatedSala)
         {
-            if (id != sala.MeetingRoomID)
+            if (id != updatedSala.MeetingRoomID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(sala).State = EntityState.Modified;
+            var existingSala = await _context.Sales.FindAsync(id);
+
+            if (existingSala == null)
+            {
+                return NotFound();
+            }
+
+            existingSala.Capacitat = updatedSala.Capacitat;  
 
             try
             {
+                _context.Entry(existingSala).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -116,7 +162,6 @@ namespace webapi.Controllers
 
             return NoContent();
         }
-
         // DELETE: Sales/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSales(int id)

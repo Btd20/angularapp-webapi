@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class OficinesService {
 
-  private apiUrlOficines = 'https://localhost:7240/Oficines';
+ // private apiUrlOficines = 'https://localhost:7240/Oficines';
+  private apiUrlOficines = 'https://localhost:7276/Oficines';
+  
   constructor( private http: HttpClient) { }
 
   getAllOficines() {
