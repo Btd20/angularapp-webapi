@@ -3,26 +3,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using webapi.Areas.Identity.Data;
-using webapi.Data;
-
+using UsersAPI.Areas.Identity.Data;
+using UsersAPI.Data;
 var builder = WebApplication.CreateBuilder(args);
-var emailKey = builder.Configuration["EMailKey"];
+var connectionString = builder.Configuration.GetConnectionString("UsersAPIContextConnection") ?? throw new InvalidOperationException("Connection string 'UsersAPIContextConnection' not found.");
 
-var emailConfig = builder.Configuration
-    .GetSection("EmailConfiguration")
-    .Get<EmailConfiguration>();
-builder.Services.AddSingleton(emailConfig);
+builder.Services.AddDbContext<UsersAPIContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<EmailService>();
-
-var connectionString = builder.Configuration.GetConnectionString("webapiContextConnection") ?? throw new InvalidOperationException("Connection string 'webapiContextConnection' not found.");
-
-builder.Services.AddDbContext<webapiContext>(options => options.UseSqlServer(connectionString));
-
-builder.Services.AddDefaultIdentity<webapiUser>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddDefaultIdentity<UsersAPIUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<webapiContext>();
+    .AddEntityFrameworkStores<UsersAPIContext>();
 
 var jwtSecretKey = "acmetokens"; // Clau secreta del token
 var key = Encoding.ASCII.GetBytes(jwtSecretKey);
@@ -45,6 +35,7 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -60,37 +51,20 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Inicia Quartz
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    QuartzConfig.Start(services);
-}
-
 app.UseCors("AllowAll");
+app.UseAuthentication();
 
+// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-else
-{
-    app.UseDefaultFiles();
-    app.UseStaticFiles();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var userManager = services.GetRequiredService<UserManager<webapiUser>>();
+    var userManager = services.GetRequiredService<UserManager<UsersAPIUser>>();
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
     var roleName = "Administrador";
@@ -108,5 +82,11 @@ using (var scope = app.Services.CreateScope())
         await userManager.AddToRoleAsync(usuario, roleName);
     }
 }
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
 
 app.Run();

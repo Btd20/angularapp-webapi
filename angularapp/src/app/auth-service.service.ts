@@ -45,7 +45,7 @@ export class AuthService implements OnInit {
       Password: password
     };
 
-    return this.http.post<any>('https://localhost:7240/Auth/login', body);
+    return this.http.post<any>('https://localhost:7044/Auth/login', body);
   }
 
   changePassword(currentPassword: string, newPassword: string) {
@@ -56,7 +56,7 @@ export class AuthService implements OnInit {
       newPassword: newPassword
     };
 
-    return this.http.post<any>('https://localhost:7240/api/ApplicationUsers/ChangePassword', body);
+    return this.http.post<any>('https://localhost:7044/api/ApplicationUsers/ChangePassword', body);
   }
 
   changeUsername(currentUsername: string, newUsername: string) {
@@ -67,7 +67,7 @@ export class AuthService implements OnInit {
       newUsername: newUsername
     };
 
-    return this.http.post<any>('https://localhost:7240/api/ApplicationUsers/ChangeUsername', body);
+    return this.http.post<any>('https://localhost:7044/api/ApplicationUsers/ChangeUsername', body);
   }
 
   changeEmail(currentEmail: string, newEmail: string) {
@@ -78,6 +78,6 @@ export class AuthService implements OnInit {
       newEmail: newEmail
     };
 
-    return this.http.post<any>('https://localhost:7240/api/ApplicationUsers/ChangeEmail', body);
+    return this.http.post<any>('https://localhost:7044/api/ApplicationUsers/ChangeEmail', body);
   }
 }
