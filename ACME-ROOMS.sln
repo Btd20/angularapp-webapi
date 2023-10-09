@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi", "webapi\webapi.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocalization", "GeoLocalization\GeoLocalization.csproj", "{6FC736A6-D2E5-45F0-9488-077C39ADBCE5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersAPI", "UsersAPI\UsersAPI.csproj", "{DF4417A3-CDFA-479F-94AF-3DDB05B062D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CiutatsAPI", "CiutatsAPI\CiutatsAPI.csproj", "{F7841E1E-7B51-4AEF-BB48-C9A5962CC666}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservesAPI", "ReservesAPI\ReservesAPI.csproj", "{2D2EE9EB-0F51-45E8-93D6-68768C73455E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersAPI", "UsersAPI\UsersAPI.csproj", "{F59E5F87-F2B9-4577-9E93-DEEAD05D5A0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservesAPI", "ReservesAPI\ReservesAPI.csproj", "{B6A1B34D-C21D-4C97-82D8-ABACBAFBD513}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
