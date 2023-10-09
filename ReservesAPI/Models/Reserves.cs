@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace ReservesAPI.Models
 {
@@ -17,8 +18,8 @@ namespace ReservesAPI.Models
         [ForeignKey("MeetingRoomID")]
         public virtual Sales Sala { get; set; }
 
-        /* [ForeignKey("UserID")]
+        [ForeignKey("UserID")]
          public virtual IdentityUser User { get; set; }
-        */
+        
     }
 }

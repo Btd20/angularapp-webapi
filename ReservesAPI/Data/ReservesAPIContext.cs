@@ -11,5 +11,7 @@ namespace ReservesAPI.Data
         }
 
         public DbSet<Reserves> Reserva { get; set; }
+
+
     }
 }
