@@ -5,6 +5,8 @@ using webapi.Models;
 using Mjml.Net;
 using Microsoft.Extensions.Options;
 using static System.Net.Mime.MediaTypeNames;
+using Quartz.Impl;
+using Quartz;
 
 namespace webapi.Controllers
 {

@@ -7,7 +7,8 @@ import { Observable, tap } from 'rxjs';
 })
 export class UsuarisService {
 
-  private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
+  // private apiUrlUsuaris = 'https://localhost:7240/api/ApplicationUsers';
+  private apiUrlUsuaris = 'https://localhost:7044/api/ApplicationUsers';
   constructor(private http: HttpClient) { }
 
   getUsuaris(): Observable<any[]> {
