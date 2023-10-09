@@ -15,22 +15,10 @@ import { SalesService } from '../sales.service';
 export class ReservesComponent implements OnInit {
   reserves: any[] = [];
 
-  //BUSCADOR PER SALES. 
-  sales: any[] = [];
-  salaControl = new FormControl();
-  filteredSala: any[] = [];
-  
 
   constructor(private apiService: ApiService,
     private router: Router, private authService: AuthService, private reservesService: ReservesService) {
-
-    this.filteredSala = this.sales.slice();
-
-    this.salaControl = new FormControl();
-
-    this.salaControl.valueChanges.subscribe(value => {
-      this.filterSala(value);
-    });
+ 
   }
 
   ngOnInit(): void {
@@ -46,15 +34,7 @@ export class ReservesComponent implements OnInit {
     }
   }
 
-  filterSala(value: string) {
-    const trimmedValue = value.trim().toLowerCase();
 
-    this.filteredSala = this.sales.filter(usuari => {
-      const trimmedUserName = usuari.userName.trim().toLowerCase();
-
-      return fuzzysearch(trimmedValue, trimmedUserName);
-    });
-  }
 
   // mira que la data no hagi passat i ordena cronològicament les reserves per mostrar-les
   private sortReservesByDate(reserves: any[]): any[] {
