@@ -7,7 +7,8 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class SalesService {
 
-  private apiUrlSales = 'https://localhost:7240/Sales';
+  //private apiUrlSales = 'https://localhost:7240/Sales';
+  private apiUrlSales = 'https://localhost:7055/Sales';
   constructor(private http: HttpClient) { }
 
 

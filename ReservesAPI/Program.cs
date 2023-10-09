@@ -11,14 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Add Entity Framework Core
-/*
+
 builder.Services.AddDbContext<ReservesAPIContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ReservesAPIContextConnection"));
 });
-
- */
-
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
