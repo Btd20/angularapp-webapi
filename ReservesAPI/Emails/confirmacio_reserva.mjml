@@ -1,0 +1,78 @@
+﻿<mjml>
+	<mj-head>
+		<mj-attributes>
+			<mj-all font-family="Bebas Neue, Arial, sans-serif"></mj-all>
+			<mj-text font-weight="400" font-size="16px" color="#202067" line-height="24px"></mj-text>
+			<mj-section padding="0px"></mj-section>
+		</mj-attributes>
+		<mj-style>
+			.body {
+			font-family: Arial, sans-serif;
+			color: #202067;
+			}
+			.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #f9f9f9;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			}
+			.header img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+			}
+			.content {
+			margin-top: 20px;
+			text-align: left;
+			}
+			.content h3 {
+			margin: 10px 0;
+			font-size: 18px;
+			color: #202067;
+			}
+			.footer img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 20px auto 0;
+			}
+			h2 {
+			color: green;
+			}
+		</mj-style>
+	</mj-head>
+	<mj-body class="body">
+		<mj-container class="container">
+			<mj-section>
+				<mj-column>
+					<mj-image src="https://i.imgur.com/U6hSDAJ.png" alt="Portada" width="600%" />
+					<mj-text align="center" font-size="20px" color="#202067">La teva reserva s'ha fet amb èxit!</mj-text>
+				</mj-column>
+			</mj-section>
+			<mj-section class="content">
+				<mj-column align="center">
+					<mj-text margin="0" line-height="normal">
+						<b> ➢ Sala: </b>{NomSala}
+					</mj-text>
+					<mj-text margin="0" line-height="normal">
+						<b> ➢ Data de Reserva: </b>{DataReserva}
+					</mj-text>
+					<mj-text margin="0" line-height="normal">
+						<b> ➢ Hora d'Inici: </b>{HoraInici}
+					</mj-text>
+					<mj-text line-height="normal">
+						<b> ➢ Hora de Fi: </b>{HoraFi}
+					</mj-text>
+				</mj-column>
+			</mj-section>
+			<mj-section>
+				<mj-column>
+					<mj-image src="https://i.imgur.com/X1rcIu9.png" alt="Footer" width="600%" />
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>

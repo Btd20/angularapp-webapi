@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AuthService } from '../auth-service.service';
 import { ReservesService } from '../reserves.service';
+import { FormControl } from '@angular/forms';
+import fuzzysearch from "fuzzysearch-ts";
+import { SalesService } from '../sales.service';
 
 @Component({
   selector: 'app-reserves',
@@ -11,10 +14,23 @@ import { ReservesService } from '../reserves.service';
 })
 export class ReservesComponent implements OnInit {
   reserves: any[] = [];
+
+  //BUSCADOR PER SALES. 
+  sales: any[] = [];
+  salaControl = new FormControl();
+  filteredSala: any[] = [];
   
 
   constructor(private apiService: ApiService,
     private router: Router, private authService: AuthService, private reservesService: ReservesService) {
+
+    this.filteredSala = this.sales.slice();
+
+    this.salaControl = new FormControl();
+
+    this.salaControl.valueChanges.subscribe(value => {
+      this.filterSala(value);
+    });
   }
 
   ngOnInit(): void {
@@ -26,6 +42,16 @@ export class ReservesComponent implements OnInit {
           this.reserves = this.sortReservesByDate(reservas);
         });
     }
+  }
+
+  filterSala(value: string) {
+    const trimmedValue = value.trim().toLowerCase();
+
+    this.filteredSala = this.sales.filter(usuari => {
+      const trimmedUserName = usuari.userName.trim().toLowerCase();
+
+      return fuzzysearch(trimmedValue, trimmedUserName);
+    });
   }
 
   // mira que la data no hagi passat i ordena cronològicament les reserves per mostrar-les

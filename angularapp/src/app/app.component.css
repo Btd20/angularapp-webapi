@@ -1,13 +1,13 @@
 .svg-home1 {
   margin-bottom: -18rem;
   overflow: hidden;
-  z-index: -99;
+  z-index: -1;
   position: relative;
 }
 
 .svg-home2 {
   margin-top: -10em;
-  z-index: -21;
+  z-index: -1;
   position: relative;
   overflow: hidden;
 }
