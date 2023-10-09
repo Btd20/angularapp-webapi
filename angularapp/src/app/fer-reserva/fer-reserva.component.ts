@@ -87,7 +87,7 @@ export class FerReservaComponent implements OnInit {
 
     console.log(`id de la sala: ${meetingRoomID}, Data Reserva: ${dataReserva}, Hora inici: ${horaInici}, Hora fi: ${horaFi}, idUsuari: ${this.userid}`);
 
-    this.reservesService.CreateReserva(3, dataReserva, horaInici, horaFi, userID).subscribe(
+    this.reservesService.CreateReserva(meetingRoomID, dataReserva, horaInici, horaFi, userID).subscribe(
       (resposta) => {
         console.log('Reserva creada amb èxit:', resposta);
         this.router.navigate(['/reserves']);
