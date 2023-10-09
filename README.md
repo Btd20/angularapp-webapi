@@ -257,7 +257,11 @@ Aquest arxiu és on escollirem una ruta de l'entorn del client amb les correspon
 ## 4. Backend i BBDD:
 En aquest apartat veurem la part del backend i la BBDD que son les parts que sostenen el nostre projecte. Puntualitzarem com es gestionen les dades, es podrà veure com es connecten els components i a la vegada, s'asegura la integritat de les dades sensibles dins de la funcionalitat de l'aplicació.<br>
 ### 4.1 Backend amb C#:
-A l'apartat del backend trobem tot allò que no es veu al costat client: rutes, endpoints, maneig de peticions, accés a la BBDD, seguretat i autenticació, maneig d'errors i excepcions, rendiment i serveis addicionals i més.<br>
+A l'apartat del backend trobem tot allò que no es veu al costat client: rutes, endpoints, maneig de peticions, accés a la BBDD, seguretat i autenticació, maneig d'excepcions, rendiment, serveis addicionals, etc.<br>
+
+### 4.2 WebAPI:
+En un principi, aquest projecte era més petit per lo que només teniem un simple projecte amb tot el backend, anomenat WebAPI. A mesura que han anat passant els sprint reviews, ens hem vist amb la necesitat d'afegir-hi microserveis -punt que explicarem més endavant-. El projecte WebAPI és el monolit principal, tot i que l'idea és dividir-lo per tal de que cada microservei cumpleixi una funcio més especifica.
+
 ##### Program.cs
 Aquest fitxer és fonamental per al projecte d'ASP.NET.<br>
 
@@ -265,7 +269,7 @@ Aquest fitxer és fonamental per al projecte d'ASP.NET.<br>
  - Iniciar el servidor web.
  - Configurar l'entorn on s'executarà l'aplicació ASP.NET Core.
    
-### 4.2 Microserveis:
+### 4.3 Microserveis:
 Els microserveis no són més que programaris dividits per tal de que aquests tinguin una autonomía. Aquesta utilitat s'ha implementat per tal de que, en el cas de que caigui un servei, per exemple el de Reserva, no es vegi afectat també el servei de País. Es a dir, que tots els serveis en la mesura del possible, siguin autonoms i no depenguin dels altres serveis ja que això pot provocar una cadena perquè si cau un servei, caurien tots per dependre del anterior. 
 
 ##### 4.2.1 APIs generades:
