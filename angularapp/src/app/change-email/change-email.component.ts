@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-change-email',
@@ -10,7 +11,7 @@ export class ChangeEmailComponent {
   currentEmail: string = '';
   newEmail: string = '';
   confirmEmail: string = '';
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   changeEmail() {
     if (this.newEmail !== this.confirmEmail) {
@@ -23,6 +24,7 @@ export class ChangeEmailComponent {
       .subscribe(() => {
         console.log('Correu canviat.');
         alert('✔ Correu canviat correctament.');
+        this.router.navigate(['/settings-user']);
       }, error => {
         console.log('Error en el canvi de correu: ', error);
         alert('✘ Error en el canvi de correu.');

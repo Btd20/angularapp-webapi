@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-change-user',
@@ -11,7 +12,7 @@ export class ChangeUserComponent {
   newUsername: string = '';
   confirmUsername: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   changeUsername() {
     if (this.newUsername !== this.confirmUsername) {
@@ -24,6 +25,7 @@ export class ChangeUserComponent {
       .subscribe(() => {
         console.log('Usuari canviat.');
         alert('✔ Usuari canviat correctament.');
+        this.router.navigate(['/settings-user']);
       }, error => {
         console.log('Error en el canvi de usuari: ', error);
         alert('✘ Error en canviar el teu usuari.');
