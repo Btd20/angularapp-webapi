@@ -105,12 +105,11 @@ namespace ReservesAPI.Controllers
             return CreatedAtAction("GetReserve", new { id = reserva.ReserveID }, reserva);
         }
 
-       /* private string ObtenerEmailPorUserId(string userId)
+       private string ObtenerEmailPorUserId(string userId)
         {
             var user = _context.Users.FirstOrDefault(u => u.Id == userId);
             return user?.Email;
         }
-       */
 
 
 
