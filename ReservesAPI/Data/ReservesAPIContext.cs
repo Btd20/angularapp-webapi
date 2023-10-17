@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ReservesAPI.Models;
 
 namespace ReservesAPI.Data
 {
-    public class ReservesAPIContext : DbContext
+    public class ReservesAPIContext : IdentityDbContext
     {
         public ReservesAPIContext(DbContextOptions<ReservesAPIContext> options) : base(options)
         {
