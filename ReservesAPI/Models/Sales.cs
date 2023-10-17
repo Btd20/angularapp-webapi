@@ -13,7 +13,7 @@ namespace ReservesAPI.Models
 
         public int Capacitat { get; set; }
 
-        //[ForeignKey("OfficeID")]
-        //public Oficines oficina { get; set; }
+      //  [ForeignKey("OfficeID")]
+     //   public Oficines oficina { get; set; }
     }
 }

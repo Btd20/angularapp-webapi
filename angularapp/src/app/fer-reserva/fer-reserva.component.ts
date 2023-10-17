@@ -39,10 +39,14 @@ export class FerReservaComponent implements OnInit {
   
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.paisReserva = params['pais'];
-      this.ciutatReserva = params['ciutat'];
-      this.oficinaReserva = params['oficina'];
+      this.meetingRoomID = +params['salaID'];
       this.minDate = this.dia;
+
+      this.apiService.obtenirDadesGeolocalitzacio().subscribe(data => {
+        this.pais = data.pais;
+        this.ciutat = data.ciutat;
+        this.oficina = data.oficina;
+      });
 
       if (this.oficinaReserva) {
         this.getSalesByOfiFromApi();

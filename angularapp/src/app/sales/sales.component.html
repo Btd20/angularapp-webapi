@@ -10,7 +10,7 @@
       <tbody class="tbl-content">
         <tr *ngFor="let sala of sales">
           <td>
-            <button (click)="navigateToFerReserves()" class="btn btn-sales m-2">{{ sala.nomSala }}</button>
+            <button (click)="navigateToFerReserves(sala.officeID)" class="btn btn-sales m-2">{{ sala.nomSala }}</button>
           </td>
         </tr>
       </tbody>
