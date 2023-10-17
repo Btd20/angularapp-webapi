@@ -11,7 +11,7 @@ namespace ReservesAPI.Data
 
         }
 
-        public DbSet<Reserves> Reserva { get; set; }
+        public DbSet<Reserves> Reserves { get; set; }
         public DbSet<Sales> Sales { get; set; }
 
 

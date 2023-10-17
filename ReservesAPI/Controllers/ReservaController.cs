@@ -25,7 +25,7 @@ namespace ReservesAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Reserves>>> GetReserves()
         {
-            var reserves = await _context.Reserva.Include(r => r.Sala).ToListAsync();
+            var reserves = await _context.Reserves.Include(r => r.Sala).ToListAsync();
             return Ok(reserves);
         }
 
@@ -33,7 +33,7 @@ namespace ReservesAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Reserves>> GetReserve(int id)
         {
-            var reserve = await _context.Reserva.Include(r => r.Sala).FirstOrDefaultAsync(m => m.ReserveID == id);
+            var reserve = await _context.Reserves.Include(r => r.Sala).FirstOrDefaultAsync(m => m.ReserveID == id);
 
             if (reserve == null)
             {
@@ -153,7 +153,7 @@ namespace ReservesAPI.Controllers
         [HttpPut("{id}/{novaHoraInici}/{novaHoraFi}/{novaDataReserva}")]
         public async Task<IActionResult> UpdateReserve(int id, string novaHoraInici, string novaHoraFi, string novaDataReserva)
         {
-            var reserve = await _context.Reserva.FindAsync(id);
+            var reserve = await _context.Reserves.FindAsync(id);
 
             if (reserve == null)
             {
@@ -198,7 +198,7 @@ namespace ReservesAPI.Controllers
         [HttpGet("GetReservesByUser/{userId}")]
         public async Task<ActionResult<IEnumerable<Reserves>>> GetReservesByUser(string userId)
         {
-            var reserves = await _context.Reserva
+            var reserves = await _context.Reserves
                 .Where(r => r.UserID == userId)
                 .Include(r => r.Sala)
                 .ToListAsync();
@@ -210,13 +210,13 @@ namespace ReservesAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReserve(int id)
         {
-            var reserve = await _context.Reserva.FindAsync(id);
+            var reserve = await _context.Reserves.FindAsync(id);
             if (reserve == null)
             {
                 return NotFound();
             }
 
-            _context.Reserva.Remove(reserve);
+            _context.Reserves.Remove(reserve);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -224,7 +224,7 @@ namespace ReservesAPI.Controllers
 
         private bool ReserveExists(int id)
         {
-            return _context.Reserva.Any(e => e.ReserveID == id);
+            return _context.Reserves.Any(e => e.ReserveID == id);
         }
 
     }
