@@ -14,6 +14,8 @@ var emailConfig = builder.Configuration
     .Get<EmailConfiguration>();
 builder.Services.AddSingleton(emailConfig);
 
+builder.Services.AddScoped<EmailService>();
+
 // Add services to the container.
 builder.Services.AddControllers();
 
