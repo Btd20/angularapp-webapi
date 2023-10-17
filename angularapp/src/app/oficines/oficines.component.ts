@@ -65,22 +65,24 @@ export class OficinesComponent implements OnInit {
     );
   }
 
-  getSalaByOficina(pais: string, ciutat: string, oficina: string): void {
-    this.apiService.getSalaByOficina(pais, ciutat, oficina).subscribe(
-      response => {
-        this.sales = response;
-        console.log(this.sales);
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }
+  //EN CUARENTENA
 
-  navigateToRooms(nomOficina: string) {
+  //getSalaByOficina(pais: string, ciutat: string, oficina: string): void {
+  //  this.apiService.getSalaByOficina(pais, ciutat, oficina).subscribe(
+  //    response => {
+  //      this.sales = response;
+  //      console.log(this.sales);
+  //    },
+  //    error => {
+  //      console.error(error);
+  //    }
+  //  );
+  //}
+
+  navigateToRooms(officeID: number) {
     const pais = this.pais;
     const ciutat = this.ciutat;
-    this.router.navigate(['/oficines', pais, ciutat, nomOficina, 'sales']); //la ruta màgica 
+    this.router.navigate(['/sales', officeID]);
   }
 
  

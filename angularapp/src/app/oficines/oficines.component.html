@@ -9,7 +9,7 @@
       </thead>
       <tbody class="tbl-content">
         <tr *ngFor="let oficinaItem of oficina">
-          <button (click)="navigateToRooms(oficinaItem.nomOficina)" class="btn btn-oficines m-2"> {{ oficinaItem.nomOficina }} </button>
+          <button (click)="navigateToRooms(oficinaItem.officeID)" class="btn btn-oficines m-2"> {{ oficinaItem.nomOficina }} </button>
         </tr>
       </tbody>
     </table>

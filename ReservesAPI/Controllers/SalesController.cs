@@ -20,6 +20,13 @@ namespace ReservesAPI.Controllers
             _context = context;
         }
 
+        [HttpGet("{officeID}")]
+        public async Task<ActionResult<IEnumerable<Sales>>> GetSalesByOfficeID(int officeID)
+        {
+            var sales = await _context.Sales.Where(s => s.OfficeID == officeID).ToListAsync();
+            return Ok(sales);
+        }
+
         // GET: Sales
         /*
         [HttpGet]
@@ -50,7 +57,7 @@ namespace ReservesAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Sales>> CreateSales(Sales sala)
         {
-            _context.Sala.Add(sala);
+            _context.Sales.Add(sala);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetSales", new { id = sala.MeetingRoomID }, sala);
@@ -128,13 +135,13 @@ namespace ReservesAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSales(int id)
         {
-            var sala = await _context.Sala.FindAsync(id);
+            var sala = await _context.Sales.FindAsync(id);
             if (sala == null)
             {
                 return NotFound();
             }
 
-            _context.Sala.Remove(sala);
+            _context.Sales.Remove(sala);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -145,13 +152,13 @@ namespace ReservesAPI.Controllers
         [HttpDelete("nom/{nomSala}")]
         public async Task<IActionResult> DeleteSalesByNom(string nomSala)
         {
-            var sala = await _context.Sala.FirstOrDefaultAsync(o => o.NomSala == nomSala);
+            var sala = await _context.Sales.FirstOrDefaultAsync(o => o.NomSala == nomSala);
             if (sala == null)
             {
                 return NotFound();
             }
 
-            _context.Sala.Remove(sala);
+            _context.Sales.Remove(sala);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -159,7 +166,7 @@ namespace ReservesAPI.Controllers
 
         private bool SalesExists(int id)
         {
-            return _context.Sala.Any(e => e.MeetingRoomID == id);
+            return _context.Sales.Any(e => e.MeetingRoomID == id);
         }
     }
 }

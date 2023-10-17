@@ -15,6 +15,8 @@ export class SalesComponent implements OnInit {
   ciutat: string = '';
   oficina: string = '';
   isAdmin?: boolean;
+  officeID: number=-1;
+
 
   constructor(private router: Router, private route: ActivatedRoute,
     private apiService: ApiService, private authService: AuthService,
@@ -28,13 +30,22 @@ export class SalesComponent implements OnInit {
       this.pais = params['pais'];
       this.ciutat = params['ciutat'];
       this.oficina = params['oficina'];
-      //alert(`${this.pais}    ${this.ciutat}   ${this.oficina}`);
+      this.officeID = +params['officeID'];  //el + transforma el paràmetre a número perque els paràmetres es passen com a string
 
-      if (this.pais && this.ciutat && this.oficina) {
-        this.getSalaByOficina(this.pais, this.ciutat, this.oficina);
+      if (this.officeID) {
+        this.getSalesByOfficeID(this.officeID);
       } else {
         this.getAllSalesFromApi();
       }
+
+      //alert(`${this.pais}    ${this.ciutat}   ${this.oficina}`);
+
+      
+      //if (this.pais && this.ciutat && this.oficina) {
+      //  this.getSalaByOficina(this.pais, this.ciutat, this.oficina);
+      //} else {
+      //  this.getAllSalesFromApi();
+      //}
     });
   }
 
@@ -49,8 +60,22 @@ export class SalesComponent implements OnInit {
     );
   }
 
-  getSalaByOficina(pais: string, ciutat: string, nomOficina: string): void {
-    this.apiService.getSalaByOficina(pais, ciutat, nomOficina).subscribe(
+  //              G E T   S A L E S   D E   W E B A P I
+  //--------------------------------------------------------------------------
+  //getSalaByOficina(pais: string, ciutat: string, nomOficina: string): void {
+  //  this.apiService.getSalaByOficina(pais, ciutat, nomOficina).subscribe(
+  //    response => {
+  //      this.sales = response;
+  //    },
+  //    error => {
+  //      console.error(error);
+  //    }
+  //  );
+  //}
+
+
+  getSalesByOfficeID(officeID: number): void {
+    this.salesService.getSalesByOfficeID(officeID).subscribe(
       response => {
         this.sales = response;
       },
@@ -59,6 +84,8 @@ export class SalesComponent implements OnInit {
       }
     );
   }
+
+  
 
   navigateToFerReserves(): void {
     this.router.navigate(['/ferreserva', this.pais, this.ciutat, this.oficina]);

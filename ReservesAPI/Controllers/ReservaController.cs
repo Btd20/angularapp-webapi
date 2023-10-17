@@ -54,7 +54,7 @@ namespace ReservesAPI.Controllers
           }
         */
 
-        [HttpPost("FerReserva/{meetingRoomID}/{dataReserva}/{horaInici}/{horaFi}/{userId}")]
+      /*  [HttpPost("FerReserva/{meetingRoomID}/{dataReserva}/{horaInici}/{horaFi}/{userId}")]
         public async Task<IActionResult> CreateReserva(int meetingRoomID, string dataReserva, string horaInici, string horaFi, string userId)
         {
             if (!DateTime.TryParse(dataReserva, out DateTime dataReservaDateTime) ||
@@ -103,16 +103,18 @@ namespace ReservesAPI.Controllers
             _emailService.SendEmail(userEmail, "Confirmació de reserva", html);
 
             return CreatedAtAction("GetReserve", new { id = reserva.ReserveID }, reserva);
+         
         }
 
-       /* private string ObtenerEmailPorUserId(string userId)
+        //!!!!! FK A USERS 
+        private string ObtenerEmailPorUserId(string userId)
         {
             var user = _context.Users.FirstOrDefault(u => u.Id == userId);
             return user?.Email;
         }
-       */
+       
 
-
+    */
 
 
 
