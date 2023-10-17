@@ -28,14 +28,14 @@ namespace ReservesAPI.Controllers
         }
 
         // GET: Sales
-        /*
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Sales>>> GetSales()
         {
-            var sales = await _context.Sala.Include(o => o.oficina).ThenInclude(c => c.ciutat).ThenInclude(p => p.pais).ToListAsync();
+            var sales = await _context.Sales.ToListAsync();
             return Ok(sales);
         }
-        */
+
 
         // GET: Sales/5
         /*
