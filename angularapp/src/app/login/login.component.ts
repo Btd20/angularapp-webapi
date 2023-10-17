@@ -4,6 +4,7 @@ import { AuthService } from '../auth-service.service';
 import jwt_decode, { JwtPayload } from 'jwt-decode';
 
 interface DecodedToken {
+  exp: number;
   username: string;
   email: string;
   role: string;
@@ -34,20 +35,26 @@ export class LoginComponent {
     this.authService.login(username, password).subscribe(
       response => {
         if (response?.token) {
-          sessionStorage.setItem('token', response.token.result);
           const decodedToken = jwt_decode(response.token.result) as DecodedToken;
-          this.authService.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
-          sessionStorage.setItem('username', username);
-          console.log(decodedToken);
-          console.log('Login exitoso');
-          this.router.navigate(['/home']);
+          const expirationTime = new Date(decodedToken.exp * 1000); // Convertir a milisegundos
+
+          if (expirationTime > new Date()) {
+            localStorage.setItem('token', response.token.result);
+            this.authService.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
+            localStorage.setItem('username', username);
+            console.log(decodedToken);
+            console.log('Login exitoso');
+            this.router.navigate(['/home']);
+          } else {
+            console.log('El token ha expirado');
+          }
         } else {
-          console.log('Error en el inici de sessió, token buit.');
+          console.log('Error en el inicio de sesión, token vacío.');
         }
       },
       error => {
-        console.log('Error en iniciar sessió:', error);
-        //AQUI S'HA DE ACTIVAR EL DIV DE ALERT-BOOTSTRAP
+        console.log('Error en iniciar sesión:', error);
+        //AQUÍ SE DEBE ACTIVAR EL DIV DE ALERT-BOOTSTRAP
       }
     );
   }

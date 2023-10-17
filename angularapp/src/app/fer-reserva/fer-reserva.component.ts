@@ -11,11 +11,11 @@ import { SalesService } from '../sales.service';
   styleUrls: ['./fer-reserva.component.css'],
 })
 export class FerReservaComponent implements OnInit {
-  userid: string | null = sessionStorage.getItem('id');
-  username: string | null = sessionStorage.getItem('username');
-  pais: string | null = sessionStorage.getItem('pais');
-  ciutat: string | null = sessionStorage.getItem('ciutat');
-  oficina: string | null = sessionStorage.getItem('oficina');
+  userid: string | null = localStorage.getItem('id');
+  username: string | null = localStorage.getItem('username');
+  pais: string | null = localStorage.getItem('pais');
+  ciutat: string | null = localStorage.getItem('ciutat');
+  oficina: string | null = localStorage.getItem('oficina');
   minDate: string = '';
   dia: string = '';
   horaInici: string = '';

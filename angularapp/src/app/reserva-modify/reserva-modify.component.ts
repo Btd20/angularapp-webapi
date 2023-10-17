@@ -10,7 +10,7 @@ import { SalesService } from '../sales.service';
   styleUrls: ['./reserva-modify.component.css']
 })
 export class ReservaMComponent {
-  username: string | null = sessionStorage.getItem('username');
+  username: string | null = localStorage.getItem('username');
   sales: any[] = [];
   selectedSala: string | undefined;
   reservaId: any;

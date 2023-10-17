@@ -22,7 +22,7 @@ export class ReservesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const userId = sessionStorage.getItem('id');
+    const userId = localStorage.getItem('id');
 
     if (userId !== null) {
       this.reservesService.getReservesByUser(userId)

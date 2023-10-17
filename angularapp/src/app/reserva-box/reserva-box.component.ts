@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ReservaBoxComponent {
   @Input() reserva: any;
-  username: string | null = sessionStorage.getItem("username");
+  username: string | null = localStorage.getItem("username");
 
   constructor(private apiService: ApiService, private reservesService: ReservesService, private router: Router) { }
 

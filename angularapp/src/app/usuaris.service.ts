@@ -14,24 +14,24 @@ export class UsuarisService {
   getUsuaris(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrlUsuaris).pipe(
       tap((usuaris: any[]) => {
-        const currentUser = usuaris.find(usuario => usuario.userName === sessionStorage.getItem('username'));
+        const currentUser = usuaris.find(usuario => usuario.userName === localStorage.getItem('username'));
         if (currentUser) {
-          sessionStorage.setItem('id', currentUser.id);
-          sessionStorage.setItem('email', currentUser.email);
+          localStorage.setItem('id', currentUser.id);
+          localStorage.setItem('email', currentUser.email);
           if (currentUser.pais == null) {
-            sessionStorage.setItem('pais', "No seleccionat");
+            localStorage.setItem('pais', "No seleccionat");
           } else {
-            sessionStorage.setItem('pais', currentUser.pais);
+            localStorage.setItem('pais', currentUser.pais);
           }
           if (currentUser.ciutat == null) {
-            sessionStorage.setItem('ciutat', "No seleccionat");
+            localStorage.setItem('ciutat', "No seleccionat");
           } else {
-            sessionStorage.setItem('ciutat', currentUser.ciutat);
+            localStorage.setItem('ciutat', currentUser.ciutat);
           }
           if (currentUser.oficina == null) {
-            sessionStorage.setItem('oficina', "No seleccionat");
+            localStorage.setItem('oficina', "No seleccionat");
           } else {
-            sessionStorage.setItem('oficina', currentUser.oficina)
+            localStorage.setItem('oficina', currentUser.oficina)
           }
         }
       })
