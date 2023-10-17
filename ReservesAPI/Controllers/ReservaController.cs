@@ -106,13 +106,12 @@ namespace ReservesAPI.Controllers
          
         }
 
-        //!!!!! FK A USERS 
-        private string ObtenerEmailPorUserId(string userId)
+       private string ObtenerEmailPorUserId(string userId)
         {
             var user = _context.Users.FirstOrDefault(u => u.Id == userId);
             return user?.Email;
         }
-       
+
 
     */
 
