@@ -1,7 +1,18 @@
 
 <app-navsales></app-navsales>
 <div class="row p-5 container-reserva">
-  <div class="res-titl"><span>LES TEVES RESERVES</span></div><!--AQUI BUSCADOR-->
+  <div class="res-titl"><span>LES TEVES RESERVES</span></div>
+  <!--AQUI BUSCADOR-->
+  <!--
+      <mat-form-field class="flex-grow-1 custom-input">
+        <input matInput placeholder="Buscar reserva per el nom de la Sala" [formControl]="salaControl">
+        <mat-autocomplete #auto="matAutocomplete" class="custom-autocomplete">
+          <mat-option class="custom-option" *ngFor="let sala of filteredSala" [value]="sala.nomSala">
+            {{ sala.nomSala }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+  -->
   <div class="res-body">
     <!-- Verifica si reserves existe y si tiene elementos antes de iterar sobre ellas -->
     <ng-container *ngIf="reserves && reserves.length > 0">
