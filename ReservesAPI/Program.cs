@@ -7,6 +7,13 @@ using ReservesAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var emailKey = builder.Configuration["EMailKey"];
+
+var emailConfig = builder.Configuration
+    .GetSection("EmailConfiguration")
+    .Get<EmailConfiguration>();
+builder.Services.AddSingleton(emailConfig);
+
 // Add services to the container.
 builder.Services.AddControllers();
 

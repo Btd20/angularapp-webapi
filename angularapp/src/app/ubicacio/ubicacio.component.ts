@@ -101,9 +101,9 @@ export class UbicacioComponent {
 
   guardarPais(): void {
     if (this.selectedCountry) {
-      const username = sessionStorage.getItem('username') ?? '';
+      const username = localStorage.getItem('username') ?? '';
       this.usuarisService.guardarPais(username, this.selectedCountry);
-      sessionStorage.setItem('pais', this.selectedCountry);
+      localStorage.setItem('pais', this.selectedCountry);
 
       this.getAllCiutatsFromApi();
     }
@@ -111,9 +111,9 @@ export class UbicacioComponent {
 
   guardarCiutat(): void {
     if (this.selectedCity) {
-      const username = sessionStorage.getItem('username') ?? '';
+      const username = localStorage.getItem('username') ?? '';
       this.usuarisService.guardarCiutat(username, this.selectedCity);
-      sessionStorage.setItem('ciutat', this.selectedCity);
+      localStorage.setItem('ciutat', this.selectedCity);
 
       this.getAllOficinesFromApi();
     }
@@ -122,9 +122,9 @@ export class UbicacioComponent {
 
   guardarOficina(): void {
     if (this.selectedOffice) {
-      const username = sessionStorage.getItem('username') ?? '';
+      const username = localStorage.getItem('username') ?? '';
       this.usuarisService.guardarOficina(username, this.selectedOffice);
-      sessionStorage.setItem('oficina', this.selectedOffice);
+      localStorage.setItem('oficina', this.selectedOffice);
     }
   }
 
@@ -142,7 +142,7 @@ export class UbicacioComponent {
       return;
     }
 
-    const username = sessionStorage.getItem('username'); // Reemplaza "nombreDeUsuario" por el nombre de usuario actual del usuario.
+    const username = localStorage.getItem('username'); // Reemplaza "nombreDeUsuario" por el nombre de usuario actual del usuario.
 
     const formData = new FormData();
     formData.append("file", this.fileToUpload);

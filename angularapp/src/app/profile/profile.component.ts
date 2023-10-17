@@ -9,11 +9,11 @@ import { UsuarisService } from '../usuaris.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  username: string | null = sessionStorage.getItem('username');
-  role: string | null = sessionStorage.getItem('role');
-  email: string | null = sessionStorage.getItem('email');
-  pais: string | null = sessionStorage.getItem('pais');
-  oficina: string | null = sessionStorage.getItem('oficina');
+  username: string | null = localStorage.getItem('username');
+  role: string | null = localStorage.getItem('role');
+  email: string | null = localStorage.getItem('email');
+  pais: string | null = localStorage.getItem('pais');
+  oficina: string | null = localStorage.getItem('oficina');
 
   profileImageUrl: string | undefined;
 

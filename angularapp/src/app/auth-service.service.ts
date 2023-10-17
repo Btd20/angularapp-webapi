@@ -17,7 +17,7 @@ interface DecodedToken {
 export class AuthService implements OnInit {
   isAdmin?: boolean = false;
   constructor(private http: HttpClient, private router: Router) {
-    const token = sessionStorage.getItem('token');
+    const token = localStorage.getItem('token');
     const decodedToken = token ? jwt_decode(token) as DecodedToken : null;
     this.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
     let role = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
@@ -28,10 +28,10 @@ export class AuthService implements OnInit {
       role = "Usuari";
     }
 
-    sessionStorage.setItem('role', role);
+    localStorage.setItem('role', role);
 
     if (this.isAdmin !== undefined) {
-      sessionStorage.setItem('isAdmin', this.isAdmin.toString());
+      localStorage.setItem('isAdmin', this.isAdmin.toString());
     }
   }
 
@@ -51,7 +51,7 @@ export class AuthService implements OnInit {
   changePassword(currentPassword: string, newPassword: string) {
 
     const body = {
-      username: sessionStorage.getItem('username'),
+      username: localStorage.getItem('username'),
       currentPassword: currentPassword,
       newPassword: newPassword
     };
@@ -62,7 +62,7 @@ export class AuthService implements OnInit {
   changeUsername(currentUsername: string, newUsername: string) {
 
     const body = {
-      username: sessionStorage.getItem('username'),
+      username: localStorage.getItem('username'),
       currentUsername: currentUsername,
       newUsername: newUsername
     };
@@ -73,7 +73,7 @@ export class AuthService implements OnInit {
   changeEmail(currentEmail: string, newEmail: string) {
 
     const body = {
-      email: sessionStorage.getItem('email'),
+      email: localStorage.getItem('email'),
       currentEmail: currentEmail,
       newEmail: newEmail
     };
