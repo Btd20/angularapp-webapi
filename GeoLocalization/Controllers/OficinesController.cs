@@ -154,10 +154,33 @@ namespace GeoLocalization.Controllers
 
             return NoContent();
         }
+      
+        [HttpGet("{id}/geolocation")]
+            public async Task<ActionResult<object>> GetGeolocationByOficinaId(int id) //todo crear model
+            {
+                var oficina = await _context.Oficines
+                    .Include(o => o.ciutat.pais)
+                    .FirstOrDefaultAsync(m => m.OfficeID == id);
+
+                if (oficina == null)
+                {
+                    return NotFound();
+                }
+
+                var geolocationData = new
+                {
+                    pais = oficina.ciutat.pais.NomPais,
+                    ciutat = oficina.ciutat.NomCiutat,
+                    oficina = oficina.NomOficina
+                };
+
+                return Ok(geolocationData);
+            }
+    
 
 
-        // DELETE: Oficina/nom/{nomOficina}
-        [HttpDelete("nom/{nomOficina}")]
+    // DELETE: Oficina/nom/{nomOficina}
+    [HttpDelete("nom/{nomOficina}")]
         public async Task<IActionResult> DeleteOficinesByNom(string nomOficina)
         {
             var oficina = await _context.Oficines.FirstOrDefaultAsync(o => o.NomOficina == nomOficina);
@@ -176,4 +199,5 @@ namespace GeoLocalization.Controllers
             return _context.Oficines.Any(e => e.OfficeID == id);
         }
     }
+
 }

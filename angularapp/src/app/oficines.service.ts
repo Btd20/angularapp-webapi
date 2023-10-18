@@ -33,4 +33,9 @@ export class OficinesService {
     return this.http.delete(url);
   }
 
+  getGeolocationByOficinaId(oficinaId: number): Observable<any> {
+    const url = `${this.apiUrlOficines}/${oficinaId}`;
+    return this.http.get<any>(url);
+  }
+
 }

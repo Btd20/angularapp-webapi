@@ -87,12 +87,12 @@ export class SalesComponent implements OnInit {
 
   
 
-  navigateToFerReserves(salaID: number): void {
+  navigateToFerReserves(officeID: number): void {
     const pais = this.pais;
     const ciutat = this.ciutat;
     const oficina = this.oficina;
 
-    this.router.navigate(['/ferreserva',salaID]);
+    this.router.navigate(['/ferreserva',officeID]);
   }
 
 }

@@ -4,6 +4,7 @@ import { ReservesService } from '../reserves.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SelectSala } from '../select-sala/select-sala.component';
 import { SalesService } from '../sales.service';
+import { OficinesService } from '../oficines.service';
 
 @Component({
   selector: 'app-ferreserva',
@@ -20,6 +21,7 @@ export class FerReservaComponent implements OnInit {
   dia: string = '';
   horaInici: string = '';
   horaFi: string = '';
+  officeID: number = 0;
   meetingRoomID: number = 0;
   sales: any[] = [];
   selectedSala: string | undefined;
@@ -35,14 +37,19 @@ export class FerReservaComponent implements OnInit {
   showValue(event: any) {
     this.selectedValue = event.target.value;
   }
-  constructor(private apiService: ApiService, private reservesService: ReservesService, private route: ActivatedRoute, private router: Router, private salesService: SalesService) { }
-  
+  constructor(private apiService: ApiService,
+    private reservesService: ReservesService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private salesService: SalesService,
+    private oficinesService: OficinesService) { }
+
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.meetingRoomID = +params['salaID'];
+      this.officeID = +params['officeID'];
       this.minDate = this.dia;
 
-      this.apiService.obtenirDadesGeolocalitzacio().subscribe(data => {
+      this.oficinesService.getGeolocationByOficinaId(this.officeID).subscribe(data => {
         this.pais = data.pais;
         this.ciutat = data.ciutat;
         this.oficina = data.oficina;
@@ -120,7 +127,7 @@ export class FerReservaComponent implements OnInit {
   }
 
   getSalesByOfiFromApi(): void {
-    this.apiService.getSalaByOficina(this.paisReserva, this.ciutatReserva, this.oficinaReserva).subscribe(
+    this.apiService.getSalaByOficina(this.paisReserva,this.ciutatReserva, this.oficinaReserva).subscribe(
       response => {
         this.sales = response;
 
@@ -129,7 +136,7 @@ export class FerReservaComponent implements OnInit {
         console.error(error);
       }
     );
-  } 
+  }
 
   getSalesByOfiFromUser(): void {
     if (!this.pais && !this.ciutat && !this.oficina) {
