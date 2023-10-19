@@ -20,6 +20,7 @@ export class SelectSala implements OnInit {
   @Input() pais: string  = '';
   @Input() ciutat: string  = '';
   @Input() nomOficina: string = '';
+  @Input() officeID: number = 0; // new 
   sales: Sala[] = [];
   selectedSala: number = 0;
 
@@ -27,8 +28,8 @@ export class SelectSala implements OnInit {
 
   ngOnInit(): void {
 
-    if (this.nomOficina && this.nomOficina !== 'No seleccionat') {
-      this.getSalesByOfiFromApi();
+    if (this.officeID ) {
+      this.getSalesByOfficeID(this.officeID);
     } else {
       this.getAllSalesFromApi();
     }
@@ -49,10 +50,10 @@ export class SelectSala implements OnInit {
     );
   }
 
-  getSalesByOfiFromApi(): void {
-    this.apiService.getSalaByOficina(this.pais, this.ciutat, this.nomOficina).subscribe(
+
+  getSalesByOfficeID(officeID: number): void {
+    this.salesService.getSalesByOfficeID(officeID).subscribe(
       response => {
-        
         this.sales = response.map(sala => ({ value: sala.meetingRoomID, nomSala: sala.nomSala }));
       },
       error => {
@@ -61,12 +62,6 @@ export class SelectSala implements OnInit {
     );
   }
 
- /* onSalaSeleccionada(salaId: number) {
-    //alert(`${this.selectedSala}`);
-    this.selectedSala = salaId;
-    this.salaSeleccionada.emit(this.selectedSala);
-  }
-  */
 
   onSalaSeleccionada(event: any) {
     const selectedValue = parseInt(event.target.value, 10); 

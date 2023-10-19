@@ -34,7 +34,7 @@ export class OficinesService {
   }
 
   getGeolocationByOficinaId(oficinaId: number): Observable<any> {
-    const url = `${this.apiUrlOficines}/${oficinaId}`;
+    const url = `${this.apiUrlOficines}/${oficinaId}/geolocation`;
     return this.http.get<any>(url);
   }
 
