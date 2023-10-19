@@ -318,12 +318,7 @@ Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<
 **GET: api/ApplicationUsers/GetProfileImage/{username}**
  - Torna la imatge del nom d'usuari que se li passa.<br>
 ### AuthController.cs
-Aquest arxiu conté tots els controladors dedicats a l'autentificació de l'aplicació.<br>
-### AdminController.cs
-Aquest arxiu conté tots els controladors dedicats al administrador de l'aplicació.<br>
-
-### RolesController.cs
-Aquest arxiu conté tots els controladors dedicats als rols d'usuari dintre de l'aplicació.<br>
+Aquest arxiu conté tots els controladors dedicats a l'autentificació de l'aplicació, fent referencia als tokens.<br>
 
 ### PaisController.cs
 Aquest arxiu conté tots els controladors dedicats als paisos de l'aplicació.<br>
