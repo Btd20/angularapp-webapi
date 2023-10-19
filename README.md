@@ -256,26 +256,22 @@ Aquest arxiu és on escollirem una ruta de l'entorn del client amb les correspon
  - Podem crear rutes anidades i també passant-li parametres. En aquest projecte ho veurem quan passem per el component Paisos. Quan l'usuari vagi fent click als parametres que ell vulgui, veura una ruta similar a aquesta: /oficines/Alemanya/Munic/ACME%20Munich/sales.
 ## 4. Backend i BBDD:
 En aquest apartat veurem la part del backend i la BBDD que son les parts que sostenen el nostre projecte. Puntualitzarem com es gestionen les dades, es podrà veure com es connecten els components i a la vegada, s'asegura la integritat de les dades sensibles dins de la funcionalitat de l'aplicació.<br>
+
 ### 4.1 Backend amb C#:
 A l'apartat del backend trobem tot allò que no es veu al costat client: rutes, endpoints, maneig de peticions, accés a la BBDD, seguretat i autenticació, maneig d'excepcions, rendiment, serveis addicionals, etc.<br>
 
 ### 4.2 WebAPI:
 En un principi, aquest projecte era més petit per lo que només teniem un simple projecte amb tot el backend, anomenat WebAPI. A mesura que han anat passant els sprint reviews, ens hem vist amb la necesitat d'afegir-hi microserveis -punt que explicarem més endavant-. El projecte WebAPI és el monolit principal, tot i que l'idea és dividir-lo per tal de que cada microservei cumpleixi una funcio més especifica.
 
-##### Program.cs
-Aquest fitxer és fonamental per al projecte d'ASP.NET.<br>
-
-**Funcionalitats principals:** 
- - Iniciar el servidor web.
- - Configurar l'entorn on s'executarà l'aplicació ASP.NET Core.
-   
 ### 4.3 Microserveis:
-Els microserveis no són més que programaris dividits per tal de que aquests tinguin una autonomía. Aquesta utilitat s'ha implementat per tal de que, en el cas de que caigui un servei, per exemple el de Reserva, no es vegi afectat també el servei de País. Es a dir, que tots els serveis en la mesura del possible, siguin autonoms i no depenguin dels altres serveis ja que això pot provocar una cadena perquè si cau un servei, caurien tots per dependre del anterior. 
+Els microserveis no són més que programaris dividits per tal de que aquests tinguin una autonomía. Aquesta utilitat s'ha implementat per tal de que, en el cas de que caigui un servei, per exemple el de ReservesAPI, no es vegi afectat també el servei de UsersAPI. Es a dir, que tots els serveis en la mesura del possible, siguin autònoms i no depenguin dels altres serveis.
 
-##### 4.2.1 APIs generades:
-Lorem ipsum.<br>
+##### 4.3.1 APIs generades:
+ - GeoLocalitzation
+ - ReservesAPI
+ - UsersAPI
 
-### 4.2.2 Controladors:
+### 4.3.2 Controladors:
 La seva funció principal és fer servir les sol·licituds HTTP que arriben al servidor i coordinar la interacció entre el model de dades, la vista i altres parts de l'aplicació.
 ### ApplicationUserController.cs
 Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<br>
@@ -322,7 +318,8 @@ Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<
 **GET: api/ApplicationUsers/GetProfileImage/{username}**
  - Torna la imatge del nom d'usuari que se li passa.<br>
 ### AuthController.cs
-Lorem ipsum.<br>
+Aquest arxiu conté tots els controladors dedicats a l'autentificació de l'aplicació.<br>
+
 ### AdminController.cs
 Aquest arxiu conté tots els controladors dedicats al administrador de l'aplicació.<br>
 ### RolesController.cs
