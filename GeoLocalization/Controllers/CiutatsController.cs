@@ -98,10 +98,6 @@ namespace GeoLocalization.Controllers
             return CreatedAtAction("GetCiutats", new { id = ciutat.CityID }, ciutat);
         }
 
-
-        //UPDATE: proba 
-
-
         // DELETE: Ciutats/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCiutats(int id)
@@ -177,10 +173,6 @@ namespace GeoLocalization.Controllers
 
             return NoContent();
         }
-
-
-
-
 
         private bool CiutatsExists(int id)
         {
