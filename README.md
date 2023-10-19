@@ -456,7 +456,35 @@ Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicaci�
 **GET: ReservesAPI/ReserveExists/{id}**
  - Aquest métode privat comprova que la reunió amb la ID introduida existeix a la BBDD.<br>
 ### 4.2.3 Models:
-Lorem ipsum.<br>
+ELS MODEEELS, DESCRIPCIÓ.
+
+### RegisterModel.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+### LoginModel.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+### ApplicationUser.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+### AssignCountry.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+### AssignCity.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+ ### AssignOffice.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+ ### ChangeEmail.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+ ### ChangePassword.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+ ### ChangeUsername.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
 ### 4.5 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
