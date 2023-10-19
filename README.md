@@ -319,7 +319,6 @@ Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<
  - Torna la imatge del nom d'usuari que se li passa.<br>
 ### AuthController.cs
 Aquest arxiu conté tots els controladors dedicats a l'autentificació de l'aplicació.<br>
-
 ### AdminController.cs
 Aquest arxiu conté tots els controladors dedicats al administrador de l'aplicació.<br>
 ### RolesController.cs
@@ -359,6 +358,27 @@ Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<
  
 #### ReservesController.cs
 Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+
+**GET: api/GetReserves**
+ - Torna totes les reserves de la base de dades amb tota la seva informació en format JSON.<br>
+
+**GET: api/GetReserve/{id}** 
+ - Torna la informació de la reserva amb la ID que se li introdueix, en format JSON.<br>
+
+**POST: api/CreateReservations**
+ - Crea una nova reserva utilitzant el nom de país, ciutat i oficina. <br>
+
+**PUT: api/UpdateReserve/{id}**
+ - Crea o actualitza una reserva utilitzant el nom de país, ciutat i oficina. <br>
+
+**GET: api/GetReservesByUser/{userId}**
+ - Torna la informació de la reserva amb la UserID que se li introdueix, en format JSON.<br>
+
+**DELETE: api/DeleteReserve/{id}**
+ - El métode elimina la reunió amb la ID introduida per l'usuari.<br>
+
+**GET: api/ReserveExists/{id}**
+ - Aquest métode privat comprova que la reunió amb la ID introduida existeix a la BBDD.<br>
 ### 4.2.3 Models:
 Lorem ipsum.<br>
 ### 4.5 BBDD SQL Server:
