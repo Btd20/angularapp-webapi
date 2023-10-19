@@ -37,7 +37,7 @@
 
       <div class="res-sales">
         <div class="res-subtitlb"><h4>Sala: </h4></div>
-        <selectSala [pais]="paisReserva" [ciutat]="ciutatReserva" [nomOficina]="oficinaReserva" (salaSeleccionada)="onSalaSeleccionada($event)"></selectSala>  <!-- aixo es l'imput,[nom propietat fill]="nom de la propietat del pare", merci Celia -->
+        <selectSala [officeID]="officeID" (salaSeleccionada)="onSalaSeleccionada($event)"></selectSala>  <!-- aixo es l'imput,[nom propietat fill]="nom de la propietat del pare", merci Celia -->
       </div>
 
       <div class="res-user">

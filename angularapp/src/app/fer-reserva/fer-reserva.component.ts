@@ -49,18 +49,36 @@ export class FerReservaComponent implements OnInit {
       this.officeID = +params['officeID'];
       this.minDate = this.dia;
 
+     
+
       this.oficinesService.getGeolocationByOficinaId(this.officeID).subscribe(data => {
+
+        console.log(`Valor de ciutat abans de la assignació: Pais: ${this.pais} Ciutat:${this.ciutat} Oficina: ${this.oficina}`);
         this.pais = data.pais;
         this.ciutat = data.ciutat;
         this.oficina = data.oficina;
-      });
 
-      if (this.oficinaReserva) {
-        this.getSalesByOfiFromApi();
-      } else {
         this.paisReserva = this.pais || '';
         this.ciutatReserva = this.ciutat || '';
         this.oficinaReserva = this.oficina || '';
+
+        console.log(`Valor de ciutat despres de la assignació: Pais: ${this.pais} Ciutat:${this.ciutat} Oficina: ${this.oficina}`);
+
+        
+      });
+
+      if (this.officeID) {
+        this.getSalesByOfiFromApi();
+        console.warn('rep officeID'+ this.officeID);
+       
+        
+      } else {
+        console.warn('no rep officeID');
+        this.paisReserva = this.pais || '';
+        this.ciutatReserva = this.ciutat || '';
+        this.oficinaReserva = this.oficina || '';
+
+        console.log(`Valor de ciutat després de la assignació de reserva: ${this.paisReserva}   ${this.ciutatReserva}   ${this.oficinaReserva} `);
         this.getSalesByOfiFromUser();
       }
     });
@@ -127,7 +145,7 @@ export class FerReservaComponent implements OnInit {
   }
 
   getSalesByOfiFromApi(): void {
-    this.apiService.getSalaByOficina(this.paisReserva,this.ciutatReserva, this.oficinaReserva).subscribe(
+    this.salesService.getSalesByOfficeID(this.officeID).subscribe(
       response => {
         this.sales = response;
 
