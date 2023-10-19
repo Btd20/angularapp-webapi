@@ -485,6 +485,21 @@ Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicaci�
  ### ChangeUsername.cs
 Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
  -Lorem ipsum.<br>
+ ### Pais.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+ ### Ciutats.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+ ### Oficines.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+ ### Reserves.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
+ ### Sales.cs
+Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
+ -Lorem ipsum.<br>
 ### 4.5 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
