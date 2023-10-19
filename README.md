@@ -361,23 +361,23 @@ Aquest arxiu conté tots els controladors dedicats a les ciutats de l'aplicació
  **GET: api/GetCiutatsByPais/{nomPais}** 
  - Torna la informació de totes les ciutats enllaçades amb el país introduit. Ho torna en format JSON.<br>
 
- **POST: api/CreateCiutats/nomCiutat**
- - Crea un nou país dintre de la BBDD. <br>
+ **POST: api/CreateCiutats/{nomCiutat}**
+ - Crea una nova ciutat dintre de la BBDD. <br>
 
  **POST: api/CreateCiutatsByName/{nomPais, nomCiutat}**
- - Crea un nou país dintre de la BBDD. <br>
+ - Crea una nova ciutat relacionada ja amb país dintre de la BBDD. <br>
 
   **PUT: api/UpdateCiutat/{cityId}**
- - Actualitza la informació d'un país amb l'ID que l'usuari ha introduit.<br>
+ - Actualitza la informació de una ciutat amb l'ID que l'usuari ha introduit.<br>
 
- **DELETE: api/DeletePais/{id}**
- - El métode elimina el país amb la ID introduida per l'usuari.<br>
+ **DELETE: api/DeleteCiutats/{id}**
+ - El métode elimina la ciutat amb la ID introduida per l'usuari.<br>
 
-**DELETE: api/DeletePais/{nomPais}**
- - El métode elimina el país que tingui el mateix nom introduit per l'usuari.<br>
+**DELETE: api/DeleteCiutatsByNom/{nomCiutat}**
+ - El métode elimina la ciutat que tingui el mateix nom introduit per l'usuari.<br>
  
- **GET: api/PaisExists/{id}**
- - Aquest métode privat comprova que el país amb ID introduida existeix a la BBDD.<br>
+ **GET: api/CiutatsExists/{id}**
+ - Aquest métode privat comprova que la ciutat amb ID introduida existeix a la BBDD.<br>
 
 ### OficinesController.cs
 Aquest arxiu conté tots els controladors dedicats a les oficines de l'aplicació.<br>
