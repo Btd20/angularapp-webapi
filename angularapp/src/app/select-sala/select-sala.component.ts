@@ -54,7 +54,7 @@ export class SelectSala implements OnInit {
   getSalesByOfficeID(officeID: number): void {
     this.salesService.getSalesByOfficeID(officeID).subscribe(
       response => {
-        this.sales = response;
+        this.sales = response.map(sala => ({ value: sala.meetingRoomID, nomSala: sala.nomSala }));
       },
       error => {
         console.error(error);
