@@ -456,11 +456,11 @@ Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicaci�
 **GET: ReservesAPI/ReserveExists/{id}**
  - Aquest métode privat comprova que la reunió amb la ID introduida existeix a la BBDD.<br>
 ### 4.2.3 Models:
-ELS MODEEELS, DESCRIPCIÓ.
-
+Lorem ipsum. <br>
 ### RegisterModel.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+ - Username (string, null):
+ - Email (string, null):
+ - Password (string, null): <br>
 ### LoginModel.cs
 Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
  -Lorem ipsum.<br>
