@@ -323,12 +323,36 @@ Aquest arxiu conté tots els controladors dedicats a l'autentificació de l'apli
 Aquest arxiu conté tots els controladors dedicats al administrador de l'aplicació.<br>
 ### RolesController.cs
 Aquest arxiu conté tots els controladors dedicats als rols d'usuari dintre de l'aplicació.<br>
+
 ### PaisController.cs
 Aquest arxiu conté tots els controladors dedicats als paisos de l'aplicació.<br>
+
+**GET: api/GetPais**
+ - Torna tots els paisos de la base de dades amb tota la seva informació en format JSON.<br>
+
+**GET: api/GetPais/{id}** 
+ - Torna la informació del país amb la ID que se li introdueix, en format JSON.<br>
+
+ **POST: api/CreatePais**
+ - Crea un nou país dintre de la BBDD. <br>
+
+  **PUT: api/UpdatePais/{id}**
+ - Actualitza la informació d'un país amb l'ID que l'usuari ha introduit.<br>
+
+ **DELETE: api/DeletePais/{id}**
+ - El métode elimina el país amb la ID introduida per l'usuari.<br>
+
+**DELETE: api/DeletePais/{nomPais}**
+ - El métode elimina el país que tingui el mateix nom introduit per l'usuari.<br>
+ 
+ **GET: api/PaisExists/{id}**
+ - Aquest métode privat comprova que el país amb ID introduida existeix a la BBDD.<br>
+
 ### CiutatsController.cs
 Aquest arxiu conté tots els controladors dedicats a les ciutats de l'aplicació.<br>
 ### OficinesController.cs
 Aquest arxiu conté tots els controladors dedicats a les oficines de l'aplicació.<br>
+
 ### SalesController.cs
 Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<br>
 
