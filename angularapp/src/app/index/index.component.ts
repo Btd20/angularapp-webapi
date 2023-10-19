@@ -30,7 +30,7 @@ export class IndexComponent {
       if (expirationTime > new Date()) {
         // El token es válido, puedes establecer la sesión.
         this.authService.isAdmin = decodedToken?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'Administrador';
-        localStorage.setItem('username', decodedToken.username);
+        //localStorage.setItem('username', decodedToken.username);
         this.router.navigate(['/home']);
       } else {
         // El token ha expirado, puedes realizar alguna acción (por ejemplo, cerrar la sesión).
