@@ -458,12 +458,15 @@ Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicaci�
 ### 4.2.3 Models:
 Lorem ipsum. <br>
 ### RegisterModel.cs
- - Username (string, null):
- - Email (string, null):
- - Password (string, null): <br>
+Lorem ipsum. 
+ - **Username** (string, nullable): La variable que registrarà el nom del futur usuari. 
+ - **Email** (string, nullable): La variable que guardarà el correu electronic del usuari.
+ - **Password** (string, nullable): Aquesta variable guardarà més endavant la contrasenya del usuari.<br>
 ### LoginModel.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **Username** (string, nullable): Lorem ipsum.
+ - **Email** (string, nullable): Lorem ipsum.<br>
+ - **RememberMe** (bool): Lorem ipsum.<br>
 ### ApplicationUser.cs
 Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
  -Lorem ipsum.<br>
