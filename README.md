@@ -468,41 +468,65 @@ Lorem ipsum.<br>
  - **Email** (string, nullable): Lorem ipsum.<br>
  - **RememberMe** (bool): Lorem ipsum.<br>
 ### ApplicationUser.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **Rol** (string): Lorem ipsum.<br>
 ### AssignCountry.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **Username** (string): Lorem ipsum.
+ - **Country** (string): Lorem ipsum.<br>
 ### AssignCity.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **Username** (string): Lorem ipsum.
+ - **City** (string): Lorem ipsum.<br>
  ### AssignOffice.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **Username** (string): Lorem ipsum.
+ - **Office** (string): Lorem ipsum.<br>
  ### ChangeEmail.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **Email** (string): Lorem ipsum.
+ - **NewEmail** (string): Lorem ipsum.<br>
  ### ChangePassword.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **Username** (string): Lorem ipsum.
+ - **CurrentPassword** (string): Lorem ipsum.
+ - **NewPassword** (string): Lorem ipsum.<br>
  ### ChangeUsername.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **CurrentUsername** (string): Lorem ipsum.
+ - **NewUsername** (string): Lorem ipsum.<br>
  ### Pais.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **CountryID** (int): Lorem ipsum.
+ - **NomPais** (string, nullable): Lorem ipsum.<br>
  ### Ciutats.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **CityID** (int): Lorem ipsum.
+ - **NomCiutat** (string, nullable): Lorem ipsum.
+ - **CountryID** (int): Lorem ipsum.
+ - **Pais** (Pais): Lorem ipsum.<br>
  ### Oficines.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
- ### Reserves.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **OfficeID** (int): Lorem ipsum.
+ - **NomOficina** (string, nullable): Lorem ipsum.
+ - **CityID** (int): Lorem ipsum.
+ - **Ciutat** (Ciutats): Lorem ipsum.<br>
  ### Sales.cs
-Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
- -Lorem ipsum.<br>
+Lorem ipsum.<br>
+ - **MeetingRoomID** (int): Lorem ipsum.
+ - **NomSala** (string, nullable): Lorem ipsum.
+ - **OfficeID** (int): Lorem ipsum.
+ - **Capacitat** (int): Lorem ipsum.<br>
+ ### Reserves.cs
+Lorem ipsum.<br>
+ - **ReserveID** (int): Lorem ipsum.
+ - **MeetingRoomID** (int): Lorem ipsum.
+ - **DataReserva** (DateTime, nullable): Lorem ipsum.
+ - **HoraInici** (TimeSpan, nullable): Lorem ipsum.
+ - **HoraFi** (TimeSpan, nullable): Lorem ipsum.
+ - **UserID** (string): Lorem ipsum.
+ - **User** (IdentityUser): Lorem ipsum.<br>
+ - **Sala** (Sales): Lorem ipsum.<br>
 ### 4.5 BBDD SQL Server:
 La base de dades SQL Server és un component clau en la arquitectura d'aquest projecte, ja que gestiona i guarda les dades utilitzades a l'aplicació. Aquestes dades inclouen informació sobre les ciutats, reserves, etc. En aquest apartat, a més, podrem apreciar millor sobre les relacions entre les taules, indicant les claus exteriors, anomenades foreign key. <br>
 ### Estructura de BBDD:
