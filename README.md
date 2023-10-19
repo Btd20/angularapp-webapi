@@ -276,47 +276,48 @@ La seva funció principal és fer servir les sol·licituds HTTP que arriben al s
 ### ApplicationUserController.cs
 Aquest arxiu conté tots els controladors dedicats als usuaris de l'aplicació.<br>
 
-**GET: api/ApplicationUsers**
+**GET: UsersAPI/ApplicationUsers**
  - Torna tots els usuaris de la base de dades amb tota la seva informació en format JSON.<br>
  
-**GET: api/ApplicationUsers/{id}**
+**GET: UsersAPI/ApplicationUsers/{id}**
  - Torna l'usuari amb la ID que se li passa amb tota la informació en format JSON.<br>
  
-**POST: api/ApplicationUsers**
+**POST: UsersAPI/ApplicationUsers**
  - Es crea o s'actualitza un usuari a la base de dades.<br>
 
-**PUT: api/ApplicationUsers/{id}**
+**PUT: UsersAPI/ApplicationUsers/{id}**
  - S'actualitzen diferents paràmetres de l'usuari amb la ID que se li passa.<br>
 
-**DELETE: api/ApplicationUsers/{id}**
+**DELETE: UsersAPI/ApplicationUsers/{id}**
  - S'esborra l'usuari amb la ID que se li passa de la base de dades.<br>
 
-**GET: api/ApplicationUsers/{id}/role**
+**GET: UsersAPI/ApplicationUsers/{id}/role**
  - Torna el nom del rol de l'usuari amb la ID que se li passa.<br>
 
-**POST: api/ApplicationUsers/ChangePassword**
+**POST: UsersAPI/ApplicationUsers/ChangePassword**
  - Actualitza la contrasenya d'un usuari. Aquesta contrasenya serà la que l'usuari hagi escrit i confirmat al formulari de la web.<br>
 
-**POST: api/ApplicationUsers/ChangeUsername**
+**POST: UsersAPI/ApplicationUsers/ChangeUsername**
  - Actualitza el nom d'usuari d'un usuari. Aquest nom d'usuari serà el que l'usuari hagi escrit i confirmat al formulari de la web.<br>
 
 **POST: api/ApplicationUsers/ChangeEmail**
  - Actualitza el correu d'un usuari. Aquest correu serà el que l'usuari hagi escrit i confirmat al formulari de la web.<br>
 
-**POST: api/ApplicationUsers/AssignCountry**
+**POST: UsersAPI/ApplicationUsers/AssignCountry**
  - Assigna un país a un usuari. Aquest país serà el que l'usuari hagi seleccionat a la web.<br>
 
-**POST: api/ApplicationUsers/AssignCity**
+**POST: UsersAPI/ApplicationUsers/AssignCity**
  - Assigna una ciutat a un usuari. Aquesta ciutat serà la que l'usuari hagi seleccionat a la web, filtrada pel país que hagi seleccionat anteriorment.<br>
 
-**POST: api/ApplicationUsers/AssignOffice**
+**POST: UsersAPI/ApplicationUsers/AssignOffice**
  - Assigna una oficina a un usuari. Aquesta oficina serà la que l'usuari hagi seleccionat a la web, filtrada pel país i ciutat que hagi seleccionat anteriorment.<br>
 
-**POST: api/ApplicationUsers/{username}/UploadProfileImage**
+**POST: UsersAPI/ApplicationUsers/{username}/UploadProfileImage**
  - Puja o actualitza a la base de dades la imatge de perfil d'un usuari. Aquesta imatge es guarda com a tipus image. Si l'usuari no ha pujat cap imatge anteriorment s'estableix una per defecte.<br>
 
-**GET: api/ApplicationUsers/GetProfileImage/{username}**
+**GET: UsersAPI/ApplicationUsers/GetProfileImage/{username}**
  - Torna la imatge del nom d'usuari que se li passa.<br>
+ 
 ### AuthController.cs
 Aquest arxiu conté tots els controladors dedicats a l'autentificació de l'aplicació, fent referencia als tokens.<br>
 
@@ -326,133 +327,133 @@ Aquest arxiu conté tots els controladors dedicats als paisos de l'aplicació.<b
 **GET: api/GetPais**
  - Torna tots els paisos de la base de dades amb tota la seva informació en format JSON.<br>
 
-**GET: api/GetPais/{id}** 
+**GET: GeoLocalitzation/GetPais/{id}** 
  - Torna la informació del país amb la ID que se li introdueix, en format JSON.<br>
 
- **POST: api/CreatePais**
+ **POST: GeoLocalitzation/CreatePais**
  - Crea un nou país dintre de la BBDD. <br>
 
-  **PUT: api/UpdatePais/{id}**
+  **PUT: GeoLocalitzation/UpdatePais/{id}**
  - Actualitza la informació d'un país amb l'ID que l'usuari ha introduit.<br>
 
- **DELETE: api/DeletePais/{id}**
+ **DELETE: GeoLocalitzation/DeletePais/{id}**
  - El métode elimina el país amb la ID introduida per l'usuari.<br>
 
-**DELETE: api/DeletePais/{nomPais}**
+**DELETE: GeoLocalitzation/DeletePais/{nomPais}**
  - El métode elimina el país que tingui el mateix nom introduit per l'usuari.<br>
  
- **GET: api/PaisExists/{id}**
+ **GET: GeoLocalitzation/PaisExists/{id}**
  - Aquest métode privat comprova que el país amb ID introduida existeix a la BBDD.<br>
 
 ### CiutatsController.cs
 Aquest arxiu conté tots els controladors dedicats a les ciutats de l'aplicació.<br>
 
-**GET: api/GetCiutats**
+**GET: GeoLocalitzation/GetCiutats**
  - Torna totes les ciutats de la base de dades amb tota la seva informació en format JSON.<br>
 
-**GET: api/GetCiutats/{id}** 
+**GET: GeoLocalitzation/GetCiutats/{id}** 
  - Torna la informació de la ciutat amb la ID que se li introdueix, en format JSON.<br>
 
- **GET: api/GetCiutatsByPais/{nomPais}** 
+ **GET: GeoLocalitzation/GetCiutatsByPais/{nomPais}** 
  - Torna la informació de totes les ciutats enllaçades amb el país introduit. Ho torna en format JSON.<br>
 
- **POST: api/CreateCiutats/{nomCiutat}**
+ **POST: GeoLocalitzation/CreateCiutats/{nomCiutat}**
  - Crea una nova ciutat dintre de la BBDD. <br>
 
- **POST: api/CreateCiutatsByName/{nomPais, nomCiutat}**
+ **POST: GeoLocalitzation/CreateCiutatsByName/{nomPais, nomCiutat}**
  - Crea una nova ciutat relacionada ja amb país dintre de la BBDD. <br>
 
-  **PUT: api/UpdateCiutat/{cityId}**
+  **PUT: GeoLocalitzation/UpdateCiutat/{cityId}**
  - Actualitza la informació de una ciutat amb l'ID que l'usuari ha introduit.<br>
 
- **DELETE: api/DeleteCiutats/{id}**
+ **DELETE: GeoLocalitzation/DeleteCiutats/{id}**
  - El métode elimina la ciutat amb la ID introduida per l'usuari.<br>
 
 **DELETE: api/DeleteCiutatsByNom/{nomCiutat}**
  - El métode elimina la ciutat que tingui el mateix nom introduit per l'usuari.<br>
  
- **GET: api/CiutatsExists/{id}**
+ **GET: GeoLocalitzation/CiutatsExists/{id}**
  - Aquest métode privat comprova que la ciutat amb ID introduida existeix a la BBDD.<br>
 
 ### OficinesController.cs
 Aquest arxiu conté tots els controladors dedicats a les oficines de l'aplicació.<br>
 
-**GET: api/GetOficines**
+**GET: GeoLocalitzation/GetOficines**
  - Torna tots els paisos de la base de dades amb tota la seva informació en format JSON.<br>
 
-**GET: api/GetOficina/{id}** 
+**GET: GeoLocalitzation/GetOficina/{id}** 
  - Torna la informació del país amb la ID que se li introdueix, en format JSON.<br>
 
-**GET: api/GetGeolocationByOficinaId/{id}**
+**GET: GeoLocalitzation/GetGeolocationByOficinaId/{id}**
 - Lorem ipsum. <br>
 
- **POST: api/CreateOficina**
+ **POST: GeoLocalitzation/CreateOficina**
  - Crea un nou país dintre de la BBDD. <br>
 
-  **POST: api/CreateOficinesByNom/{nomOficina}**
+  **POST: GeoLocalitzation/CreateOficinesByNom/{nomOficina}**
  - Crea un nou país dintre de la BBDD. <br>
 
-  **PUT: api/UpdateOficina/{id}**
+  **PUT: GeoLocalitzation/UpdateOficina/{id}**
  - Actualitza la informació d'un país amb l'ID que l'usuari ha introduit.<br>
 
- **DELETE: api/DeleteOficina/{id}**
+ **DELETE: GeoLocalitzation/DeleteOficina/{id}**
  - El métode elimina el país amb la ID introduida per l'usuari.<br>
 
-**DELETE: api/DeleteOficinesByNom/{nomOficina}**
+**DELETE: GeoLocalitzation/DeleteOficinesByNom/{nomOficina}**
  - El métode elimina el país que tingui el mateix nom introduit per l'usuari.<br>
  
- **GET: api/OficinaExists/{id}**
+ **GET: GeoLocalitzation/OficinaExists/{id}**
  - Aquest métode privat comprova que el país amb ID introduida existeix a la BBDD.<br>
 
 ### SalesController.cs
 Aquest arxiu conté tots els controladors dedicats a les sales de l'aplicació.<br>
 
-**GET: api/GetSales**
+**GET: ReservesAPI/GetSales**
  - Torna totes les sales de la base de dades amb tota la seva informació en format JSON.<br>
 
-**GET: api/GetSala/{id}** 
+**GET: ReservesAPI/GetSala/{id}** 
  - Torna la informació de la sala amb la ID que se li introdueix, en format JSON.<br>
 
-**POST: api/CreateSales**
+**POST: ReservesAPI/CreateSales**
  - Crea una nova sala de reunions utilitzant el nom de país, ciutat i oficina. <br>
 
-**POST: api/CreateSalesByNom/{id}**
+**POST: ReservesAPI/CreateSalesByNom/{id}**
  - Crea una nova sala de reunions utilitzant el nom de país, ciutat i oficina. <br>
 
-**PUT: api/UpdateSales/{id}**
+**PUT: ReservesAPI/UpdateSales/{id}**
  - Actualitza la sala desitjada a través del ID que l'usuari li introdueixi. Retorna el codi 204 si l'operació s'ha realitzat amb éxit.<br>
 
-**DELETE: api/DeleteSales/{id}**
+**DELETE: ReservesAPI/DeleteSales/{id}**
  - El métode elimina la sala de reunions amb la ID introduida per l'usuari.<br>
 
-**DELETE: api/DeleteSalesByNom/{nomSala}**
+**DELETE: ReservesAPI/DeleteSalesByNom/{nomSala}**
  - El métode elimina la sala de reunions amb el nom de la sala introduit per l'usuari.<br>
 
-**GET: api/SalesExists/{id}**
+**GET: ReservesAPI/SalesExists/{id}**
  - Aquest métode privat comprova que la sala de reunions amb la ID introduida, existeix a la BBDD.<br>
  
 ### ReservesController.cs
 Aquest arxiu conté tots els controladors dedicats a les reserves de l'aplicació.<br>
 
-**GET: api/GetReserves**
+**GET: ReservesAPI/GetReserves**
  - Torna totes les reserves de la base de dades amb tota la seva informació en format JSON.<br>
 
-**GET: api/GetReserve/{id}** 
+**GET: ReservesAPI/GetReserve/{id}** 
  - Torna la informació de la reserva amb la ID que se li introdueix, en format JSON.<br>
 
-**POST: api/CreateReservations**
+**POST: ReservesAPI/CreateReservations**
  - Crea una nova reserva utilitzant el nom de país, ciutat i oficina. <br>
 
-**PUT: api/UpdateReserve/{id}**
+**PUT: ReservesAPI/UpdateReserve/{id}**
  - Crea o actualitza una reserva utilitzant el nom de país, ciutat i oficina. <br>
 
-**GET: api/GetReservesByUser/{userId}**
+**GET: ReservesAPI/GetReservesByUser/{userId}**
  - Torna la informació de la reserva amb la UserID que se li introdueix, en format JSON.<br>
 
-**DELETE: api/DeleteReserve/{id}**
+**DELETE: ReservesAPI/DeleteReserve/{id}**
  - El métode elimina la reunió amb la ID introduida per l'usuari.<br>
 
-**GET: api/ReserveExists/{id}**
+**GET: ReservesAPI/ReserveExists/{id}**
  - Aquest métode privat comprova que la reunió amb la ID introduida existeix a la BBDD.<br>
 ### 4.2.3 Models:
 Lorem ipsum.<br>
