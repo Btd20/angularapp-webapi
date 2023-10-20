@@ -197,9 +197,23 @@ namespace GeoLocalization.Controllers
 
             return NoContent();
         }
+
+
+
+
         private bool OficinaExists(int id)
         {
             return _context.Oficines.Any(e => e.OfficeID == id);
+        }
+
+       
+        [HttpGet("exists")]
+        public async Task<ActionResult<bool>> CheckIfPaisCiutatOficinaExists(string nomPais, string nomCiutat, string nomOficina)
+        {
+
+            var exists = _context.Pais.Any(p => p.NomPais == nomPais) && _context.Ciutats.Any(c => c.NomCiutat == nomCiutat) && _context.Oficines.Any(o => o.NomOficina == nomOficina);
+
+            return Ok(exists);
         }
     }
 
