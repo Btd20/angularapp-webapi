@@ -66,6 +66,7 @@ export class AdminMRComponent implements OnInit {
       if (result) {
         const { nomPais, nomCiutat, nomOficina, nomSala } = result;
 
+        alert(`NomPais ${nomPais}  NomCiutat  ${nomCiutat}  nomOficina   ${nomOficina}  nomSala  ${nomSala}`);
 
         if (nomPais.trim() === '' || nomCiutat.trim() === '' || nomOficina.trim() === '' ||nomSala.trim() === '') {
           alert('Els noms de la sala, de la ciutat i de l\'oficina no poden estar buits.');

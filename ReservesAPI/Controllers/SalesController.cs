@@ -36,21 +36,6 @@ namespace ReservesAPI.Controllers
         }
 
 
-        // GET: Sales/5
-        /*
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Oficines>> GetOficina(int id)
-        {
-            var sales = await _context.Sala.Include(o => o.oficina).FirstOrDefaultAsync(m => m.MeetingRoomID == id);
-
-            if (sales == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(sales);
-        }
-        */
 
         // POST: Sales
         [HttpPost]
@@ -62,8 +47,8 @@ namespace ReservesAPI.Controllers
             return CreatedAtAction("GetSales", new { id = sala.MeetingRoomID }, sala);
         }
 
-        /*
-        [HttpPost("Pais/{nomPais}/Ciutats/{nomCiutat}/Oficines/{nomOficina}/Sales/{nomSala}")]
+        
+      /*  [HttpPost("Pais/{nomPais}/Ciutats/{nomCiutat}/Oficines/{nomOficina}/Sales/{nomSala}")]
         public async Task<ActionResult<Sales>> CreateSalesByNom(string nomPais, string nomCiutat, string nomOficina, string nomSala)
         {
             var pais = await _context.Pais.FirstOrDefaultAsync(p => p.NomPais == nomPais);
@@ -93,12 +78,12 @@ namespace ReservesAPI.Controllers
                 OfficeID = oficina.OfficeID,
             };
 
-            _context.Sala.Add(novaSala);
+            _context.Sales.Add(novaSala);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetOficina", new { id = novaSala.MeetingRoomID }, novaSala);
         }
-        */
+    */
 
         // PUT: Sales/5
         [HttpPut("{id}")]

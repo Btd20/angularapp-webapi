@@ -27,9 +27,11 @@ export class SelectSala implements OnInit {
   constructor(private apiService: ApiService, private salesService: SalesService) { }
 
   ngOnInit(): void {
-
-    if (this.officeID ) {
+    
+    if (this.officeID) {
       this.getSalesByOfficeID(this.officeID);
+    } else if ((this.nomOficina && this.nomOficina !== 'No seleccionat')) {
+      this.getSalesByOfiFromApi();
     } else {
       this.getAllSalesFromApi();
     }
@@ -61,6 +63,19 @@ export class SelectSala implements OnInit {
       }
     );
   }
+
+  getSalesByOfiFromApi(): void {
+    this.apiService.getSalaByOficina(this.pais, this.ciutat, this.nomOficina).subscribe(
+      response => {
+
+        this.sales = response.map(sala => ({ value: sala.meetingRoomID, nomSala: sala.nomSala }));
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
 
 
   onSalaSeleccionada(event: any) {
